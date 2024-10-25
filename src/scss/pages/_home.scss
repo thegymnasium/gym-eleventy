@@ -145,12 +145,12 @@ section.home-featured {
       border-top: 2px solid var(--mono-400);
 
       h2 {
+        display: inline-block;
         position: relative;
         top: -1.75rem;
         background: var(--mono-200);
-        margin-bottom: -0.75rem;
-        display: inline-block;
         padding: 0 2rem;
+        margin-bottom: -0.75rem;
       }
     }
 
@@ -223,6 +223,7 @@ section.home-featured {
     h2 {
       font-size: 1.8rem;
       line-height: 1.2;
+      text-wrap: pretty;
       margin-bottom: 1rem;
     }
 
