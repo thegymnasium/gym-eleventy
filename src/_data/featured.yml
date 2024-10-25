@@ -8,7 +8,7 @@ home:
       description:
     wrapper_class: home
     cta:
-      description: "Design a career you love with our free online courses and tutorials on design, development, UX, prototyping, accessibility, and career skills."
+      description: Design a career you love with our free online <a href="/courses/">courses</a> and <a href="/courses/take5/">tutorials</a> on design, development, UX, prototyping, accessibility, and career skills.
       href: /courses/
       label: View all Courses
       class: btn
