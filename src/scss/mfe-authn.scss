@@ -27,6 +27,7 @@
   display: grid;
   grid-template-rows: auto;
   margin: auto;
+  min-height: 50vh; // temp fix to prevent footer from being halfway up the page
 
   @include breakpoint(medium) {
     max-width: 50vw;
