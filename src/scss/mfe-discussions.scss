@@ -172,12 +172,16 @@ main.container {
     letter-spacing: 0.0125ex;
     word-spacing: 0.25ex;
   }
+
 }
 
 #post {
   p {
     font-size: 1.05rem;
     line-height: 1.35;
+  }
+  a[href]:not(.btn) {
+    color: var(--mono-900);
   }
 }
 
