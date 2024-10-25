@@ -117,8 +117,7 @@ article.home-hero {
 
  .hero {
     font-family: var(--font-family-custom);
-    font-size: 1.6875rem;
-    margin-top: 0rem;
+    font-size: 1.75rem;
     margin-bottom: 2.4rem;
   }
 
@@ -152,6 +151,24 @@ section.home-featured {
         margin-bottom: -0.75rem;
         display: inline-block;
         padding: 0 2rem;
+      }
+    }
+
+    > .cta {
+      text-align: center;
+      margin-top: 1.4rem;
+
+      .description {
+        max-width: 44rem;
+        font-family: var(--font-family-custom);
+        font-size: 1.625rem;
+        text-align: left;
+        margin: 0.8rem auto;
+      }
+
+      .btn {
+        padding-left: 2.1rem;
+        padding-right: 2.1rem;
       }
     }
   }
@@ -206,7 +223,7 @@ section.home-featured {
     h2 {
       font-size: 1.8rem;
       line-height: 1.2;
-      margin-bottom: 0.8rem;
+      margin-bottom: 1rem;
     }
 
     .instructor,
@@ -242,6 +259,7 @@ section.home-featured {
       }
     }
   }
+
 }
 
 .how-gymnasium-works,
