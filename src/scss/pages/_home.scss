@@ -4,6 +4,7 @@
 @use 'base/fonts' as *;
 
 // applied to body class
+
 .home {
   background-color: var(--mono-200);
 
@@ -13,6 +14,7 @@
   }
 
   // top/bottom padding for each component of the home page
+
   > article,
   section {
     padding-top: 2rem;
@@ -54,6 +56,7 @@ article.home-hero {
     letter-spacing: 0.15ex;
     word-spacing: 0.25ex;
   }
+
   h1 {
     font-size: rem-calc(40);
     word-spacing: rem-calc(2);
