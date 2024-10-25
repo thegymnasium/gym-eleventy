@@ -182,6 +182,7 @@ main.container {
   }
   a[href]:not(.btn) {
     color: var(--mono-900);
+    text-decoration-color: currentColor;
   }
 }
 
