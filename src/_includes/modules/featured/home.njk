@@ -54,39 +54,39 @@
           {%- endif -%}
         {%- endif -%}
         <li>
-          <div class="featured-item" id="featured-{{ type }}-{{ obj.id | lower }}">
-            <div class="card-top {{ bg_color }}">
-              <header>{%- if obj["topic"] -%}
-                <h5 class="topic caps">{{ obj["topic"] }}</h5>
-              {%- endif -%}</header>
-              <figure>
-                <img src="{{ src }}" alt="Image for {{ title }}">
-              </figure>
+          <article class="featured-item" id="featured-{{ type }}-{{ obj.id | lower }}">
+            <figure class="{{ bg_color }}">
+              <a href="{{ destUrl }}">
+                <img alt="Image for {{ title }}." src="{{ src | replace('svg', 'png') }}" srcset="{{ srcSet }}" width="574"  height="488" decoding="asyc" fetchpriority="low">
+              </a>
+            </figure>
+            <header>
+              {%- if obj["topic"] -%}
+              {%- endif -%}
               <hgroup>
-              {%- if obj["title"] -%}
-                <h3 class="title caps">{{ obj["title"] | strip_html }}</h3>
-              {%- endif -%}
-              {%- if obj["description"] -%}
-                <p class="description">{{ obj["description"] }}</p>
-              {%- endif -%}
+                <p class="topic caps"><b>{{ obj["topic"] }}</b></p>
+                {%- if obj["title"] -%}
+                <a href="{{ destUrl }}">
+                  <h2 class="title caps">{{ obj["title"] | strip_html }}</h2>
+                </a>
+                {%- endif -%}
               </hgroup>
-            </div>
-
-            <div class="card-bottom info">
               {%- if obj["instructor"] -%}
                 <dl class="instructor">
                   <dt class="byline"><b>with {{ bios[obj["instructor"]].name }}</b></dt>
                   <dd>{{ bios[obj["instructor"]].subtitle }}</dd>
                 </dl>
               {%- endif -%}
-
-              <div class="cta">
-                <a class="btn" href="{{ destUrl }}">Learn More</a>
-              </div>
+            </header>
+            <div class="info" hidden>
+              {%- if obj["description"] -%}
+                <p class="description">{{ obj["description"] }}</p>
+              {%- endif -%}
             </div>
-
-
-          </div>
+            <div class="cta">
+              <a class="btn" href="{{ destUrl }}">Learn More</a>
+            </div>
+          </article>
         </li>
       {%- endfor -%}
     </ul>
