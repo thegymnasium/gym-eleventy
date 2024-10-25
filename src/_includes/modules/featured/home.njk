@@ -66,9 +66,11 @@
               <hgroup>
                 <p class="topic caps"><b>{{ obj["topic"] }}</b></p>
                 {%- if obj["title"] -%}
-                <a href="{{ destUrl }}">
-                  <h2 class="title caps">{{ obj["title"] | strip_html }}</h2>
-                </a>
+                <h2 class="title caps">
+                  <a href="{{ destUrl }}">
+                    {{ obj["title"] | strip_html }}
+                  </a>
+                </h2>
                 {%- endif -%}
               </hgroup>
               {%- if obj["instructor"] -%}
