@@ -10,7 +10,7 @@ home:
     cta:
       description: Design a career you love with our free online <a href="/courses/">courses</a> and <a href="/courses/take5/">tutorials</a> on design, development, UX, prototyping, accessibility, and career skills.
       href: /courses/
-      label: View all Courses
+      label: View All Courses
       class: btn
     items:
     - id: GYM-017
