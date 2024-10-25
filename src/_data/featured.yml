@@ -4,6 +4,7 @@ home:
   featured:
     header:
       heading: Featured Courses
+      heading_type: h2
       description:
     wrapper_class: home
     cta:
@@ -13,8 +14,10 @@ home:
       class: btn
     items:
     - id: GYM-017
-    - id: GYM-018
-    - id: GYM-019
+    - id: GYM-107
+    - id: GYM-103
+    - id: GYM-104
+
 catalog:
   full:
   - GYM-107
