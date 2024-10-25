@@ -13,6 +13,10 @@
   &[data-course-num="006"],
   &[data-course-num="001"] {
     background-color: var(--green-500);
+
+    span {
+      color: var(--mono-900);
+    }
   }
 
   &[data-course-num="107"],
@@ -40,6 +44,10 @@
   &[data-course-num="014"],
   &[data-course-num="013"] {
     background-color: var(--teal-500);
+
+    span {
+      color: var(--mono-900);
+    }
   }
 
   span {
