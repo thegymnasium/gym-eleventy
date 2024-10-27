@@ -118,13 +118,19 @@ article.home-hero {
     font-family: var(--font-family-custom);
     font-size: 1.75rem;
     margin-top: 0.4rem;
-    margin-bottom: 2.8rem;
+
+    + * {
+      margin-top: 2.8rem;
+    }
   }
+
 
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
     gap: 1.4rem 2rem;
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
 
     @include breakpoint(large, min) {
       grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
@@ -167,12 +173,14 @@ section.home-featured {
         font-family: var(--font-family-custom);
         font-size: 1.675rem;
         text-align: left;
-        margin: 0.8rem auto;
+        margin: 1.2rem auto;
       }
 
       .btn {
-        padding-left: 2.1rem;
-        padding-right: 2.1rem;
+        display: inline-block;
+        padding-left: 6%;
+        padding-right: 6%;
+        // margin-bottom: 0;
       }
     }
   }
@@ -222,6 +230,10 @@ section.home-featured {
       word-spacing: 0.25ex;
       margin-top: -0.125rem;
       margin-bottom: 0.8rem;
+
+      b {
+        font-weight: inherit;
+      }
     }
 
     h2 {
@@ -237,6 +249,8 @@ section.home-featured {
     }
 
     .instructor {
+      margin-top: 0;
+      margin-bottom: 0;
 
       * {
         line-height: 1.4;
