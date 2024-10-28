@@ -555,7 +555,7 @@ a.muted-link.inline-link,
 p > a.muted-link[href]:not(.btn) {
   color: var(--primary-500);
   text-decoration: underline;
-  text-decoration-color: rgba(var(--primary-500), 80);
+  text-decoration-color: var(--primary-500);
   text-decoration-line: underline;
 }
 a.muted-link.inline-link:hover,
@@ -5037,7 +5037,7 @@ a.badge-primary:hover {
 }
 a.badge-primary.focus,
 a.badge-primary:focus {
-  box-shadow: 0 0 0 1px var(--primary-500) 80;
+  box-shadow: 0 0 0 1px var(--primary-500);
   outline: 0;
 }
 .badge-secondary {
@@ -5065,7 +5065,7 @@ a.badge-brand:hover {
 }
 a.badge-brand.focus,
 a.badge-brand:focus {
-  box-shadow: 0 0 0 1px var(--primary-500) 80;
+  box-shadow: 0 0 0 1px var(--primary-500);
   outline: 0;
 }
 .badge-success {
@@ -7728,7 +7728,7 @@ textarea.form-control {
 .custom-checkbox
   .custom-control-input:disabled:indeterminate
   ~ .custom-control-label:before {
-  background-color: var(--primary-500) 80;
+  background-color: var(--primary-500);
 }
 .custom-radio .custom-control-label:before {
   border-radius: 50%;
@@ -7739,7 +7739,7 @@ textarea.form-control {
 .custom-radio
   .custom-control-input:disabled:checked
   ~ .custom-control-label:before {
-  background-color: var(--primary-500) 80;
+  background-color: var(--primary-500);
 }
 .custom-switch {
   padding-left: 2.6875rem;
@@ -7783,7 +7783,7 @@ textarea.form-control {
 .custom-switch
   .custom-control-input:disabled:checked
   ~ .custom-control-label:before {
-  background-color: var(--primary-500) 80;
+  background-color: var(--primary-500);
 }
 .custom-select {
   -webkit-appearance: none;
