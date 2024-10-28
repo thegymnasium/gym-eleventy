@@ -1,46 +1,48 @@
 body.view-in-course {
 
   main {
-    .wrapper-course-material,
-    .wrapper-preview-menu {
-      padding: 0;
-    }
-    .wrapper-course-material .course-material,
-    .wrapper-preview-menu .preview-menu {
-      width: auto;
-    }
-    .wrapper-preview-menu .preview-menu {
-      padding: 15px 2%;
-    }
-    .wrapper-course-material .course-material {
-      padding: 0;
-    }
-    .wrapper-course-material .course-material .course-tabs {
-      padding: 0;
-    }
-    .container {
-      max-width: none;
-      min-width: initial;
-      width: auto;
-    }
-    .info-wrapper {
-      max-width: 1920px;
-      margin: 0 auto;
-    }
-    .course-wrapper,
-    .profile-wrapper,
-    .instructor-dashboard-wrapper-2,
-    .wiki-wrapper,
-    .teams-wrapper,
-    .static_tab_wrapper {
-      max-width: 1920px;
-      margin: 0 auto;
-      padding: 0;
-    }
+    // .wrapper-course-material,
+    // .wrapper-preview-menu {
+    //   padding: 0;
+    // }
+    // .wrapper-course-material .course-material,
+    // .wrapper-preview-menu .preview-menu {
+    //   width: auto;
+    // }
+    // .wrapper-preview-menu .preview-menu {
+    //   padding: 15px 2%;
+    // }
+    // .wrapper-course-material .course-material {
+    //   padding: 0;
+    // }
+    // .wrapper-course-material .course-material .course-tabs {
+    //   padding: 0;
+    // }
+    // .container {
+    //   max-width: none;
+    //   min-width: initial;
+    //   width: auto;
+    // }
+    // .info-wrapper {
+    //   max-width: 1920px;
+    //   margin: 0 auto;
+    // }
+    // .course-wrapper,
+    // .profile-wrapper,
+    // .instructor-dashboard-wrapper-2,
+    // .wiki-wrapper,
+    // .teams-wrapper,
+    // .static_tab_wrapper {
+    //   max-width: 1920px;
+    //   margin: 0 auto;
+    //   padding: 0;
+    // }
     // .static_tab_wrapper {
     //   padding: 2em 2.5em;
     // }
   }
+
+
   // .header-global,
   // .header-global.slim {
   //   width: auto;
@@ -82,73 +84,73 @@ body.view-in-course {
   // .view-in-course
   .course-content {
 
-    display: table-cell;
-    box-sizing: border-box;
-    padding: 0;
-    vertical-align: top;
-    height: 100%;
-    min-height: 100%;
+    // display: table-cell;
+    // box-sizing: border-box;
+    // padding: 0;
+    // vertical-align: top;
+    // height: 100%;
+    // min-height: 100%;
 
-    main {
-      padding: 0;
-      background-color: inherit;
-      height: 100%;
-      min-height: 100%;
-    }
+    // main {
+    //   // padding: 0; // this rule breaks progress again?
+    //   // background-color: inherit;
+    //   height: 100%;
+    //   min-height: 100%;
+    // }
   }
 
 
-  .modal,.leanModal_box,.entitlement-unenrollment-modal {
-    display:none;
-    position: absolute;
-    left: 50%;
-    padding: 8px;
-    width: 480px;
-    border-radius: 3px;
-    box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
-    background: #313131;
-    color: #313131
-  }
+  // .modal,.leanModal_box,.entitlement-unenrollment-modal {
+  //   display:none;
+  //   position: absolute;
+  //   left: 50%;
+  //   padding: 8px;
+  //   width: 480px;
+  //   border-radius: 3px;
+  //   box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
+  //   background: #313131;
+  //   color: #313131;
+  // }
 
-  .modal.video-modal,.video-modal.leanModal_box,.video-modal.entitlement-unenrollment-modal {
-    left: 50%;
-    padding: 10px;
-    width: 582px
-  }
+  // .modal.video-modal,.video-modal.leanModal_box,.video-modal.entitlement-unenrollment-modal {
+  //   left: 50%;
+  //   padding: 10px;
+  //   width: 582px;
+  // }
 
-  .modal.video-modal .inner-wrapper,.video-modal.leanModal_box .inner-wrapper,.video-modal.entitlement-unenrollment-modal .inner-wrapper,.modal.video-modal .entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper,.entitlement-unenrollment-modal .modal.video-modal .entitlement-unenrollment-modal-inner-wrapper,.video-modal.leanModal_box .entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper,.entitlement-unenrollment-modal .video-modal.leanModal_box .entitlement-unenrollment-modal-inner-wrapper,.video-modal.entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper {
-    background: #000;
-    box-shadow: none;
-    height: 315px;
-    padding: 10px;
-    width: 560px
-  }
+  // .modal.video-modal .inner-wrapper,.video-modal.leanModal_box .inner-wrapper,.video-modal.entitlement-unenrollment-modal .inner-wrapper,.modal.video-modal .entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper,.entitlement-unenrollment-modal .modal.video-modal .entitlement-unenrollment-modal-inner-wrapper,.video-modal.leanModal_box .entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper,.entitlement-unenrollment-modal .video-modal.leanModal_box .entitlement-unenrollment-modal-inner-wrapper,.video-modal.entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper {
+  //   background: #000;
+  //   box-shadow: none;
+  //   height: 315px;
+  //   padding: 10px;
+  //   width: 560px;
+  // }
 
-  .course-wrapper .course-content .xqa-modal,.course-wrapper .course-content .staff-modal,.course-wrapper .course-content .history-modal,.course-wrapper .courseware-results-wrapper .xqa-modal,.course-wrapper .courseware-results-wrapper .staff-modal,.course-wrapper .courseware-results-wrapper .history-modal {
-    width: 80%;
-    height: 80%;
-    left: left(20%);
-    overflow: auto;
-    display: none
-  }
+  // .course-wrapper .course-content .xqa-modal,.course-wrapper .course-content .staff-modal,.course-wrapper .course-content .history-modal,.course-wrapper .courseware-results-wrapper .xqa-modal,.course-wrapper .courseware-results-wrapper .staff-modal,.course-wrapper .courseware-results-wrapper .history-modal {
+  //   width: 80%;
+  //   height: 80%;
+  //   left: left(20%);
+  //   overflow: auto;
+  //   // display: none;
+  // }
 
-  .course-wrapper .course-content div.staff_info,.course-wrapper .courseware-results-wrapper div.staff_info {
-    display: none;
-    white-space: pre-wrap;
-    border-top: 1px solid #c8c8c8;
-    padding-top: 1.41575em;
-    margin-top: 1.41575em;
-    line-height: 1.41575em;
-    font-family: Consolas, "Lucida Console", Monaco, "Courier New", Courier, monospace;
-    direction: ltr;
-    text-align: left
-  }
+  // .course-wrapper .course-content div.staff_info,.course-wrapper .courseware-results-wrapper div.staff_info {
+  //   // display: none;
+  //   white-space: pre-wrap;
+  //   border-top: 1px solid #c8c8c8;
+  //   padding-top: 1.41575em;
+  //   margin-top: 1.41575em;
+  //   line-height: 1.41575em;
+  //   font-family: Consolas, "Lucida Console", Monaco, "Courier New", Courier, monospace;
+  //   direction: ltr;
+  //   text-align: left;
+  // }
 
-  .course-wrapper .course-content div.staff_info:after,.course-wrapper .courseware-results-wrapper div.staff_info:after {
-    content: "";
-    display: table;
-    clear: both
-  }
+  // .course-wrapper .course-content div.staff_info:after,.course-wrapper .courseware-results-wrapper div.staff_info:after {
+  //   content: "";
+  //   display: table;
+  //   clear: both;
+  // }
 
   // Final Exam Tweaks
 

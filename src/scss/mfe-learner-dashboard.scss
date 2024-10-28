@@ -6,7 +6,8 @@
 @use "base/mixins" as *;
 @use "base/fonts" as *;
 
-@use "shared";
+@use 'shared';
+@use 'base/visibility';
 @use 'components/webfonts_absolute';
 
 @use "mfe/root";

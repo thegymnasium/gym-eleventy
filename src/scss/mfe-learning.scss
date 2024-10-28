@@ -9,7 +9,8 @@
 
 @use "mfe/learning/learning-original";
 
-@use "shared";
+@use 'shared';
+@use 'base/visibility';
 @use 'components/webfonts_absolute';
 
 @use "mfe/root";

@@ -3,6 +3,7 @@
 // | -------------------------------------------------------------
 
 @use 'shared';
+@use 'base/visibility';
 @use 'components/webfonts_relative';
 
 // Static-site only (eleventy-specific) components below

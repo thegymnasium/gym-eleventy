@@ -9,12 +9,15 @@
 
 
 @use 'shared';
+@use 'theme/visibility';
 @use 'components/webfonts_absolute';
+
 
 @use 'theme/containers';
 
 // Courseware
-@use 'theme/courseware';
+@use 'theme/course-simplified';
+// @use 'theme/courseware';
 
 // Instructor stuff
 @use 'theme/instructor';
@@ -28,3 +31,15 @@ body.view-in-mfe {
     padding: 0;
   }
 }
+
+// [aria-hidden=true] {
+//   position: absolute;
+//   white-space: nowrap;
+//   width: 1px;
+//   height: 1px;
+//   padding: 0;
+//   border: 0;
+//   margin: -1px;
+//   overflow: hidden;
+//   clip: rect(0, 0, 0, 0);
+// }
