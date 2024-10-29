@@ -1,3 +1,8 @@
+@use 'base/breakpoints' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
+@use 'base/fonts' as *;
+
 /* line 261, lms/static/sass/base/_reset.scss */
 .hide, .hidden {
   display: none !important;
