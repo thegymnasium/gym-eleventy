@@ -1,11 +1,16 @@
+@use 'base/breakpoints' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
+@use 'base/fonts' as *;
+
 // global rules
 html {
   height: 100%;
   max-height: 100%;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-default);
   font-style: normal;
-  line-height: 1em;
-  background: #fff;
+  line-height: 1;
+  background: var(--mono-100);
   color: #222;
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -17,25 +22,12 @@ body {
   font-style: normal;
   font-size: 1rem;
   line-height: 1em;
-  background: #fff;
+  background: var(--mono-100);
   margin: 0;
-}
 
-body.view-in-course {
-  background-color: #fff;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-label {
-  text-align: left;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  &.view-in-course {
+    background-color: var(--mono-100);
+  }
 }
 
 #lean_overlay {
@@ -56,7 +48,7 @@ label {
 // lms-course.css
 .sr,
 .sr-only {
-  background: #fff;
+  background: var(--mono-100);
   color: #000;
 }
 
@@ -79,7 +71,7 @@ label {
   left: 0;
   top: -600px;
   overflow: hidden;
-  background: #fff;
+  background: var(--mono-100);
   border-bottom: 1px solid #fcfcfc;
   padding: 15px 0;
 }
@@ -208,13 +200,13 @@ section.gradebook-content,
   z-index: 99999;
   padding: 10px;
   border-radius: 3px;
-  background: #ffffff;
-  border-color: #000000;
+  background: var(--mono-100);
+  border-color: var(--mono-900);
   border-width: 2px;
   border-style: solid;
   font-size: 11px;
   font-weight: 400;
-  color: #000000;
+  color: var(--mono-900);
   pointer-events: none;
   opacity: 0;
   max-width: 200px;
@@ -244,7 +236,7 @@ section.gradebook-content,
   background-color: #f2f2f2;
   color: #c2387d;
   text-transform: uppercase;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: var(--font-family-default);
 }
 
 // staff modal
@@ -280,7 +272,7 @@ section.gradebook-content,
 .leanModal_box .inner-wrapper,
 .entitlement-unenrollment-modal .inner-wrapper,
 .entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper {
-  background: #fff;
+  background: var(--mono-100);
   border-radius: 0;
   border: 1px solid rgba(0, 0, 0, 0.9);
   box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.7);
@@ -299,8 +291,7 @@ div.staff_info {
   padding-top: 1.41575em;
   margin-top: 1.41575em;
   line-height: 1.41575em;
-  font-family: Consolas, "Lucida Console", Monaco, "Courier New", Courier,
-    monospace;
+  font-family: monospace;
   direction: ltr;
   text-align: left;
 }

@@ -40,10 +40,8 @@ body {
     padding: 1.4rem 1rem;
     margin-top: 1.4rem;
     margin-bottom: 1.4rem;
-    
     background: var(--mono-100);
-    border: 1px solid var(--mono-300);
-    border-radius: 3px;
+    border: 0;
 
     @include breakpoint(medium) {
       max-width: calc(75rem - 2rem);
