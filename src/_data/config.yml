@@ -282,34 +282,23 @@ msg:
         audience: This Course is For
         instructor: Meet the Instructor
   learning:
-    exam_success_short_course: |
+    exam_success: |
       <h2>You did it! 🎉</h2>
       <p>Congratulations on passing the final exam!</p>
-      <p>Now you can show off your achievement by sharing your badge on social media. You can always access your badge from the <a href="/dashboard">Dashboard</a>.</p>
+      <p>Now you can share your achievement on social media. You can always access your credential from the <a href="/dashboard">Dashboard</a>.</p>
       <div class="survey">
         <p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses.</p>
-        <a class="gym-button gym-button-secondary" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
+        <a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
       </div>
-    exam_success_full_course: |
-      <h2>You did it! 🎉</h2>
-      <p>Congratulations on passing the final exam.</p>
-      <p>Now you can show off your achievement by sharing your certificate on social media. You can always access your certificate from the <a href="/dashboard">Dashboard</a>.</p>
-      <div class="survey">
-        <p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p>
-        <a class="gym-button gym-button-secondary" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
-      </div>
-    exam_first_attempt_short_course: |
+    exam_failed_attempt: |
       <h2>You’re Close!</h2>
-      <p>You've scored <span class="exam-score-container"></span> on the exam. (To pass, you need to score greater than 80%.) The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
-    exam_first_attempt_full_course: |
-      <h2>You’re close!</h2>
-      <p>You've scored <span class="exam-score-container"></span> on the exam. (To pass, you need to score greater than 85%.) The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
+      <p>You've scored <span id="exam-score-container"></span> on the exam. The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
     exam_failure: |
       <h2>Darn.</h2>
       <p>The bad news is that you didn’t pass the exam. But the good news is that we have plenty of other free courses.</p>
       <div class="survey">
         <p>In the meantime, please take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p>
-        <a class="gym-button gym-button-primary" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">
+        <a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">
           Take Survey
         </a>
       </div>
