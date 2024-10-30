@@ -159,7 +159,7 @@ section.gradebook-content,
 }
 
 .course-wrapper.chromeless main {
-  padding: 0.001rem !important; // for course progress tracking, this element must have even the slightest amount of padding for some reason
+  padding: 0.1rem !important; // for course progress tracking, this element must have even the slightest amount of padding for some reason
   outline: none;
 }
 
