@@ -52,5 +52,10 @@
   <div class="container">
     {%- set header = pages['home']['find-work']['header'] -%}
     {%- include 'modules/jobs.njk' -%}
+    {%- set cta = pages['home']['find-work']['cta'] -%}
+    <div class="cta">
+      <p class="description">{{ cta.description }}</p>
+      <a class="btn" href="{{ cta.href }}">{{ cta.label }}</a>
+    </div>
   </div>
 </section>

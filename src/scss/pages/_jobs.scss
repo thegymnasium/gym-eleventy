@@ -24,26 +24,45 @@
   }
 }
 
+.jobs-list {
+    display: grid;
+    margin-top: 1.6rem;
 
-.jobs-list li {
-  font-weight: bold;
-  padding-top: 1.2rem;
-  border-top: 1px dashed var(--mono-300);
-  margin-top: 1.2rem;
+    @include breakpoint(medium, min) {
+      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+      gap: 0 2rem;
+    }
+
+  li {
+    font-weight: bold;
+    font-size: 1.05rem;
+    padding: 1.2rem 0;
+    border-top: 1px dashed var(--mono-300);
+    border-bottom: 1px dashed var(--mono-300);
+    margin-top: -1px;
+
+    a {
+      display: inline-block;
+      margin-bottom: 0.2rem;
+    }
+
+    &:first-child {
+
+    }
+  }
+
 }
 
 .home-find-work {
   .location-select {
     background-color: var(--mono-100);
-    margin-top: 1rem;
   }
 
-  .jobs-list li {
-    padding-top: 1rem;
-    margin-top: 1rem;
+  .jobs-list {
 
-    &:first-child {
-      border-top: 0;
+    li {
+      border-top-color: var(--mono-500);
+      border-bottom-color: var(--mono-500);
     }
   }
 }
