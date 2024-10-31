@@ -42,10 +42,26 @@
 
     a {
       display: inline-block;
+      text-decoration: none;
       margin-bottom: 0.2rem;
 
       span {
         font-weight: bold;
+        text-transform: capitalize;
+      }
+
+      .job-title {
+        text-decoration: underline;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+
+        .job-title {
+          text-decoration: none;
+        }
+
       }
 
       .job-location {
@@ -53,10 +69,6 @@
         font-weight: normal;
         font-size: 1rem;
       }
-    }
-
-    &:first-child {
-
     }
   }
 
