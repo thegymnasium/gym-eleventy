@@ -3,6 +3,7 @@
 // | -------------------------------------------------------------
 
 html {
+  color: var(--mono-900);
   box-sizing: border-box;
 
   @media (prefers-reduced-motion: no-preference) {

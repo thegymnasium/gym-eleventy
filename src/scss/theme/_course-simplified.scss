@@ -1,0 +1,331 @@
+@use 'base/breakpoints' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
+@use 'base/fonts' as *;
+
+// global rules
+html {
+  height: 100%;
+  max-height: 100%;
+  font-family: var(--font-family-default);
+  font-style: normal;
+  line-height: 1;
+  background: var(--mono-100);
+  color: #222;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1em;
+  background: var(--mono-100);
+  margin: 0;
+
+  &.view-in-course {
+    background-color: var(--mono-100);
+  }
+}
+
+#lean_overlay {
+  background-image: radial-gradient(
+    circle at 50% 30%,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.6)
+  );
+  display: none;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+// lms-course.css
+.sr,
+.sr-only {
+  background: var(--mono-100);
+  color: #000;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+  border: 0;
+}
+
+.nav-skip,
+.transcript-skip {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -600px;
+  overflow: hidden;
+  background: var(--mono-100);
+  border-bottom: 1px solid #fcfcfc;
+  padding: 15px 0;
+}
+
+.sr,
+.sr-only,
+.pagination .nav-label,
+.pagination .pagination-form .page-number-label,
+.pagination .pagination-form .submit-pagination-form,
+.nav-contents,
+.nav-skip,
+.transcript-skip,
+.view-teams .page-header-search .search-label {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  margin: -1px;
+  height: 1px;
+  width: 1px;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  word-wrap: normal;
+}
+
+// Course header
+.course-header {
+  background-color: var(--mono-600);
+  padding: 1rem 0;
+  font-size: 1.3rem;
+  font-family: var(--font-family-custom);
+  text-transform: uppercase;
+  font-weight: bold;
+
+  .pretty-course-id {
+    display: none;
+  }
+}
+
+.content-wrapper {
+  background: none;
+  border: none;
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 0;
+}
+
+body.view-in-course .course-wrapper,
+body.view-in-course .profile-wrapper,
+body.view-in-course .instructor-dashboard-wrapper-2,
+body.view-in-course .wiki-wrapper,
+body.view-in-course .teams-wrapper,
+body.view-in-course .static_tab_wrapper {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.course-wrapper {
+  position: relative;
+}
+
+.course-wrapper .course-content,
+.course-wrapper .courseware-results-wrapper {
+  line-height: 1.6;
+}
+
+.course-wrapper .course-content {
+  padding: 0;
+}
+
+.content,
+.course-content,
+.courseware-results-wrapper,
+.book,
+.course-info,
+.student-notes,
+.date-wrapper,
+section.gradebook-content,
+.instructor-dashboard-content-2 {
+  box-sizing: border-box;
+  display: table-cell;
+  padding: 2em 2.5em;
+  vertical-align: top;
+  width: 76.27119%;
+}
+
+.course-wrapper.chromeless main {
+  padding: 0.1rem !important; // for course progress tracking, this element must have even the slightest amount of padding for some reason
+  outline: none;
+}
+
+.xblock {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin: 0 auto;
+  font: -apple-system-body;
+
+  &.xblock-student_view-vertical,
+  &.xblock-public_view-vertical {
+    max-width: 1080px;
+  }
+
+  table {
+    table-layout: auto;
+    word-break: normal;
+  }
+}
+
+.vert-mod {
+  padding: 0;
+  margin: 0;
+  line-height: 1.4;
+  list-style: none;
+
+  > div:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  padding: 10px;
+  border-radius: 3px;
+  background: var(--mono-100);
+  border-color: var(--mono-900);
+  border-width: 2px;
+  border-style: solid;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--mono-900);
+  pointer-events: none;
+  opacity: 0;
+  max-width: 200px;
+  transition: opacity 0.1s linear 0s;
+}
+
+// Instructor
+.wrap-instructor-info {
+  margin: 10px 5px 0 0;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .wrap-instructor-info {
+    display: block;
+  }
+}
+
+.instructor-info-action {
+  font-size: 12px;
+  line-height: 17.76px;
+  float: right;
+  margin-left: 10px;
+  text-align: right;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: #c2387d;
+  text-transform: uppercase;
+  font-family: var(--font-family-default);
+}
+
+// staff modal
+.modal,
+.leanModal_box,
+.entitlement-unenrollment-modal {
+  display: none;
+  position: absolute;
+  left: 50%;
+  padding: 8px;
+  width: 480px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
+  background: #313131;
+  color: #313131;
+}
+
+[tabindex="-1"] {
+  outline: none;
+}
+
+.xqa-modal,
+.staff-modal,
+.history-modal {
+  width: 80%;
+  height: 80%;
+  left: left(20%); // WTF
+  overflow: auto;
+  display: none;
+}
+
+.modal .inner-wrapper,
+.leanModal_box .inner-wrapper,
+.entitlement-unenrollment-modal .inner-wrapper,
+.entitlement-unenrollment-modal .entitlement-unenrollment-modal-inner-wrapper {
+  background: var(--mono-100);
+  border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.7);
+  overflow: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+// Staff Info inside modal
+div.staff_info {
+  display: none;
+  white-space: pre-wrap;
+  border-top: 1px solid #c8c8c8;
+  padding-top: 1.41575em;
+  margin-top: 1.41575em;
+  line-height: 1.41575em;
+  font-family: monospace;
+  direction: ltr;
+  text-align: left;
+}
+
+// Course Tab Nav
+.tabs,
+.course-tabs {
+  padding: 1rem 0;
+  font-weight: normal;
+
+  li {
+    display: inline-block;
+    list-style: none;
+  }
+
+  a {
+    padding: 0;
+    margin-right: 1rem;
+    text-transform: uppercase;
+    color: currentColor;
+    cursor: pointer;
+    display: block;
+    line-height: 1;
+    font-family: var(--font-family-custom);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+
+    &:hover,
+    &:focus,
+    &.active {
+      border-bottom-width: 2px;
+      margin-bottom: -2px;
+    }
+  }
+}

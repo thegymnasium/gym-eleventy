@@ -9,7 +9,8 @@
 
 @use "mfe/learning/learning-original";
 
-@use "shared";
+@use 'shared';
+@use 'base/visibility';
 @use 'components/webfonts_absolute';
 
 @use "mfe/root";
@@ -48,6 +49,7 @@ main {
 // Course Header (non-nav version, only appears under "Course" tab)
 div[data-learner-type] {
   margin: 0 !important;
+  display: none;
 }
 
 // headings (course tab)
@@ -55,6 +57,27 @@ h2, .h2 {
   font-family: var(--font-family-custom);
   font-weight: bold;
   text-transform: uppercase;
+}
+
+// course sidebar (handouts)
+.sidebar-course-handouts {
+  h2 {
+    font-weight: 900;
+    line-height: 1.5;
+    letter-spacing: 0.0125ex;
+    word-spacing: 0.25ex;
+  }
+  .small {
+    font-size: 100%;
+  }
+  dl {
+    div:not(:first-child) {
+      margin-top: 0.75rem;
+    }
+    dt {
+      font-weight: bold;
+    }
+  }
 }
 
 .row {
@@ -77,7 +100,7 @@ h2, .h2 {
   }
 }
 
-// menu icon at the top. Warning! This disappears automatically on wide screens, so the one built into the sidebar navigation is the only one remaining 
+// menu icon at the top. Warning! This disappears automatically on wide screens, so the one built into the sidebar navigation is the only one remaining
 .course-nav-trigger {
   margin-bottom: 1rem;
   margin-right: 1rem;
@@ -90,6 +113,7 @@ div.d-flex.ml-auto {
 
 // Start/Resume Card at top
 .start-resume-card {
+
   border: rem-calc(1) solid var(--mono-300);
   padding: 1rem;
 
@@ -105,19 +129,29 @@ div.d-flex.ml-auto {
       margin: 0;
       font-family: var(--font-family-custom);
       justify-content: center;
+
+      .pgn__card-header-title-md {
+        font-size: 1.25rem;
+      }
     }
-  
+
     .pgn__card-header-actions {
       margin: 0;
-  
+
       .btn {
-        font-size: 1rem;
+        text-transform: capitalize;
+        padding: 1.05rem;
       }
-      
+
     }
   }
 
   .pgn__card-footer {
+    display: none;
+  }
+
+  // hide expand/contract button without a dedicated class name on the wrapper
+  + .row.w-100.m-0.mb-3.justify-content-end {
     display: none;
   }
 }
@@ -134,7 +168,7 @@ div.d-flex.ml-auto {
       &:first-child {
         padding-top: 0;
       }
-  
+
       &:last-child {
         border-bottom: 0;
       }
@@ -172,6 +206,12 @@ div.d-flex.ml-auto {
   padding: 1rem;
 }
 
+.unit {
+  // hide in-unit bookmarks button
+  button[aria-live='assertive'] {
+    display: none;
+  }
+}
 // IFRAME
 .unit-iframe-wrapper {
   iframe {
@@ -217,10 +257,6 @@ div.d-flex.ml-auto {
     border-radius: 6px; // ???
   }
 }
-
-
-
-
 
 
 // Course Sidebar Navigation
@@ -307,6 +343,11 @@ div.d-flex.ml-auto {
   transform: scaleX(-1);
 }
 
+// Course Outline Right Sidebar (Course Tools, Dates, etc)
+.sidebar-course-tools, .sidebar-course-dates {
+  display: none;
+}
+
 // Course Left Sidebar Navigation
 .outline-sidebar {
 
@@ -314,17 +355,17 @@ div.d-flex.ml-auto {
     border: rem-calc(1) solid var(--mono-300);
     align-items: center;
     align-self: flex-start;
-    
+
     padding: 0.75rem;
     padding-left: 1rem;
-  
+
     &.sticky {
       position: sticky;
       left: 0;
       top: 0;
       z-index: 5;
     }
-  
+
     .outline-sidebar-heading {
       text-align: left;
       font-weight: 700;
@@ -332,7 +373,7 @@ div.d-flex.ml-auto {
       font-family: var(--font-family-custom);
       align-self: center;
       align-items: center;
-  
+
       // left caret icon
       span.pgn__icon {
         //
@@ -344,7 +385,7 @@ div.d-flex.ml-auto {
     @media (min-width: 1200px) {
       margin-bottom: 0;
     }
-  
+
     // Individual unit links
     a:not(.btn) {
       padding: 1rem;
@@ -361,23 +402,23 @@ div.d-flex.ml-auto {
         border-color: var(--mono-400);
       }
     }
-  
+
     li {
       font-size: 1rem;
       line-height: 1.5rem;
-    
+
       .collapsible-trigger {
         border-radius: 0;
         padding: 1.25rem 1.5rem 1.25rem 3rem;
-  
+
         @media (max-width: 575px) {
           padding-left: 1.5rem;
         }
-  
+
         &:hover {
           background-color: #e1dddb;
         }
-  
+
         .collapsible-icon {
           margin-inline-start: 0;
         }
@@ -388,17 +429,17 @@ div.d-flex.ml-auto {
         border: rem-calc(1) solid var(--primary);
       }
     }
-  
+
     .collapsible-body {
       padding: 0;
-  
+
       ol li > a {
         padding: 1.25rem 1.5rem 1.25rem 4rem;
-  
+
         @media (max-width: 575px) {
           padding-left: 2rem;
         }
-  
+
         &:hover {
           background-color: #e1dddb;
           text-decoration: none;
@@ -444,7 +485,7 @@ div.d-flex.ml-auto {
   .dropdown {
     position: relative;
   }
-  
+
   .dropdown-toggle {
     white-space: nowrap;
 
@@ -497,11 +538,33 @@ div.d-flex.ml-auto {
   display: grid;
   gap: 1rem;
 
-  grid-template-areas: 
+  grid-template-areas:
     "a a a"
     "b b b"
     "c c c"
   ;
+
+  // Remove layout gap for empty element
+
+  > div[class*="col"]:first-child:empty {
+    + *,
+    + * + * {
+      margin-top: -1rem;
+    }
+  }
+
+  // Disable course content before enrollment
+
+  > div[class*="col"]:first-child:not(:empty) {
+    margin-bottom: -1rem;
+
+    + *,
+    + * + * {
+      opacity: 25%;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
 
   > div:nth-child(1) {
     grid-area: a;
@@ -525,7 +588,7 @@ div.d-flex.ml-auto {
   @include breakpoint(medium) {
     grid-template-columns: auto 7fr 3fr;
 
-    grid-template-areas: 
+    grid-template-areas:
       "a a a"
       "b b c"
       "b b c"
@@ -684,7 +747,7 @@ div.d-flex.ml-auto {
     flex-direction: row;
   }
 
-  
+
 }
 
 // Hide course license?
@@ -931,6 +994,8 @@ div.d-flex.ml-auto {
 
   // Theoretically, the "Enroll Now" button in the alert that pops up
   button {
+    // font: 700 1.25rem/1 var(--font-family-custom);
+    // padding: 1.05rem;
     margin-inline-end: 0.33rem;
   }
 }

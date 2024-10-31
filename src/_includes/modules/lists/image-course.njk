@@ -7,6 +7,10 @@
         <img alt="{{ title }}" srcset="{{ srcSet }}" src="{{ src }}">
       </a>
     </figure>
-    <h3><a href="{%- if type == 'livestream' -%}{{ 'https://www.youtube.com/watch?v=' + obj.video_id }}{%- else -%}{{ path }}{{ slug }}{%- endif -%}">{{ title }}</a></h3>
+    <h3>
+      <a href="{%- if type == 'livestream' -%}{{ 'https://www.youtube.com/watch?v=' + obj.video_id }}{%- else -%}{{ path }}{{ slug }}{%- endif -%}">
+      {{ title }}
+      </a>
+    </h3>
   </li>
 {% endblock %}

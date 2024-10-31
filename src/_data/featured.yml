@@ -4,17 +4,20 @@ home:
   featured:
     header:
       heading: Featured Courses
+      heading_type: h2
       description:
     wrapper_class: home
     cta:
-      description: "Design a career you love with our free online courses and tutorials on design, development, UX, prototyping, accessibility, and career skills."
+      description: Design a career you love with our free online <a href="/courses/">courses</a> and <a href="/courses/take5/">tutorials</a> on design, development, UX, prototyping, accessibility, and career skills.
       href: /courses/
-      label: View all Courses
+      label: View All Courses
       class: btn
     items:
     - id: GYM-017
-    - id: GYM-018
-    - id: GYM-019
+    - id: GYM-107
+    - id: GYM-103
+    - id: GYM-104
+
 catalog:
   full:
   - GYM-107

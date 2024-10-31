@@ -7,6 +7,7 @@
 @use 'base/fonts' as *;
 
 @use 'shared';
+@use 'base/visibility';
 @use 'components/webfonts_absolute';
 
 @use 'mfe/root';
@@ -63,7 +64,7 @@ main.container {
 }
 
 .font-size-14 {
-  font-size: 14px !important;
+  font-size: 14px;
 }
 
 .font-size-12 {
@@ -75,7 +76,7 @@ main.container {
 }
 
 .font-weight-500 {
-  font-weight: 500 !important;
+  font-weight: 500;
 }
 
 .post-footer-icon-dimensions {
@@ -121,6 +122,69 @@ main.container {
 .post-summary-card-selected {
   border-right-width: 4px !important;
   border-right-style: solid !important;
+}
+
+.pgn_collapsible {
+  .collapsible-trigger {
+    > span:first-child {
+      color: var(--mono-900);
+      font-size: 1.05rem;
+      text-decoration: underline;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.discussion-post {
+  .text-truncate {
+    span {
+      font-size: 1.05rem;
+    }
+    > span:first-child {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.2rem;
+    }
+  }
+  .author-name {
+    display: inline-block;
+    margin-top: 0.4rem;
+  }
+}
+
+.discussion-post,
+.discussion-comments,
+.post-preview {
+  * {
+    color: var(--mono-900);
+  }
+}
+
+.discussion-comments {
+  h5 {
+    font-weight: 900;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.0125ex;
+    word-spacing: 0.25ex;
+    margin-bottom: 0.4rem;
+  }
+}
+
+#post {
+  p {
+    font-size: 1.05rem;
+    line-height: 1.35;
+  }
+  a[href]:not(.btn) {
+    color: var(--mono-900);
+    text-decoration-color: currentColor;
+  }
 }
 
 .my-14px {
@@ -441,9 +505,9 @@ header {
   .nav-link {
     border: 1px solid var(--mono-900);
     text-decoration: none;
+    text-transform: capitalize;
     border-radius: var(--global-button-radius);
-    font-family: var(--font-family-custom);
-    font-weight: 400;
+    font: 700 1.05rem/1.5 var(--font-family-custom);
 
     &:hover {
       background-color: var(--mono-600);
@@ -461,7 +525,7 @@ header {
   }
 
   .nav-link.active,
-  .show>.nav-link {
+  .show >.nav-link {
     background-color: var(--primary);
   }
 }
@@ -538,7 +602,7 @@ code {
 }
 
 .font-style {
-  font-style: normal !important;
+  font-style: normal;
 }
 
 .in-context-navbar {

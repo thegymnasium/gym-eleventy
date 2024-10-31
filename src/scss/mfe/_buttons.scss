@@ -9,12 +9,13 @@
   - Learning: "Launch Tour" button/link
   */
   &-link {
-    background: none;
-    text-decoration: underline;
     color: var(--mono, 100);
+    text-decoration: underline;
+    text-transform: capitalize;
+    background: none;
+    padding: 0;
     border: transparent;
     border-radius: 0;
-    padding: 0;
 
     &:hover,
     &:active,
