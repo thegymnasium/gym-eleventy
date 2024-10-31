@@ -34,7 +34,6 @@
     }
 
   li {
-    font-weight: bold;
     font-size: 1.05rem;
     padding: 1.2rem 0;
     border-top: 1px dashed var(--mono-300);
@@ -44,6 +43,16 @@
     a {
       display: inline-block;
       margin-bottom: 0.2rem;
+
+      span {
+        font-weight: bold;
+      }
+
+      .job-location {
+        display: block;
+        font-weight: normal;
+        font-size: 1rem;
+      }
     }
 
     &:first-child {
@@ -65,6 +74,10 @@
     li {
       border-top-color: var(--mono-500);
       border-bottom-color: var(--mono-500);
+
+      .job-location {
+        color: var(--mono-300);
+      }
     }
   }
 }
