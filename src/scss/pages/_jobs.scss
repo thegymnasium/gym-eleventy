@@ -56,9 +56,11 @@
 .home-find-work {
   .location-select {
     background-color: var(--mono-100);
+    margin-top: 1.4rem;
   }
 
   .jobs-list {
+    margin-bottom: 2rem;
 
     li {
       border-top-color: var(--mono-500);
