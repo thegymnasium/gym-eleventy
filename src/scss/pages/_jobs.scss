@@ -5,23 +5,31 @@
 
 .location-select {
   display: inline-block;
-  color: var(--mono-900);
-  border: 2px solid var(--primary);
-  border-radius: 3px;
+  margin: 0 auto;
 
-  select {
-    all: revert;
-    font-size: 1.05rem;
+  label {
     font-weight: bold;
-    background-color: transparent;
-    padding: 1.2rem;
-    border: 0;
-    border-right: 1.2rem dashed transparent;
+    font-size: 1.125rem;
+    margin-right: 0.8rem;
+  }
+}
 
-    &,
-    option {
-      line-height: 1.15;
-    }
+.form-control {
+  all: revert;
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--mono-900);
+  background-color: transparent;
+  padding: 1.2rem;
+  border: 0;
+  border-right: 1rem dashed transparent;
+  border-radius: 3px;
+  outline: 2px solid var(--primary);
+
+  &,
+  option {
+    line-height: 1.15;
   }
 }
 
@@ -35,7 +43,7 @@
     }
 
   li {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     padding: 1.2rem 0;
     border-top: 1px dashed var(--mono-300);
     border-bottom: 1px dashed var(--mono-300);
@@ -111,12 +119,13 @@
 
 .home-find-work {
 
-  .location-select {
+  .form-control {
     background-color: var(--mono-100);
     margin-top: 1.4rem;
   }
 
   .jobs-list {
+    position: relative;
     margin-bottom: 2rem;
 
     li {

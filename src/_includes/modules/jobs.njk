@@ -4,10 +4,15 @@
 {%- include 'modules/components/header.njk' -%}
 
 <form id="location-select" class="location-select">
+  <label>Select a location nearest you:</label>
   <select name="location" id="location" class="form-control">
-    <option value="">Select a location nearest you</option>
+    <option value="">Select a location</option>
+
+    <hr>
 
     <option value="remote">Remote, all locations</option>
+
+    <hr>
 
     <optgroup label="Australia">
       {%- for market in data.markets2 -%}{%- if market['regions'][0] == 'Australia' -%}
