@@ -6,7 +6,6 @@
 .location-select {
   display: inline-block;
   color: var(--mono-900);
-  padding-right: 1rem;
   border: 2px solid var(--primary);
   border-radius: 3px;
 
@@ -17,6 +16,7 @@
     background-color: transparent;
     padding: 1.2rem;
     border: 0;
+    border-right: 1.2rem dashed transparent;
 
     &,
     option {
@@ -69,6 +69,7 @@
         display: block;
         font-weight: normal;
         font-size: 1rem;
+        margin-top: 0.125rem;
       }
     }
   }
@@ -79,7 +80,8 @@
 
   > div {
     padding: 1.8rem;
-    border: 2px dashed var(--secondary-500);
+    border: 2px solid var(--secondary-500);
+    border-radius: 3px;
     margin-top: 1.6rem;
   }
 
