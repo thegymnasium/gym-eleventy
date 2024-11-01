@@ -106,10 +106,11 @@
 
       h1 {
         margin-bottom: 0;
-      }
 
-      p {
-        display: none;
+        + p {
+          display: none;
+        }
+
       }
 
     }
@@ -218,15 +219,4 @@
     }
 
   }
-}
-
-
-// TODO: Update/move style rules
-
-#jobs {
-
-  #error-results {
-    margin-top: 1.4rem;
-  }
-
 }

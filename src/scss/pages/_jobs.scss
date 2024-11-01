@@ -5,8 +5,9 @@
 
 .location-select {
   display: inline-block;
+  color: var(--mono-900);
   padding-right: 1rem;
-  border: 1px solid var(--secondary-500);
+  border: 2px solid var(--primary);
   border-radius: 3px;
 
   select {
@@ -74,7 +75,40 @@
 
 }
 
+#messages {
+
+  > div {
+    padding: 1.8rem;
+    border: 2px dashed var(--secondary-500);
+    margin-top: 1.6rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    margin-top: -0.4rem;
+    margin-bottom: 1.2rem;
+
+    + p {
+      font-weight: bold;
+    }
+
+  }
+
+  p {
+    font-size: 1.125rem;;
+  }
+
+  + #jobs-container {
+    margin-top: 0;
+  }
+
+}
+
+// home page
+
 .home-find-work {
+
   .location-select {
     background-color: var(--mono-100);
     margin-top: 1.4rem;
@@ -92,4 +126,5 @@
       }
     }
   }
+
 }
