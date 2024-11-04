@@ -1,10 +1,10 @@
 {%- if module -%}
 <section class="{{ module.wrapper_class }}-featured">
   <div class="container">
-    {%- if module.header -%}
-      {%- set header = module.header -%}
-      {%- include 'modules/components/header.njk' -%}
-    {%- endif -%}
+  {%- if module.header -%}
+    {%- set header = module.header -%}
+    {%- include 'modules/components/header.njk' -%}
+  {%- endif -%}
 
     <ul class="list-unstyled">
       {%- for idx in range(0, module.items.length) -%}
@@ -92,15 +92,12 @@
         </li>
       {%- endfor -%}
     </ul>
-    {%- if module.description -%}
-      <p>{{ module.description | safe }}</p>
-    {%- endif -%}
 
     {%- if module.cta -%}
       <div class="cta">
-        {%- if module["cta"]["description"] -%}
-          <p class="description">{{ module["cta"]["description"] | safe }}</p>
-        {%- endif -%}
+      {%- if module["cta"]["description"] -%}
+        <p class="description">{{ module["cta"]["description"] | safe }}</p>
+      {%- endif -%}
         <a class="btn" href="{{ module.cta.href }}">{{ module.cta.label }}</a>
       </div>
     {%- endif -%}
