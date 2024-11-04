@@ -285,7 +285,7 @@ msg:
     exam_success: |
       <h2>You did it! 🎉</h2>
       <p>Congratulations on passing the final exam!</p>
-      <p>Now you can share your achievement on social media. You can always access your credential from the <a href="/dashboard">Dashboard</a>.</p>
+      <p>Now you can share your achievement on social media. You can always access your credential from the <a href="GYM_LMS_URL/dashboard">Dashboard</a>.</p>
       <div class="survey">
         <p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses.</p>
         <a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
