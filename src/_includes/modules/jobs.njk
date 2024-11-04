@@ -4,10 +4,15 @@
 {%- include 'modules/components/header.njk' -%}
 
 <form id="location-select" class="location-select">
+  <label for="location">Select a location nearest you:</label>
   <select name="location" id="location" class="form-control">
-    <option value="">Select a location nearest you</option>
+    <option value="">Select a location</option>
+
+    <hr>
 
     <option value="remote">Remote, all locations</option>
+
+    <hr>
 
     <optgroup label="Australia">
       {%- for market in data.markets2 -%}{%- if market['regions'][0] == 'Australia' -%}
@@ -43,25 +48,13 @@
 
 <div id="messages">
   <div id="loading" class="loading hide">
-    <p>Please wait while we find you some jobs…</p>
+    <p><strong>Hold On:</strong> Please wait while we find you some jobs…</p>
   </div>
   <div id="error-results" class="hide">
-    <h3>It’s Not You, It’s Us</h3>
-    <p>We’re unable to find jobs in this location.</p>
-    <p>Please try another location or check back later for new jobs.</p>
+    <p><strong>It’s Not You, It’s Us:</strong> We’re unable to find jobs in this location. <em>Please try another location or check back later for new jobs.</em></p>
   </div>
   <div id="error-general" class="hide">
-    <h3>We’re On It</h3>
-    <p>Something broke on our end and we’re working on fixing it.</p>
-    <p>
-      Continue exploring jobs at
-      <a
-        href="https://aquent.com/find-work/?utm_source=gymnasium&amp;utm_medium=web&amp;utm_campaign=job-module&amp;utm_content=textlink"
-        target="_blank"
-        rel="noopener"
-        >Aquent</a
-      >.
-    </p>
+    <p><strong>We’re On It:</strong> Something broke on our end and we’re working to fix it. <em>Continue exploring jobs at <a href="https://aquent.com/find-work/?utm_source=gymnasium&amp;utm_medium=web&amp;utm_campaign=job-module&amp;utm_content=textlink" target="_blank" rel="noopener">Aquent</a>.</em></p>
   </div>
 </div>
 {%- set base_params = "?pageSize=10" -%}
