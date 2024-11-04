@@ -14,7 +14,8 @@ $colors: (
   secondary: (
     100: hsl(18.26, 100%, 95.49%), // #ffefe8 (message: attention)
     500: hsl(19.15, 100%, 53.92%), // #ff5f14 Aquent Orange
-    900: hsl(19.37, 85.52%, 43.33%) // #cd4d10 Darker Aquent Orange
+    800: hsl(19.37, 85.52%, 43.33%), // #cd4d10 Darker Aquent Orange
+    900: hsl(19.14, 84.46%, 37.84%), // #b2430f (message text: error)
   ),
   'green': (
     400: hsl(120, 100%, 35.69%), // #00b600 (holiday green)
