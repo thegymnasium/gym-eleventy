@@ -17,3 +17,8 @@ find-work:
   header:
     heading: Find Work
     heading_type: h2
+  cta:
+    description: Explore job listings, salary guides, and career advice tutorials and articles.
+    href: /jobs/
+    label: Start Your Search
+    class: btn
