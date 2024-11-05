@@ -116,6 +116,7 @@ function gymJobs() {
     var opts = {};
     var selectedLoc;
     var url = new URL(window.location.href);
+    let params = new URLSearchParams(url.search);
     const form = document.getElementById("location");
     var debug = getUrlParameter("debug") ? true : false;
 
@@ -313,6 +314,8 @@ function gymJobs() {
         } else {
           // No jobs in market! Show the appropriate message.
           showMsg("error-results");
+          params.set("location", "remote");
+          window.history.pushState({}, "", `?${params}#location`);
         }
       } else {
         // No data found for some reason...
@@ -330,8 +333,6 @@ function gymJobs() {
       } else {
         location = value;
       }
-
-      let params = new URLSearchParams(url.search);
 
       // add "topic" parameter
       params.set("location", value);
