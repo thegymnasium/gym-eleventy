@@ -6,13 +6,13 @@ if (!Array.prototype.filter) {
       throw new TypeError();
     }
 
-    var len = this.length >>> 0;
-    var res = new Array(len); // preallocate array
-    var t = this;
-    var c = 0;
-    var i = -1;
+    let len = this.length >>> 0;
+    let res = new Array(len); // preallocate array
+    let t = this;
+    let c = 0;
+    let i = -1;
 
-    var kValue;
+    let kValue;
     if (thisArg === undefined) {
       while (++i !== len) {
         // checks to see if the key was set
@@ -62,17 +62,17 @@ Array.prototype.shuffle = function () {
 };
 
 // Create IE + others compatible event handler via @https://davidwalsh.name/window-iframe
-var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
-var eventer = window[eventMethod];
-var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+let eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+let eventer = window[eventMethod];
+let messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
 
 const jobsContainer = document.getElementById("jobs-container");
 
 // Get URL Parameter
 function getUrlParameter(name) {
   name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-  var regex = new RegExp(`[\\?&]${name}=([^&#]*)`);
-  var results = regex.exec(location.search);
+  let regex = new RegExp(`[\\?&]${name}=([^&#]*)`);
+  let results = regex.exec(location.search);
   return results === null
     ? ""
     : decodeURIComponent(results[1].replace(/\+/g, " "));
@@ -94,7 +94,7 @@ function parseValue(str) {
 // Create an array of options
 function parseOptions(input, output) {
   input.split(";").forEach(function (option, _index) {
-    var opt = option.split(":").map(function (el) {
+    let opt = option.split(":").map(function (el) {
       return el.trim();
     });
     if (opt[0]) {
@@ -104,21 +104,24 @@ function parseOptions(input, output) {
 }
 
 function gymJobs() {
-  // add stuff here
+  // check if we have the jobs container
   if (typeof jobsContainer !== "undefined" && jobsContainer !== null) {
     console.log("jobs.js active");
     let endpoint = jobsContainer.getAttribute("data-feed");
-    var utms = jobsContainer.hasAttribute("data-utm")
+    const utms = jobsContainer.hasAttribute("data-utm")
       ? `?${jobsContainer.getAttribute("data-utm")}`
       : "";
     const msgContainer = document.getElementById("messages");
-    var data;
-    var opts = {};
-    var selectedLoc;
-    var url = new URL(window.location.href);
+    let data;
+    let opts = {};
+    let selectedSlug = '';
+    let url = new URL(window.location.href);
     let params = new URLSearchParams(url.search);
-    const form = document.getElementById("location");
-    var debug = getUrlParameter("debug") ? true : false;
+    const locationSelect = document.getElementById("location");
+    const debug = getUrlParameter("debug") ? true : false;
+    // Add exception for `remote` option in the markets dropdown
+    let location =
+      getUrlParameter("location") === "remote" ? '' : getUrlParameter("location");
 
     // Off-site preference key
     const remoteLegend = {
@@ -144,13 +147,21 @@ function gymJobs() {
       parseOptions(jobsContainer.getAttribute("data-options"), opts);
     }
 
-    // Add exception for `remote` option in the markets dropdown
-    var location =
-      getUrlParameter("location") === "remote" ? '' : getUrlParameter("location");
+    // get human-readable slug from location ID
+    function getSlug(locId) {
+      outputDebug(`getting slug for `, locId);
+      const selectedOption = locationSelect.options[locationSelect.selectedIndex];
+      selectedSlug = selectedOption.dataset.slug;
+      outputDebug(`selectedSlug `,  selectedSlug);
+    }
 
     // If we have a market populated on page load, update the dropdown
     if (typeof location !== "undefined" && location !== null && location.length) {
-      updateDropdown(location);
+      updateDropdown(location)
+        .then(getSlug(location))
+        .catch((err) => {
+          console.warn(err);
+        });
     }
 
     // Clear results completely
@@ -158,72 +169,89 @@ function gymJobs() {
       jobsContainer.innerHTML = "";
     }
 
+    // fetch data from endpoint and process accordingly
     function fetchData(endpoint) {
+      outputDebug(`fetching data from endpoint: ${endpoint}`);
       fetch(endpoint)
       .then((response) => response.json())
       .then((responseObj) => {
         let jobData = JSON.stringify(responseObj)
         // store('jobs', jobData);
-        outputDebug(`[job module] fetching data from endpoint: ${endpoint}`);
         processData(jobData);
       })
       .catch((error) => console.error("Error loading JSON file", error));
     }
 
+    // hide any visible messaging
     function hideMsg() {
-      // firstly, hide any visible messaging
       msgContainer.querySelectorAll("div").forEach((el) => {
         el.classList.add("hide");
       });
     }
 
+    // if we have locations, make sure we are using the proper parameters at the endpoint
     function initializeJobs(append) {
-
       try {
         if (append) {
           let updated_endpoint = `${endpoint}&locations[]=${append}`;
-          outputDebug(`[job module] updating endpoint: ${updated_endpoint}`);
+          outputDebug(`updating endpoint: ${updated_endpoint}`);
           fetchData(updated_endpoint);
         } else {
           fetchData(endpoint);
         }
-
-        outputDebug(`[job module] fetching JSONData.`);
       } catch (err) {
         console.warn(
-          "[job module] error processing JSONData!",
+          "error processing JSONData!",
           err
         );
       }
     }
 
-    function outputDebug(message) {
+    // use `debug=true or debug=1` parameter to activate
+    function outputDebug(message, type) {
       if (debug) {
-        console.log(message);
+        const msg = `[job module]: ${message}`;
+        if (type === 'warn') {
+          console.warn(msg);
+        } else if (type === 'error') {
+          console.error(msg);
+        } else {
+          console.log(msg);
+        }
       }
+    }
+
+    // update window history
+    function pushHistory(loc) {
+      params.set("location", loc);
+      if (debug) {
+        params.set("debug", true);
+      }
+      params.toString();
+      window.history.pushState({}, "", `?${params}#location`);
     }
 
     // Process our JSON data
     function processData(d) {
       data = JSON.parse(d);
       if (typeof data.items !== "undefined" && data.items !== null) {
-        var items = data.items;
+        let items = data.items;
 
-        outputDebug(`[job module] ${items.length} total jobs available.`);
+        outputDebug(`${items.length} total jobs available.`);
 
         // Do we have a specific category?
         // TODO: this is currently broken in the new endpoint
-        var category = opts.category ?? false;
+        let category = opts.category ?? false;
 
         // Set iteration limits
-        var limit = opts.limit ? parseInt(opts.limit) : 10;
+        let limit = opts.limit ? parseInt(opts.limit) : 10;
 
         // TODO: this is currently broken in the new endpoint
         if (category) {
           items = items.filter((item) => item.category === category);
 
           outputDebug(
-            `[job module] showing ${items.length} jobs for category: ${category}.`
+            `showing ${items.length} jobs for category: ${category}.`
           );
         }
 
@@ -235,12 +263,8 @@ function gymJobs() {
         ) {
           items = items.filter((item) => item.location_id === location);
 
-          selectedLoc = document.querySelector(
-            `#location [value="${location}"]`
-          ).innerText;
-
           outputDebug(
-            `[job module] showing ${items.length} jobs for location: ${location}, aka ${selectedLoc}`
+            `showing ${items.length} jobs for location: ${location}, aka ${selectedSlug}`
           );
         } else {
           // Off-site preference key
@@ -250,16 +274,16 @@ function gymJobs() {
           // 3 = Either
           // 4 = Partial on-site
           items = items.filter((item) => parseInt(item.offsite_preference) >= 2);
-          updateDropdown("remote");
+          updateDropdown('remote');
 
-          outputDebug("[job module] showing only remote & hybrid options…");
+          outputDebug("showing only remote & hybrid options…");
         }
 
         // How many results do we have?
-        var numResults = items.length;
+        let numResults = items.length;
 
         outputDebug(
-          `[job module] total results: ${numResults} | limit: ${limit}`
+          `total results: ${numResults} | limit: ${limit}`
         );
 
         if (numResults > 0) {
@@ -277,25 +301,25 @@ function gymJobs() {
           });
 
           // Start with an empty list
-          var list = "";
+          let list = "";
 
           // hide our loading message
-          document.getElementById("loading").classList.add("hide");
+          document.getElementById("loading").classList.add("fadeout");
 
           if (numResults < limit) {
             limit = numResults;
           }
 
           // Generate job item
-          for (var i = 0; i < limit; i++) {
-            var el = items[i];
-            var postDate = el.posted_date;
-            var modDate = el.cloudwall_mod_date;
+          for (let i = 0; i < limit; i++) {
+            let el = items[i];
+            let postDate = el.posted_date;
+            let modDate = el.cloudwall_mod_date;
             const jobUrls = JSON.parse(jobsContainer.dataset.urls);
             const jobUrl = `${jobUrls[el.country]}${el.job_id}`;
 
             outputDebug(
-              `[job module] job id: ${el.job_id}\n   remote type: ${
+              `job id: ${el.job_id}\n   remote type: ${
                 remoteLegend[el.offsite_preference]
               }\n   posted: ${postDate}\n   mod date: ${modDate}`
             );
@@ -314,8 +338,11 @@ function gymJobs() {
         } else {
           // No jobs in market! Show the appropriate message.
           showMsg("error-results");
-          params.set("location", "remote");
-          window.history.pushState({}, "", `?${params}#location`);
+
+          // let's wait one second before updating the url parameter to `remote`
+          setTimeout(() => {
+            pushHistory('remote');
+          }, '1000');
         }
       } else {
         // No data found for some reason...
@@ -327,6 +354,7 @@ function gymJobs() {
     function selectChange() {
       let value = this.value;
       let slug = this.options[this.selectedIndex].dataset.slug;
+      
       if (value === "remote") {
         location = '';
         slug = '';
@@ -334,21 +362,16 @@ function gymJobs() {
         location = value;
       }
 
-      // add "topic" parameter
-      params.set("location", value);
+      selectedSlug = slug;
 
-      if (debug) {
-        params.set("debug", true);
-      }
+      pushHistory(value);
 
-      params.toString();
-
-      window.history.pushState({}, "", `?${params}#location`);
-
-      outputDebug(`[job module] location selected: ${location}, slug: ${slug}`);
+      outputDebug(`location selected: ${location}, slug: ${selectedSlug}`);
 
       hideMsg();
       clearResults();
+
+      showMsg("loading");
 
       initializeJobs(slug);
     }
@@ -360,8 +383,11 @@ function gymJobs() {
       // firstly, hide any visible messaging
       hideMsg();
 
+      const shownMsg = document.getElementById(id);
+
       // show the element we want!
-      document.getElementById(id).classList.remove("hide");
+      shownMsg.classList.remove("fadeout");
+      shownMsg.classList.remove("hide");
     }
 
     // Store our data in session storage
@@ -369,21 +395,33 @@ function gymJobs() {
       if (window.sessionStorage) {
         sessionStorage.setItem(name, data);
       } else {
-        console.warn("[job module] No browser support for sessionStorage!");
+        console.warn("No browser support for sessionStorage!");
       }
     }
 
     // Update dropdown to the selected option
-    function updateDropdown(location) {
-      document.querySelector(`#location [value="${location}"]`).selected = true;
+    async function updateDropdown(location) {
+
+      try {
+        locationSelect.value = location;
+        outputDebug(`updating dropdown to ${locationSelect.value}`);
+      } catch(err) {
+        console.warn(err);
+      }
     }
 
-    // initialize data
-    initializeJobs();
+    // check to see if we have a market set in URL parameters
+    if (selectedSlug.length) {
+      outputDebug(`we have a previously set market in the URL parameters`);
+      initializeJobs(selectedSlug);
+    } else {
+      outputDebug(`no market set in URL parameters`);
+      initializeJobs();
+    }
+    
 
     // Listen for change events from form select
-    form.addEventListener("change", selectChange, false);
-
+    locationSelect.addEventListener("change", selectChange, false);
   }
 }
 
