@@ -97,7 +97,7 @@ body.view-in-mfe {
     box-sizing: border-box;
     display: inline-block;
     clear: both;
-    border: none;
+    border: 2px solid transparent; // prevents jumpiness
     width: 100%;
     margin-bottom: 0;
   }
@@ -164,6 +164,23 @@ body.view-in-mfe {
     }
     .indicator-container {
       display: none !important;
+    }
+
+    // overriding some built-in CSS with the exact same rule
+    .choicegroup input:focus+label, 
+    .choicetextgroup input:focus+label {
+      border: 2px solid #0075b4 !important;
+    }
+
+    input+label.choicegroup_correct, 
+    input+label.choicetextgroup_correct, 
+    input+section.choicetextgroup_correct, 
+    input:focus+label.choicegroup_correct, 
+    input:focus+label.choicetextgroup_correct, 
+    input:focus+section.choicetextgroup_correct, 
+    input:hover+label.choicetextgroup_correct,  
+    input:hover+section.choicetextgroup_correct {
+      border: 2px solid #008100 !important;
     }
   }
 }
