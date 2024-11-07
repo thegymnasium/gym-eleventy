@@ -102,6 +102,10 @@
       margin-top: 0;
     }
 
+    &.fadeout {
+      position: absolute;
+    }
+
     &[id*="error"] {
       background-color: var(--secondary-100);
       border-color: var(--secondary-900);
