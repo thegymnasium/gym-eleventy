@@ -35,12 +35,8 @@ body.view-in-mfe {
     line-height: 1;
     content: "✔";
     color: var(--green-400);
-    margin-top: rem-calc(7);
-    margin-left: -2.3rem;
-  }
-
-  #main .problem .choicegroup_correct:before, #main .problem .choicetextgroup_correct:before {
-    margin-top: 4px;
+    margin-top: 0;
+    margin-left: rem-calc(-47);
   }
 
   // Explanation box
@@ -93,7 +89,7 @@ body.view-in-mfe {
 
   .course-content .problem .choicetextgroup label, .course-content .problem .choicegroup label {
     padding: rem-calc(10);
-    padding-left: rem-calc(38);
+    padding-left: 1rem;
     position: relative;
     font-size: 1rem;
     line-height: normal;
@@ -160,5 +156,11 @@ body.view-in-mfe {
 
   .course-content .problem .save {
     margin-right: rem-calc(10);
+  }
+
+  .wrapper-problem-response {
+    .xmodule_display.xmodule_ProblemBlock div.problem .choicegroup .indicator-container, .xmodule_display.xmodule_ProblemBlock div.problem .choicetextgroup .indicator-container {
+      display: none;
+    }
   }
 }
