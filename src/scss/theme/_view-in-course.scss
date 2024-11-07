@@ -36,7 +36,7 @@ body.view-in-mfe {
     content: "✔";
     color: var(--green-400);
     margin-top: 0;
-    margin-left: rem-calc(-47);
+    margin-left: rem-calc(-53);
   }
 
   // Explanation box
@@ -159,8 +159,11 @@ body.view-in-mfe {
   }
 
   .wrapper-problem-response {
-    .xmodule_display.xmodule_ProblemBlock div.problem .choicegroup .indicator-container, .xmodule_display.xmodule_ProblemBlock div.problem .choicetextgroup .indicator-container {
-      display: none;
+    .field {
+      margin-left: 0.5rem;
+    }
+    .indicator-container {
+      display: none !important;
     }
   }
 }
