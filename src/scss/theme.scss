@@ -30,6 +30,313 @@ body.view-in-mfe {
   .course-content {
     padding: 0;
   }
+
+  // Hide final exam header
+  h3.problem-header {
+    display: none;
+  }
+
+  // Hide final exam score
+  .xmodule_display.xmodule_ProblemBlock .problem-progress {
+    display: none;
+  }
+
+
+  // Exam/Quiz/Homework Fixes
+  .course-content {
+    ul,
+    ol {
+      padding: 0 0 0 40px;
+      margin: 1em 0;
+    }
+
+    ul {
+      padding-left: 1em;
+      list-style: disc outside none;
+      margin-bottom: 1.41575em;
+      margin-left: 0.75rem;
+
+      li {
+        margin-bottom: 0.70788em;
+        line-height: 1.4em;
+      }
+    }
+
+    // Exam/Quiz
+    .problem {
+      // exam submit buttons
+      .action {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        min-height: 20px;
+        width: 100%;
+        display: flex;
+        display: -ms-flexbox;
+        -ms-flex-align: start;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .submit-attempt-container {
+
+        flex-grow: 1;
+
+        @include breakpoint(medium, max) {
+          padding-bottom: 20px;
+        }
+      }
+
+      .submission-feedback {
+        margin-right: 10px;
+        margin-top: 10px;
+        display: inline-block;
+        color: #5e5e5e;
+        font-size: 0.9em;
+        -webkit-font-smoothing: antialiased;
+        vertical-align: middle;
+      }
+
+      .problem-action-button-wrapper {
+        border-right: 1px solid #f2f2f2;
+        display: inline-block;
+
+        &:last-child {
+          border: none;
+        }
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        position: relative;
+        left: -1em;
+        font-size: 1.8em;
+        margin-right: -0.8em;
+        top: 1px;
+      }
+
+      fieldset {
+        padding-left: 0;
+        border: none;
+        margin-bottom: 1.2em;
+        width: 100%;
+      }
+
+      label {
+        display: block;
+        font: 1em/1.5 var(--font-family-default);
+        color: var(--mono-600);
+        text-transform: none;
+        margin-top: 0;
+        margin-left: 1.6em;
+        width: 100%;
+      }
+
+      .solution-span + label {
+        margin-left: 0;
+      }
+
+      // https://github.com/gymnasium/tracker/issues/242
+      // Override default white-space: nowrap;
+
+      pre,
+      code {
+        tab-size: 2;
+      }
+
+      pre {
+        font-size: 16px;
+        white-space: normal;
+        padding: 0;
+        margin: 1.2rem 0;
+      }
+
+      code {
+        display: inline-block;
+        font-size: 92.5%;
+        font-family: monospace, monospace;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        padding: 0.125rem 0.5rem;
+        margin: 0;
+        border: 1px solid #eaeaea;
+        border-radius: 3px;
+        background-color: #f8f8f8;
+      }
+
+      pre code {
+        display: block;
+        line-height: inherit;
+        white-space: pre;
+        padding: 2.25rem 2.75rem;
+      }
+
+      .solution-span > span {
+        background: var(--mono-200);
+        padding: 1.8em;
+        border: 1px solid var(--mono-400);
+        border-radius: 2px;
+        margin: 20px 0;
+        display: block;
+        position: relative;
+
+        &:empty {
+          display: none;
+        }
+
+        p {
+          font: 1em/1.5 var(--font-family-default);
+          color: var(--mono-600);
+          margin-top: 0.84em;
+          margin-left: 0;
+
+          &:first-child {
+            font: 900 1em/1.3 var(--font-family-custom);
+            color: var(--mono-900);
+            letter-spacing: 0.02em;
+            word-spacing: 0.02em;
+            text-transform: uppercase;
+            margin-top: 0;
+            margin-bottom: 1em;
+          }
+        }
+      }
+
+      .problem-progress {
+        font: 1em/1.5 var(--font-family-custom);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        word-spacing: 0.02em;
+        color: var(--mono-900);
+      }
+
+      > div > strong {
+        display: block;
+        font: bold 1.2em/1.4 var(--font-family-custom);
+        color: var(--mono-900);
+        letter-spacing: 0.02em;
+        word-spacing: 0.04em;
+        padding-top: 1.5em;
+        padding-left: 0;
+        border-top: 1px solid var(--mono-300);
+        margin-top: 1.5em;
+      }
+
+      div span.incorrect,
+      div span.incomplete,
+      div span.ui-icon-close {
+        top: -1.55em;
+        left: -1.7em;
+      }
+
+      .choicetextgroup label,
+      .choicegroup label {
+        padding: 10px;
+        padding-left: 38px;
+        position: relative;
+        font-size: 1em;
+        line-height: normal;
+        cursor: pointer;
+        box-sizing: border-box;
+        display: inline-block;
+        clear: both;
+        border: none;
+        // border-radius: 3px;
+        width: 100%;
+        margin-bottom: 0;
+
+        &:hover {
+          border: none;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      .choicegroup label[class*="_incorrect"]:before,
+      .choicegroup section[class*="_incorrect"]:before {
+        position: absolute;
+        font: 900 2.4em/1 var(--font-family-custom);
+        content: "×";
+        color: var(--red-400);
+        margin-top: 2px;
+        margin-left: -1.3em;
+      }
+
+      .choicegroup label[class*="_correct"]:before,
+      .choicegroup section[class*="_correct"]:before {
+        position: absolute;
+        font: 900 1.4em/1 var(--font-family-custom);
+        content: "✔";
+        color: var(--green-400);
+        margin-top: 7px;
+        margin-left: -2.3em;
+
+        p {
+          margin-bottom: 0;
+          font-size: 16px;
+        }
+      }
+
+      div span {
+        &.incorrect,
+        &.incomplete,
+        &.ui-icon-close,
+        &.correct,
+        &.ui-icon-check {
+          background: none;
+        }
+      }
+
+      .gym-button {
+        margin-left: 0;
+        height: 3em;
+        display: inline-block;
+        align-items: inherit;
+        vertical-align: top;
+
+        &.save {
+          margin-right: 10px;
+        }
+
+        &.show {
+          display: inline-block !important;
+        }
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .entitlement-action span {
+        display: inline-block;
+      }
+
+      span.unanswered {
+        display: none;
+        visibility: hidden;
+      }
+
+      span.incorrect:before,
+      span.incomplete:before,
+      span.ui-icon-close:before {
+        font: 900 2.4em/1 var(--font-family-custom);
+        content: "×";
+        color: var(--red-400);
+      }
+
+      span.correct:before,
+      span.ui-icon-check:before {
+        font: 900 1.4em/1 var(--font-family-custom);
+        content: "✔";
+        color: var(--green-400);
+        display: block;
+        margin-left: -1em;
+        margin-top: 0.4em;
+      }
+    }
+  }
 }
 
 // [aria-hidden=true] {
