@@ -304,7 +304,7 @@ function gymJobs() {
           let list = "";
 
           // hide our loading message
-          document.getElementById("loading").classList.add("fadeout");
+          document.getElementById("loading").classList.add("hide");
 
           if (numResults < limit) {
             limit = numResults;
@@ -354,7 +354,7 @@ function gymJobs() {
     function selectChange() {
       let value = this.value;
       let slug = this.options[this.selectedIndex].dataset.slug;
-      
+
       if (value === "remote") {
         location = '';
         slug = '';
@@ -418,7 +418,7 @@ function gymJobs() {
       outputDebug(`no market set in URL parameters`);
       initializeJobs();
     }
-    
+
 
     // Listen for change events from form select
     locationSelect.addEventListener("change", selectChange, false);
