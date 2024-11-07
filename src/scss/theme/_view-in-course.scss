@@ -94,10 +94,10 @@ body.view-in-mfe {
     line-height: normal;
     cursor: pointer;
     box-sizing: border-box;
-    display: inline-block;
+    display: block;
     clear: both;
     border: 2px solid transparent; // prevents jumpiness
-    width: 100%;
+    width: auto !important;
     margin-bottom: 0;
   }
 
