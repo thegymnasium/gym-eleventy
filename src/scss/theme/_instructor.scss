@@ -175,8 +175,7 @@ body.view-instructordash {
 }
 
 // Instructor tab
-.view-instructordash {
-}
+.view-instructordash {}
 
 body.view-in-course .instructor-dashboard-wrapper-2 {
   max-width: 1920px;
@@ -219,12 +218,13 @@ body.view-instructordash {
   margin: 0;
 }
 
+// Instructor info button is hidden on small screens?
 .wrap-instructor-info {
   margin: 10px 5px 0 0;
   display: none;
-}
-@media (min-width: 768px) {
-  .wrap-instructor-info {
+  clear: both;
+
+  @include breakpoint(medium, min) {
     display: block;
   }
 }
