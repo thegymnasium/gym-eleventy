@@ -175,8 +175,7 @@ body.view-instructordash {
 }
 
 // Instructor tab
-.view-instructordash {
-}
+.view-instructordash {}
 
 body.view-in-course .instructor-dashboard-wrapper-2 {
   max-width: 1920px;
@@ -219,13 +218,23 @@ body.view-instructordash {
   margin: 0;
 }
 
+// Instructor tools buttons on exams/quizzes
 .wrap-instructor-info {
   margin: 10px 5px 0 0;
-  display: none;
-}
-@media (min-width: 768px) {
-  .wrap-instructor-info {
-    display: block;
+  clear: both;
+  display: block;
+  padding: 2rem;
+
+  // the individual buttons
+  .instructor-info-action {
+    font-family: var(--font-family-custom);
+    display: inline-block;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: var(--mono-200);
+    color: var(--magenta-500);
+    text-transform: uppercase;
   }
 }
 
@@ -262,17 +271,6 @@ body.view-instructordash {
   border: 0;
   box-shadow: none;
   text-shadow: none;
-}
-
-.wrap-instructor-info .instructor-info-action {
-  float: right;
-  margin-left: 10px;
-  text-align: right;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  color: #c2387d;
-  text-transform: uppercase;
 }
 
 .instructor-dashboard-content-2 {

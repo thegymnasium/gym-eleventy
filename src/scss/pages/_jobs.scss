@@ -90,17 +90,25 @@
 
 #messages {
 
+  // TODO: combine these with a global `.alert` class?
   > div {
-    background-color: var(--secondary-100);
     padding: 1.4rem;
-    border: 1px dashed var(--secondary-900);
+    border: 1px dashed var(--mono-500);
     border-radius: 3px;
     margin-top: 1.6rem;
 
     p {
       font-size: 1.125rem;
-      color: var(--secondary-900);
       margin-top: 0;
+    }
+
+    &[id*="error"] {
+      background-color: var(--secondary-100);
+      border-color: var(--secondary-900);
+
+      p {
+        color: var(--secondary-900);
+      }
     }
   }
 

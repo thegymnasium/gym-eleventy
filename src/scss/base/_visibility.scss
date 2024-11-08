@@ -31,3 +31,22 @@
 [hidden] {
   display: none !important;
 }
+
+
+// Fadeout animation
+
+.fadeout {
+  animation: fadeout 0.125s ease-out forwards;
+}
+
+@keyframes fadeout {
+
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+}

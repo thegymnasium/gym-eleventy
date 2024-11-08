@@ -292,15 +292,13 @@ msg:
       </div>
     exam_failed_attempt: |
       <h2>You’re Close!</h2>
-      <p>You've scored <span id="exam-score-container"></span> on the exam. The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
+      <p>You didn't score high enough on the exam. The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
     exam_failure: |
       <h2>Darn.</h2>
       <p>The bad news is that you didn’t pass the exam. But the good news is that we have plenty of other free courses.</p>
       <div class="survey">
         <p>In the meantime, please take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p>
-        <a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">
-          Take Survey
-        </a>
+        <a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
       </div>
   theme:
     custom: "<p>This is an example of a custom message for anywhere in the theme.</p>"
