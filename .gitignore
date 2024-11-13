@@ -29,3 +29,7 @@ netlify/edge-functions/_generated
 
 # Eleventy clean plugin
 .plugin-clean
+
+# exclude SCSS and JS folder from API branch
+src/scss
+src/js
