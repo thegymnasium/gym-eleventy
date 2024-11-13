@@ -307,6 +307,3 @@ paths:
       icons: /img/footer/icons/
       logos: /img/footer/logos/
 markets: MARKETS_STATIC
-test:
-  test1: testing
-  test2: testing
