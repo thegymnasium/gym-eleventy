@@ -18,6 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          fetch-depth: 0
           ref: api/dev
           sparse-checkout: |
             .github/workflows/**
@@ -26,10 +27,16 @@ jobs:
             src/pages/api/**.njk
             src/_includes/modules/api-config.njk
           sparse-checkout-cone-mode: false
-      # - name: Reset develop branch
-      #   run: |
-      #     git fetch origin develop:develop
-      #     git reset --hard develop
+      - name: Reset develop branch
+        run: |
+          git fetch origin develop:develop
+          git reset --hard develop
+          git checkout develop -- \
+            .github/workflows/** \
+            src/_data/**.js \
+            src/_data/**.yml \
+            src/pages/api/**.njk \
+            src/_includes/modules/api-config.njk
       - name: set datestamp
         id: datestamp
         run: |
