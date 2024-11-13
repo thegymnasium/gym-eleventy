@@ -33,7 +33,7 @@ module.exports = async function() {
       type: "json"
     });
 
-    let markets2 = await EleventyFetch(MARKET_FEED, {
+    let markets = await EleventyFetch(MARKET_FEED, {
       duration: ENV === ('dev' || 'development' || 'default' || 'local') ? 0 : '24h',
       type: "json"
     });
@@ -45,7 +45,7 @@ module.exports = async function() {
 
     // const feed = feed1.items.concat(feed2.items);
 
-    // console.log(markets2)
+    // console.log(markets)
 
     return {
       // live values
@@ -70,7 +70,7 @@ module.exports = async function() {
         }
       },
       // markets: markets.items,
-      markets2: markets2,
+      markets: markets,
 
       // blog: feed,
     };
