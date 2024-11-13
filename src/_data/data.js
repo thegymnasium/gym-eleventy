@@ -8,9 +8,7 @@ const DATA_URL = process.env.DATA_URL || 'https://data.gym.soy';
 
 // Individual job API: https://cloudwall.aquent.com/api/v1/jobpostings/189094
 
-// const MARKET_FEED = 'https://assets.aquent.com/apps/gym/markets.json';
-
-const MARKET_FEED2 = 'https://aquentllc.wpengine.com/feeds/gymnasium-markets.json';
+const MARKET_FEED = 'https://aquentllc.wpengine.com/feeds/gymnasium-markets.json';
 
 // const JOB_FEED = 'https://aquentllc.wpengine.com/wp-json/aq-central/v1/jobs/listing?pageSize=500';
 
@@ -35,12 +33,7 @@ module.exports = async function() {
       type: "json"
     });
 
-    // let markets = await EleventyFetch(MARKET_FEED, {
-    //   duration: ENV === ('dev' || 'development' || 'default' || 'local') ? 0 : '24h',
-    //   type: "json"
-    // });
-
-    let markets2 = await EleventyFetch(MARKET_FEED2, {
+    let markets2 = await EleventyFetch(MARKET_FEED, {
       duration: ENV === ('dev' || 'development' || 'default' || 'local') ? 0 : '24h',
       type: "json"
     });
