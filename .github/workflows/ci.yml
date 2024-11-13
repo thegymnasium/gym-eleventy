@@ -19,6 +19,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: api/dev
+          sparse-checkout: |
+            .github/workflows/**
+            src/_data/**.js
+            src/_data/**.yml
+            src/pages/api/**.njk
+            src/_includes/modules/api-config.njk
       - name: Reset develop branch
         run: |
           git fetch origin develop:develop
