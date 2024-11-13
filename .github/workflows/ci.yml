@@ -21,11 +21,11 @@ jobs:
           fetch-depth: 0
           ref: api/dev
           sparse-checkout: |
-            .github/workflows/**
-            src/_data/**.js
-            src/_data/**.yml
-            src/pages/api/**.njk
-            src/_includes/modules/api-config.njk
+            /.github/workflows/**
+            /src/_data/**.js
+            /src/_data/**.yml
+            /src/pages/api/**.njk
+            /src/_includes/modules/api-config.njk
           sparse-checkout-cone-mode: false
       - name: Reset develop branch
         run: |
