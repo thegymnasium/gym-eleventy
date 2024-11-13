@@ -12,7 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+          fetch-depth: 2  # OR "2" -> To retrieve the preceding commit.
+          persist-credentials: true
 
       - name: Get changed data files
         id: changed-data-files
@@ -20,7 +21,7 @@ jobs:
         with:
           # Avoid using single or double quotes for multiline patterns
           files: |
-            'src/data/**'
+            src/data/**
 
       - name: List all changed data files
         if: steps.changed-data-files.outputs.any_changed == 'true'
