@@ -20,7 +20,7 @@ jobs:
         with:
           # Avoid using single or double quotes for multiline patterns
           files: |
-            src/data/**.*
+            'src/data/**'
 
       - name: List all changed data files
         if: steps.changed-data-files.outputs.any_changed == 'true'
