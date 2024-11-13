@@ -139,7 +139,6 @@ div.d-flex.ml-auto {
       margin: 0;
 
       .btn {
-        text-transform: capitalize;
         padding: 1.05rem;
       }
 
@@ -982,13 +981,13 @@ div.d-flex.ml-auto {
   // box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.15),
   //   0 0.0625rem 0.25rem rgba(0, 0, 0, 0.15);
   margin-bottom: 1rem;
-  padding: 1rem;
+  padding: 1.4rem;
   position: relative;
 }
 // Theoretically, the last div in the alert that pops up when a user isn't enrolled (could be any alert in that section TBH
 .alert .alert-message-content > :last-child {
+  margin-top: 1.4rem;
   margin-bottom: 0;
-  margin-inline-end: 0.33rem;
   // font-size: 1rem;
   line-height: 1;
 
@@ -1182,6 +1181,13 @@ div.d-flex.ml-auto {
 .private-course-alert {
   p {
     font-size: rem-calc(20);
+  }
+  .font-weight-bold {
+    font-size: rem-calc(24);
+
+    + * {
+      margin-top: 1.4rem;
+    }
   }
   div.d-flex {
     font-size: rem-calc(18);
