@@ -1,42 +1,19 @@
-name: Changed Data Files
+name: Changed Data Files - Develop
 
 on:
   push:
     branches:
       - develop
     paths:
-      - 'src/_data/**'
+      - 'src/_data/**.js'
+      - 'src/_data/**.yml'
+      - 'src/pages/api/**.njk'
+      - 'src/_includes/modules/api-config.njk'
 
 jobs:
-  changed_files:
-    runs-on: ubuntu-latest  # windows-latest || macos-latest
-    name: Test changed files
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2  # OR "2" -> To retrieve the preceding commit.
-          persist-credentials: true
-
-      - name: Get changed data files
-        id: changed-data-files
-        uses: tj-actions/changed-files@v45
-        with:
-          # Avoid using single or double quotes for multiline patterns
-          files: |
-            src/_data/**
-
-      - name: List all changed data files
-        if: steps.changed-data-files.outputs.any_changed == 'true'
-        env:
-          ALL_CHANGED_FILES: ${{ steps.changed-data-files.outputs.all_changed_files }}
-        run: |
-          for file in ${ALL_CHANGED_FILES}; do
-            echo "$file was changed"
-          done
-
   create_pr:
     runs-on: ubuntu-latest
-    name: create PR
+    name: Create PR
     steps:
       - uses: actions/checkout@v4
         with:
@@ -45,7 +22,18 @@ jobs:
         run: |
           git fetch origin develop:develop
           git reset --hard develop
+      - name: Set output variables
+        id: vars
+        run: |
+          pr_title="[Auto PR]: Update Data API"
+          pr_body="This PR was auto-generated on $(date +%d-%m-%Y) \
+            by [create-pull-request](https://github.com/peter-evans/create-pull-request)."
+          echo "pr_title=$pr_title" >> $GITHUB_OUTPUT
+          echo "pr_body=$pr_body" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
           branch: auto/api/dev
+          title: ${{ steps.vars.outputs.pr_title }}
+          body: ${{ steps.vars.outputs.pr_body }}
+
