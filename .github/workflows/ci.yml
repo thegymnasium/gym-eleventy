@@ -29,15 +29,15 @@ jobs:
           sparse-checkout-cone-mode: false
       - name: sparse checkout develop branch
         run: |
-          git sparse-checkout disable
-          git reset --hard
-          git fetch origin develop
-          git checkout develop
+          # git sparse-checkout disable
+          # git reset --hard
+          # git fetch origin develop
+          # git checkout develop
           git sparse-checkout set --no-cone '.github/workflows/**' 'src/_data/**.js' 'src/_data/**.yml' 'src/pages/api/**.njk' '/src/_includes/modules/api-config.njk'
       - name: set datestamp
         id: datestamp
         run: |
-          echo "datestamp=$(git log -1 --format=%cd --date=format:%Y-%m-%dh %H%M%S)" >> $GITHUB_OUTPUT
+          echo "datestamp=$(git log -1 --format=%cd --date=format:%Y-%m-%dh%H%M%S)" >> $GITHUB_OUTPUT
       - name: set PR message
         id: message
         run: |
