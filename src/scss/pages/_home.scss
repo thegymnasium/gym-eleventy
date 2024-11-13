@@ -151,15 +151,15 @@ article.home-hero {
   > div {
     > header {
       text-align: center;
-      border-top: 2px solid var(--mono-400);
+      border-top: 1px solid var(--mono-400);
 
       h2 {
         display: inline-block;
         position: relative;
-        top: -1.75rem;
-        background: var(--mono-200);
+        top: -0.9375rem;
+        line-height: 1.25;
+        background-color: var(--mono-200);
         padding: 0 2rem;
-        margin-bottom: -0.75rem;
       }
     }
   }
