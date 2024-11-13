@@ -20,19 +20,16 @@ jobs:
         with:
           fetch-depth: 0
           ref: api/dev
-          # sparse-checkout: |
-          #   .github/workflows/**
-          #   src/_data/**.js
-          #   src/_data/**.yml
-          #   src/pages/api/**.njk
-          #   src/_includes/modules/api-config.njk
-          #   !src/scss
-          #   !src/js
-          # sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            .github/workflows/**
+            src/_data/**.js
+            src/_data/**.yml
+            src/pages/api/**.njk
+            /src/_includes/modules/api-config.njk
+          sparse-checkout-cone-mode: false
       - name: Reset develop branch
         run: |
-          git fetch origin develop
-          git reset --hard
+          git pull origin develop
           git checkout develop
           git sparse-checkout set --no-cone '.github/workflows/**' 'src/_data/**.js' 'src/_data/**.yml' 'src/pages/api/**.njk' '/src/_includes/modules/api-config.njk'
       - name: set datestamp
