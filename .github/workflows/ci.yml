@@ -22,18 +22,22 @@ jobs:
         run: |
           git fetch origin develop:develop
           git reset --hard develop
-      - name: Set output variables
-        id: vars
+      - name: set datestamp
+        id: datestamp
         run: |
-          pr_title="[Auto PR]: Update Data API"
-          pr_body="This PR was auto-generated on $(date +%d-%m-%Y) \
+          echo "datestamp=$(date --rfc-3339=date)" >> $GITHUB_OUTPUT
+      - name: Set PR message
+        id: message
+        run: |
+          title="[Auto PR]: ${{ steps.datestamp.outputs.datestamp }} Update API - Dev"
+          body="This PR was auto-generated on ${{ steps.datestamp.outputs.datestamp }} \
             by [create-pull-request](https://github.com/peter-evans/create-pull-request)."
-          echo "pr_title=$pr_title" >> $GITHUB_OUTPUT
-          echo "pr_body=$pr_body" >> $GITHUB_OUTPUT
+          echo "title=$title" >> $GITHUB_OUTPUT
+          echo "body=$body" >> $GITHUB_OUTPUT
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
           branch: auto/api/dev
-          title: ${{ steps.vars.outputs.pr_title }}
-          body: ${{ steps.vars.outputs.pr_body }}
+          title: ${{ steps.message.outputs.title }}
+          body: ${{ steps.message.outputs.body }}
 
