@@ -43,7 +43,7 @@
     "markdown-it-anchor": "^9.1.0",
     "markdown-it-attrs": "^4.2.0",
     "markdown-it-eleventy-img": "^0.10.2",
-    "netlify-cli": "^17.34.3",
+    "netlify-cli": "^17.37.1",
     "netlify-plugin-cache": "^1.0.3",
     "rss-parser": "^3.13.0"
   },

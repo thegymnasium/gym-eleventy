@@ -283,23 +283,11 @@ msg:
         instructor: Meet the Instructor
   learning:
     exam_success: |
-      <h2>You did it! 🎉</h2>
-      <p>Congratulations on passing the final exam!</p>
-      <p>Now you can share your achievement on social media. You can always access your credential from the <a href="GYM_LMS_URL/dashboard">Dashboard</a>.</p>
-      <div class="survey">
-        <p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses.</p>
-        <a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
-      </div>
+      <h2>You did it! 🎉</h2><p>Congratulations on passing the final exam!</p><p>Now you can share your achievement on social media. You can always access your credential from the <a href="GYM_LMS_URL/dashboard">Dashboard</a>.</p><div class="survey"><p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses.</p><a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a></div>
     exam_failed_attempt: |
-      <h2>You’re Close!</h2>
-      <p>You didn't score high enough on the exam. The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
+      <h2>You’re Close!</h2><p>You didn't score high enough on the exam. The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
     exam_failure: |
-      <h2>Darn.</h2>
-      <p>The bad news is that you didn’t pass the exam. But the good news is that we have plenty of other free courses.</p>
-      <div class="survey">
-        <p>In the meantime, please take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p>
-        <a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
-      </div>
+      <h2>Darn.</h2><p>The bad news is that you didn’t pass the exam. But the good news is that we have plenty of other free courses.</p><div class="survey"><p>In the meantime, please take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p><a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a></div>
   theme:
     custom: "<p>This is an example of a custom message for anywhere in the theme.</p>"
 html:
@@ -319,3 +307,6 @@ paths:
       icons: /img/footer/icons/
       logos: /img/footer/logos/
 markets: MARKETS_STATIC
+test:
+  test1: testing
+  test2: testing
