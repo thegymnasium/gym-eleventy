@@ -32,7 +32,8 @@ jobs:
       - name: Reset develop branch
         run: |
           git fetch origin develop
-          git reset --hard develop
+          git reset --hard
+          git checkout develop
           git sparse-checkout set --no-cone '.github/workflows/**' 'src/_data/**.js' 'src/_data/**.yml' 'src/pages/api/**.njk' '/src/_includes/modules/api-config.njk'
       - name: set datestamp
         id: datestamp
