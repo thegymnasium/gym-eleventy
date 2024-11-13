@@ -26,10 +26,10 @@ jobs:
             src/pages/api/**.njk
             src/_includes/modules/api-config.njk
           sparse-checkout-cone-mode: false
-      - name: Reset develop branch
-        run: |
-          git fetch origin develop:develop
-          git reset --hard develop
+      # - name: Reset develop branch
+      #   run: |
+      #     git fetch origin develop:develop
+      #     git reset --hard develop
       - name: set datestamp
         id: datestamp
         run: |
