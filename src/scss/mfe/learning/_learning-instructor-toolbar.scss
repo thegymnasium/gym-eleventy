@@ -22,7 +22,7 @@ hr {
 }
 
 .bg-primary {
-  background-color: var(--primary);
+  background-color: var(--primary-500);
 }
 .border-light {
   border-color: #e1dddb;
@@ -154,7 +154,7 @@ hr {
   width: auto;
 }
 .bg-primary {
-  background-color: var(--primary);
+  background-color: var(--primary-500);
 }
 .border-light {
   border-color: #e1dddb;
@@ -311,7 +311,7 @@ hr {
 }
 .dropdown-item.active,
 .dropdown-item:active {
-  background-color: var(--primary);
+  background-color: var(--primary-500);
   color: var(--mono-100);
   text-decoration: none;
 }

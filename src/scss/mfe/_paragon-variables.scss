@@ -54,7 +54,7 @@ $grays: map-merge(
   $grays
 );
 
-$blue: var(--primary) !default;
+$blue: var(--primary-500) !default;
 $red: #C32D3A !default;
 $yellow: #FFD900 !default;
 $green: #178253 !default;
@@ -682,7 +682,7 @@ $box-shadow:                  0 .125rem .25rem rgba($black, .3) !default;
 $box-shadow-lg:               0 .25rem .5rem rgba($black, .3) !default;
 
 $component-active-color:      $white !default;
-$component-active-bg:         var(--primary) !default;
+$component-active-bg:         var(--primary-500) !default;
 
 $caret-width:                 .3em !default;
 $caret-vertical-align:        $caret-width * .85 !default;
