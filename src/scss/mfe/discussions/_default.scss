@@ -29371,6 +29371,17 @@ header span:first-child {
 .breadcrumb-menu {
   z-index: 1;
 }
+
+// topics section (discussions and questions count)
+
+.discussion-topic {
+
+  [class="mr-3.5"] {
+    white-space: nowrap;
+  }
+
+}
+
 .discussion-topic-group:last-of-type .divider {
   display: none;
 }
