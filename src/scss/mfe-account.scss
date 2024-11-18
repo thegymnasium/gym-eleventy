@@ -118,8 +118,18 @@
 }
 
 // Form element (Country) + element (with button elements siblings)
-.pgn__form-group + * {
-  margin-top: 1.2rem;
+// Match form label font and weight
+.pgn__form-group {
+
+  label {
+    font-family: var(--font-family-custom);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  + * {
+    margin-top: 1.2rem;
+  }
 }
 
 svg {
