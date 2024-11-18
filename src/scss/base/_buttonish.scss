@@ -177,4 +177,8 @@ a, summary {
     padding: 0 .25em;
     vertical-align: bottom;
   }
+
+  &:not(:only-of-type) {
+    margin-right: 1.2rem;
+  }
 }
