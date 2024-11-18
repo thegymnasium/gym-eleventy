@@ -51,14 +51,18 @@ module.exports = function (eleventyConfig) {
 
   // create a catalog collection combining courses, tutorials, webinars
   eleventyConfig.addCollection('catalog', (collection) => {
-    const courses = collection.getAll()[0].data.courses;
-    const tutorials = collection.getAll()[0].data.tutorials;
-    const livestreams = collection.getAll()[0].data.livestreams;
-    const webinars = collection.getAll()[0].data.webinars;
+    const allCollections = collection.getAll()[0];
+    if (typeof allCollections !== 'undefined' && allCollections !== null) {
+      const courses = collection.getAll()[0]?.data?.courses;
+      const tutorials = collection.getAll()[0]?.data?.tutorials;
+      const livestreams = collection.getAll()[0]?.data?.livestreams;
+      const webinars = collection.getAll()[0]?.data?.webinars;
+      const catalog = {...courses, ...tutorials, ...livestreams, ...webinars}
+      return catalog;
+    } else {
+      return false;
+    }
 
-    const catalog = {...courses, ...tutorials, ...livestreams, ...webinars}
-
-    return catalog;
   });
 
   // Get all static pages and perform intentional exclusions by directory
@@ -89,57 +93,75 @@ module.exports = function (eleventyConfig) {
 
   // bios collections
   eleventyConfig.addCollection('bios', function (collection) {
-    const col = Object.values(collection.getAll()[0].data.bios)
+    const allCollections = collection.getAll()[0];
+    if (typeof allCollections !== 'undefined' && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.bios)
       .filter(item => {
         return item.exclude ? false : item;
       });
-    // console.log(col);
-
-    return col;
+      return col;
+    } else {
+      return false;
+    }
   });
 
   // this is our `hub pages` collection
   eleventyConfig.addCollection('collection', function (collection) {
-    const col = Object.values(collection.getAll()[0].data.collection)
+    const allCollections = collection.getAll()[0];
+    if (typeof allCollections !== 'undefined' && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.collection)
       .filter(item => {
         return item.exclude ? false : item;
       });
-    // console.log(col);
-
-    return col;
+      return col;
+    } else {
+      return false;
+    }
   });
 
   // return only live full courses
   eleventyConfig.addCollection('live_courses_full', function (collection) {
-    const col = Object.values(collection.getAll()[0].data.courses)
+    const allCollections = collection.getAll()[0];
+    if (typeof allCollections !== 'undefined' && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.courses)
       .filter(item => {
         const bool = item.type === 'full' && item.live;
         return bool ? item : false;
       });
-
-    return col;
+      return col;
+    } else {
+      return false;
+    }
   });
 
   // return only live short courses
   eleventyConfig.addCollection('live_courses_short', function (collection) {
-    const col = Object.values(collection.getAll()[0].data.courses)
+    const allCollections = collection.getAll()[0];
+    if (typeof allCollections !== 'undefined' && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.courses)
       .filter(item => {
         const bool = item.type === 'short' && item.live;
         return bool ? item : false;
       });
-
-    return col;
+      return col;
+    } else {
+      return false;
+    }
   });
 
   // return only live tutorials
   eleventyConfig.addCollection('live_tutorials', function (collection) {
-    const col = Object.values(collection.getAll()[0].data.tutorials)
+    const allCollections = collection.getAll()[0];
+    if (typeof allCollections !== 'undefined' && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.tutorials)
       .filter(item => {
         const bool = item.type === 'tutorial' && item.live;
         return bool ? item : false;
       });
-
-    return col;
+      return col;
+    } else {
+      return false;
+    }
   });
 
   eleventyConfig.addPlugin(clean);
@@ -204,7 +226,7 @@ module.exports = function (eleventyConfig) {
     showVersion: true,
   });
 
-  eleventyConfig.setQuietMode(true);
+  // eleventyConfig.setQuietMode(true);
 
   return {
     htmlTemplateEngine: 'njk',

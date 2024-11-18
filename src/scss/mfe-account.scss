@@ -49,7 +49,7 @@
       font-weight: normal;
       border-radius: 0;
       text-decoration: underline;
-    
+
       &:hover {
         background-color: transparent;
         color: var(--mono-700);
@@ -115,6 +115,24 @@
 // Hide entire jump menu
 .col-md-2 {
   display: none;
+}
+
+// Form element (Country) + element (with button elements siblings)
+// Match form label font and weight
+.pgn__form-group {
+
+  label {
+    font-family: var(--font-family-custom);
+    font-weight: 700;
+
+    + * {
+       margin-top: 0.6rem;
+    }
+  }
+
+  + * {
+    margin-top: 1.2rem;
+  }
 }
 
 svg {

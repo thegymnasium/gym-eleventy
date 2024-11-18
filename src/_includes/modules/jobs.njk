@@ -15,31 +15,31 @@
     <hr>
 
     <optgroup label="Australia">
-      {%- for market in data.markets2 -%}{%- if market['regions'][0] == 'Australia' -%}
+      {%- for market in data.markets -%}{%- if market['regions'][0] == 'Australia' -%}
       <option data-slug="{{ market.id }}" value="{{ market.cloudwall_id }}">{{ market.name }}</option>
       {%- endif -%}{%- endfor -%}
     </optgroup>
 
     <optgroup label="Canada">
-      {%- for market in data.markets2 -%}{%- if market.country == 'Canada' -%}
+      {%- for market in data.markets -%}{%- if market.country == 'Canada' -%}
       <option data-slug="{{ market.id }}" value="{{ market.cloudwall_id }}">{{ market.name }}</option>
       {%- endif -%} {%- endfor -%}
     </optgroup>
 
     <optgroup label="Europe">
-      {%- for market in data.markets2 -%}{%- if market['regions'][0] == 'Europe' -%}
+      {%- for market in data.markets -%}{%- if market['regions'][0] == 'Europe' -%}
       <option data-slug="{{ market.id }}" value="{{ market.cloudwall_id }}">{{ market.name }}</option>
       {%- endif -%}{%- endfor -%}
     </optgroup>
 
     <optgroup label="Japan">
-      {%- for market in data.markets2 -%}{%- if market['regions'][0] == 'Japan' -%}
+      {%- for market in data.markets -%}{%- if market['regions'][0] == 'Japan' -%}
       <option data-slug="{{ market.id }}" value="{{ market.cloudwall_id }}">{{ market.name }}</option>
       {%- endif -%}{%- endfor -%}
     </optgroup>
 
     <optgroup label="United States">
-      {%- for market in data.markets2 -%}{%- if market['regions'][0] == 'North America' and market.country != 'Canada' -%}
+      {%- for market in data.markets -%}{%- if market['regions'][0] == 'North America' and market.country != 'Canada' -%}
       <option data-slug="{{ market.id }}" value="{{ market.cloudwall_id }}">{{ market.name }}</option>
       {%- endif -%}{%- endfor -%}
     </optgroup>

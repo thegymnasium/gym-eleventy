@@ -30,6 +30,7 @@ a, summary {
   padding: rem-calc(16.8);
   text-align: center;
   text-decoration: none;
+  text-transform: capitalize;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 
   &.disabled,
@@ -175,5 +176,9 @@ a, summary {
     line-height: calc(1.5556em - 2px);
     padding: 0 .25em;
     vertical-align: bottom;
+  }
+
+  &:not(:only-of-type) {
+    margin-right: 1.2rem;
   }
 }

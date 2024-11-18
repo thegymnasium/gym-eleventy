@@ -1,0 +1,24 @@
+id: live-0009
+slug: ai-reality-check
+color: ""
+type: livestream
+title: "AI Reality Check: 2024 Year in Review"
+event_guests: "with Jeremy Osborn and Andrew Miller"
+description: "TK"
+permalink: /livestreams/ai-reality-check
+event_date: 2024-11-12
+event_time: "10AM EDT"
+img: /img/hero/livestreams/ai-reality-check/ai-reality-check-1280w.jpg
+host:
+  - josborn
+  - amiller
+speaker:
+  - ""
+content_category: gen-ai
+tags:
+  - livestream
+landing: false
+register: false
+video: true
+webinar_id:
+video_id: GTQcUE0NNfo
