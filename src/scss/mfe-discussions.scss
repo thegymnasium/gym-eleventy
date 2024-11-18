@@ -160,7 +160,7 @@ main.container {
 .discussion-post,
 .discussion-comments,
 .post-preview {
-  *:not(.btn) {
+  *:not(.btn):not(.btn *) {
     color: var(--mono-900);
   }
 }
