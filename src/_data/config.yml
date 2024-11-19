@@ -265,6 +265,23 @@ css:
   lms: /css/theme.css
   mfe: /css/mfe.css
 msg:
+  errors:
+    error_404:
+      heading: '404: Page Not Found'
+      description: |
+        <span aria-label="Waving hand emoji" role="img">👋</span> You discovered a page that doesn’t exist.
+      body: |
+        <p>Some might call you lost. Others might call you a creative genius.</p><p>Either way, we suggest that you check out our frequently visited pages below:</p>
+    links:
+    - label: Homepage
+      url: GYM_ROOT_URL/
+    - label: Full Courses
+      url: GYM_ROOT_URL/courses/full/
+    - label: Gym Shorts
+      url: GYM_ROOT_URL/courses/gym-shorts/
+    - label: Take 5 Tutorials
+      url: GYM_ROOT_URL/courses/take5/
+    footer: <p>Need to get in touch? You can email us at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
   mfe:
     account:
       deletion: |
@@ -292,6 +309,7 @@ msg:
     custom: "<p>This is an example of a custom message for anywhere in the theme.</p>"
 html:
   footer: FOOTER_HTML
+  error_404: 404_HTML
 bios: BIOS_DATA
 courses: COURSES_DATA
 # TODO: consider refactoring to support global path definitions

@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+{# If any page passes in a `layoutClass`, append it to the default class #}
+{%- set mainWrapperClass = 'default' -%}
+{%- if layoutClass -%}
+  {%- set mainWrapperClass = 'default ' + layoutClass -%}
+{%- endif -%}
+<main id="main" class="{{ mainWrapperClass }}" tabindex="-1">
+  <div class="container">
+    <div class="main-panel">
+      <article>
+        {{ content | safe }}
+      </article>
+      {%- include 'modules/components/sidebar.njk' ignore missing -%}
+    </div>
+  </div><!-- .container -->
+</main>
