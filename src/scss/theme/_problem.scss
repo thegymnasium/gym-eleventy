@@ -3,6 +3,52 @@
 
 #main {
 
+  .unit {
+
+    h3 {
+      font-weight: 900;
+      font-size: 2.25rem;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .problem-progress {
+    display: block;
+    font-weight: bold;
+    font-size: 1.125rem;
+    color: var(--mono-900);
+    text-transform: uppercase;
+  }
+
+  .problem {
+
+    p,
+    > label  {
+      font-size: 1.125rem;
+      line-height: 1.5
+    }
+
+    .course-quiz-reminder {
+
+      h2 {
+        font-weight: bold;
+
+        &:before {
+          content: "👋" "\00a0";
+        }
+
+      }
+
+    }
+
+    fieldset {
+      margin-top: 1.4rem;
+    }
+
+  }
+
   .problem-action-btn {
     max-width: none;
 
