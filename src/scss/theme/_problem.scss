@@ -1,0 +1,14 @@
+// ProblemBlockDisplay.scss override
+// quiz/exam problem(s)
+
+#main {
+
+  .problem-action-btn {
+    max-width: none;
+
+    .show-label {
+      text-transform: capitalize;
+    }
+  }
+
+}
