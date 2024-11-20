@@ -255,6 +255,18 @@ div.d-flex.ml-auto {
   .previous-button:focus:before {
     border-radius: 6px; // ???
   }
+
+  .next-button {
+    svg {
+      margin-left: 1ex;
+    }
+  }
+
+  .previous-button {
+    svg {
+      margin-right: 1ex;
+    }
+  }
 }
 
 
