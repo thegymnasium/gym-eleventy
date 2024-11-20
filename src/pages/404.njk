@@ -1,34 +1,18 @@
 ---
-layout: layouts/main.njk
+layout: layouts/sidebar.njk
 meta:
   title: "404: Page Not Found"
   sitemapExclude: true
 eleventyExcludeFromCollections: true
 permalink: 404.html
 ---
-{%- set header = pages['404'].header -%}
-{%- set main = pages['404'].main -%}
-<div class="main-panel">
-
-  <article>
-    <header id="{{ id }}" class="main-header {{ id }}">
-      <h1>{{ header.heading }}</h1>
-      <p>{{ header.description | safe }}</p>
-    </header>
-    {%- set body_text = main.body_text -%}
-    {%- for text in body_text  -%}
-    <p>{{ text }}</p>
-    {%- endfor -%}
-    {%- set links = main.links -%}
-    <ul>
-    {%- for link in links -%}
-      <li><a href="{{ link.url }}">{{ link.label }}</li></a>
-    {%- endfor -%}
-    </ul>
-    <p>{{ main.contact | safe}}</p>
-  </article>
-
-  <!-- Sidebar -->
-  {% include 'modules/components/sidebar.njk' ignore missing %}
-
-</div>
+{%- set error404 -%}{%- include 'modules/components/404.njk' -%}{%- endset -%}
+{# In the static site footer, convert absolute urls to relative #}
+{{ error404
+  | replace(config.urls.root, '')
+  | replace('GYM_ROOT_URL', '')
+  | replace('GYM_LMS_URL', config.urls.lms)
+  | replace('GYM_DATA_URL', config.urls.data)
+  | replace('GYM_MFE_URL', config.urls.mfe)
+  | safe
+}}
