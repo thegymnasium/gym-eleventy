@@ -28710,3 +28710,19 @@ body.view-in-course footer#footer-edx-v3 {
     width: 54px !important;
   }
 }
+
+
+// ProblemBlockDisplay.scss
+// quiz/exam
+
+#main {
+
+  .problem-action-btn {
+    max-width: none;
+
+    .show-label {
+      text-transform: capitalize;
+    }
+  }
+
+}
