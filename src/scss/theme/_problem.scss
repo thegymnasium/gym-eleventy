@@ -32,8 +32,9 @@
 
     .course-quiz-reminder {
       padding: 1.4rem 0;
-      border-top: 1px dashed color: var(--mono-300);
-      border-bottom: 1px dashed color: var(--mono-300);
+      border-top: 1px dashed var(--mono-300);
+      border-bottom: 1px dashed var(--mono-300);
+      margin: 1.4rem 0;
 
       h2 {
         font-weight: bold;
