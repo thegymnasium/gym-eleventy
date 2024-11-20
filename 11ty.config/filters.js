@@ -194,6 +194,7 @@ module.exports = eleventyConfig => {
       output = JSON.stringify(input);
     }
 
+    // TODO: improve this to eliminate line breaks (/n)
     output = input.replace(/>\s+|\s+</g, function(m) {
       return m.trim();
     });
