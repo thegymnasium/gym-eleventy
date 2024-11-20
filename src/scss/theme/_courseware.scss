@@ -134,12 +134,13 @@
   .problem-action-buttons-wrapper {
 
     .problem-action-btn {
+      max-width: none;
 
+      .show-label {
+        text-transform: capitalize;
+      }
     }
 
-    .show-label {
-
-    }
   }
 
   .submit-attempt-container {
@@ -148,7 +149,7 @@
     }
 
     .submission-feedback {
-      
+
     }
   }
 
