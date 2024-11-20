@@ -1,18 +1,18 @@
 // ProblemBlockDisplay.scss override
 // quiz/exam problem(s)
 
-#main {
+.unit {
 
-  .unit {
-
-    h3 {
-      font-weight: 900;
-      font-size: 2.25rem;
-      line-height: 1.15;
-      text-transform: uppercase;
-    }
-
+  h3 {
+    font-weight: 900;
+    font-size: 2.25rem;
+    line-height: 1.15;
+    text-transform: uppercase;
   }
+
+}
+
+#main {
 
   .problem-progress {
     display: block;
@@ -31,6 +31,9 @@
     }
 
     .course-quiz-reminder {
+      padding: 1.4rem 0;
+      border-top: 1px dashed color: var(--mono-300);
+      border-bottom: 1px dashed color: var(--mono-300);
 
       h2 {
         font-weight: bold;
