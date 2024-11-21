@@ -25,17 +25,30 @@ body.view-in-mfe {
     padding: 0;
   }
 
-  // green checkmark status icon on exam
-  .course-content .problem .choicegroup label[class*="_correct"]:before, .course-content .problem .choicegroup section[class*="_correct"]:before {
-    position: absolute;
-    font-family: var(--font-family-custom);
-    font-weight: 900;
-    font-size: 1.4rem;
-    line-height: 1;
-    content: "✔";
-    color: var(--green-400);
-    margin-top: 0;
-    margin-left: rem-calc(-53);
+  // green check mark status icon on exam
+  // red ballot x status icon on exam
+  .course-content .problem .choicegroup {
+
+    label[class*="_correct"]:before, section[class*="_correct"]:before,
+    label[class*="_incorrect"]:before, section[class*="_incorrect"]:before {
+      position: absolute;
+      left: -2rem;
+      font-family: var(--font-family-custom);
+      font-weight: 900;
+      font-size: 1.4rem;
+      line-height: 1;
+      margin-top: 0;
+    }
+
+    label[class*="_correct"]:before, section[class*="_correct"]:before {
+      content: "✔";
+      color: var(--green-400);
+    }
+
+    label[class*="_incorrect"]:before, section[class*="_incorrect"]:before {
+      content: "✘";
+      color: var(--magenta-500);
+    }
   }
 
   // Explanation box
@@ -257,16 +270,28 @@ body.view-in-mfe {
           }
         }
 
+        .choicegroup {
 
-        fieldset {
+          fieldset {
 
-          legend {
-            margin-bottom: 0.6rem;
-          }
+            legend {
+              margin-bottom: 0.6rem;
+            }
 
-          label {
-            font-weight: normal;
-            line-height: 1.35;
+            input[type="checkbox"] {
+              left: 2rem;
+              top: 4.5rem;
+            }
+
+            label {
+              font-weight: normal;
+              line-height: 1.35;
+
+              div {
+                margin-left: 1.2rem;
+              }
+            }
+
           }
 
         }
