@@ -231,7 +231,6 @@ body.view-in-mfe {
         }
 
         p + div {
-          margin-top: 0;
           margin-bottom: 0;
         }
 
@@ -252,6 +251,10 @@ body.view-in-mfe {
         }
 
         fieldset {
+
+          legend {
+            margin-top: 0.6rem;
+          }
 
           label {
             font-weight: normal;
