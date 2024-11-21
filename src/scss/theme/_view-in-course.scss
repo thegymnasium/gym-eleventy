@@ -21,64 +21,6 @@ body.view-in-mfe {
     padding: 0;
   }
 
-  // Quiz/Final Exam Tweaks
-  // ProblemBlockDisplay.scss overrides
-
-  #main {
-
-    .problems-wrapper {
-      // font-size: 1rem;
-    }
-
-    .problem-progress {
-      display: block;
-      font-weight: bold;
-      font-size: 1.125rem;
-      color: var(--mono-900);
-      text-transform: uppercase;
-    }
-
-    .problem {
-
-      p,
-      > label  {
-        font-size: 1.125rem;
-        line-height: 1.5
-      }
-
-      .course-quiz-reminder {
-        padding: 1.4rem 0;
-        border-top: 1px dashed var(--mono-300);
-        border-bottom: 1px dashed var(--mono-300);
-        margin-bottom: 1.4em;
-
-        h2 {
-          font-weight: bold;
-
-          &:before {
-            content: "👋" "\00a0";
-          }
-
-        }
-
-      }
-
-      fieldset {
-        margin-top: 1.4rem;
-      }
-
-    }
-
-    .problem-action-btn {
-      max-width: none;
-
-      .show-label {
-        text-transform: capitalize;
-      }
-    }
-
-  }
-
   // green checkmark status icon on exam
   .course-content .problem .choicegroup label[class*="_correct"]:before, .course-content .problem .choicegroup section[class*="_correct"]:before {
     position: absolute;
@@ -98,7 +40,7 @@ body.view-in-mfe {
     padding: 1.8rem;
     border: 1px solid #ccc;
     border-radius: 2px;
-    margin: -1rem 0 2rem;
+    margin: 1.2rem 0 2rem;
     display: block;
     position: relative;
   }
@@ -261,4 +203,74 @@ body.view-in-mfe {
       margin-bottom: 8px;
     }
   }
+
+  // Quiz/Final Exam Tweaks
+  // ProblemBlockDisplay.scss overrides
+
+  #main {
+
+    .problems-wrapper {
+
+      .problem-progress {
+        display: block;
+        font-weight: bold;
+        font-size: 1.125rem;
+        color: var(--mono-900);
+        text-transform: uppercase;
+      }
+
+      .problem {
+        font-size: 1.05rem;
+
+        p,
+        > label  {
+          line-height: 1.5
+        }
+
+        .solution-span + label,
+        legend + strong {
+          display: inline-block;
+          font-size: 1.125rem;
+          margin-top: 1.4rem;
+          margin-left: 0;
+        }
+
+        fieldset {
+
+          label {
+            font-weight: normal;
+          }
+
+        }
+
+        .course-quiz-reminder {
+          padding: 1.4rem 0;
+          border-top: 1px dashed var(--mono-300);
+          border-bottom: 1px dashed var(--mono-300);
+          margin-bottom: 1.4em;
+
+          h2 {
+            font-weight: bold;
+
+            &:before {
+              content: "👋" "\00a0";
+            }
+
+          }
+
+        }
+
+      }
+
+      .problem-action-btn {
+      max-width: none;
+
+      .show-label {
+        text-transform: capitalize;
+      }
+    }
+
+    }
+  }
+
 }
