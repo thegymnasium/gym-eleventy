@@ -41,10 +41,10 @@ body.view-in-mfe {
   // Explanation box
   .course-content .problem .solution-span > span {
     background: var(--mono-200);
-    padding: 1.8rem;
-    border: 1px solid #ccc;
+    padding: 1.4rem;
+    border: 1px solid var(--mono-400);
     border-radius: 3px;
-    margin: 1.2rem 0 1.8rem;
+    margin: 0.6rem 0 1.8rem;
     display: block;
     position: relative;
   }
@@ -64,7 +64,7 @@ body.view-in-mfe {
 
   .course-content .problem .solution-span>span p {
     font-family: var(--font-family-default);
-    font-weight: 900;
+    font-weight: normal;
     font-size: 1rem;
     line-height: 1.5;
     color: #444;
@@ -248,12 +248,17 @@ body.view-in-mfe {
         label + pre {
           margin-top: 1.2rem;
           margin-bottom: 1.4rem;
+
+          + p {
+            font-weight: bold;
+          }
         }
+
 
         fieldset {
 
           legend {
-            margin-top: 0.6rem;
+            margin-bottom: 0.6rem;
           }
 
           label {
@@ -282,12 +287,12 @@ body.view-in-mfe {
       }
 
       .problem-action-btn {
-      max-width: none;
+        max-width: none;
 
-      .show-label {
-        text-transform: capitalize;
+        .show-label {
+          text-transform: capitalize;
+        }
       }
-    }
 
     }
   }
