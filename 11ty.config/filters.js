@@ -187,7 +187,7 @@ module.exports = eleventyConfig => {
     if (name) {
       const usePorts = process.env.NODE_ENV === 'development' ? true : false;
       
-      const BASE_URL = usePorts ? `${process.env.MFE_URL}:${MFE_PORTS[name.toUpperCase()].replaceAll('-','_')}` : process.env.MFE_URL;
+      const BASE_URL = usePorts ? `${process.env.MFE_URL}:${MFE_PORTS[name.toUpperCase().replaceAll('-','_')]}` : process.env.MFE_URL;
       return `${BASE_URL}/${name.toLowerCase().replaceAll('_','-')}/`;
     } else {
       console.warn('you must specify a name!');
