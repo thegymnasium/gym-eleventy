@@ -69,8 +69,8 @@ eleventyExcludeFromCollections: true
 /courses/GYM/105/0/courseware  {{ 'GYM-105' | course_endpoint('learning') }}  301
 /courses/GYM/106/0/courseware  {{ 'GYM-106' | course_endpoint('learning') }}  301
 /courses/GYM/107/0/courseware  {{ 'GYM-107' | course_endpoint('learning') }}  301
-/login  {{ 'authn' | mfe_endpoint }}login
-/register  {{ 'authn' | mfe_endpoint }}register
-/dashboard  {{ 'learner-dashboard' | mfe_endpoint }}
-/account*  {{ 'account' | mfe_endpoint }}
-/u/*  {{ 'profile' | mfe_endpoint }}u/:splat
+/login  {{ 'authn' | mfe_endpoint }}login  301
+/register  {{ 'authn' | mfe_endpoint }}register  301
+/dashboard  {{ 'learner-dashboard' | mfe_endpoint }}  301
+/account*  {{ 'account' | mfe_endpoint }}  301
+/u/*  {{ 'profile' | mfe_endpoint }}u/:splat  301
