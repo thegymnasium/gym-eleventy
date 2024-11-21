@@ -226,17 +226,24 @@ body.view-in-mfe {
       .problem {
         font-size: 1.05rem;
 
-        p,
-        > label  {
-          line-height: 1.35;
+        p  {
+          line-height: 1.5;
+        }
+
+        p + div {
+          margin-top: 0;
+          margin-bottom: 0;
         }
 
         .solution-span + label,
         legend + strong {
           display: inline-block;
           font-size: 1.125rem;
-          margin-top: 1.4rem;
           margin-left: 0;
+        }
+
+        .solution-span + * {
+          margin-top: 1.8rem;
         }
 
         label + pre {
@@ -265,10 +272,6 @@ body.view-in-mfe {
               content: "👋" "\00a0";
             }
 
-          }
-
-          p {
-            line-height: 1.5;
           }
 
         }
