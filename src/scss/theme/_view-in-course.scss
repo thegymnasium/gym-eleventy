@@ -6,6 +6,10 @@
 // view-in-course & view-in-mfe are essentially the same thing for our purposes
 body.view-in-mfe {
 
+  .is-hidden {
+    display: none;
+  }
+
   // Hide final exam header
   h3.problem-header {
     display: none;
