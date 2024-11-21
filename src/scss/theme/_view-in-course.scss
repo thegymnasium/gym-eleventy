@@ -226,7 +226,8 @@ body.view-in-mfe {
       .problem {
         font-size: 1.05rem;
 
-        p  {
+        p,
+        legend,  {
           line-height: 1.5;
         }
 
@@ -237,7 +238,6 @@ body.view-in-mfe {
         .solution-span + label,
         legend + strong {
           display: inline-block;
-          font-size: 1.125rem;
           margin-left: 0;
         }
 
@@ -280,6 +280,10 @@ body.view-in-mfe {
               content: "👋" "\00a0";
             }
 
+          }
+
+          p {
+            font-size: 1.125rem;
           }
 
         }
