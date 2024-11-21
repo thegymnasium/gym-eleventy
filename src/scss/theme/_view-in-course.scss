@@ -228,7 +228,6 @@ body.view-in-mfe {
   #main {
 
     .problems-wrapper {
-
       .problem-progress {
         display: block;
         font-weight: bold;
@@ -242,7 +241,7 @@ body.view-in-mfe {
         font-size: 1.05rem;
 
         p,
-        legend,  {
+        legend {
           line-height: 1.5;
         }
 
@@ -272,9 +271,7 @@ body.view-in-mfe {
         }
 
         .choicegroup {
-
           fieldset {
-
             legend {
               margin-bottom: 0.6rem;
             }
@@ -292,6 +289,10 @@ body.view-in-mfe {
               div {
                 margin-left: 1.2rem;
 
+                code {
+                  white-space: pre-wrap;
+                }
+
                 + span[class*="status"] {
                   position: absolute;
                   width: 1px;
@@ -305,9 +306,7 @@ body.view-in-mfe {
                 }
               }
             }
-
           }
-
         }
 
         .course-quiz-reminder {
@@ -323,15 +322,12 @@ body.view-in-mfe {
             &:before {
               content: "👋" "\2004";
             }
-
           }
 
           p {
             font-size: 1.125rem;
           }
-
         }
-
       }
 
       .problem-action-btn {
@@ -341,7 +337,6 @@ body.view-in-mfe {
           text-transform: capitalize;
         }
       }
-
     }
   }
 
