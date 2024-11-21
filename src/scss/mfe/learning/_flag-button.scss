@@ -11,13 +11,13 @@
   box-shadow: 0 0 0 2px var(--mono-400);
 
   &:hover {
-    border: 1px solid var(--primary);
+    border: 1px solid var(--primary-500);
     box-shadow: 0 0 0 2px var(--mono-100);
   }
 
   &-selected {
-    border: 1px solid var(--primary);
-    box-shadow: 0 0 0 2px var(--primary);
+    border: 1px solid var(--primary-500);
+    box-shadow: 0 0 0 2px var(--primary-500);
     pointer-events: none;
   }
 

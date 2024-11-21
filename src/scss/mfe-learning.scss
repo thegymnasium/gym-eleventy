@@ -255,6 +255,18 @@ div.d-flex.ml-auto {
   .previous-button:focus:before {
     border-radius: 6px; // ???
   }
+
+  .next-button {
+    svg {
+      margin-left: 1ex;
+    }
+  }
+
+  .previous-button {
+    svg {
+      margin-right: 1ex;
+    }
+  }
 }
 
 
@@ -310,12 +322,12 @@ div.d-flex.ml-auto {
 
     svg {
       circle:nth-child(2) {
-        stroke: var(--primary);
+        stroke: var(--primary-500);
       }
     }
 
     span {
-      color: var(--primary);
+      color: var(--primary-500);
     }
   }
 }
@@ -425,7 +437,7 @@ div.d-flex.ml-auto {
 
       &.bg-info-100 {
         background: var(--mono-100);
-        border: rem-calc(1) solid var(--primary);
+        border: rem-calc(1) solid var(--primary-500);
       }
     }
 
@@ -460,7 +472,7 @@ div.d-flex.ml-auto {
 
 // blue background for instructor toolbar
 .bg-primary {
-  background-color: var(--primary);
+  background-color: var(--primary-500);
   color: var(--mono-100);
 }
 
@@ -647,7 +659,7 @@ div.d-flex.ml-auto {
   transform: translateY(-0.6em);
 }
 .donut-chart-text {
-  fill: var(--primary);
+  fill: var(--primary-500);
   transform: translateY(0.25em);
 }
 .donut-ring,
@@ -684,7 +696,7 @@ div.d-flex.ml-auto {
 .donut-hole.locked-stroke,
 .donut-ring.locked-stroke,
 .donut-segment.locked-stroke {
-  stroke: var(--primary);
+  stroke: var(--primary-500);
 }
 .grade-bar rect {
   height: 6px;
@@ -693,11 +705,11 @@ div.d-flex.ml-auto {
   fill: var(--mono-100);
 }
 .grade-bar .grade-bar__divider {
-  fill: var(--primary);
+  fill: var(--primary-500);
   width: 1px;
 }
 .grade-bar .grade-bar--passing {
-  fill: var(--primary);
+  fill: var(--primary-500);
 }
 .grade-bar .grade-bar--current-passing {
   fill: var(--green-600);
@@ -711,9 +723,9 @@ div.d-flex.ml-auto {
 }
 
 #minimum-grade-tooltip {
-  background: var(--primary);
+  background: var(--primary-500);
   .arrow:after {
-    border-bottom-color: var(--primary);
+    border-bottom-color: var(--primary-500);
   }
 }
 
@@ -819,7 +831,7 @@ div.d-flex.ml-auto {
   z-index: 1;
 }
 .sequence-navigation .btn.active:after {
-  background: var(--primary);
+  background: var(--primary-500);
   bottom: -1px;
   content: "";
   height: 2px;
@@ -900,13 +912,13 @@ div.d-flex.ml-auto {
   .dropdown-menu
   .btn.active
   .unit-icon {
-  color: var(--primary);
+  color: var(--primary-500);
 }
 .sequence-navigation
   .sequence-navigation-dropdown
   .dropdown-menu
   .btn.active:after {
-  background: var(--primary);
+  background: var(--primary-500);
   bottom: 0;
   content: "";
   height: auto;
@@ -1062,7 +1074,7 @@ div.d-flex.ml-auto {
   color: inherit;
 
   .alert-icon {
-    color: var(--primary);
+    color: var(--primary-500);
   }
 }
 
@@ -1082,7 +1094,7 @@ div.d-flex.ml-auto {
   color: inherit;
 
   .alert-icon {
-    color: var(--primary);
+    color: var(--primary-500);
   }
 }
 

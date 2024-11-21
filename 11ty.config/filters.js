@@ -173,6 +173,27 @@ module.exports = eleventyConfig => {
     return path;
   });
 
+  const MFE_PORTS = {
+    'ACCOUNT': 1997,
+    'AUTHN': 1999,
+    'COURSE_ABOUT': 3000,
+    'DISCUSSIONS': 2002,
+    'LEARNER_DASHBOARD': 1996,
+    'LEARNING': 2000,
+    'PROFILE': 1995,
+  };
+
+  eleventyConfig.addFilter('mfe_endpoint', (name) => {
+    if (name) {
+      const usePorts = process.env.NODE_ENV === 'development' ? true : false;
+      
+      const BASE_URL = usePorts ? `${process.env.MFE_URL}:${MFE_PORTS[name.toUpperCase().replaceAll('-','_')]}` : process.env.MFE_URL;
+      return `${BASE_URL}/${name.toLowerCase().replaceAll('_','-')}/`;
+    } else {
+      console.warn('you must specify a name!');
+    }
+  });
+
   // smart-ish replace filter, which works on strings and objects
   eleventyConfig.addFilter('replace', (input, string, replace) => {
     let output;
@@ -194,6 +215,7 @@ module.exports = eleventyConfig => {
       output = JSON.stringify(input);
     }
 
+    // TODO: improve this to eliminate line breaks (/n)
     output = input.replace(/>\s+|\s+</g, function(m) {
       return m.trim();
     });

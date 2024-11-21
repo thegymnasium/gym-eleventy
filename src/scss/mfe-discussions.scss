@@ -160,7 +160,7 @@ main.container {
 .discussion-post,
 .discussion-comments,
 .post-preview {
-  * {
+  *:not(.btn):not(.btn *) {
     color: var(--mono-900);
   }
 }
@@ -331,7 +331,7 @@ header {
 }
 
 .border-primary-500-2 {
-  border: 2px solid var(--primary);
+  border: 2px solid var(--primary-500);
   border-width: 2px !important;
 }
 
@@ -448,7 +448,7 @@ header {
 
 .btn-icon.btn-icon-primary:hover {
   background-color: $light-300 !important;
-  color: var(--primary)
+  color: var(--primary-500);
 }
 
 
@@ -515,7 +515,7 @@ header {
     }
 
     &.active {
-      border-color: var(--primary);
+      border-color: var(--primary-500);
 
       &:hover {
         background-color: var(--mono-600);
@@ -526,7 +526,7 @@ header {
 
   .nav-link.active,
   .show >.nav-link {
-    background-color: var(--primary);
+    background-color: var(--primary-500);
   }
 }
 
