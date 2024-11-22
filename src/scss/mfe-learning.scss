@@ -1232,9 +1232,7 @@ div.d-flex.ml-auto {
   margin-bottom: 2.4rem;
 
   h2 {
-    font-weight: 900;
-    font-size: 2rem;
-    line-height: 1.15;
+    font: 900 2rem/1.15 var(--font-family-custom);
 
     + p:not(:only-of-type) {
       font-weight: bold;
