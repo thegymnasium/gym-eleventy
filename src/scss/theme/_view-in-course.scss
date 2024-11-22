@@ -248,6 +248,10 @@ body.view-in-mfe {
           font-weight: bold;
           font-size: 1.75rem;
           line-height: 1.15;
+
+          + ul {
+            margin-top: 1.2rem;
+          }
         }
 
         p {
@@ -389,12 +393,27 @@ body.view-in-mfe {
       margin: -1px;
       clip: rect(0, 0, 0, 0);
       overflow: hidden;
+
+      + ul {
+        margin-top: 1.2rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
     }
 
     p,
     li {
-      font-size: 1.05rem;
+      font-size: 1.125rem;
       line-height: 1.5;
+    }
+
+    ul {
+      margin-left: 1.15rem;
+
+      li {
+        margin-top: 0.8rem;
+      }
     }
 
     a {
