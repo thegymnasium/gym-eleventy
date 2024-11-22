@@ -247,6 +247,7 @@ body.view-in-mfe {
         h2 {
           font-weight: bold;
           font-size: 1.75rem;
+          line-height: 1.15;
         }
 
         p {
@@ -266,6 +267,7 @@ body.view-in-mfe {
         background-color: var(--secondary-100);
         padding: 1.4rem;
         border: 1px dashed var(--mono-700);
+        border-radius: 3px;
 
         h2:before {
           content: "👋" "\2004";
