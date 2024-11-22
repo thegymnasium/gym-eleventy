@@ -57,7 +57,7 @@ body.view-in-mfe {
     padding: 1.4rem;
     border: 1px solid var(--mono-400);
     border-radius: 3px;
-    margin: 0.6rem 0 1.8rem;
+    margin: 0.6rem 0 2.4rem;
     display: block;
     position: relative;
   }
@@ -238,8 +238,7 @@ body.view-in-mfe {
       }
 
       .course-quiz-reminder,
-      #course-exam-instructions,
-      .course-quiz-reminder {
+      #course-exam-instructions {
         padding: 1.4rem 0;
         border-top: 1px dashed var(--mono-300);
         border-bottom: 1px dashed var(--mono-300);
@@ -263,14 +262,11 @@ body.view-in-mfe {
         }
       }
 
-      .course-quiz-reminder,
-      .final-exam-wrapper {
+      .course-quiz-reminder {
         background-color: var(--secondary-100);
         padding: 1.4rem;
         border: 1px dashed var(--mono-700);
-      }
 
-      .course-quiz-reminder {
         h2:before {
           content: "👋" "\2004";
         }
@@ -280,10 +276,6 @@ body.view-in-mfe {
         h2:before {
           content: "📝" "\2004";
         }
-      }
-
-      .final-exam-wrapper {
-        margin-bottom: 1.2rem;
       }
 
       .problem {
