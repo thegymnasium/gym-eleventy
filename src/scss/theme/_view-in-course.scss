@@ -238,7 +238,8 @@ body.view-in-mfe {
       }
 
       .course-quiz-reminder,
-      #course-exam-instructions {
+      #course-exam-instructions,
+      .course-quiz-reminder {
         padding: 1.4rem 0;
         border-top: 1px dashed var(--mono-300);
         border-bottom: 1px dashed var(--mono-300);
