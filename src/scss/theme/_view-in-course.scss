@@ -351,6 +351,12 @@ body.view-in-mfe {
             }
           }
         }
+
+        .submission-feedback {
+          font-size: 1.05rem;
+          color: var(--mono-900);
+          margin-top: 0;
+        }
       }
 
       .problem-action-btn {
@@ -358,6 +364,13 @@ body.view-in-mfe {
 
         .show-label {
           text-transform: capitalize;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: var(--mono-900) !important;
+          text-decoration: none;
         }
       }
     }
