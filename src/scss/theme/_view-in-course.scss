@@ -262,11 +262,14 @@ body.view-in-mfe {
         }
       }
 
-      .course-quiz-reminder {
+      .course-quiz-reminder,
+      .final-exam-wrapper {
         background-color: var(--secondary-100);
         padding: 1.4rem;
         border: 1px dashed var(--mono-700);
+      }
 
+      .course-quiz-reminder {
         h2:before {
           content: "👋" "\2004";
         }
@@ -276,6 +279,10 @@ body.view-in-mfe {
         h2:before {
           content: "📝" "\2004";
         }
+      }
+
+      .final-exam-wrapper {
+        margin-bottom: 1.2rem;
       }
 
       .problem {
