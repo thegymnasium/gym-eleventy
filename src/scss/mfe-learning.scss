@@ -1235,14 +1235,21 @@ div.d-flex.ml-auto {
     font-weight: 900;
     font-size: 2rem;
     line-height: 1.15;
+
+    + p:not(:only-of-type) {
+      font-weight: bold;
+    }
   }
 
   p {
     font-size: 1.125rem;
     line-height: 1.5;
+  }
 
-    + :only-of-type {
-      margin-top: 1.2rem;
+  .survey {
+
+    p + :only-of-type {
+      margin-top: 1.4rem;
     }
   }
 
