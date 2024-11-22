@@ -376,4 +376,30 @@ body.view-in-mfe {
     }
   }
 
+  #homework-materials {
+    font-family: var(--font-family-default);
+
+    h2 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      white-space: nowrap;
+      padding: 0;
+      border: 0;
+      margin: -1px;
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+    }
+
+    p,
+    li {
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
 }
