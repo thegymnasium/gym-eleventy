@@ -237,6 +237,39 @@ body.view-in-mfe {
         margin-top: 0.6rem;
       }
 
+      .course-quiz-reminder,
+      .course-exam-instructions {
+        padding: 1.4rem 0;
+        border-top: 1px dashed var(--mono-300);
+        border-bottom: 1px dashed var(--mono-300);
+        margin: 0.6rem 0 2.4rem;
+
+        h2 {
+          font-weight: bold;
+          font-size: 1.75rem;
+        }
+
+        p {
+          font-size: 1.125rem;
+        }
+
+        ul {
+          margin-left: 1.15rem;
+        }
+      }
+
+      .course-quiz-reminder {
+        h2:before {
+          content: "👋" "\2004";
+        }
+      }
+
+      .course-exam-instructions {
+        h2:before {
+          content: "📝" "\2004";
+        }
+      }
+
       .problem {
         font-size: 1.05rem;
 
@@ -306,26 +339,6 @@ body.view-in-mfe {
                 }
               }
             }
-          }
-        }
-
-        .course-quiz-reminder {
-          padding: 1.4rem 0;
-          border-top: 1px dashed var(--mono-300);
-          border-bottom: 1px dashed var(--mono-300);
-          margin: 0.6rem 0 2.4rem;
-
-          h2 {
-            font-weight: bold;
-            font-size: 1.75rem;
-
-            &:before {
-              content: "👋" "\2004";
-            }
-          }
-
-          p {
-            font-size: 1.125rem;
           }
         }
       }
