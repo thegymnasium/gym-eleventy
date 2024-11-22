@@ -1222,3 +1222,24 @@ div.d-flex.ml-auto {
   }
 
 }
+
+// Final Exam message(s)
+
+.final-exam-wrapper {
+  padding: 1.4rem;
+  border: 1px solid var(--mono-700);
+  border-radius: 3px;
+  margin-bottom: 2.4rem;
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+
+}
