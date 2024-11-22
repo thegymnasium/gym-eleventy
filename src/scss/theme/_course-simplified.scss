@@ -167,7 +167,7 @@ section.gradebook-content,
   overflow-wrap: break-word;
   word-wrap: break-word;
   margin: 0 auto;
-  font: -apple-system-body;
+  font: inherit;
 
   &.xblock-student_view-vertical,
   &.xblock-public_view-vertical {
