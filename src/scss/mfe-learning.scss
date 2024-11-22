@@ -1240,6 +1240,10 @@ div.d-flex.ml-auto {
   p {
     font-size: 1.125rem;
     line-height: 1.5;
+
+    + :only-of-type {
+      margin-top: 1.2rem;
+    }
   }
 
 }
