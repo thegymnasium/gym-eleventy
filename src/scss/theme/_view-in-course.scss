@@ -5,6 +5,7 @@
 
 // view-in-course & view-in-mfe are essentially the same thing for our purposes
 body.view-in-mfe {
+  font-family: var(--font-family-default);
 
   .is-hidden {
     display: none;
@@ -381,7 +382,6 @@ body.view-in-mfe {
   }
 
   #homework-materials {
-    font-family: var(--font-family-default);
 
     h2 {
       position: absolute;
