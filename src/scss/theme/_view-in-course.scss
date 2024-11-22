@@ -238,7 +238,7 @@ body.view-in-mfe {
       }
 
       .course-quiz-reminder,
-      .course-exam-instructions {
+      #course-exam-instructions {
         padding: 1.4rem 0;
         border-top: 1px dashed var(--mono-300);
         border-bottom: 1px dashed var(--mono-300);
@@ -259,12 +259,16 @@ body.view-in-mfe {
       }
 
       .course-quiz-reminder {
+        background-color: var(--secondary-100;
+        padding: 1.4rem;
+        border: 1px dashed var(--mono-700);
+
         h2:before {
           content: "👋" "\2004";
         }
       }
 
-      .course-exam-instructions {
+      #course-exam-instructions {
         h2:before {
           content: "📝" "\2004";
         }
