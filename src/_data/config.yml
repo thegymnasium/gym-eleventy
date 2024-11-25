@@ -272,6 +272,16 @@ msg:
         <span aria-label="Waving hand emoji" role="img">👋</span> You discovered a page that doesn’t exist.
       body: |
         <p>Some might call you lost. Others might call you a creative genius.</p><p>Either way, we suggest that you check out our frequently visited pages below:</p>
+      show_links: true
+    error_unknown:
+      heading: 'Oops!'
+      description: |
+        <span aria-label="Waving hand emoji" role="img">👋</span> There was an unexpected error.
+      body: |
+        <p>Try refreshing the page using the button below.</p>
+      footer: |
+        <p>If this issue persists, please reach out to our support team at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+      show_links: false
     links:
     - label: Homepage
       url: GYM_ROOT_URL/
@@ -281,7 +291,8 @@ msg:
       url: GYM_ROOT_URL/courses/gym-shorts/
     - label: Take 5 Tutorials
       url: GYM_ROOT_URL/courses/take5/
-    footer: <p>Need to get in touch? You can email us at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+    footer: |
+      <p>Need to get in touch? You can email us at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
   mfe:
     account:
       deletion: |
