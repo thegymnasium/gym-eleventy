@@ -6,6 +6,10 @@
 // view-in-course & view-in-mfe are essentially the same thing for our purposes
 body.view-in-mfe {
 
+  .is-hidden {
+    display: none;
+  }
+
   // Hide final exam header
   h3.problem-header {
     display: none;
@@ -21,84 +25,39 @@ body.view-in-mfe {
     padding: 0;
   }
 
-  // Quiz/Final Exam Tweaks
-  // ProblemBlockDisplay.scss overrides
+  // green check mark status icon on exam
+  // red ballot x status icon on exam
+  .course-content .problem .choicegroup {
 
-  #main {
-
-    .problems-wrapper {
-      // font-size: 1rem;
+    label[class*="_correct"]:before, section[class*="_correct"]:before,
+    label[class*="_incorrect"]:before, section[class*="_incorrect"]:before {
+      position: absolute;
+      left: -2rem;
+      font-family: var(--font-family-custom);
+      font-weight: 900;
+      font-size: 1.4rem;
+      line-height: 1;
+      margin-top: 0;
     }
 
-    .problem-progress {
-      display: block;
-      font-weight: bold;
-      font-size: 1.125rem;
-      color: var(--mono-900);
-      text-transform: uppercase;
+    label[class*="_correct"]:before, section[class*="_correct"]:before {
+      content: "✔";
+      color: var(--green-400);
     }
 
-    .problem {
-
-      p,
-      > label  {
-        font-size: 1.125rem;
-        line-height: 1.5
-      }
-
-      .course-quiz-reminder {
-        padding: 1.4rem 0;
-        border-top: 1px dashed var(--mono-300);
-        border-bottom: 1px dashed var(--mono-300);
-        margin-bottom: 1.4em;
-
-        h2 {
-          font-weight: bold;
-
-          &:before {
-            content: "👋" "\00a0";
-          }
-
-        }
-
-      }
-
-      fieldset {
-        margin-top: 1.4rem;
-      }
-
+    label[class*="_incorrect"]:before, section[class*="_incorrect"]:before {
+      content: "✘";
+      color: var(--magenta-500);
     }
-
-    .problem-action-btn {
-      max-width: none;
-
-      .show-label {
-        text-transform: capitalize;
-      }
-    }
-
-  }
-
-  // green checkmark status icon on exam
-  .course-content .problem .choicegroup label[class*="_correct"]:before, .course-content .problem .choicegroup section[class*="_correct"]:before {
-    position: absolute;
-    font-family: var(--font-family-custom);
-    font-weight: 900;
-    font-size: 1.4rem;
-    line-height: 1;
-    content: "✔";
-    color: var(--green-400);
-    margin-top: 0;
-    margin-left: rem-calc(-53);
   }
 
   // Explanation box
   .course-content .problem .solution-span > span {
     background: var(--mono-200);
-    padding: 1.8rem;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    margin: -1rem 0 2rem;
+    padding: 1.4rem;
+    border: 1px solid var(--mono-400);
+    border-radius: 3px;
+    margin: 0.6rem 0 2.4rem;
     display: block;
     position: relative;
   }
@@ -118,7 +77,7 @@ body.view-in-mfe {
 
   .course-content .problem .solution-span>span p {
     font-family: var(--font-family-default);
-    font-weight: 900;
+    font-weight: normal;
     font-size: 1rem;
     line-height: 1.5;
     color: #444;
@@ -239,6 +198,7 @@ body.view-in-mfe {
   // post exam submission, failed attempt "graph?"
   .xmodule_display.xmodule_ProblemBlock div.problem .notification {
     float: left;
+    width: 100%;
     margin-top: 10px;
     padding: 8px 10px 4px 10px;
     line-height: 1.5em;
@@ -252,7 +212,7 @@ body.view-in-mfe {
     }
 
     &.general {
-      border-top: 3px solid var(--primary);
+      border-top: 3px solid var(--primary-500);
     }
 
     .notification-message {
@@ -261,4 +221,206 @@ body.view-in-mfe {
       margin-bottom: 8px;
     }
   }
+
+  // Quiz/Final Exam Tweaks
+  // ProblemBlockDisplay.scss overrides
+
+  #main {
+
+    .problems-wrapper {
+      .problem-progress {
+        display: block;
+        font-weight: bold;
+        font-size: 1.125rem;
+        color: var(--mono-900);
+        text-transform: uppercase;
+        margin-top: 0.6rem;
+      }
+
+      .course-quiz-reminder,
+      #course-exam-instructions {
+        padding: 1.4rem 0;
+        border-top: 1px dashed var(--mono-300);
+        border-bottom: 1px dashed var(--mono-300);
+        margin: 0.6rem 0 2.4rem;
+
+        h2 {
+          font-weight: bold;
+          font-size: 1.75rem;
+          line-height: 1.15;
+
+          + ul {
+            margin-top: 1.2rem;
+          }
+        }
+
+        p {
+          font-size: 1.125rem;
+        }
+
+        ul {
+          padding-left: 1.15rem;
+          margin: 0;
+
+          li {
+            margin-top: 0.8rem;
+          }
+        }
+      }
+
+      .course-quiz-reminder {
+        background-color: var(--secondary-100);
+        padding: 1.4rem;
+        border: 1px dashed var(--mono-700);
+        border-radius: 3px;
+
+        h2:before {
+          content: "👋" "\2004";
+        }
+      }
+
+      #course-exam-instructions {
+        h2:before {
+          content: "📝" "\2004";
+        }
+      }
+
+      .problem {
+        font-size: 1.05rem;
+
+        p,
+        legend {
+          line-height: 1.5;
+        }
+
+        p + div {
+          margin-top: 0.6rem;
+          margin-bottom: 0;
+        }
+
+        .solution-span + label,
+        legend + strong {
+          display: inline-block;
+          font-size: 1.05rem;
+          margin-left: 0;
+        }
+
+        .solution-span + * {
+          margin-top: 1.8rem;
+        }
+
+        label + pre {
+          margin-top: 1.2rem;
+          margin-bottom: 1.4rem;
+
+          + p {
+            font-weight: bold;
+          }
+        }
+
+        .choicegroup {
+          fieldset {
+            legend {
+              margin-bottom: 0.6rem;
+            }
+
+            input[type="radio"],
+            input[type="checkbox"] {
+              left: 2rem;
+              top: 0.46rem;
+            }
+
+            label {
+              font-weight: normal;
+              line-height: 1.35;
+
+              div {
+                margin-left: 1.4rem;
+
+                code {
+                  white-space: pre-wrap;
+                }
+
+                + span[class*="status"] {
+                  position: absolute;
+                  width: 1px;
+                  height: 1px;
+                  white-space: nowrap;
+                  padding: 0;
+                  border: 0;
+                  margin: -1px;
+                  clip: rect(0, 0, 0, 0);
+                  overflow: hidden;
+                }
+              }
+            }
+          }
+        }
+
+        .submission-feedback {
+          font-size: 1.05rem;
+          color: var(--mono-900);
+          margin-top: 0;
+        }
+      }
+
+      .problem-action-btn {
+        max-width: none;
+
+        .show-label {
+          text-transform: capitalize;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: var(--mono-900) !important;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  #homework-materials {
+
+    h2 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      white-space: nowrap;
+      padding: 0;
+      border: 0;
+      margin: -1px;
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+
+      + ul {
+        margin-top: 1.2rem;
+      }
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    p,
+    li {
+      font-size: 1.125rem;
+      line-height: 1.5;
+    }
+
+    ul {
+      padding-left: 1.15rem;
+      margin: 0;
+
+      li {
+        margin-top: 0.8rem;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
 }

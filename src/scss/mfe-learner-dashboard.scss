@@ -299,7 +299,13 @@
 
 // Course "Cards"
 .course-card {
-  margin-bottom: 2rem;
+  border: 1px solid var(--mono-400);
+  border-radius: 3px;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 1.4rem;
+  }
 
   > .card {
     flex-direction: row;
@@ -410,7 +416,7 @@
   box-shadow: none;
   padding: 1rem 1.5rem;
   background-color: var(--mono-300);
-  border-color: #bfdbea;
+  // border-color: #bfdbea;
   color: inherit;
   display: flex;
   font-size: 1.05rem;

@@ -38,6 +38,25 @@
     "Liberation Mono", "Courier New", monospace;
 }
 
+// Hide extra Final Exam text
+#courseHome-outline {
+
+  li {
+    .text-body {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      white-space: nowrap;
+      padding: 0;
+      border: 0;
+      margin: -1px;
+      clip: rect(0, 0, 0, 0);
+      overflow: hidden;
+    }
+  }
+
+}
+
 .menu {
   position: relative;
 }
@@ -117,7 +136,6 @@
 .pgn__menu-select .pgn__menu-select-popup {
   position: static;
 }
-
 
 .modal-lti {
   max-width: 100%;
@@ -5724,7 +5742,7 @@ a.pgn__card {
   color: var(--mono-900);
   font-weight: 700;
   text-align: start;
-  
+
 }
 .pgn__card .pgn__card-header .pgn__card-header-title-sm {
   font-size: 1rem;

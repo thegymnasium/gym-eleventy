@@ -510,7 +510,7 @@ header {
     font: 700 1.05rem/1.5 var(--font-family-custom);
 
     &:hover {
-      background-color: var(--mono-600);
+      background-color: var(--primary-600);
       color: var(--mono-100);
     }
 
@@ -518,8 +518,8 @@ header {
       border-color: var(--primary-500);
 
       &:hover {
-        background-color: var(--mono-600);
-        border-color: var(--mono-600);
+        background-color: var(--primary-600);
+        border-color: var(--primary-600);
       }
     }
   }

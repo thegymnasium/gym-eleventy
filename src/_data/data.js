@@ -43,36 +43,30 @@ module.exports = async function() {
       type: "json"
     });
 
-    // const feed = feed1.items.concat(feed2.items);
+    let JOB_FEED_URLS = `{
+      "AU": "https://aquent.com.au/find-work/",
+      "CA": "https://aquent.com/find-work/",
+      "DE": "https://aquent.com/find-work/",
+      "FR": "https://aquent.fr/nos-offres/",
+      "GB": "https://aquent.co.uk/find-work/",
+      "JP": "https://aquent.co.jp/find-work/",
+      "NL": "https://aquent.com/find-work/",
+      "US": "https://aquent.com/find-work/"
+    }`;
 
-    // console.log(markets)
+    // minify JOB_FEED_URLS
+    JOB_FEED_URLS = JSON.stringify(JSON.parse(JOB_FEED_URLS));
 
     return {
-      // live values
-      // JOB_FEED: JOB_FEED,
       GYM_JOB_FEED: GYM_JOB_FEED,
       JOBDATA: {
-        // "jobs": jobs.items,
-        // "jobs2": jobs2.items,
         "locations": job_options.locations,
         "placement_options": job_options.placement_options,
         "preferences": job_options.preferences,
         "roles": job_options.roles,
-        "urls": {
-          "AU": "https://aquent.com.au/find-work/",
-          "CA": "https://aquent.com/find-work/",
-          "DE": "https://aquent.com/find-work/",
-          "FR": "https://aquent.fr/nos-offres/",
-          "GB": "https://aquent.co.uk/find-work/",
-          "JP": "https://aquent.co.jp/find-work/",
-          "NL": "https://aquent.com/find-work/",
-          "US": "https://aquent.com/find-work/",
-        }
+        "urls": JOB_FEED_URLS,
       },
-      // markets: markets.items,
       markets: markets,
-
-      // blog: feed,
     };
   } catch(e) {
     console.warn( "Failed fetching data feeds.", e );

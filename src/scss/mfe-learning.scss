@@ -43,7 +43,7 @@ main {
   @include container;
   // max-width: convert-to-rem(map.get($breakpoints, 'large'));
 
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.4rem;
 }
 
 // Course Header (non-nav version, only appears under "Course" tab)
@@ -746,13 +746,15 @@ div.d-flex.ml-auto {
 }
 
 // the container for the whole course experience, more or less.
+
 .sequence-container {
-  padding: 1rem;
-  background-color: var(--mono-100);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  margin: 0 auto 4rem;
+  background-color: var(--mono-100);
+  padding: 1rem;
+  border: 1px solid var(--mono-400);
+  margin: 0 auto;
 
   @include breakpoint(medium) {
     flex-direction: row;
@@ -1208,4 +1210,46 @@ div.d-flex.ml-auto {
       font-size: rem-calc(18);
     }
   }
+}
+
+// Quiz/Final Exam
+.unit {
+
+  h3 {
+    font-weight: 900;
+    font-size: 2.25rem;
+    line-height: 1.15;
+    text-transform: uppercase;
+  }
+
+}
+
+// Final Exam message(s)
+
+.final-exam-wrapper {
+  padding: 1.4rem;
+  border: 1px solid var(--mono-700);
+  border-radius: 3px;
+  margin-bottom: 2.4rem;
+
+  h2 {
+    font: 900 2rem/1.15 var(--font-family-custom);
+
+    + p:not(:only-of-type) {
+      font-weight: bold;
+    }
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+
+  .survey {
+
+    p + :only-of-type {
+      margin-top: 1.4rem;
+    }
+  }
+
 }

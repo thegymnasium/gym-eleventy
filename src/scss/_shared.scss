@@ -21,6 +21,9 @@
 @use 'base/flex';
 @use 'base/backgrounds';
 
+// Generic Page Styles
+@use 'pages/static';
+
 // Component Includes
 @use 'components/header';
 @use 'components/footer';

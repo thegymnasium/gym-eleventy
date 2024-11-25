@@ -1,4 +1,5 @@
 const fs = require("node:fs");
+const htmlmin = require("html-minifier-terser");
 
 var urlRegex = new RegExp('^(?:[a-z+]+:)?//', 'i');
 
@@ -208,18 +209,14 @@ module.exports = eleventyConfig => {
     return output;
   });
 
-  eleventyConfig.addFilter('minify_html', (input) => {
-    let output;
-
-    if (typeof input === 'object') {
-      output = JSON.stringify(input);
-    }
-
-    // TODO: improve this to eliminate line breaks (/n)
-    output = input.replace(/>\s+|\s+</g, function(m) {
-      return m.trim();
+  eleventyConfig.addAsyncFilter('minify_html', (input) => {
+    let minified = htmlmin.minify(input, {
+      useShortDoctype: true,
+      removeComments: true,
+      collapseWhitespace: true,
     });
-    return output;
+
+    return minified;
   });
 
   eleventyConfig.addFilter('replace_after', (input, find, replace) => {
