@@ -232,7 +232,6 @@ module.exports = function (eleventyConfig) {
   // Set up HTML minification (excludes local dev env)
   const HTMLMIN_CONFIG = {
     useShortDoctype: true,
-    removeComments: process.env.ELEVENTY_ENV === 'development' ? false : true,
     collapseWhitespace: process.env.ELEVENTY_ENV === 'development' ? false : true,
   }
 
