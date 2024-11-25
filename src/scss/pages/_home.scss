@@ -39,18 +39,29 @@
 
 // hero styling (full compiled class name is`.home-hero`)
 article.home-hero {
-  padding-top: rem-calc(44);
-  padding-bottom: rem-calc(68);
+  padding-bottom: rem-calc(56);
+
+  @include breakpoint(large, min) {
+    padding-top: rem-calc(44);
+    padding-bottom: rem-calc(68);
+  }
 
   .container {
+    display: grid;
+    gap: 1.4rem 2rem;
+
     @include breakpoint(large, min) {
-      display: grid;
       grid-template-columns: 1fr 2fr;
-      grid-gap: 2rem;
     }
   }
 
+  .image {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+
   .subhead {
+    font-weight: bold;
     font-size: rem-calc(18);
     color: var(--secondary-500);
     letter-spacing: 0.15ex;
@@ -60,16 +71,38 @@ article.home-hero {
   h1 {
     font-size: rem-calc(40);
     word-spacing: rem-calc(2);
+    text-wrap: pretty;
   }
 
-  p {
-    font-size: rem-calc(16);
-    font-weight: 700;
+  // livestreams-related (guest / time)
+  .guest,
+  & > p {
+    font-size: 1.4em;
+    line-height: 1.45;
+    color: var(--mono-300);
+    text-wrap: pretty;
+    margin-top: 1rem;
+  }
+
+  .guest {
+    font-weight: bold;
+    font-size: 1.05em;
+  }
+
+  .guest,
+  time {
+    color: var(--mono-100)
+  }
+
+  a:visited {
+    border-bottom: inherit;
   }
 
   .cta {
+    margin-top: 2rem;
+
     .btn {
-      border: rem-calc(2) white solid;
+      border: rem-calc(2) solid var(--mono-100);
       font-size: rem-calc(23);
     }
   }
