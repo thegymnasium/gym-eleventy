@@ -1,7 +1,7 @@
 {
   "name": "gym-eleventy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gymnasium v3 frontend static site",
   "engines": {
     "node": ">=18.17.0 <22"
   },
@@ -26,8 +26,10 @@
     "netlify-cli": {
       "follow-redirects": "^1.15.5",
       "word-wrap": "^1.2.5",
-      "braces": ">=3.0.3"
-    }
+      "braces": ">=3.0.3",
+      "cross-spawn": ">=7.0.6"
+    },
+    "cross-spawn": ">=7.0.6"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -39,6 +41,7 @@
     "eleventy-plugin-clean": "github:kentaroi/eleventy-plugin-clean#v1.2.6",
     "eleventy-plugin-rev": "^2.0.0",
     "eleventy-sass": "^2.2.6",
+    "html-minifier-terser": "^7.2.0",
     "js-yaml": "^4.1.0",
     "markdown-it-anchor": "^9.1.0",
     "markdown-it-attrs": "^4.2.0",

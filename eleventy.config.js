@@ -10,6 +10,7 @@ const yaml = require('js-yaml');
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const markdownItAttrs = require("markdown-it-attrs");
+const htmlmin = require("html-minifier-terser");
 
 require('@dotenvx/dotenvx').config({ path: `.env.${process.env.NODE_ENV}` })
 
@@ -227,6 +228,25 @@ module.exports = function (eleventyConfig) {
   });
 
   // eleventyConfig.setQuietMode(true);
+
+  // Set up HTML minification (excludes local dev env)
+  const HTMLMIN_CONFIG = {
+    useShortDoctype: true,
+    removeComments: process.env.ELEVENTY_ENV === 'development' ? false : true,
+    collapseWhitespace: process.env.ELEVENTY_ENV === 'development' ? false : true,
+  }
+
+  // via @https://www.11ty.dev/docs/transforms/#minify-html-output
+  eleventyConfig.addTransform("htmlmin", async function (content) {
+    if (this.page.outputPath.endsWith(".html")) {
+      let minified = htmlmin.minify(content, HTMLMIN_CONFIG);
+
+      return minified;
+    }
+
+    // If not an HTML output, return content as-is
+    return content;
+  });
 
   return {
     htmlTemplateEngine: 'njk',
