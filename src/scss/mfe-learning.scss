@@ -1211,12 +1211,9 @@ div.d-flex.ml-auto {
 }
 
 // Courseware main content
-.container-xl {
-
-  > div:not([class]) {
-    border: 1px solid var(--mono-400);
-  }
-
+.sequence-container {
+  border: 1px solid var(--mono-400);
+  margin-bottom: 1.4rem;
 }
 
 // Quiz/Final Exam
