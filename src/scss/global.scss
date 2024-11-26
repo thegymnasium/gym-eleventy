@@ -3,6 +3,7 @@
 // | -------------------------------------------------------------
 
 @use 'shared';
+@use 'base/visibility';
 @use 'components/webfonts_relative';
 
 // Static-site only (eleventy-specific) components below
@@ -14,5 +15,4 @@
 @use 'pages/course-about';
 @use 'pages/collection';
 @use 'pages/jobs';
-@use 'pages/static';
 @use 'pages/privacy-policy';

@@ -2,7 +2,7 @@ how-gymnasium-works:
   header:
     heading: How Gymnasium Works
     heading_type: h2
-  description: Gymnasium offers free online <a href="/courses/">courses</a> and <a href="/courses/take5/">tutorials</a> on design, development, UX, prototyping, accessibility, and career skills. Whether you want to dive deep or quickly pick up a new skill, <a href="/courses/full/">explore our free courses</a> now.
+  description: Gymnasium offers free online <a href="/courses/">courses</a> and <a href="/courses/take5/">tutorials</a> on design, development, UX, prototyping, accessibility, and career skills. Whether you want to dive deep or pick up a new skill, <a href="/courses/full/">explore our free courses</a> now.
   items:
     - heading: Free Online Courses <span aria-label="Hundred Points emoji" role="img">💯</span>
       description: Learn anytime, anywhere with free <a href="/courses/">courses and tutorials</a> taught by industry experts.
@@ -17,3 +17,8 @@ find-work:
   header:
     heading: Find Work
     heading_type: h2
+  cta:
+    description: Explore job listings, salary guides, and career advice tutorials and articles.
+    href: /jobs/
+    label: Start Your Search
+    class: btn

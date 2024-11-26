@@ -6,7 +6,8 @@
 @use "base/mixins" as *;
 @use "base/fonts" as *;
 
-@use "shared";
+@use 'shared';
+@use 'base/visibility';
 @use 'components/webfonts_absolute';
 
 @use "mfe/root";
@@ -293,12 +294,18 @@
 }
 
 .btn-tertiary {
-  
+
 }
 
 // Course "Cards"
 .course-card {
-  margin-bottom: 2rem;
+  border: 1px solid var(--mono-400);
+  border-radius: 3px;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 1.4rem;
+  }
 
   > .card {
     flex-direction: row;
@@ -311,6 +318,15 @@
     flex-direction: column;
     min-width: 0;
     position: relative;
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.0125ex;
+      word-spacing: 0.25ex;
+    }
   }
 }
 
@@ -360,6 +376,7 @@
     flex-grow: 1;
     text-align: start;
     margin: 1rem 0 1.25rem;
+    visibility: hidden; // Use to display other data, e.g. course topic/type?
   }
 
   &-footer {
@@ -369,9 +386,9 @@
     display: flex;
     width: 100%;
 
-    @include breakpoint(medium, min) {
-      justify-content: flex-end;
-    }
+//     @include breakpoint(medium, min) {
+//       justify-content: flex-end;
+//     }
   }
 }
 
@@ -390,16 +407,20 @@
 .course-card-banners {
 }
 
+.pgn__alert-message-wrapper {
+  align-self: center;
+}
+
 .alert {
   border-radius: 0;
   box-shadow: none;
   padding: 1rem 1.5rem;
   background-color: var(--mono-300);
-  border-color: #bfdbea;
+  // border-color: #bfdbea;
   color: inherit;
   display: flex;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.15rem;
   text-align: start;
 
   .alert-icon {
@@ -420,6 +441,7 @@
   padding: 0;
   width: 2.75rem;
   white-space: nowrap;
+  position: relative;
 
   &.btn-icon-primary {
     background-color: transparent;
@@ -428,7 +450,7 @@
   }
 
   &__icon-container {
-    position: relative;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -472,7 +494,7 @@
   width: 100%;
 }
 
-// Hice sidebar (for now)
+// Hide sidebar (for now)
 .sidebar-column {
   display: none;
 }
@@ -518,7 +540,7 @@
 
     &.active {
       .btn {
-        border: 1px solid var(--primary);
+        border: 1px solid var(--primary-500);
       }
     }
 

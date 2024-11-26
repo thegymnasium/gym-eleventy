@@ -5,45 +5,140 @@
 
 .location-select {
   display: inline-block;
-  padding-right: 1rem;
-  border: 1px solid var(--secondary-500);
-  border-radius: 3px;
+  margin: 0 auto;
 
-  select {
-    all: revert;
-    font-size: 1.05rem;
+  label {
     font-weight: bold;
-    background-color: transparent;
-    padding: 1.2rem;
-    border: 0;
-
-    &,
-    option {
-      line-height: 1.15;
-    }
+    font-size: 1.125rem;
+    line-height: 1.15;
+    margin-right: 0.8rem;
   }
 }
 
-
-.jobs-list li {
+.form-control {
+  all: revert;
+  display: inline-block;
+  font-size: 1.05rem;
   font-weight: bold;
-  padding-top: 1.2rem;
-  border-top: 1px dashed var(--mono-300);
-  margin-top: 1.2rem;
+  color: var(--mono-900);
+  background-color: transparent;
+  border: 0.8rem dashed transparent;
+  border-right-width: 1rem;
+  border-radius: 3px;
+  outline: 2px solid var(--primary-500);
+
+  &:focus {
+    outline: 2px solid var(--primary-500);
+  }
+
+  &,
+  option {
+    line-height: 1.15;
+  }
 }
+
+.jobs-list {
+    display: grid;
+    margin-top: 1.6rem;
+
+    @include breakpoint(medium, min) {
+      grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+      gap: 0 2rem;
+    }
+
+  li {
+    font-size: 1.25rem;
+    padding: 1.2rem 0;
+    border-top: 1px dashed var(--mono-300);
+    border-bottom: 1px dashed var(--mono-300);
+    margin-top: -1px;
+
+    a {
+      display: inline-block;
+      text-decoration: none;
+      margin-bottom: 0.2rem;
+
+      span {
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+
+      .job-title {
+        text-decoration: underline;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+
+        .job-title {
+          text-decoration: none;
+        }
+
+      }
+
+      .job-location {
+        display: block;
+        font-weight: normal;
+        font-size: 1rem;
+        margin-top: 0.125rem;
+      }
+    }
+  }
+
+}
+
+#messages {
+
+  // TODO: combine these with a global `.alert` class?
+  > div {
+    padding: 1.4rem;
+    border: 1px dashed var(--mono-500);
+    border-radius: 3px;
+    margin-top: 1.6rem;
+
+    p {
+      font-size: 1.125rem;
+      margin-top: 0;
+    }
+
+    &[id*="error"] {
+      background-color: var(--secondary-100);
+      border-color: var(--secondary-900);
+
+      p {
+        color: var(--secondary-900);
+      }
+    }
+  }
+
+  + #jobs-container {
+    margin-top: 0;
+  }
+
+}
+
+// home page
 
 .home-find-work {
-  .location-select {
+
+  .form-control {
     background-color: var(--mono-100);
-    margin-top: 1rem;
+    margin-top: 1.4rem;
   }
 
-  .jobs-list li {
-    padding-top: 1rem;
-    margin-top: 1rem;
+  .jobs-list {
+    position: relative;
+    margin-bottom: 2rem;
 
-    &:first-child {
-      border-top: 0;
+    li {
+      border-top-color: var(--mono-500);
+      border-bottom-color: var(--mono-500);
+
+      .job-location {
+        color: var(--mono-300);
+      }
     }
   }
+
 }

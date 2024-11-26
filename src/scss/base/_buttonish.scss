@@ -18,8 +18,8 @@ a, summary {
 }
 
 .btn {
-  background-color: var(--primary);
-  border: rem-calc(3) solid var(--primary);
+  background-color: var(--primary-500);
+  border: rem-calc(3) solid var(--primary-500);
   border-radius: var(--global-button-radius);
   color: var(--mono-100);
   display: inline-flex;
@@ -30,6 +30,7 @@ a, summary {
   padding: rem-calc(16.8);
   text-align: center;
   text-decoration: none;
+  text-transform: capitalize;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 
   &.disabled,
@@ -42,8 +43,8 @@ a, summary {
   &:hover,
   &:focus {
     color: var(--mono-100);
-    background-color: var(--mono-600);
-    border-color: var(--mono-600);
+    background-color: var(--primary-600);
+    border-color: var(--primary-600);
     text-decoration: none;
   }
 
@@ -165,7 +166,7 @@ a, summary {
     &:active,
     &.active {
       background-color: transparent;
-      color: var(--primary);
+      color: var(--primary-500);
       text-decoration: underline;
     }
   }
@@ -175,5 +176,9 @@ a, summary {
     line-height: calc(1.5556em - 2px);
     padding: 0 .25em;
     vertical-align: bottom;
+  }
+
+  &:not(:only-of-type) {
+    margin-right: 0.5rem;
   }
 }

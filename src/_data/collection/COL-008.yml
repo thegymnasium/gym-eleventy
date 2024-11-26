@@ -31,6 +31,7 @@ livestreams:
     class: btn
   gen-ai-livestreams:
     ids:
+    - id: live-0009
     - id: live-0008
     - id: live-0007
     - id: live-0006
@@ -113,7 +114,7 @@ resources:
     - href: https://chatgpt.com/g/g-YMTYaHUGy-merlin-the-job-application-wizard
       label: Merlin GPT
       description: Merlin, the Job Application Wizard, by Feridoon Malekzadeh.
-    - href: https://www.midjourney.com
+    - href: https://www.midjourney.com/home
       label: Midjourney
       description: An AI-powered platform that generates high-quality, unique images based on user-provided text prompts.
     - href: https://www.bing.com/images/create

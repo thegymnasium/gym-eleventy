@@ -9,22 +9,18 @@
 
 
 @use 'shared';
+@use 'theme/visibility';
 @use 'components/webfonts_absolute';
+
 
 @use 'theme/containers';
 
 // Courseware
-@use 'theme/courseware';
+@use 'theme/course-simplified';
+// @use 'theme/courseware';
 
 // Instructor stuff
 @use 'theme/instructor';
 
 @use 'theme/view-in-course';
-
-.gym-theme.view-in-mfe {
-  .content-wrapper,
-  .course-content {
-    padding: 0;
-  }
-}
 

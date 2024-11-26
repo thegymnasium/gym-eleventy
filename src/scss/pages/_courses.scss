@@ -148,7 +148,7 @@
   .topic-label,
   #tutorial-resources h3 {
     font-weight: 900;
-    font-size: 1.55rem;
+    font-size: 1.5rem;
     line-height: 1.15;
     text-transform: uppercase;
     letter-spacing: 0.05ex;
@@ -297,6 +297,7 @@
   }
 
   .note {
+    font-size: 1.125rem;
     background-color: var(--secondary-100); // ultralight orange
     padding: 1.4rem;
     border: 1px dashed var(--mono-700);
@@ -328,7 +329,7 @@
 
     .instructor {
       font-weight: bold;
-      font-size: 1.09375rem;
+      font-size: 1.125rem;
       line-height: 1.4;
       letter-spacing: 0.0125ex;
       margin-top: 1.125rem;
@@ -337,7 +338,7 @@
   }
 
   .description {
-    font-size: 1.09375rem;
+    font-size: 1.125rem;
     letter-spacing: 0.01ex;
   }
 
@@ -346,7 +347,7 @@
   .course-card {
     background-color: var(--mono-100);
     padding: 1.4rem;
-    border: 1px solid var(--mono-300);
+    border: 1px solid var(--mono-400);
     border-radius: 3px;
     margin-top: 1.2rem;
 
@@ -566,7 +567,9 @@
 
       section {
         > h3 {
-          font-size: 1.25rem;
+          font-size: 1.5rem;
+          letter-spacing: 0.0125ex;
+          word-spacing: 0.25ex;
         }
       }
     }
@@ -790,7 +793,7 @@
   .main section h2,
   aside h2 {
     font-weight: 900;
-    font-size: 1.55rem;
+    font-size: 1.5rem;
     line-height: 1.15;
     text-transform: uppercase;
     letter-spacing: 0.05ex;

@@ -216,7 +216,6 @@
   height: 2rem;
   vertical-align: -0.125em;
   width: 2rem;
-  
 }
 
 .spinner-grow-sm {
@@ -231,6 +230,12 @@
   50% {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes spinner-border {
+  to {
+    transform: rotate(1turn);
   }
 }
 

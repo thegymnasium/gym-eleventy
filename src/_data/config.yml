@@ -2,8 +2,8 @@ meta:
   title: Gymnasium
   subtitle: Free online courses on design and development.
   author: Aquent Gymnasium
-  description: Design a career you love with free online courses on design, development, accessibility, prototyping, UX, and career skills.
-  short_description: Design a career you love with free online courses.
+  description: Design a career you love with our free online courses and tutorials on design, development, UX, prototyping, accessibility, and career skills.
+  short_description: Design a career you love with free online courses and tutorials.
   og_img: /img/brand/og/gym-brand-og.png
   twitter_handle: "@AquentGymnasium"
 header:
@@ -189,7 +189,7 @@ footer:
           height: 400
     - title: Awards
       links:
-        - href: https://americanstaffing.net/posts/2020/10/01/asa-honors-best-work-based-learning-programs/
+        - href: https://americanstaffing.net/posts/2024/10/15/workforce-development-with-2024-elevate-awards/
           alt: American Staffing Association Elevete Awards.
           src: asa-elevate-awards.png
           srcset:
@@ -265,6 +265,34 @@ css:
   lms: /css/theme.css
   mfe: /css/mfe.css
 msg:
+  errors:
+    error_404:
+      heading: '404: Page Not Found'
+      description: |
+        <span aria-label="Waving hand emoji" role="img">👋</span> You discovered a page that doesn’t exist.
+      body: |
+        <p>Some might call you lost. Others might call you a creative genius.</p><p>Either way, we suggest that you check out our frequently visited pages below:</p>
+      show_links: true
+    error_unknown:
+      heading: 'Oops!'
+      description: |
+        <span aria-label="Waving hand emoji" role="img">👋</span> There was an unexpected error.
+      body: |
+        <p>Try refreshing the page using the button below.</p>
+      footer: |
+        <p>If this issue persists, please reach out to our support team at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+      show_links: false
+    links:
+    - label: Homepage
+      url: GYM_ROOT_URL/
+    - label: Full Courses
+      url: GYM_ROOT_URL/courses/full/
+    - label: Gym Shorts
+      url: GYM_ROOT_URL/courses/gym-shorts/
+    - label: Take 5 Tutorials
+      url: GYM_ROOT_URL/courses/take5/
+    footer: |
+      <p>Need to get in touch? You can email us at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
   mfe:
     account:
       deletion: |
@@ -282,41 +310,17 @@ msg:
         audience: This Course is For
         instructor: Meet the Instructor
   learning:
-    exam_success_short_course: |
-      <h2>You did it! 🎉</h2>
-      <p>Congratulations on passing the final exam!</p>
-      <p>Now you can show off your achievement by sharing your badge on social media. You can always access your badge from the <a href="/dashboard">Dashboard</a>.</p>
-      <div class="survey">
-        <p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses.</p>
-        <a class="gym-button gym-button-secondary" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
-      </div>
-    exam_success_full_course: |
-      <h2>You did it! 🎉</h2>
-      <p>Congratulations on passing the final exam.</p>
-      <p>Now you can show off your achievement by sharing your certificate on social media. You can always access your certificate from the <a href="/dashboard">Dashboard</a>.</p>
-      <div class="survey">
-        <p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p>
-        <a class="gym-button gym-button-secondary" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a>
-      </div>
-    exam_first_attempt_short_course: |
-      <h2>You’re Close!</h2>
-      <p>You've scored <span class="exam-score-container"></span> on the exam. (To pass, you need to score greater than 80%.) The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
-    exam_first_attempt_full_course: |
-      <h2>You’re close!</h2>
-      <p>You've scored <span class="exam-score-container"></span> on the exam. (To pass, you need to score greater than 85%.) The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
+    exam_success: |
+      <h2>You did it! 🎉</h2><p>Congratulations on passing the final exam!</p><p>Now you can share your achievement on social media. You can always access your credential from the <a href="GYM_LMS_URL/dashboard">Dashboard</a>.</p><div class="survey"><p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses.</p><a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a></div>
+    exam_failed_attempt: |
+      <h2>You’re Close!</h2><p>You didn't score high enough on the exam. The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
     exam_failure: |
-      <h2>Darn.</h2>
-      <p>The bad news is that you didn’t pass the exam. But the good news is that we have plenty of other free courses.</p>
-      <div class="survey">
-        <p>In the meantime, please take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p>
-        <a class="gym-button gym-button-primary" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">
-          Take Survey
-        </a>
-      </div>
+      <h2>Darn.</h2><p>The bad news is that you didn’t pass the exam. But the good news is that we have plenty of other free courses.</p><div class="survey"><p>In the meantime, please take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p><a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a></div>
   theme:
     custom: "<p>This is an example of a custom message for anywhere in the theme.</p>"
 html:
   footer: FOOTER_HTML
+  error_404: 404_HTML
 bios: BIOS_DATA
 courses: COURSES_DATA
 # TODO: consider refactoring to support global path definitions

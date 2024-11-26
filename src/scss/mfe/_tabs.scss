@@ -6,9 +6,9 @@
 $color_1: #454545;
 $color_2: #adadad;
 $color_3: var(--mono-100);
-$color_4: var(--primary);
+$color_4: var(--primary-500);
 $background-color_1: #e9e6e4;
-$background-color_2: var(--primary);
+$background-color_2: var(--primary-500);
 $background-color_3: #939f97;
 $background-color_4: var(--mono-100);
 $background-color_5: var(--mono-1000);
@@ -16,7 +16,7 @@ $background-color_6: #8598aa;
 $border-color_1: #0000 #0000 #e9e6e4;
 $border-color_2: var(--mono-100);
 $border-color_3: #939f97;
-$border-color_4: var(--primary);
+$border-color_4: var(--primary-500);
 $border-color_5: var(--mono-1000);
 
 .nav {
@@ -44,7 +44,7 @@ $border-color_5: var(--mono-1000);
       position: relative;
       z-index: 200;
       &:before {
-        border: 2px solid var(--primary);
+        border: 2px solid var(--primary-500);
         border-radius: 0;
         bottom: -4px;
         content: "";
@@ -70,7 +70,7 @@ $border-color_5: var(--mono-1000);
   .nav-item.show {
     .nav-link {
       background-color: $background-color_5;
-      border-bottom: 2px solid var(--primary);
+      border-bottom: 2px solid var(--primary-500);
       color: $color_4;
       &:hover {
         background-color: $background-color_1;
@@ -80,7 +80,7 @@ $border-color_5: var(--mono-1000);
         position: relative;
         z-index: 200;
         &:before {
-          border: 2px solid var(--primary);
+          border: 2px solid var(--primary-500);
           border-radius: 0;
           bottom: -4px;
           content: "";
@@ -94,7 +94,7 @@ $border-color_5: var(--mono-1000);
   }
   .nav-link.active {
     background-color: $background-color_5;
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary-500);
     color: $color_4;
     &:hover {
       background-color: $background-color_1;
@@ -104,7 +104,7 @@ $border-color_5: var(--mono-1000);
       position: relative;
       z-index: 200;
       &:before {
-        border: 2px solid var(--primary);
+        border: 2px solid var(--primary-500);
         border-radius: 0;
         bottom: -4px;
         content: "";
@@ -148,7 +148,7 @@ $border-color_5: var(--mono-1000);
       position: relative;
       z-index: 200;
       &:before {
-        border: 2px solid var(--primary);
+        border: 2px solid var(--primary-500);
         border-radius: 0.375rem;
         bottom: -4px;
         content: "";
@@ -172,7 +172,7 @@ $border-color_5: var(--mono-1000);
           position: relative;
           z-index: 200;
           &:before {
-            border: 2px solid var(--primary);
+            border: 2px solid var(--primary-500);
             border-radius: 0.375rem;
             bottom: -4px;
             content: "";
@@ -194,7 +194,7 @@ $border-color_5: var(--mono-1000);
       position: relative;
       z-index: 200;
       &:before {
-        border: 2px solid var(--primary);
+        border: 2px solid var(--primary-500);
         border-radius: 0.375rem;
         bottom: -4px;
         content: "";

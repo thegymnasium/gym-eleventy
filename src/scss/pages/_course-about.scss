@@ -13,6 +13,7 @@
 
 // TODO: remove after refactoring the main element padding thing, etc
 .course-about main {
+  background-color: var(--mono-100);
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -89,7 +90,8 @@
   h1 {
     font-size: 2.25rem;
     line-height: 1.15;
-    letter-spacing: .05ex;
+    letter-spacing: 0.05ex;
+    word-spacing: 0.25ex;
     text-wrap: balance;
   }
 }

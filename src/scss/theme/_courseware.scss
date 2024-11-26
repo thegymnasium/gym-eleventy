@@ -5,7 +5,7 @@
 
 // Staff action menu
 .wrapper-preview-menu {
-  background-color: var(--primary);
+  background-color: var(--primary-500);
 }
 
 .preview-menu {
@@ -59,40 +59,6 @@
   }
 }
 
-
-// Course tabs
-.tabs,
-.course-tabs {
-  padding: 1rem 0;
-  font-weight: normal;
-
-  li {
-    display: inline-block;
-    list-style: none;
-  }
-  a {
-    padding: 0;
-    margin-right: 1rem;
-    text-transform: uppercase;
-    color: currentColor;
-    cursor: pointer;
-    display: block;
-    line-height: 1;
-    font-family: var(--font-family-custom);
-    font-size: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom: 1px solid currentColor;
-
-    &:hover,
-    &:focus,
-    &.active {
-      border-bottom-width: 2px;
-      margin-bottom: -2px;
-    }
-  }
-}
-
 // self explanatory
 .instructor-dashboard-wrapper-2,
 .page-content-container {
@@ -128,14 +94,14 @@
 .view-in-mfe {
 
   // Hide final exam header
-  h3.problem-header {
-    display: none;
-  }
+  // h3.problem-header {
+  //   display: none;
+  // }
 
   // Hide final exam score
-  .xmodule_display.xmodule_ProblemBlock .problem-progress {
-    display: none;
-  }
+  // .xmodule_display.xmodule_ProblemBlock .problem-progress {
+  //   display: none;
+  // }
 
   // Exam component styling. TODO: populate with style fixes for exam
   .problem {
@@ -182,7 +148,7 @@
     }
 
     .submission-feedback {
-      
+
     }
   }
 
