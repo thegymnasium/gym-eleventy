@@ -36,16 +36,19 @@
         }
       }
     }
+  }
 
-    // --- sections ---
+  // --- sections ---
 
-    .course-card {
-      background-repeat: no-repeat;
+  .course-card {
+    background-repeat: no-repeat;
 
-      .description {
-        max-width: 28.5rem;
-      }
+    .description {
+      max-width: 28.5rem;
     }
+  }
+
+  @include breakpoint(large, min) {
 
     #everyone,
     #product-managers {
@@ -59,7 +62,7 @@
 
     #designers,
     #developers {
-      background-position: right 5rem top 4.75rem;
+      background-position: right 4rem top 4.75rem;
       background-size: 16%;
     }
 
