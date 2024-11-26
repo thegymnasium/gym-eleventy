@@ -11,6 +11,7 @@
 
   main {
     padding-top: 0;
+    overflow-x: hidden;
 
     .courses {
       margin-top: 1.4rem;
@@ -24,12 +25,27 @@
     margin: 0;
   }
 
-  .header .intro-about {
-    background-color: var(--mono-400);
-    --box-shadow-color: var(--mono-400);
-    margin-bottom: 8rem;
+  .header {
+    position: relative;
 
-    @include full-bleed;
+      &:before {
+      display: block;
+      position: absolute;
+      top: 0;
+      content: "";
+      width: 100vw;
+      height: calc(100% - 1px);
+      background-color: var(--mono-400);
+      border-bottom: 1px dashed var(--mono-500);
+      margin-left: calc(50% - 50vw - 0.6rem);
+      z-index: 0;
+    }
+
+    .intro-about {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 8rem;
+    }
   }
 
   @include breakpoint(large, min) {
@@ -55,8 +71,8 @@
 
     #everyone,
     #product-managers {
-      background-position: right 4rem;
-      background-size: 23.75%;
+      background-position: right 6rem;
+      background-size: 22%;
     }
 
     #everyone {
