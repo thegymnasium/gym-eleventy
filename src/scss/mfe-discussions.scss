@@ -586,6 +586,13 @@ code {
   }
 }
 
+[data-testid="add-response"] {
+  font-weight: bold;
+  font-size: 1.05rem;
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+}
+
 // Really messy way to ensure the avatar icon maintains aspect ratio
 .pgn__avatar {
   height: auto !important;
