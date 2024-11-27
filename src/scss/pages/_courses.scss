@@ -178,7 +178,7 @@
     @supports (position: sticky) {
 
       @include breakpoint(large, min) {
-        & div {
+        > div:not([class]) {
           position: sticky;
           top: 1.6rem;
         }
@@ -652,8 +652,13 @@
 
     #tutorial-resources {
       grid-area: resources;
-      position: sticky;
-      top: 1.4em;
+
+      @supports (position: sticky) {
+        > div:not([class]) {
+          position: sticky;
+          top: 1.4em;
+        }
+      }
     }
 
     #tutorial-transcript {
@@ -689,11 +694,11 @@
   #tutorial-resources {
     scroll-margin-top: 1.4rem;
 
-    > div {
+    div[class] {
       padding-top: 1rem;
       border-top: 1px dashed var(--mono-400);
 
-      + div {
+      + div[class] {
         margin-top: 1.4rem;
       }
     }
