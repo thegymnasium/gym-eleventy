@@ -44,7 +44,7 @@
     }
   }
 
-  @include breakpoint(large, min) {
+  @include breakpoint(medium, min) {
     & {
       display: grid;
       grid-auto-flow: column;
@@ -389,17 +389,29 @@
         }
       }
 
-      @include breakpoint(large, min) {
+      @include breakpoint(medium, min) {
         & {
           display: grid;
-          grid-template-columns: 3fr 5fr;
+          grid-template-columns: 4fr 4fr;
           grid-template-rows: min-content auto;
+          grid-template-areas:
+            "art header"
+            "art cta"
+            "aside aside"
+            "info info";
+          gap: 0 1.4rem;
+          align-items: start;
+        }
+      }
+
+      @include breakpoint(large, min) {
+        & {
+          grid-template-columns: 3fr 5fr;
           grid-template-areas:
             "art  header"
             "art  cta"
             "aside aside"
             "info info";
-          gap: 0 1.4rem;
         }
 
         > a[href*="about"] {
@@ -471,7 +483,9 @@
   // back to (footer)
 
   .back-to {
-    margin-top: 0.825rem;
+    padding-top: 1.2rem;
+    border-top: 1px dashed var(--mono-400);
+    margin-top: 1.4rem;
   }
 
   // Take 5 (tutorials)
