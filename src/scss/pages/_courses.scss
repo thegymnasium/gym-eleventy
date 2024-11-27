@@ -173,6 +173,11 @@
           padding: 0.8rem 1rem;
         }
       }
+
+      @include breakpoint(large, max) {
+        columns: 2 12rem;
+        gap: 1.4rem;
+      }
     }
 
     @supports (position: sticky) {
@@ -434,7 +439,7 @@
       border-top: 1px dashed var(--mono-400);
       margin-top: 1.4rem;
 
-      &.list-summary {
+      .list-summary {
         justify-content: start;
 
         dl {
