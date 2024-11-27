@@ -563,6 +563,10 @@ code {
 .post-card-comment {
   outline: none;
 
+  *:not(.btn):not(.btn *) {
+    color: inerhit;
+  }
+
   &:not(:hover),
   &:not(:focus) {
     .hover-card {
