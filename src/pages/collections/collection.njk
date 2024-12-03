@@ -7,10 +7,16 @@
     alias: "item",
     resolve: "values",
     before: function(data) {
-      const items = data.filter(x => !x.exclude);
+      const items = data.filter(x => !x.meta.exclude);
       return items;
     },
-    addAllPagesToCollections: true,
+    addAllPagesToCollections: function(data) {
+      if (data.item.meta.redirectFrom !== 'undefined' || data.item.meta.redirect !== null) {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
   permalink: "/{{ item.meta.title | slugify }}/",
   nav: {
