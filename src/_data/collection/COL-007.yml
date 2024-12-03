@@ -19,7 +19,7 @@ header:
   heading_id: # default is null
   heading: Career Skills
   description: |
-    <p>Explore our free career skills collection of <a href="#courses"><b>courses</b></a>, <a href="#tutorials"><b>tutorials</b></a>, and <a href="#articles"><b>articles</b></a>. See <a href="/jobs"><b>jobs</b></a> for Aquent’s salary guides.</p>
+    <p>Explore our free career skills collection of <a href="#courses"><b>courses</b></a>, <a href="#tutorials"><b>tutorials</b></a>, and <a href="#articles"><b>articles</b></a>. See <a href="/jobs/"><b>jobs</b></a> for Aquent’s salary guides.</p>
 
 courses:
   module: lists/image-course
