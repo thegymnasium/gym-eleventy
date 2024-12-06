@@ -563,6 +563,10 @@ code {
 .post-card-comment {
   outline: none;
 
+  *:not(.btn):not(.btn *) {
+    color: inherit;
+  }
+
   &:not(:hover),
   &:not(:focus) {
     .hover-card {
@@ -580,6 +584,15 @@ code {
   .pgn__avatar {
     flex-shrink: 0;
   }
+}
+
+[data-testid="add-response"] {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--mono-100);
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+  border-radius: var(--global-button-radius);
 }
 
 // Really messy way to ensure the avatar icon maintains aspect ratio
