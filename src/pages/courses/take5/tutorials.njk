@@ -32,6 +32,14 @@
         const bool = data.item.sitemapExclude ? data.item.sitemapExclude : false;
         return bool;
       },
+      css: function(data) {
+        const item = data.item.enable_syntax_highlighting ? "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css" : false;
+        return item;
+      },
+      js: function(data) {
+        const item = data.item.enable_syntax_highlighting ? "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" : false;
+        return item;
+      },
     },
   },
 }
