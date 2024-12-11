@@ -1,11 +1,30 @@
 <script type="module" src="{{ '/js/gym.js' | cachebust }}"></script>
+{#- Adds per-page js support -#}
+{%- if meta.js -%}
+  {%- if meta.js | is_object -%}
+    {%- for item in meta.js -%}
+      {%- set link = item.link -%}
+      {%- if item.cachebust -%}
+        {%- set link = item.link | cachebust -%}
+      {%- endif -%}
+      {%- set attr = '' -%}
+      {%- if item.attr -%}
+        {%- set attr = item.attr | safe -%}
+      {%- endif -%}
+      <script {{ attr }} src="{{ link }}"></script>
+    {%- endfor -%}
+  {%- else -%}
+  <script async src="{{ meta.js | cachebust }}"></script>
+  {%- endif -%}
+{%- endif %}
+{#- Add Intercom Script -#}
 {%- if env.INTERCOM_APP_ID -%}
 {%- set auth %}
 <script>
 const getCookieValue = (name) => (
   document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
 );
-{# Note: the openedx user info cookie is encoded in a weird way, and we have to double decode it to get useable values. Perhaps there's a better way of handling this. #}
+{#- Note: the openedx user info cookie is encoded in a weird way, and we have to double decode it to get useable values. Perhaps there's a better way of handling this. -#}
 const userInfo = JSON.parse(getCookieValue('edx-user-info').replace(/\\054/g, ','));
 const decodedUserInfo = JSON.parse(userInfo);
 
@@ -45,6 +64,7 @@ window.intercomSettings = {
 {%- endif -%}
 {#- End OneTrust Cookies Consent Notice -#}
 
+{#- Add GA4 -#}
 {%- if env.GOOGLE_ANALYTICS_4_ID -%}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ env.GOOGLE_ANALYTICS_4_ID }}"></script>
