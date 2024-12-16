@@ -23750,116 +23750,7 @@ select.form-control {
 .pgn__overflow-scroll-overflow-container {
   --pgn-overflow-scroll-opacity-mask-transparent: rgba(0, 0, 0, 0.4);
 }
-.pgn__searchfield {
-  border: 0.0625rem solid #707070;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.pgn__searchfield .pgn__searchfield-form {
-  align-items: center;
-  background-color: var(--mono-100);
-  display: flex;
-  width: 100%;
-}
-.pgn__searchfield .btn:focus-visible {
-  outline: none;
-  position: relative;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-.pgn__searchfield .btn:focus-visible:after {
-  border: 0.3125rem double #000;
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-.pgn__searchfield.disabled,
-.pgn__searchfield:disabled {
-  opacity: 0.3;
-  pointer-events: none;
-}
-.pgn__searchfield.has-focus:not(.pgn__searchfield--external) {
-  position: relative;
-}
-.pgn__searchfield.has-focus:not(.pgn__searchfield--external):after {
-  border: 0.3125rem double #000;
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-.pgn__searchfield.has-focus:not(.pgn__searchfield--external)
-  .pgn__searchfield_wrapper {
-  box-shadow: 0 0 0 0.0625rem #000;
-}
-.pgn__searchfield:active,
-.pgn__searchfield:hover {
-  border-color: #000;
-}
-.pgn__searchfield .form-control {
-  border: none;
-  border-radius: 0;
-  height: calc(1.3333em + 1.125rem);
-}
-.pgn__searchfield .form-control:focus {
-  box-shadow: none;
-}
-.pgn__searchfield .form-control::-ms-clear,
-.pgn__searchfield .form-control::-ms-reveal {
-  display: none;
-  height: 0;
-  width: 0;
-}
-.pgn__searchfield .form-control::-webkit-search-cancel-button,
-.pgn__searchfield .form-control::-webkit-search-decoration,
-.pgn__searchfield .form-control::-webkit-search-results-button,
-.pgn__searchfield .form-control::-webkit-search-results-decoration {
-  display: none;
-}
-.pgn__searchfield .form-control .form-control:active,
-.pgn__searchfield .form-control .form-control:focus,
-.pgn__searchfield .form-control .form-control:hover {
-  border: none;
-}
-.pgn__searchfield label.has-label-text {
-  padding-inline-start: 0.75rem;
-}
-.pgn__searchfield.pgn__searchfield--external {
-  border: none;
-}
-.pgn__searchfield.pgn__searchfield--external.has-focus {
-  box-shadow: none;
-}
-.pgn__searchfield.pgn__searchfield--external.has-focus
-  .pgn__searchfield_wrapper {
-  position: relative;
-}
-.pgn__searchfield.pgn__searchfield--external.has-focus
-  .pgn__searchfield_wrapper:after {
-  border: 0.3125rem double #000;
-  content: "";
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-.pgn__searchfield .pgn__searchfield_wrapper {
-  align-items: center;
-  border: 0.0625rem solid #707070;
-  display: flex;
-  width: 100%;
-}
-.pgn__searchfield .pgn__searchfield_wrapper:active,
-.pgn__searchfield .pgn__searchfield_wrapper:hover {
-  border-color: #000;
-}
-.pgn__searchfield__button.btn[type="submit"] {
-  border-radius: 0;
-  margin-inline-start: 0.5rem;
-}
-.pgn__searchfield__iconbutton-reset,
-.pgn__searchfield__iconbutton-submit {
-  flex-shrink: 0;
-  margin-inline-end: 0.25rem;
-}
+
 .pgn__scrollable-body {
   display: flex;
   flex-direction: column;
@@ -23879,9 +23770,6 @@ select.form-control {
 [dir="ltr"] .pgn__scrollable-body:before {
   box-shadow: 5px 0 7px 2px rgba(0, 0, 0, 0.55);
 }
-[dir="rtl"] .pgn__scrollable-body:before {
-  box-shadow: -5px 0 7px 2px rgba(0, 0, 0, 0.55);
-}
 .pgn__scrollable-body:after {
   background-color: rgba(0, 0, 0, 0);
   bottom: -2px;
@@ -23893,9 +23781,6 @@ select.form-control {
 }
 [dir="ltr"] .pgn__scrollable-body:after {
   box-shadow: 5px 0 7px 2px rgba(0, 0, 0, 0.55);
-}
-[dir="rtl"] .pgn__scrollable-body:after {
-  box-shadow: -5px 0 7px 2px rgba(0, 0, 0, 0.55);
 }
 .pgn__scrollable-body.pgn__scrollable-body-scroll-bottom:before {
   opacity: 0.5;
@@ -23933,9 +23818,6 @@ select.form-control {
 }
 [dir="ltr"] .pgn__sheet-skrim {
   left: 0;
-}
-[dir="rtl"] .pgn__sheet-skrim {
-  right: 0;
 }
 .pgn__sheet-skrim.hidden {
   display: none;

@@ -2430,6 +2430,7 @@ textarea.form-control {
 }
 .forgot-password--button {
   min-width: 6rem;
+  margin-top: 1.4rem;
   margin-right: 1rem;
 }
 .login-button-width {
@@ -2631,6 +2632,15 @@ textarea.form-control {
   color: $color_12;
 }
 #forget-password-form {
+  h2 {
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    letter-spacing: 0.05ex;
+    word-spacing: 0.25ex;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
   p.small {
     margin-top: 2rem;
   }
