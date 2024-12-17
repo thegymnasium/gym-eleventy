@@ -987,7 +987,11 @@ div.d-flex.ml-auto {
   }
 }
 
-// Alert stuff (copied from learning_original)
+// Alert Stuff
+.alert-wrapper {
+  margin-top: 1rem;
+}
+
 .alert {
   background-color: var(--mono-100);
   border: rem-calc(1) solid var(--mono-300);
@@ -997,32 +1001,33 @@ div.d-flex.ml-auto {
   margin-bottom: 1rem;
   padding: 1.4rem;
   position: relative;
-}
-// Theoretically, the last div in the alert that pops up when a user isn't enrolled (could be any alert in that section TBH
-.alert .alert-message-content > :last-child {
-  margin-bottom: 0;
-  // font-size: 1rem;
-  line-height: 1;
 
-  // Theoretically, the "Enroll Now" button in the alert that pops up
-  button {
-    // font: 700 1.25rem/1 var(--font-family-custom);
-    // padding: 1.05rem;
-    margin-top: 1.4rem;
-    margin-inline-end: 0.33rem;
+  // Hypothetically, the last div in the alert that pops up when a user isn't enrolled (could be any alert in that section TBH
+  .alert-message-content > :last-child {
+    margin-bottom: 0;
+    // font-size: 1rem;
+    line-height: 1;
+  
+    // Hypothetically, the "Enroll Now" button in the alert that pops up
+    button {
+      // font: 700 1.25rem/1 var(--font-family-custom);
+      // padding: 1.05rem;
+      margin-top: 1.4rem;
+      margin-inline-end: 0.33rem;
+    }
+  }
+
+  .alert-icon {
+    flex-shrink: 0;
+    float: left;
+    height: 1.5rem;
+    margin-inline-end: 0.8rem;
+    width: 1.5rem;
   }
 }
 
-.alert .alert-icon {
-  flex-shrink: 0;
-  float: left;
-  height: 1.5rem;
-  margin-inline-end: 0.8rem;
-  width: 1.5rem;
-}
-
 .alert-heading {
-  color: #000;
+  color: var(--mono-900);
   display: flex;
 }
 
