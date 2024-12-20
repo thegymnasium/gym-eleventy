@@ -26,6 +26,7 @@ jobs:
       # NOTE: `since_last_remote_commit: true` is implied by default and falls back to the previous local commit.
 
       - name: List all changed files
+        id: list-files
         env:
           ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
         run: |
@@ -34,13 +35,18 @@ jobs:
           done
       
       - name: Reset api/dev branch
+        id: reset-branch
         run: |
           git fetch origin api/dev:api/dev
           git reset --hard api/dev
 
       - name: Create Pull Request
+        id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
+          commit-message: [create-pull-request] automated change to update api/dev
+          title: update api/dev
+          body: Update update api/dev to reflect latest changes
           draft: true
           add-paths: |
             .github/workflows/**
@@ -48,9 +54,6 @@ jobs:
             src/_data/**.yml
             src/pages/api/**.njk
             src/_includes/modules/api-config.njk
-          commit-message: [create-pull-request] automated change to update api/dev
-          title: update api/dev
-          body: Update update api/dev to reflect latest changes
           branch: auto/api/dev
           base: api/dev
 
