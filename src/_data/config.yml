@@ -336,3 +336,5 @@ paths:
       icons: /img/footer/icons/
       logos: /img/footer/logos/
 markets: MARKETS_STATIC
+test:
+  a: hello world
