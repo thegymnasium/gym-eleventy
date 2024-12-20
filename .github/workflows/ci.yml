@@ -44,7 +44,7 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v7.0.5
         with:
-          commit-message: [create-pull-request] automated change to update api/dev
+          commit-message: automated change to update api/dev
           title: update api/dev
           body: Update update api/dev to reflect latest changes
           draft: true
