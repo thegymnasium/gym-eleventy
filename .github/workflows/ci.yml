@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.2.2
         with:
-          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+          fetch-depth: 10  # OR "2" -> To retrieve the preceding commit.
 
       - name: Get changed files
         id: changed-files
@@ -32,6 +32,17 @@ jobs:
           for file in ${ALL_CHANGED_FILES}; do
             echo "$file was changed"
           done
+      
+      - name: Reset api/dev branch
+        run: |
+          git fetch origin api/dev:api/dev
+          git reset --hard api/dev
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/api/dev
+
 
   # create_pr:
   #   runs-on: ubuntu-latest
