@@ -20,30 +20,20 @@ jobs:
         with:
           fetch-depth: 10  # OR "2" -> To retrieve the preceding commit.
           ref: ${{ github.head_ref }}
+          sparse-checkout: |
+            .github/workflows/**
+            src/_data/**.js
+            src/_data/**.yml
+            src/pages/api/**.njk
+            /src/_includes/modules/api-config.njk
+          sparse-checkout-cone-mode: false
 
-      - name: Reset api/dev branch
-        id: reset-branch
-        run: |
-          git fetch origin api/dev:api/dev
-          git reset --hard api/dev
-          git checkout api/dev
-
-      - name: Create Pull Request
-        id: cpr
-        uses: peter-evans/create-pull-request@v7.0.5
-        with:
-          commit-message: automated change to update api/dev
-          title: update api/dev
-          body: Update update api/dev to reflect latest changes
-          draft: true
-          add-paths: |
-            .github/workflows/*
-            src/_data/*.js
-            src/_data/*.yml
-            src/pages/api/*.njk
-            src/_includes/modules/api-config.njk
-          branch: auto/api/dev
-          base: api/dev
+      - name: Create PR
+        uses: Poorva17/create-pr-action@v2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_BRANCH: dev/test/api
+          BASE_BRANCH: api/dev
 
 
   # create_pr:
