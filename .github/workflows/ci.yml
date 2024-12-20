@@ -3,7 +3,7 @@ name: Changed Data Files - Develop
 on:
   push:
     branches:
-      - develop
+      - dev/test/api
     paths:
       - '.github/workflows/**'
       - 'src/_data/**.js'
