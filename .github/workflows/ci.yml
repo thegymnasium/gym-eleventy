@@ -49,10 +49,10 @@ jobs:
           body: Update update api/dev to reflect latest changes
           draft: true
           add-paths: |
-            .github/workflows/**
-            src/_data/**.js
-            src/_data/**.yml
-            src/pages/api/**.njk
+            .github/workflows/*
+            src/_data/*.js
+            src/_data/*.yml
+            src/pages/api/*.njk
             src/_includes/modules/api-config.njk
           branch: auto/api/dev
           base: api/dev
