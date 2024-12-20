@@ -14,10 +14,11 @@ on:
 jobs:
   changed_files:
     runs-on: ubuntu-latest  # windows-latest || macos-latest
-    name: List changed files
+    name: Automatic PR
     steps:
       - uses: actions/checkout@v4.2.2
         with:
+          ref: dev/test/api
           fetch-depth: 10  # OR "2" -> To retrieve the preceding commit.
 
       - name: Get changed files
@@ -41,7 +42,11 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v7
         with:
+          commit-message: update api/dev
+          title: update api/dev
+          body: Update update api/devg to reflect latest changes
           branch: auto/api/dev
+          base: api/dev
 
 
   # create_pr:
