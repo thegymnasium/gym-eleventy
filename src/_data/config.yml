@@ -338,3 +338,4 @@ paths:
 markets: MARKETS_STATIC
 test:
   a: hello world
+  b: hello mars
