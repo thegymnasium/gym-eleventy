@@ -26,6 +26,7 @@ jobs:
         run: |
           git fetch origin api/dev:api/dev
           git reset --hard api/dev
+          git checkout api/dev
 
       - name: Create Pull Request
         id: cpr
