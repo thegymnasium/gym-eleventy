@@ -27,15 +27,10 @@ jobs:
           git fetch origin api/dev:api/dev
           git reset --hard api/dev
 
-      - name: checkout branch?
-        run: |
-          git checkout dev/test/api
-
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7.0.5
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
           commit-message: automated change to update api/dev
           title: update api/dev
           body: Update update api/dev to reflect latest changes
