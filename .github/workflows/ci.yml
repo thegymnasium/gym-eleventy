@@ -29,12 +29,24 @@ jobs:
             src/pages/api/**.njk
             /src/_includes/modules/api-config.njk
           sparse-checkout-cone-mode: false
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        # NOTE: `since_last_remote_commit: true` is implied by default and falls back to the previous local commit.
+      - name: List all changed files
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          for file in ${ALL_CHANGED_FILES}; do
+            echo "$file was changed"
+          done
+
       - name: set datestamp
         id: datestamp
         run: |
-          echo "datestamp=$(git log -1 --format=%cd --date=format:%Y-%m-%dh%H%M%S)" >> $GITHUB_OUTPUT
+          echo "datestamp=$(git log -1 --format=%cd --date=format:%Y-%m-%d-%H%M%S)" >> $GITHUB_OUTPUT
       - name: create pull request
-        run: gh pr create -B api/dev -H dev/test/api --title "[Auto PR] - ${{ steps.datestamp.outputs.datestamp }} Merge dev/test/api into api/dev" --body "Automated PR Created by Github action" --draft --label "automation" --reviewer "rediris"
+        run: gh pr create -B api/dev -H dev/test/api --title "[Auto PR] - ${{ steps.datestamp.outputs.datestamp }} Merge dev/test/api into api/dev" --body "Automated PR Created by Github action" --draft --label "automation" --reviewer "rediris" --dry-run
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
