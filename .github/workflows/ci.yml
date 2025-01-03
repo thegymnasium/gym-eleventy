@@ -34,7 +34,7 @@ jobs:
         run: |
           echo "datestamp=$(git log -1 --format=%cd --date=format:%Y-%m-%dh%H%M%S)" >> $GITHUB_OUTPUT
       - name: create pull request
-        run: gh pr create -B api/dev -H dev/test/api --title '[Auto PR]: ${{ steps.datestamp.outputs.datestamp }} Merge dev/test/api into api/dev' --body 'Automated PR Created by Github action' --draft --fill-verbose --label "automation" -r "rediris"
+        run: gh pr create -B api/dev -H dev/test/api --title "[Auto PR]: ${ steps.datestamp.outputs.datestamp } Merge dev/test/api into api/dev" --body 'Automated PR Created by Github action' --draft --fill-verbose --label 'automation' --reviewer 'rediris'
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
