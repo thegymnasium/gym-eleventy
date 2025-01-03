@@ -28,6 +28,7 @@ jobs:
             src/_data/**.yml
             src/pages/api/**.njk
             /src/_includes/modules/api-config.njk
+          sparse-checkout-cone-mode: false
       - name: set datestamp
         id: datestamp
         run: |
