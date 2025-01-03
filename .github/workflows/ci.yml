@@ -16,7 +16,9 @@ jobs:
     runs-on: ubuntu-latest  # windows-latest || macos-latest
     name: Automatic PR
     steps:
-      - uses: actions/checkout@v4.2.2
+      - name: checkout specific files
+        id: checkout-files
+        uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 10  # OR "2" -> To retrieve the preceding commit.
           ref: ${{ github.head_ref }}
@@ -27,13 +29,14 @@ jobs:
             src/pages/api/**.njk
             /src/_includes/modules/api-config.njk
           sparse-checkout-cone-mode: false
-
-      - name: Create PR
-        uses: Poorva17/create-pr-action@v2.0
+      - name: set datestamp
+        id: datestamp
+        run: |
+          echo "datestamp=$(git log -1 --format=%cd --date=format:%Y-%m-%dh%H%M%S)" >> $GITHUB_OUTPUT
+      - name: create pull request
+        run: gh pr create -B api/dev -H dev/test/api --title '[Auto PR]: ${{ steps.datestamp.outputs.datestamp }} Merge dev/test/api into api/dev' --body 'Automated PR Created by Github action' --draft --fill-verbose --label "automation" -r "rediris"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          HEAD_BRANCH: dev/test/api
-          BASE_BRANCH: api/dev
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
   # create_pr:
