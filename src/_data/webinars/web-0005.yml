@@ -5,7 +5,7 @@ type: webinar
 title: "The State of Responsive Web Design"
 event_guests: "with Ethan Marcotte and Karen McGrane"
 description: "A conversation about the past, present, and future state of responsive web design with special guests Ethan Marcotte and Karen McGrane."
-permalink: /webinars/state-of-responsive-web-design
+permalink: /webinars/state-of-responsive-web-design/
 event_date: 2016-12-08
 event_time: "2PM EDT"
 event_ogimage: state-of-responsive-web-design-event.png
