@@ -5,7 +5,7 @@ type: webinar
 title: "A Decade of Responsive Web Design"
 event_guests: "with Ethan Marcotte"
 description: "Join us for a webinar with Ethan Marcotte as we celebrate the past decade of his groundbreaking work. We’ll be discussing inclusivity, accessibility, and all things responsive web design."
-permalink: /webinars/decade-of-responsive-web-design
+permalink: /webinars/decade-of-responsive-web-design/
 event_date: 2020-05-26
 event_time: "2:00 PM EDT"
 event_ogimage: decade-of-responsive-web-design-event.png

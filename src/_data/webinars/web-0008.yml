@@ -5,7 +5,7 @@ type: webinar
 title: "Rethinking Full Stack: Cost and Compromise"
 event_guests: "with Eric Meyer and Dan Mall"
 description: "A conversation about the difference between front end and full stack developers with special guests Eric Meyer and Dan Mall."
-permalink: /webinars/rethinking-full-stack
+permalink: /webinars/rethinking-full-stack/
 event_date: 2017-11-09
 event_time: "2PM EST"
 event_ogimage: rethinking-full-stack-event.png
