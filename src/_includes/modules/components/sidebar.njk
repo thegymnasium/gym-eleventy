@@ -3,7 +3,7 @@
   {%- set header = item.header -%}
   {%- include 'modules/components/header.njk' -%}
 
-  {%- set module = featured['sidebar'] -%}
+  {%- set module = featured[item.feature] -%}
   {%- include 'modules/featured/smart-cards.njk' -%}
 
   {%- back_to 'footer' -%}
