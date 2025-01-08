@@ -1,35 +1,57 @@
-name: Changed Data Files
+name: Changed Data Files - Develop
 
 on:
   push:
     branches:
-      - develop
+      - dev/test/api
     paths:
-      - 'src/_data/**'
+      - '.github/workflows/**'
+      - 'src/_data/**.js'
+      - 'src/_data/**.yml'
+      - 'src/pages/api/**.njk'
+      - 'src/_includes/modules/api-config.njk'
 
 jobs:
-  changed_files:
-    runs-on: ubuntu-latest  # windows-latest || macos-latest
-    name: Test changed-files
+  create_pr:
+    runs-on: ubuntu-latest
+    name: Create PR
     steps:
-      - uses: actions/checkout@v4
+      - name: sparse checkout api/dev branch
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 2  # OR "2" -> To retrieve the preceding commit.
-          persist-credentials: true
-
-      - name: Get changed data files
-        id: changed-data-files
-        uses: tj-actions/changed-files@v45
+          fetch-depth: 0
+          ref: api/dev
+          sparse-checkout: |
+            .github/workflows/**
+            src/_data/**.js
+            src/_data/**.yml
+            src/pages/api/**.njk
+            /src/_includes/modules/api-config.njk
+          sparse-checkout-cone-mode: false
+      - name: create temp branch
+        uses: carlsberg/temporary-branch-action@1.1.3
+        id: temp-branch
         with:
-          # Avoid using single or double quotes for multiline patterns
-          files: |
-            src/_data/**
-
-      - name: List all changed data files
-        if: steps.changed-data-files.outputs.any_changed == 'true'
-        env:
-          ALL_CHANGED_FILES: ${{ steps.changed-data-files.outputs.all_changed_files }}
+          base: api/dev
+      - name: checkout specific files in develop branch
         run: |
-          for file in ${ALL_CHANGED_FILES}; do
-            echo "$file was changed"
-          done
+          git checkout ${{ steps.temp-branch.outputs.branch }}
+          git checkout develop -- .github/workflows/** src/_data/**.js src/_data/**.yml src/pages/api/**.njk /src/_includes/modules/api-config.njk
+      - name: set datestamp
+        id: datestamp
+        run: |
+          echo "datestamp=$(git log -1 --format=%cd --date=format:%Y-%m-%dh%H%M%S)" >> $GITHUB_OUTPUT
+      - name: set PR message
+        id: message
+        run: |
+          title="[Auto PR]: ${{ steps.datestamp.outputs.datestamp }} Update API - Dev"
+          body="This PR was auto-generated on ${{ steps.datestamp.outputs.datestamp }} \
+            by [create-pull-request](https://github.com/peter-evans/create-pull-request)."
+          echo "title=$title" >> $GITHUB_OUTPUT
+          echo "body=$body" >> $GITHUB_OUTPUT
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/api/dev
+          title: ${{ steps.message.outputs.title }}
+          body: ${{ steps.message.outputs.body }}
