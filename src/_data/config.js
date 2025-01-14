@@ -1,5 +1,6 @@
 module.exports = {
   urls: {
+    api_subdomain: process.env.api_subdomain || 'dev-api',
     base_domain: process.env.BASE_DOMAIN || 'gym.soy',
     base_url: process.env.BASE_URL || 'https://gym.soy',
     root_domain: process.env.ROOT_DOMAIN || 'gym.soy',

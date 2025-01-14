@@ -4,7 +4,7 @@ meta:
   author: Aquent Gymnasium
   description: Design a career you love with our free online courses and tutorials on design, development, UX, prototyping, accessibility, and career skills.
   short_description: Design a career you love with free online courses and tutorials.
-  og_img: /img/brand/og/gym-brand-og.png
+  og_img: /img/og/gym-brand.png
   twitter_handle: "@AquentGymnasium"
 header:
   nav:
@@ -90,7 +90,7 @@ footer:
           target: _blank
           rel: noopener
         - label: Impressum
-          href: https://aquent.de/impressum
+          href: https://aquent.de/impressum/
           target: _blank
           rel: noopener
     - title: Social
@@ -265,6 +265,34 @@ css:
   lms: /css/theme.css
   mfe: /css/mfe.css
 msg:
+  errors:
+    error_404:
+      heading: '404: Page Not Found'
+      description: |
+        <span aria-label="Waving hand emoji" role="img">👋</span> You discovered a page that doesn’t exist.
+      body: |
+        <p>Some might call you lost. Others might call you a creative genius.</p><p>Either way, we suggest that you check out our frequently visited pages below:</p>
+      show_links: true
+    error_unknown:
+      heading: 'Oops!'
+      description: |
+        <span aria-label="Waving hand emoji" role="img">👋</span> There was an unexpected error.
+      body: |
+        <p>Try refreshing the page using the button below.</p>
+      footer: |
+        <p>If this issue persists, please reach out to our support team at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+      show_links: false
+    links:
+    - label: Homepage
+      url: GYM_ROOT_URL/
+    - label: Full Courses
+      url: GYM_ROOT_URL/courses/full/
+    - label: Gym Shorts
+      url: GYM_ROOT_URL/courses/gym-shorts/
+    - label: Take 5 Tutorials
+      url: GYM_ROOT_URL/courses/take5/
+    footer: |
+      <p>Need to get in touch? You can email us at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
   mfe:
     account:
       deletion: |
@@ -292,6 +320,7 @@ msg:
     custom: "<p>This is an example of a custom message for anywhere in the theme.</p>"
 html:
   footer: FOOTER_HTML
+  error_404: 404_HTML
 bios: BIOS_DATA
 courses: COURSES_DATA
 # TODO: consider refactoring to support global path definitions
@@ -307,6 +336,3 @@ paths:
       icons: /img/footer/icons/
       logos: /img/footer/logos/
 markets: MARKETS_STATIC
-test:
-  test1: testing
-  test2: testing
