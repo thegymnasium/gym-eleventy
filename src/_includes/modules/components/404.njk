@@ -1,0 +1,14 @@
+{%- set item = config.msg.errors.error_404 -%}
+
+<header class="main-header">
+  <h1>{{ item.heading }}</h1>
+  <p>{{ item.description | safe }}</p>
+</header>
+{{ item.body | safe }}
+{%- set links = config.msg.errors.links -%}
+<ul>
+{%- for link in links -%}
+  <li><a href="{{ link.url }}">{{ link.label }}</li></a>
+{%- endfor -%}
+</ul>
+{{ config.msg.errors.footer | safe }}

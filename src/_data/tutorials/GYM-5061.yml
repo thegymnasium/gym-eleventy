@@ -1,0 +1,40 @@
+id: GYM-5061
+title: "Crafting Impactful Case Studies with Storytelling"
+date: 2025-01-24T00:00:00-04:00
+type: tutorial
+tags:
+  - tutorial
+  - take5
+url: /courses/take5/GYM-5061/
+img: /img/tutorials/poster/gym-5061.jpg
+live: false
+instructor: "Leah Cunningham"
+instructor_bio: "TK"
+topic_featured: false
+topic: "UX"
+subtopics:
+  - label: "Design"
+video_id: TK
+video_duration: "TK"
+featured: false
+description: Learn strategies for making a visually compelling project case study in your portfolio in this tutorial.
+project_file_source:
+project_files:
+related_content:
+- label: "All About Process: Dissecting Case Study Portfolios by Adnan Puzic"
+  url: "https://www.toptal.com/designers/ui/case-study-portfolio"
+- label: "The digital product studio Upstatement’s case study on The Arnold Arboretum website"
+  url: "upstatement.com/case-study/arnold-arboretum"
+- label: "Caroline Win’s online portfolio "
+  url: "https://www.carolinewin.com"
+- label: "Gymnasium: Knowing Your Audience"
+  url: "/courses/take5/knowing-your-audience"
+- label: "Gymnasium: Storytelling for Designers"
+  url: "/courses/take5/storytelling-for-designers"
+- label: "Gymnasium: Taking Your Portfolio Case Studies to the Next Level"
+  url: "/courses/take5/taking-your-portfolio-case-studies-to-the-next-level"
+- label: "Gymnasium: Preventing Confirmation Bias In UX"
+  url: "/courses/take5/preventing-confirmation-bias-in-ux"
+- label: "Gymnasium: Gaining UX Insights on a Budget"
+  url: "/courses/take5/gaining-ux-insights-on-a-budget"
+skill_level: "Beginner"

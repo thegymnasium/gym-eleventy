@@ -5,7 +5,7 @@ type: webinar
 title: "Keeping Up with JavaScript is a Full-time Job"
 event_guests: "with Kevin Chisholm and Keith Peters"
 description: "A conversation about the ever-changing JavaScript landscape with special guests Kevin Chisholm and Keith Peters."
-permalink: /webinars/keeping-up-with-javascript
+permalink: /webinars/keeping-up-with-javascript/
 event_date: 2017-03-22
 event_time: "2PM EDT"
 event_ogimage: keeping-up-with-javascript-event.png

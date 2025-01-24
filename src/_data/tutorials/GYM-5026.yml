@@ -7,6 +7,7 @@ tags:
   - take5
 url: /courses/take5/GYM-5026/
 img: /img/tutorials/poster/gym-5026.jpg
+enable_syntax_highlighting: true
 live: true
 instructor: "Mike Bifulco"
 instructor_bio: "Developer Advocate at Stripe"
