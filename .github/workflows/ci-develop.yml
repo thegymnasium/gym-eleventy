@@ -5,6 +5,7 @@ on:
     branches:
       - develop
     paths:
+      - '.env*'
       - '.github/workflows/**'
       - 'src/_data/**.js'
       - 'src/_data/**.yml'
@@ -54,7 +55,7 @@ jobs:
           git push -d origin $TEMP_BRANCH &>/dev/null || true
           git branch -d $TEMP_BRANCH &>/dev/null || true
           git checkout -b $TEMP_BRANCH
-          git checkout $BASE_BRANCH -- .github/workflows src/_data src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components
+          git checkout $BASE_BRANCH -- .env* .github/workflows src/_data src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components
           git add -A
           git commit -m "${{ steps.message.outputs.title }}"
           git push --set-upstream origin $TEMP_BRANCH
