@@ -1,0 +1,62 @@
+name: CI - Develop
+
+on:
+  push:
+    branches:
+      - develop
+    paths:
+      - '.github/workflows/**'
+      - 'src/_data/**.js'
+      - 'src/_data/**.yml'
+      - 'src/pages/api/**.njk'
+      - 'src/_includes/modules/api-config.njk'
+      - 'src/_includes/modules/components/**'
+
+env:
+  TEMP_BRANCH: "temp/api-develop" # TODO: use "${{ vars.TEMP_BRANCH }}"
+  BASE_BRANCH: "origin/develop" # TODO: use "${{ vars.BASE_BRANCH }}"
+  DEST_BRANCH: "api/develop" # TODO: use "${{ vars.DEST_BRANCH }}"
+  CI_COMMIT_AUTHOR: ${{ vars.CI_COMMIT_AUTHOR }}
+  CI_COMMIT_EMAIL: ${{ vars.CI_COMMIT_EMAIL }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  VARS_CONTEXT: ${{ toJson(vars) }}
+
+jobs:
+  automatic-pr:
+    runs-on: ubuntu-latest
+    name: Automatic PR
+    steps:
+      - name: checkout specific files
+        id: checkout-files
+        uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          ref: ${{ env.DEST_BRANCH }}
+      - name: Get current time
+        uses: josStorer/get-current-time@v2
+        id: timestamp
+        with:
+          format: YYYYMMDD-HHMMSS
+          timezone: America/New_York
+      - name: set commit/pr message
+        id: message
+        run: |
+          title="✅ CI: automatically update ${{ env.DEST_BRANCH }} from ${{ env.BASE_BRANCH }} 🙌📟🎉"
+          body="🚀 Automated PR created via Github action by ${{ env.CI_COMMIT_AUTHOR }} :octocat: on ${{ steps.timestamp.outputs.readableTime }} 📅⏳"
+          echo "title=$title" >> $GITHUB_OUTPUT
+          echo "body=$body" >> $GITHUB_OUTPUT
+      - name: create branch from destination branch and checkout files from base branch
+        id: new-branch
+        run: |
+          git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
+          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
+          git fetch origin
+          git push -d origin $TEMP_BRANCH &>/dev/null || true
+          git branch -d $TEMP_BRANCH &>/dev/null || true
+          git checkout -b $TEMP_BRANCH
+          git checkout $BASE_BRANCH -- .github/workflows src/_data src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components
+          git add -A
+          git commit -m "${{ steps.message.outputs.title }}"
+          git push --set-upstream origin $TEMP_BRANCH
+      - name: create pull request
+        run: gh pr create -B $DEST_BRANCH -H $TEMP_BRANCH --title "${{ steps.message.outputs.title }}" --body "${{ steps.message.outputs.body }}" --draft --label "automation" --reviewer "rediris"
