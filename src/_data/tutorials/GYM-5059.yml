@@ -1,0 +1,38 @@
+id: GYM-5059
+title: "Preventing Confirmation Bias In UX"
+date: 2025-01-24T00:00:00-04:00
+type: tutorial
+tags:
+  - tutorial
+  - take5
+url: /courses/take5/GYM-5059/
+img: /img/tutorials/poster/gym-5059.jpg
+live: false
+instructor: "Leah Cunningham"
+instructor_bio: "TK"
+topic_featured: false
+topic: "UX"
+subtopics:
+  - label: "Design"
+video_id: TK
+video_duration: "TK"
+featured: false
+description: Learn strategies for challenging your assumptions and preventing costly mistakes during the most important stages of the design process in this tutorial.
+project_file_source:
+project_files:
+related_content:
+- label: "Confirmation Bias in UX by Jennifer Junge"
+  url: "https://www.nngroup.com/articles/confirmation-bias-ux/"
+- label: "Why Did Google Plus Fail? by Sumeet"
+  url: "https://uxplanet.org/the-google-plus-story-7ebb3f7d806e"
+- label: "Don’t Make Me Think by Steve Krug"
+  url: "https://sensible.com/dont-make-me-think/"
+- label: "The Cost of Bad UX"
+  url: "https://www.linkedin.com/pulse/cost-bad-ux-rich-wilson-vehzc/"
+- label: "Bad UX Exposed: A Comprehensive Guide to Avoiding Pitfalls by Mads Soegaard"
+  url: "https://www.interaction-design.org/literature/article/bad-ux-examples"
+- label: "Gymnasium: Gaining UX Insights on a Budget"
+  url: "/courses/take5/gaining-ux-insights-on-a-budget"
+- label: "Gymnasium: Crafting Impactful Case Studies with Storytelling"
+  url: "/courses/take5/crafting-impactful-case-studies-with-storytelling"
+skill_level: "Beginner"

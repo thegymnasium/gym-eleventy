@@ -5,7 +5,7 @@ type: webinar
 title: "Web Design is Hard"
 event_guests: "with Jeffrey Zeldman and Aaron Gustafson"
 description: "A conversation about navigating the complex world of web design education with our friends Jeffrey Zeldman and Aaron Gustafson."
-permalink: /webinars/web-design-is-hard
+permalink: /webinars/web-design-is-hard/
 event_date: 2016-09-21
 event_time: "2PM EDT"
 event_ogimage: web-design-is-hard-event.png

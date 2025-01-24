@@ -1,0 +1,58 @@
+{%- if header -%}
+{# Debug: uncomment below #}
+{# {{ header | dump }} #}
+  {# Set defaults #}
+  {%- set header_id = "" -%}
+  {%- set header_class = "" -%}
+  {%- set heading_id = "" -%}
+  {%- set heading_type = "h2" -%}
+  {%- set heading_class = "caps" -%}
+  {%- set heading = "" -%}
+  {%- set description = "" -%}
+  {%- if header.header_id -%}
+    {%- set header_id = header.header_id -%}
+  {%- endif -%}
+  {%- if header.header_class -%}
+    {%- set header_class = header.header_class -%}
+  {%- endif -%}
+  {%- if header.heading_id -%}
+    {%- set heading_id = " id=\"{{ header.heading_id }}\"" -%}
+  {%- endif -%}
+  {%- if header.heading_type -%}
+    {%- set heading_type = header.heading_type -%}
+  {%- endif -%}
+  {%- if header.heading_class -%}
+    {%- set heading_class = header.heading_class -%}
+  {%- endif -%}
+  {%- if header.heading -%}
+    {%- set heading = header.heading -%}
+  {%- endif -%}
+  {%- if header.description -%}
+    {%- set description = header.description -%}
+  {%- endif -%}
+  <header>
+    {%- if heading -%}
+    <{{ heading_type }} class="{{ heading_class }}"{{ heading_id }}>{{ heading }}</{{ heading_type }}>
+    {%- endif -%}
+    {%- if description -%}
+      {% if description | has_html -%}
+        {{ description | safe }}
+      {%- else -%}
+        <p>{{ description }}</p>
+      {%- endif -%}
+    {%- endif -%}
+  </header>
+  {# Reset variables to prevent looping duplicates #}
+  {%- set header = "" -%}
+  {%- set header_id = "" -%}
+  {%- set header_class = "" -%}
+  {%- set heading = "" -%}
+  {%- set heading_id = "" -%}
+  {%- set heading_type = "" -%}
+  {%- set heading_class = "" -%}
+  {%- set description = "" -%}
+{%- else -%}
+  <em>{ Header Module Placeholder }</em>
+  <p>Pass in the `header` variable to display the header.</p>
+{%- endif -%}
+

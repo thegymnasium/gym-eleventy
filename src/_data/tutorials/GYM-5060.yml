@@ -1,0 +1,42 @@
+id: GYM-5060
+title: "Gaining UX Insights on a Budget"
+date: 2025-01-24T00:00:00-04:00
+type: tutorial
+tags:
+  - tutorial
+  - take5
+url: /courses/take5/GYM-5060/
+img: /img/tutorials/poster/gym-5060.jpg
+live: false
+instructor: "Leah Cunningham"
+instructor_bio: "TK"
+topic_featured: false
+topic: "UX"
+subtopics:
+  - label: "Design"
+video_id: TK
+video_duration: "TK"
+featured: false
+description: Learn practical approaches for incorporating user research into your design projects when faced with limitations on time, budget, and available team members in this tutorial.
+project_file_source:
+project_files:
+related_content:
+- label: "Going Guerilla: How to Fit UX Research into any Timeframe by Amanda Stockwell"
+  url: "https://uxmastery.com/guerrilla-ux-research/"
+- label: "How we do user research when we can’t speak to real users by Saransh Gupta and Elli Panagopoulos"
+  url: "https://dwpdigital.blog.gov.uk/2019/09/26/how-we-do-user-research-when-we-cant-speak-to-real-users/"
+- label: "User Experience (UX) Surveys: The Ultimate Guide by Mads Soegaard"
+  url: "https://www.interaction-design.org/literature/article/ux-surveys"
+- label: "UserTesting"
+  url: "https://www.usertesting.com"
+- label: "Lookback"
+  url: "https://www.lookback.com"
+- label: "SurveyMonkey"
+  url: "https://www.surveymonkey.com"
+- label: "Google Forms"
+  url: "https://www.google.com/forms/about/"
+- label: "Gymnasium: Preventing Confirmation Bias In UX"
+  url: "/courses/take5/preventing-confirmation-bias-in-ux"
+- label: "Gymnasium: Crafting Impactful Case Studies with Storytelling"
+  url: "/courses/take5/crafting-impactful-case-studies-with-storytelling"
+skill_level: "Beginner"
