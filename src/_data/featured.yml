@@ -96,7 +96,7 @@ collection:
     - id: GYM-016
       type: course
       cta_text: Enroll for Free
-    - link: https://youtu.be/B1y5aNsVVLQ
+    - link: https://www.youtube.com/watch?v=B1y5aNsVVLQ
       type: tutorial
       title: Web Accessibility Testing Made Easy
       # TODO: migrate image to a location that makes sense
