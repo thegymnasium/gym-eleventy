@@ -113,7 +113,7 @@ resources:
       heading: "Learning the Basics"
       heading_type: h3
     links:
-    - href: https://brand.aquent.com/Accessibility?utm_source=partner&amp;utm_medium=web&amp;utm_campaign=AQ_UK_gymnasium&amp;utm_content=2021
+    - href: https://brand.aquent.com/Accessibility
       label: How to Get Started with Digital Accessibility
       description: Learn how (and why) to make digital accessibility a priority with Aquent’s PDF guide.
     - href: https://webaim.org/intro/
