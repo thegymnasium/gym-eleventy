@@ -1,0 +1,24 @@
+id: live-0010
+slug: generative-ai-on-the-fly
+color: ""
+type: livestream
+title: "Generative AI on the Fly"
+event_guests: "with Jeremy Osborn and Andrew Miller"
+description: "TK"
+permalink: /livestreams/generative-ai-on-the-fly
+event_date: 2024-12-19
+event_time: "2PM EST"
+img: /img/hero/livestreams/generative-ai-on-the-fly/generative-ai-on-the-fly-1280w.jpg
+host:
+  - josborn
+  - amiller
+speaker:
+  - ""
+content_category: gen-ai
+tags:
+  - livestream
+landing: false
+register: false
+video: true
+webinar_id:
+video_id: V-6wCUmm4fI
