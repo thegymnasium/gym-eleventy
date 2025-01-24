@@ -288,6 +288,7 @@
 }
 
 
+// TODO: define style?
 
 .btn-tertiary, .btn-tertiary:hover {
 
@@ -295,6 +296,21 @@
 
 .btn-tertiary {
 
+}
+
+.unenroll {
+  color: currentColor;
+  background-color: transparent;
+  border: dashed transparent;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: inherit;
+    border: dashed transparent;
+    text-decoration: none;
+  }
 }
 
 // Course "Cards"
