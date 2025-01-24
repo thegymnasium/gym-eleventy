@@ -4,7 +4,6 @@ let parser = new Parser();
 const fs = require('node:fs');
 
 const ENV = process.env.ELEVENTY_ENV;
-const DATA_URL = process.env.DATA_URL || 'https://data.gym.soy';
 
 // Individual job API: https://cloudwall.aquent.com/api/v1/jobpostings/189094
 
