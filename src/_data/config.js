@@ -1,6 +1,10 @@
 module.exports = {
+  domains: {
+    ROOT: process.env.ROOT_DOMAIN || 'gym.soy',
+    PRODUCTION: 'thegymnasium.com',
+  },
   urls: {
-    api_subdomain: process.env.API_SUBDOMAIN || 'api-develop',
+    API_URL: process.env.API_URL,
     root_domain: process.env.ROOT_DOMAIN || 'gym.soy',
     root: process.env.ROOT_URL || 'https://gym.soy',
     cms: process.env.CMS_URL || 'https://studio.learn.gym.soy',
