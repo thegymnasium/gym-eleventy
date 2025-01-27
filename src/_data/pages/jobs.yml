@@ -3,10 +3,10 @@ header:
   heading_type: h1
   description: |
     <p>Explore
-    <a href="#jobs"><b>job listings</b></a>,
-    <a href="#salary-guides"><b>salary guides</b></a>,
-    <a href="#take5-tutorials"><b>tutorials</b></a>,
-    and <a href="#articles"><b>articles</b></a>.</p>
+    <b><a href="#jobs">job listings</a></b>,
+    <b><a href="#salary-guides">salary guides</a></b>,
+    <b><a href="#take5-tutorials">tutorials</a></b>,
+    and <b><a href="#articles">articles</a></b>.</p>
 cards:
   - heading: Salary Guides
     subheading: See How Your Salary & Benefits Stack Up

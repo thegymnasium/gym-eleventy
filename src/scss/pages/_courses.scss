@@ -760,6 +760,14 @@
         padding-left: 1rem;
       }
 
+      ol,
+      ul {
+        + * {
+          margin-top: 1rem;
+        }
+
+      }
+
       p:not(footer p),
       li {
         font-size: 1.15rem;
