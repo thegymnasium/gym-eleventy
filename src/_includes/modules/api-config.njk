@@ -5,6 +5,7 @@
 {# Important: note the inclusion of double quotes when replacing '"FOOTER_HTML"' #}
 {
   "meta": {{ config.meta | stringify | safe }},
+  "domains": {{ config.endpoints | stringify | safe }},
   "urls": {{ config.urls | stringify | safe }},
   "header": {{ config.header | stringify | replace("GYM_ROOT_URL", config.urls.root) | replace("GYM_LMS_URL", config.urls.lms) | safe }},
   "logos": {{ config.logos | stringify | safe }},
