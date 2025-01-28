@@ -12,6 +12,7 @@ on:
       - 'src/pages/api/**.njk'
       - 'src/_includes/modules/api-config.njk'
       - 'src/_includes/modules/components/**'
+      - 'src/_includes/layouts/components/footer.njk'
 
 env:
   TEMP_BRANCH: "temp/api-staging" # TODO: use "${{ vars.TEMP_BRANCH }}"
@@ -55,7 +56,7 @@ jobs:
           git push -d origin $TEMP_BRANCH &>/dev/null || true
           git branch -d $TEMP_BRANCH &>/dev/null || true
           git checkout -b $TEMP_BRANCH
-          git checkout $BASE_BRANCH -- .env* .github/workflows src/_data src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components
+          git checkout $BASE_BRANCH -- .env* .github/workflows src/_data src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components src/_includes/layouts/components/footer.njk
           git add -A
           git commit -m "${{ steps.message.outputs.title }}"
           git push --set-upstream origin $TEMP_BRANCH
