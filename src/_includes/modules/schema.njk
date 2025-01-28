@@ -14,7 +14,7 @@
       {%- set bio = bios[course.instructor] -%}
       {%- set bio_name = bio.name -%}
       {%- set bio_description = bio.description | strip_html -%}
-      {%- set bio_img = config.urls.base_url + bio.img -%}
+      {%- set bio_img = config.urls.root_url + bio.img -%}
       {
         "@type": "ListItem",
         "position": {{ loop.index }},
@@ -22,7 +22,7 @@
           "@type": "Course",
           "name": "{{ title }}",
           "description": "{{ description }}",
-          "image": "{{ config.urls.base_url }}{{ config.paths.img.og }}courses/{{ id | lowercase }}.png",
+          "image": "{{ config.urls.root_url }}{{ config.paths.img.og }}courses/{{ id | lowercase }}.png",
           "url": "{{ url }}",
           "provider": {
             "@type": "School",

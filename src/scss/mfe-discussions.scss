@@ -416,7 +416,149 @@ header {
 .header-action-bar {
   z-index: 2;
   top: 0;
+
+  // hide learners tab
+  .nav-item.learners {
+    display: none;
+  }
 }
+
+// Search field used in header action bar
+.pgn__searchfield {
+  display: none; // hide search field
+  border: 0.0625rem solid var(--mono-600);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  // hide border next to search field
+  ~ div.border-right {
+    display: none;
+  }
+
+  .pgn__searchfield-form {
+    align-items: center;
+    background-color: var(--mono-100);
+    display: flex;
+    width: 100%;
+  }
+
+  .btn:focus-visible {
+    outline: none;
+    position: relative;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:after {
+      border: 0.3125rem double var(--mono-900);
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &.has-focus:not(.pgn__searchfield--external) {
+    position: relative;
+
+    &:after {
+      border: 0.3125rem double var(--mono-900);
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
+    .pgn__searchfield_wrapper {
+      box-shadow: 0 0 0 0.0625rem var(--mono-900);
+    }
+  }
+
+  &:active,
+  &:hover {
+    border-color: var(--mono-900);
+  }
+
+  .form-control {
+    border: none;
+    border-radius: 0;
+    height: calc(1.3333em + 1.125rem);
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &::-ms-clear,
+    &::-ms-reveal {
+      display: none;
+      height: 0;
+      width: 0;
+    }
+
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-decoration,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      border: none;
+    }
+  }
+
+  label.has-label-text {
+    padding-inline-start: 0.75rem;
+  }
+
+  &.pgn__searchfield--external {
+    border: none;
+
+    &.has-focus {
+      box-shadow: none;
+
+      .pgn__searchfield_wrapper {
+        position: relative;
+
+        &:after {
+          border: 0.3125rem double var(--mono-900);
+          content: "";
+          height: 100%;
+          position: absolute;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .pgn__searchfield_wrapper {
+    align-items: center;
+    border: 0.0625rem solid var(--mono-600);
+    display: flex;
+    width: 100%;
+
+    &:active,
+    &:hover {
+      border-color: var(--mono-900);
+    }
+  }
+
+  &__button.btn[type="submit"] {
+    border-radius: 0;
+    margin-inline-start: 0.5rem;
+  }
+  &__iconbutton-reset,
+  &__iconbutton-submit {
+    flex-shrink: 0;
+    margin-inline-end: 0.25rem;
+  }
+}
+
 
 .tox-tinymce-aux {
   z-index: 1 !important;
@@ -563,6 +705,10 @@ code {
 .post-card-comment {
   outline: none;
 
+  *:not(.btn):not(.btn *) {
+    color: inherit;
+  }
+
   &:not(:hover),
   &:not(:focus) {
     .hover-card {
@@ -580,6 +726,15 @@ code {
   .pgn__avatar {
     flex-shrink: 0;
   }
+}
+
+[data-testid="add-response"] {
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--mono-100);
+  background-color: var(--primary-500);
+  border-color: var(--primary-500);
+  border-radius: var(--global-button-radius);
 }
 
 // Really messy way to ensure the avatar icon maintains aspect ratio

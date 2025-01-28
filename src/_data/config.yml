@@ -4,7 +4,7 @@ meta:
   author: Aquent Gymnasium
   description: Design a career you love with our free online courses and tutorials on design, development, UX, prototyping, accessibility, and career skills.
   short_description: Design a career you love with free online courses and tutorials.
-  og_img: /img/brand/og/gym-brand-og.png
+  og_img: /img/og/gym-brand.png
   twitter_handle: "@AquentGymnasium"
 header:
   nav:
@@ -90,7 +90,7 @@ footer:
           target: _blank
           rel: noopener
         - label: Impressum
-          href: https://aquent.de/impressum
+          href: https://aquent.de/impressum/
           target: _blank
           rel: noopener
     - title: Social

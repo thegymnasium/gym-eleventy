@@ -22,11 +22,14 @@
       }
     }
 
+    section:not(.header) {
+      border-radius: 3px;
+    }
+
     section:not(.featured) {
       background-color: var(--mono-100);
       padding: 1.4rem;
       border: 1px solid var(--mono-400);
-      border-radius: 3px;
       margin-top: 1rem;
 
       header:not(.course-card header) {
@@ -130,7 +133,7 @@
         }
       }
 
-      h3:not(.featured h3) {
+      h3:not(.featured  h3):not(.info h3) {
         font-family: var(--font-family-default);
         font-size: 1.4rem;
         line-height: 1.35;

@@ -4,7 +4,6 @@ let parser = new Parser();
 const fs = require('node:fs');
 
 const ENV = process.env.ELEVENTY_ENV;
-const DATA_URL = process.env.DATA_URL || 'https://data.gym.soy';
 
 // Individual job API: https://cloudwall.aquent.com/api/v1/jobpostings/189094
 
@@ -15,6 +14,17 @@ const MARKET_FEED = 'https://aquentllc.wpengine.com/feeds/gymnasium-markets.json
 const GYM_JOB_FEED = 'https://aquentllc.wpengine.com/wp-json/aq-central/v1/gymnasium/listing';
 
 const JOB_OPTIONS = 'https://aquentllc.wpengine.com/wp-json/aq-central/v1/jobs/options';
+
+const JOB_FEED_URLS = {
+  "AU": "https://aquent.com.au/find-work/",
+  "CA": "https://aquent.com/find-work/",
+  "DE": "https://aquent.com/find-work/",
+  "FR": "https://aquent.fr/nos-offres/",
+  "GB": "https://aquent.co.uk/find-work/",
+  "JP": "https://aquent.co.jp/find-work/",
+  "NL": "https://aquent.com/find-work/",
+  "US": "https://aquent.com/find-work/"
+};
 
 module.exports = async function() {
 
@@ -42,20 +52,6 @@ module.exports = async function() {
       duration: ENV === ('dev' || 'development' || 'default' || 'local') ? 0 : '24h',
       type: "json"
     });
-
-    let JOB_FEED_URLS = `{
-      "AU": "https://aquent.com.au/find-work/",
-      "CA": "https://aquent.com/find-work/",
-      "DE": "https://aquent.com/find-work/",
-      "FR": "https://aquent.fr/nos-offres/",
-      "GB": "https://aquent.co.uk/find-work/",
-      "JP": "https://aquent.co.jp/find-work/",
-      "NL": "https://aquent.com/find-work/",
-      "US": "https://aquent.com/find-work/"
-    }`;
-
-    // minify JOB_FEED_URLS
-    JOB_FEED_URLS = JSON.stringify(JSON.parse(JOB_FEED_URLS));
 
     return {
       GYM_JOB_FEED: GYM_JOB_FEED,

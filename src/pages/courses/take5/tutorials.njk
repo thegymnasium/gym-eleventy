@@ -32,6 +32,14 @@
         const bool = data.item.sitemapExclude ? data.item.sitemapExclude : false;
         return bool;
       },
+      css: function(data) {
+        const item = data.item.enable_syntax_highlighting ? "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css" : false;
+        return item;
+      },
+      js: function(data) {
+        const item = data.item.enable_syntax_highlighting ? "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js" : false;
+        return item;
+      },
     },
   },
 }
@@ -85,29 +93,30 @@
 
   {%- if item.project_files or item.related_content -%}
   <aside class="resources" id="tutorial-resources">
-    <h3>Resources</h3>
-    {%- if item.project_files -%}
-    <div class="project-files">
-      <header>
-        <h4>Project Files</h4>
-        {%- if item.project_file_source -%}<p>on {{ item.project_file_source }}</p>{%- endif -%}
-      </header>
-      <ul>
-        {%- for file in item.project_files -%}
+    <div>
+      <h3>Resources</h3>
+      {%- if item.project_files -%}
+      <div class="project-files">
+        <header>
+          <h4>Project Files</h4>
+          {%- if item.project_file_source -%}<p>on {{ item.project_file_source }}</p>{%- endif -%}
+        </header>
+        <ul>
+          {%- for file in item.project_files -%}
           <li>
             <a href="{{ file.url }}" target="_blank" rel="noopener">{{ file.label }}</a>
           </li>
-        {%- endfor -%}
-      </ul>
-    </div>
-    {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endif -%}
 
-    {%- if item.related_content -%}
-    <div class="related">
-      <header>
-        <h4>Related Content</h4>
-      </header>
-      <ul>
+      {%- if item.related_content -%}
+      <div class="related">
+        <header>
+          <h4>Related Content</h4>
+        </header>
+        <ul>
         {%- for link in item.related_content -%}
           {%- set attr -%} target="_blank" rel="noopener"{% endset -%}
           {%- if not 'http' in link.url -%}
@@ -117,7 +126,8 @@
             <a href="{{ link.url }}"{{ attr }}>{{ link.label }}</a>
           </li>
         {%- endfor -%}
-      </ul>
+        </ul>
+      </div>
     </div>
     {%- endif -%}
   </aside>
