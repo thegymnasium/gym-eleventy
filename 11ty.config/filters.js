@@ -214,7 +214,6 @@ module.exports = eleventyConfig => {
       useShortDoctype: true,
       removeComments: true,
       collapseWhitespace: true,
-      conservativeCollapse: true,
     });
 
     return minified;
