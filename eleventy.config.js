@@ -238,15 +238,7 @@ module.exports = function (eleventyConfig) {
   // via @https://www.11ty.dev/docs/transforms/#minify-html-output
   eleventyConfig.addTransform("htmlmin", async function (content) {
     if (this.page.outputPath.endsWith(".html")) {
-      // Replace space after "© 2025" and before <a> tag
-      let modifiedContent = content.replace(/(©\s*2025)(\s+)(<a[^>]*>)/g, '$1&nbsp;$3');
-
-      // Minify the content
-      let minified = htmlmin.minify(modifiedContent, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-      });
+      let minified = htmlmin.minify(content, HTMLMIN_CONFIG);
 
       return minified;
     }
