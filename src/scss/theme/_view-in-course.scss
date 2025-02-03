@@ -381,7 +381,11 @@ body.view-in-mfe {
     }
 
     // Courseware links
-    .xmodule_display.xmodule_HtmlBlock a {
+    .xmodule_display.xmodule_HtmlBlock a:link,
+    .xmodule_display.xmodule_HtmlBlock a:visited,
+    .xmodule_display.xmodule_HtmlBlock a:hover,
+    .xmodule_display.xmodule_HtmlBlock a:focus,
+    .xmodule_display.xmodule_HtmlBlock a:active {
       color: inherit;
     }
   }
