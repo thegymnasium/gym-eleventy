@@ -307,6 +307,7 @@
   &:hover,
   &:focus,
   &:active {
+    color: inherit;
     background-color: inherit;
     border: dashed transparent;
     text-decoration: none;

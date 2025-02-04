@@ -24,7 +24,7 @@ project_files:
   url: "https://codepen.io/josborn/pen/oRVrOR"
 related_content:
 - label: "Gymnasium: Creating a CSS Knockout Text Effect"
-  url: "/courses/take5/creating-a-css-knockout-text-effect"
+  url: "/courses/take5/creating-a-css-knockout-text-effect/"
 - label: "How @supports works by Chris Coyier"
   url: "https://css-tricks.com/how-supports-works/"
 - label: "Using Feature Queries in CSS by Jen Simmons"
