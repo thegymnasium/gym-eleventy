@@ -22,11 +22,11 @@ project_file_source:
 project_files:
 related_content:
 - label: "Gymnasium: Improving Accessibility with Color Contrast"
-  url: "/courses/take5/improving-accessibility-with-color-contrast"
+  url: "/courses/take5/improving-accessibility-with-color-contrast/"
 - label: "Pairing typefaces by Eliot Jay Stocks"
   url: "https://fonts.google.com/knowledge/choosing_type/pairing_typefaces"
 - label: "WebAIM’s Contrast Checker"
   url: "https://webaim.org/resources/contrastchecker/"
 - label: "Gymnasium: Creating an Effective Color Palette in Design"
-  url: "/courses/take5/creating-an-effective-color-palette-in-design"
+  url: "/courses/take5/creating-an-effective-color-palette-in-design/"
 skill_level: "Beginner"
