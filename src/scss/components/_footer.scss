@@ -187,3 +187,14 @@
     }
   }
 }
+
+// Add visual whitespace character to MFEs/LMS footer
+#root {
+  .site-footer {
+    .copyright {
+      a {
+        margin-left: 0.6ex;
+      }
+    }
+  }
+}
