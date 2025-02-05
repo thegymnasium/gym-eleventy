@@ -3,7 +3,7 @@
 - replace all src/srcset base urls with static site assets url
 - ensure all DUMMY_STRINGS are replaced with actual URL values
 -#}
-{%- set footer = footer | replace('src=\"GYM_ROOT_URL', 'src=\"STATIC_ASSETS_URL') | replace('srcset=\"GYM_ROOT_URL', 'src=\"STATIC_ASSETS_URL') | replace("GYM_ROOT_URL", config.urls.root) | replace("STATIC_ASSETS_URL", config.urls.STATIC_ASSETS_URL) -%}
+{%- set footer = footer | replace('src=\"GYM_ROOT_URL', 'src=\"STATIC_ASSETS_URL') | replace('srcset=\"GYM_ROOT_URL', 'srcset=\"STATIC_ASSETS_URL') | replace("GYM_ROOT_URL", config.urls.root) | replace("STATIC_ASSETS_URL", config.urls.STATIC_ASSETS_URL) -%}
 {%- set footer = footer | minify_html | stringify -%}
 {%- set error_404 -%}{%- include 'modules/components/404.njk' -%}{%- endset -%}
 {%- set error_404 = error_404 | minify_html | stringify | replace("GYM_ROOT_URL", config.urls.root) -%}
