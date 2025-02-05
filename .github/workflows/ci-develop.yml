@@ -43,7 +43,7 @@ jobs:
       - name: set commit/pr message
         id: message
         run: |
-          title="✅ CI: automatically update ${{ env.DEST_BRANCH }} from ${{ env.BASE_BRANCH }} 🙌📟🎉"
+          title="✅ CI Develop: automatically update ${{ env.DEST_BRANCH }} from ${{ env.BASE_BRANCH }} 🙌📟🎉"
           body="🚀 Automated PR created via Github action by ${{ env.CI_COMMIT_AUTHOR }} :octocat: on ${{ steps.timestamp.outputs.readableTime }} 📅⏳"
           echo "title=$title" >> $GITHUB_OUTPUT
           echo "body=$body" >> $GITHUB_OUTPUT
