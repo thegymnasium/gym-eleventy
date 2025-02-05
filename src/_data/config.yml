@@ -261,9 +261,6 @@ colors:
   medium-gray: "#737373"
   dark-gray: "#444"
   black: "#181818"
-css:
-  lms: /css/theme.css
-  mfe: /css/mfe.css
 msg:
   errors:
     error_404:

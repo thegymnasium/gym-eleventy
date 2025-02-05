@@ -2,7 +2,7 @@
 This component is used to generate the footer for the static site and the LMS theme + MFEs.
 
 Please use the following strings instead of directly coding domain names:
-- {{ config.urls.root }}: the static site domain
+- GYM_ROOT_URL: without the brackets for the root static site domain
 - {{ config.urls.lms }}: the LMS theme domain
 - {{ config.urls.mfe }}: the LMS MFE domain
 #}
@@ -10,8 +10,8 @@ Please use the following strings instead of directly coding domain names:
   <div class="container">
     <div class="main">
       <div class="header">
-        <a href="{{ config.urls.root }}/" aria-label="{{ config.meta.title }} homepage">
-          <img alt="{{ config.meta.author }}" src="{{ config.urls.root }}{{ config.logos.main.white.src }}" srcset="{{ config.urls.root }}{{ config.logos.main.white.srcset }}" decoding="async" fetchpriority="low" width="208" height="24">
+        <a href="GYM_ROOT_URL/" aria-label="{{ config.meta.title }} homepage">
+          <img alt="{{ config.meta.author }}" src="GYM_ROOT_URL{{ config.logos.main.white.src }}" srcset="GYM_ROOT_URL{{ config.logos.main.white.srcset }}" decoding="async" fetchpriority="low" width="208" height="24">
         </a>
         <p>{{ config.meta.short_description }}</p>
       </div>
@@ -26,7 +26,7 @@ Please use the following strings instead of directly coding domain names:
               {%- if link.target %} target="{{ link.target }}"{%- endif -%}
               {%- if link.rel %} rel="{{ link.rel }}"{%- endif -%}>
               {%- if link.src -%}
-                {%- set img_base_path = config.urls.root + config.paths.img.footer.icons -%}
+                {%- set img_base_path = "GYM_ROOT_URL" + config.paths.img.footer.icons -%}
                 <img alt="{{ link.alt }}" src="{{ img_base_path }}{{ link.src }}" srcset="{{ img_base_path }}{{ link.srcset }}"{% for key, val in item.img.attr %} {{ key }}="{{ val }}"{% endfor -%}>
               {%- endif -%}
               {{ link.label }}
@@ -45,7 +45,7 @@ Please use the following strings instead of directly coding domain names:
           {%- set links =  item.links -%}
           {%- for link in links -%}
           <a href="{{ link.href }}"{% for key, val in config.footer.a.attr %} {{ key }}="{{ val }}"{% endfor -%}>
-            {%- set img_base_path = config.urls.root + config.paths.img.footer.logos -%}
+            {%- set img_base_path = "GYM_ROOT_URL" + config.paths.img.footer.logos -%}
             <img alt="{{ link.alt }}" src="{{ img_base_path }}{{ link.src }}" {%- if link.srcset %} srcset="{{ img_base_path }}{{ link.srcset }}" {%- endif %} width="{{ link.width }}" height="{{ link.height }}"{% for key, val in config.footer.img.attr %} {{ key }}="{{ val }}"{% endfor -%}>
           </a>
           {%- endfor -%}
@@ -54,7 +54,7 @@ Please use the following strings instead of directly coding domain names:
       {%- endfor -%}
     </aside>
     <p class="copyright">
-      <small>© {% year %} <a href="{{ config.urls.root }}/" aria-label="{{ config.meta.title }} homepage">{{ config.meta.author }}</a></small>
+      <small>© {% year %} <a href="GYM_ROOT_URL/" aria-label="{{ config.meta.title }} homepage">{{ config.meta.author }}</a></small>
     </p>
   </div>
 </footer>
