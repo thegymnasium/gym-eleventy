@@ -54,6 +54,7 @@ jobs:
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git fetch origin
           git checkout -b $TEMP_BRANCH
+          git branch --set-upstream-to=origin/$TEMP_BRANCH $TEMP_BRANCH
           git pull
           git checkout $BASE_BRANCH -- .env* .github/workflows src/_data src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components src/_includes/layouts/components/footer.njk
           git add -A
