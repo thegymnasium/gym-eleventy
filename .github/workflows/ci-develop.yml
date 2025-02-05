@@ -43,7 +43,7 @@ jobs:
       - name: set commit/pr message
         id: message
         run: |
-          title="✅ CI: automatically update ${{ env.DEST_BRANCH }} from ${{ env.BASE_BRANCH }} 🙌📟🎉"
+          title="✅ CI Develop: automatically update ${{ env.DEST_BRANCH }} from ${{ env.BASE_BRANCH }} 🙌📟🎉"
           body="🚀 Automated PR created via Github action by ${{ env.CI_COMMIT_AUTHOR }} :octocat: on ${{ steps.timestamp.outputs.readableTime }} 📅⏳"
           echo "title=$title" >> $GITHUB_OUTPUT
           echo "body=$body" >> $GITHUB_OUTPUT
@@ -53,12 +53,12 @@ jobs:
           git config --global user.email "${{ env.CI_COMMIT_EMAIL }}"
           git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
           git fetch origin
-          git push -d origin $TEMP_BRANCH &>/dev/null || true
-          git branch -d $TEMP_BRANCH &>/dev/null || true
           git checkout -b $TEMP_BRANCH
+          git branch --set-upstream-to=origin/$TEMP_BRANCH $TEMP_BRANCH &>/dev/null || true
+          git pull &>/dev/null || true
           git checkout $BASE_BRANCH -- .env* .github/workflows src/_data src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components src/_includes/layouts/components/footer.njk
           git add -A
           git commit -m "${{ steps.message.outputs.title }}"
           git push --set-upstream origin $TEMP_BRANCH
       - name: create pull request
-        run: gh pr create -B $DEST_BRANCH -H $TEMP_BRANCH --title "${{ steps.message.outputs.title }}" --body "${{ steps.message.outputs.body }}" --label "automation"
+        run: gh pr view $TEMP_BRANCH && gh pr reopen $TEMP_BRANCH || gh pr create -B $DEST_BRANCH -H $TEMP_BRANCH --title "${{ steps.message.outputs.title }}" --body "${{ steps.message.outputs.body }}" --label "automation" --reviewer "${{ github.actor }}"
