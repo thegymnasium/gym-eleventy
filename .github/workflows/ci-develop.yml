@@ -61,4 +61,4 @@ jobs:
           git commit -m "${{ steps.message.outputs.title }}"
           git push --set-upstream origin $TEMP_BRANCH
       - name: create pull request
-        run: gh pr create -B $DEST_BRANCH -H $TEMP_BRANCH --title "${{ steps.message.outputs.title }}" --body "${{ steps.message.outputs.body }}" --label "automation" --reviewer "${{ github.actor }}"
+        run: gh pr view $TEMP_BRANCH && gh pr reopen $TEMP_BRANCH || gh pr create -B $DEST_BRANCH -H $TEMP_BRANCH --title "${{ steps.message.outputs.title }}" --body "${{ steps.message.outputs.body }}" --label "automation" --reviewer "${{ github.actor }}"
