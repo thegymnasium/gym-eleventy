@@ -9,7 +9,7 @@
   {%- if not heroClass -%}
     {%- set heroClass = "hero" -%}
   {%- endif -%}
-  {%- if img_preload.css -%}
+  {%- if hero.img_preload -%}
   <link rel="preload" href="{{ hero.img_preload }}" as="image" media="(min-width: 75em)" fetchpriority="high">
   {%- endif -%}
   {%- if hero.css -%}
