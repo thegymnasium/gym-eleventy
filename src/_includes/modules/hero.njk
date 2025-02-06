@@ -13,7 +13,7 @@
   <link rel="preload" href="{{ hero.img_preload }}" as="image" media="(min-width: 75em)" fetchpriority="high">
   {%- endif -%}
   {%- if hero.css -%}
-  <link rel="stylesheet" href="{{ hero.css_path ~ hero.stylesheet }}" fetchpriority="high">
+  <link rel="stylesheet" href="/css/heros/{{ hero.css }}" fetchpriority="high">
   {%- endif -%}
   <article class="{{ heroClass }} {{ hero.layout }}" id="{{ hero.slug }}">
     <div class="container">

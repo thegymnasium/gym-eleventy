@@ -10,9 +10,7 @@ cta:
 
 layout: full-width
 img_preload: /img/tutorials/hero/gym-5019.jpg
-css: true
-css_path: css/
-stylesheet: take5-tutorials.css
+css: evergreens/take5-tutorials.css
 include: true
 slides:
   - slide-1

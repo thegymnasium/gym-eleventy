@@ -1,8 +1,8 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/colors' as *;
-@use 'base/mixins' as *;
-@use 'base/animations' as *;
+@use '../../base/breakpoints' as *;
+@use '../../base/functions' as *;
+@use '../../base/colors' as *;
+@use '../../base/mixins' as *;
+@use '../../base/animations' as *;
 
 .home-hero {
   position: relative;
