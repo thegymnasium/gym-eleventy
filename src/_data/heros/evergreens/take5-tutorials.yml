@@ -1,0 +1,20 @@
+slug: take5-tutorials
+subtitle: "Take 5"
+title: "Learn A New Skill in 5 Minutes"
+description: "Watch free video tutorials on design, development, UX, prototyping, accessibility, and career skills."
+cta:
+  label: "5-Minute Skill Boost"
+  url: /courses/take5/
+
+# custom content
+
+layout: full-width
+img_preload: /img/tutorials/hero/gym-5019.jpg
+css: evergreens/take5-tutorials.css
+include: true
+slides:
+  - slide-1
+  - slide-2
+  - slide-3
+  - slide-4
+  - slide-5
