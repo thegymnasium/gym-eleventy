@@ -1,5 +1,5 @@
 @use 'base/breakpoints' as *;
-@use 'base/functions' as *;
+@use 'functions' as *;
 
 select {
   color: var(--mono-900);
