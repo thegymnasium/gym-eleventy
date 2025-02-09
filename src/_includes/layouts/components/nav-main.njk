@@ -1,6 +1,6 @@
 <nav class="main" role="navigation" aria-label="Main">
   <a href="/">
-    <img src="{{config.logos.main.white.src}}" srcset="{{config.logos.main.white.srcset}}" alt="{{config.meta.author}} Home">
+    <img alt="{{config.meta.author}} logo, to the homepage." src="{{config.logos.main.white.src}}" srcset="{{config.logos.main.white.srcset}}" decoding="async" fetchpriority="high" width="208" height="24">
   </a>
   <div class="wrapper">
     <ul role="list">
@@ -30,7 +30,7 @@
     </li>
   {%- endfor -%}
   </ul>
-  
+
 {% edge "njk", auth %}
   {% if eleventy.edge.cookies.edxloggedin %}
     <template data-island="replace">
@@ -39,8 +39,8 @@
     </template>
   {% endif %}
 {% endedge %}
-  
+
 </is-land>
-    
+
   </div>
 </nav>
