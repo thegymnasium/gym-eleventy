@@ -11,11 +11,5 @@ cta:
 layout: full-width
 img_preload: /img/tutorials/hero/gym-5019.jpg
 css: evergreens/take5-tutorials.css
-include: "{% if page.slug == 'take5-tutorials' %} true {% else %} false {% endif %}"
 alt_text: "Slideshow of various Gymnasium tutorial video posters with fading color overlays."
-artwork:
-  - 5019
-  - 5013
-  - 5002
-  - 5001
-  - 5007
+artwork: [5019, 5013, 5002, 5001, 5007]

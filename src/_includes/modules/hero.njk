@@ -10,10 +10,10 @@
     {%- set heroClass = "hero" -%}
   {%- endif -%}
   {%- if hero.img_preload -%}
-  <link rel="preload" href="{{ hero.img_preload }}" as="image" media="(min-width: 75em)" fetchpriority="high">
+  <link rel="preload" fetchpriority="high" href="{{ hero.img_preload }}" as="image" media="(min-width: 75em)">
   {%- endif -%}
   {%- if hero.css -%}
-  <link rel="stylesheet" href="/css/heros/{{ hero.css }}" fetchpriority="high">
+  <link rel="stylesheet" fetchpriority="high" href="/css/heros/{{ hero.css }}">
   {%- endif -%}
   <article class="{{ heroClass }} {{ hero.layout }}" id="{{ hero.slug }}">
     <div class="container">
@@ -32,15 +32,9 @@
         {%- endif -%}
       </div>
       {%- endif -%}
-      {%- if hero.include -%}
-      {# TODO: Include as partial? #}
-      <!-- Take 5 tutorials evergreen -->
-      {%- if hero.slides -%}
-      {% for slide in hero.slides %}
-      <div class="{{ slide | replace('-\\d+', '') }}" id="{{ slide }}"></div>
-      {% endfor %}
-      {%- endif -%}
-      <!-- / Take 5 tutorials evergreen -->
+      {# TODO: refactor for DRYer logic #}
+      {%- if hero.slug == 'take5-tutorials' -%}
+        {% include "modules/heros/evergreens/partial-take5-tutorials.njk" %}
       {%- endif -%}
       <header>
         <hgroup>
