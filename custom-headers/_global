@@ -4,11 +4,11 @@
   Access-Control-Allow-Origin: *
 /manifest.json
   Access-Control-Allow-Origin: *
-*.js
+/*.js
   Access-Control-Allow-Origin: *
   cache-control: public
   cache-control: max-age=31536000
-*.css
+/*.css
   Access-Control-Allow-Origin: *
   cache-control: public
   cache-control: max-age=31536000
