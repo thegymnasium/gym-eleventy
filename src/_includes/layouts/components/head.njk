@@ -26,8 +26,11 @@
 {%- endif -%}
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ config.meta.title }}</title>
+
+<link rel="preload" as="style" href="{{ '/css/global.css' | cachebust }}">
+
 <meta name="robots" content="noai, noimageai, {{ metaRobots }}">
 <meta name="author" content="{{ metaAuthor }}">
 <meta property="og:site_name" content="{{ metaAuthor }}">
@@ -46,13 +49,13 @@
 
 <meta name="generator" content="{{ eleventy.generator }}">
 
-<meta content="ie=edge" http-equiv=X-UA-Compatible>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/favicon-180.png">
 <link rel="manifest" href="/manifest.json">
 
-<link rel="stylesheet" href="{{ '/css/global.css' | cachebust }}" />
+<link rel="stylesheet" fetchpriority="high" href="{{ '/css/global.css' | cachebust }}">
 {# Allows piping in page-specific CSS files - probably not a "recommended" practice. However, we have implemented this to support the collections index page and prism js highlighting on tutorial transcripts #}
 {%- if meta.css -%}
   {%- if meta.css | is_object -%}
@@ -61,10 +64,10 @@
       {%- if item.cachebust -%}
         {%- set link = item.link | cachebust -%}
       {%- endif -%}
-      <link rel="stylesheet" href="{{ link }}" />
+      <link rel="stylesheet" href="{{ link }}">
     {%- endfor -%}
   {%- else -%}
-    <link rel="stylesheet" href="{{ meta.css | cachebust }}" />
+    <link rel="stylesheet" href="{{ meta.css | cachebust }}">
   {%- endif -%}
 {%- endif -%}
 

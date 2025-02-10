@@ -1,5 +1,5 @@
 slug: take5-tutorials
-subtitle: "Take 5"
+subtitle: "Take 5 Tutorials"
 title: "Learn A New Skill in 5 Minutes"
 description: "Watch free video tutorials on design, development, UX, prototyping, accessibility, and career skills."
 cta:
@@ -11,10 +11,5 @@ cta:
 layout: full-width
 img_preload: /img/tutorials/hero/gym-5019.jpg
 css: evergreens/take5-tutorials.css
-include: true
-slides:
-  - slide-1
-  - slide-2
-  - slide-3
-  - slide-4
-  - slide-5
+alt_text: "Slideshow of various Gymnasium tutorial video posters with fading color overlays."
+artwork: [5019, 5013, 5002, 5001, 5007]

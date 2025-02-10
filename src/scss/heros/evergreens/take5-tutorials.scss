@@ -7,6 +7,7 @@
 .home-hero {
   position: relative;
 
+  .image-group,
   .slide,
   &:after {
     position: absolute;
@@ -16,38 +17,19 @@
     height: 100%;
   }
 
+  // animation: 60s ease-in-out infinite running slide-show
+
   .slide {
-    background-color: inherit;
-    background-image: none;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-blend-mode: luminosity;
     filter: grayscale(1);
+    object-fit: cover;
     animation: 60s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite running;
   }
 
-  // animation: 60s ease-in-out infinite running slide-show;
-
-  // list images
-  $image-numbers: (5019, 5013, 5002, 5001, 5007);
-
   // loop through images
+
   @for $i from 1 through 5 {
-    $image-number: nth($image-numbers, $i);
-    $formatted-number: if($image-number < 10, '000' + $image-number, if($image-number < 100, '00' + $image-number, $image-number));
-
-    // poster images
     #slide-#{$i} {
-      background-image: url("/img/tutorials/poster/gym-#{$formatted-number}.jpg");
       animation-name: fade-#{$i};
-    }
-
-    @include breakpoint(large, min) {
-      // hero images
-      #slide-#{$i} {
-        background-image: url("/img/tutorials/hero/gym-#{$formatted-number}.jpg");
-      }
     }
   }
 

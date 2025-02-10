@@ -1,0 +1,27 @@
+<!-- Take 5 tutorials evergreen -->
+<div class="image-group">
+{% for img_num in hero.artwork %}
+  {# Format the img number with leading zeros #}
+  {% if img_num < 10 %}
+    {% set fmt_num = '000' + img_num %}
+  {% elif img_num < 100 %}
+    {% set fmt_num = '00' + img_num %}
+  {% else %}
+    {% set fmt_num = img_num %}
+  {% endif %}
+  <img class="slide" id="slide-{{ loop.index }}"
+    {% if loop.index == 1 %}
+     alt="{{ hero.alt_text }}"
+    {% else %}
+     alt=" "
+    {% endif %}
+    src="/img/tutorials/poster/gym-{{ fmt_num }}.jpg"
+    decoding="async"
+    {% if loop.index == 1 %} fetchpriority="high"{% endif %}
+    {% if loop.index > 1 %} loading="lazy"{% endif %}
+    srcset="/img/tutorials/poster/gym-{{ fmt_num }}.jpg 1280w,
+           /img/tutorials/hero/gym-{{ fmt_num }}.jpg 1920w"
+    sizes="(max-width: 75em) 100vw, 50vw">
+{% endfor %}
+</div>
+<!-- / Take 5 tutorials evergreen -->
