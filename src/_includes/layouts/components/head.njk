@@ -13,16 +13,19 @@
   {%- set metaImg -%}{{ config.urls.root_url }}{{ meta.img }}{%- endset -%}
 {%- endif -%}
 {# meta robots defaults #}
+{%- set robotsDisallow = "noindex, nofollow, noimageindex, noarchive, nosnippet, nocache" -%}
 {%- if meta.robots -%}
   {%- set metaRobots = meta.robots -%}
 {%- else -%}
-  {# TODO: adjust logic for production release #}
-  {# {%- set metaRobots = "index, follow" -%} #}
-  {%- set metaRobots = "noindex, nofollow, noimageindex, noarchive, nosnippet, nocache" -%}
+  {%- if config.urls.root == config.urls.production -%}
+    {%- set metaRobots = "index, follow" -%}
+  {%- else -%}
+    {%- set metaRobots = robotsDisallow -%}
+  {%- endif -%}
 {%- endif -%}
 {# automatically exlude unindexed pages #}
 {%- if (eleventyExcludeFromCollections or meta.sitemapExclude) -%}
-  {%- set metaRobots = "noindex, nofollow, noimageindex, noarchive, nosnippet, nocache" -%}
+  {%- set metaRobots = robotsDisallow -%}
 {%- endif -%}
 
 <meta charset="utf-8">
@@ -64,10 +67,10 @@
       {%- if item.cachebust -%}
         {%- set link = item.link | cachebust -%}
       {%- endif -%}
-      <link rel="stylesheet" href="{{ link }}">
+      <link rel="stylesheet" href="{{ link }}" fetchpriority="high" />
     {%- endfor -%}
   {%- else -%}
-    <link rel="stylesheet" href="{{ meta.css | cachebust }}">
+    <link rel="stylesheet" href="{{ meta.css | cachebust }}" fetchpriority="high" />
   {%- endif -%}
 {%- endif -%}
 
