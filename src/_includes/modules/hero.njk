@@ -9,8 +9,12 @@
   {%- if not heroClass -%}
     {%- set heroClass = "hero" -%}
   {%- endif -%}
-  <article class="{{ heroClass }}" id="{{ hero.slug }}">
+  {%- if hero.img_preload -%}
+  <link rel="preload" fetchpriority="high" href="{{ hero.img_preload }}" as="image" media="(min-width: 75em)">
+  {%- endif -%}
+  <article class="{{ heroClass }} {{ hero.layout }}" id="{{ hero.slug }}">
     <div class="container">
+      {%- if hero.img -%}
       <div class="image">
         {%- macro picture() -%}
           <picture decoding="async" fetchpriority="high">
@@ -18,12 +22,17 @@
             <img alt="{{ hero.img.description }}" src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.jpg" width="1280" height="720">
           </picture>
         {%- endmacro -%}
-        {%- if hero.cta.href | is_external_link -%}
-          {%- external_link hero.cta.href, picture() -%}
+        {%- if hero.cta.url| is_external_link -%}
+          {%- external_link hero.cta.url, picture() -%}
         {%- else -%}
-          <a href="{{ hero.cta.href }}">{{ picture() }}</a>
+          <a href="{{ hero.cta.url }}">{{ picture() }}</a>
         {%- endif -%}
       </div>
+      {%- endif -%}
+      {# TODO: refactor for DRYer logic #}
+      {%- if hero.slug == 'take5-tutorials' -%}
+        {% include "modules/heros/evergreens/partial-take5-tutorials.njk" %}
+      {%- endif -%}
       <header>
         <hgroup>
           <p class="subhead caps">{{ hero.subtitle }}</p>
@@ -35,12 +44,11 @@
         {%- else -%}
           <p>{{ hero.description }}</p>
         {%- endif -%}
-
         <div class="cta">
           {%- if hero.cta.href | is_external_link -%}
             {%- external_link hero.cta.href, hero.cta.label, 'btn' -%}
           {%- else -%}
-            <a href="{{ hero.cta.href }}" class="btn">{{ hero.cta.label }}</a>
+            <a href="{{ hero.cta.url }}" class="btn">{{ hero.cta.label }}</a>
           {%- endif -%}
         </div>
       </header>
