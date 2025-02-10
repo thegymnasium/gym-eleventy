@@ -2,12 +2,13 @@
 permalink: /robots.txt
 eleventyExcludeFromCollections: true
 ---
-{# TODO: adjust logic for production release #}
-{# Sitemap: {{config.urls.root}}/sitemap.xml #}
+Sitemap: {{ config.urls.production }}/sitemap.xml
 
 User-agent: *
-Disallow: /
-{# /tests/
+Disallow:
+/tests/
 /test/
 /debug/
-/pattern-library/ #}
+/pattern-library/
+/instructors/
+/catalog/

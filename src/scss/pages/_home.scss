@@ -26,19 +26,16 @@
       font-size: 1.5rem;
     }
 
-    > div {
-      > header {
-        h2 {
-          letter-spacing: 0.15ex;
-          word-spacing: 0.25ex;
-        }
-      }
+    > div > header h2 {
+      letter-spacing: 0.15ex;
+      word-spacing: 0.25ex;
     }
   }
 }
 
-// hero styling (full compiled class name is`.home-hero`)
-article.home-hero {
+// home page hero
+
+.home-hero {
   padding-bottom: rem-calc(56);
 
   @include breakpoint(large, min) {
@@ -55,17 +52,31 @@ article.home-hero {
     }
   }
 
+  &.full-width .container {
+    @include breakpoint(large, min) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .image {
     margin-left: -1rem;
     margin-right: -1rem;
   }
 
+  @include breakpoint(large, max) {
+    header:not(.image + header) {
+      margin-top: 1.8rem;
+    }
+  }
+
   .subhead {
-    font-weight: bold;
-    font-size: rem-calc(18);
+    font-weight: 900;
+    font-size: rem-calc(20);
+    font-family: var(--font-family-custom);
     color: var(--secondary-500);
     letter-spacing: 0.15ex;
     word-spacing: 0.25ex;
+    margin-top: -0.4rem;
   }
 
   h1 {
@@ -74,9 +85,7 @@ article.home-hero {
     text-wrap: pretty;
   }
 
-  // livestreams-related (guest / time)
-  .guest,
-  & > p {
+  header > p {
     font-size: 1.4rem;
     line-height: 1.45;
     color: var(--mono-300);
@@ -91,7 +100,7 @@ article.home-hero {
 
   .guest,
   time {
-    color: var(--mono-100)
+    color: var(--mono-100);
   }
 
   a:visited {
@@ -115,13 +124,14 @@ article.home-hero {
     .image {
       min-height: 100%;
       margin: 0;
-
       & + .text {
         margin-top: 0;
       }
     }
   }
 }
+
+// How Gymnasium Works
 
 .how-gymnasium-works {
   h2,
@@ -147,7 +157,7 @@ article.home-hero {
     text-wrap: pretty;
   }
 
- .hero {
+  .hero {
     font-family: var(--font-family-custom);
     font-size: 1.75rem;
     margin-top: 0.4rem;
@@ -170,43 +180,33 @@ article.home-hero {
 
     li {
       margin-top: 0;
-
       p {
         color: var(--mono-600);
       }
     }
-
   }
 }
 
+// Home Featured
+
 .home-featured {
+  > div > header h2 {
+    line-height: 1.25;
+    text-align: center;
+    margin-bottom: 1.8rem;
+  }
 
-  > div {
-    > header {
+  @supports (display: grid) {
+    > div > header h2 {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0 1.8rem;
+      align-items: center;
 
-      h2 {
-        line-height: 1.25;
-        text-align: center;
-        margin-bottom: 1.8rem;
-      }
-
-      // Horizontal rule (enhancement)
-
-      @supports (display: grid) {
-
-        h2 {
-          display: grid;
-          grid-template-columns: 1fr auto 1fr;
-          gap: 0 1.8rem;
-          align-items: center;
-
-          &:before,
-          &:after {
-            content: "";
-            border-top: 1px solid var(--mono-400);
-          }
-        }
-
+      &:before,
+      &:after {
+        content: "";
+        border-top: 1px solid var(--mono-400);
       }
     }
   }
@@ -222,11 +222,9 @@ article.home-hero {
     }
 
     @media (min-width: 67.75em) {
-
       li:last-child {
         display: none;
       }
-
     }
   }
 
@@ -304,12 +302,10 @@ article.home-hero {
       }
     }
   }
-
 }
 
 .home-featured,
 .home-find-work {
-
   .cta {
     text-align: center;
     margin-top: 1.8rem;
@@ -328,18 +324,20 @@ article.home-hero {
       padding-right: 6%;
     }
   }
-
 }
+
+// How Gymnasium
+// Home Find Work
 
 .how-gymnasium-works,
 .home-find-work {
-
   header {
-    display: table; // shh (old school `width: fit-content;`)
+    display: table;
     margin: 0 auto;
 
     &:before {
       display: block;
+      position: relative;
       content: "";
       border-left: 1.4rem dashed transparent;
       border-right: 1.4rem dashed transparent;
@@ -356,7 +354,7 @@ article.home-hero {
 .home-find-work {
   margin-top: 1.4rem;
 
-  header:before  {
+  header:before {
     border-bottom-color: var(--mono-700);
   }
 }
