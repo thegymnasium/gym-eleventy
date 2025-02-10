@@ -14,14 +14,13 @@
 {%- endif -%}
 {# meta robots defaults #}
 {%- set robotsDisallow = "noindex, nofollow, noimageindex, noarchive, nosnippet, nocache" -%}
-{%- if meta.robots -%}
-  {%- set metaRobots = meta.robots -%}
-{%- else -%}
-  {%- if config.urls.root == config.urls.production -%}
-    {%- set metaRobots = "index, follow" -%}
-  {%- else -%}
-    {%- set metaRobots = robotsDisallow -%}
+{%- if config.urls.root == config.urls.production -%}
+  {%- set metaRobots = "index, follow" -%}
+  {%- if meta.robots -%}
+    {%- set metaRobots = meta.robots -%}
   {%- endif -%}
+{%- else -%}
+  {%- set metaRobots = robotsDisallow -%}
 {%- endif -%}
 {# automatically exlude unindexed pages #}
 {%- if (eleventyExcludeFromCollections or meta.sitemapExclude) -%}
