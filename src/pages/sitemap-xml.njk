@@ -3,8 +3,7 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-{# TODO: re-enable for production release #}
-{# <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for item in collections.all | sortByUrl -%}
   {%- if (not item.data.meta.draft) and (not item.data.meta.sitemapExclude) -%}
   <url>
@@ -15,4 +14,4 @@ eleventyExcludeFromCollections: true
   </url>
   {%- endif -%}
 {%- endfor -%}
-</urlset> #}
+</urlset>
