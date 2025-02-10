@@ -1,6 +1,6 @@
 /favicon/*
   Access-Control-Allow-Origin: *
-/feeds/*
+/api/*
   Access-Control-Allow-Origin: *
 /manifest.json
   Access-Control-Allow-Origin: *
@@ -12,7 +12,67 @@
   Access-Control-Allow-Origin: *
   cache-control: public
   cache-control: max-age=31536000
-/*.(svg|jpg|jpeg|png|gif|webp|ico|ttf|ttc|otf|eot|woff|woff2)
+/*.svg
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.jpg
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.jpeg
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.png
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.gif
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.webp
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.ico
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.ttf
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.ttc
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.otf
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.eot
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.woff
+  Access-Control-Allow-Origin: *
+  cache-control: public
+  cache-control: max-age=31536000
+  cache-control: immutable
+/*.woff2
   Access-Control-Allow-Origin: *
   cache-control: public
   cache-control: max-age=31536000
