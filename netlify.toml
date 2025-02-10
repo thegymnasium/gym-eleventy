@@ -2,34 +2,6 @@
   command = "npm run build" # runs with ENV=production
   publish = "dist"
 
-# [[headers]]
-#   for = "/favicon/*"
-#     [headers.values]
-#     Access-Control-Allow-Origin = "*"
-# [[headers]]
-#   for = "/feeds/*"
-#     [headers.values]
-#     Access-Control-Allow-Origin = "*"
-# [[headers]]
-#   for = "/manifest.json"
-#     [headers.values]
-#     Access-Control-Allow-Origin = "*"
-# [[headers]]
-#   for = "*.js"
-#   [headers.values] # cache for 1 year
-#     Access-Control-Allow-Origin = "*"
-#     Cache-Control = "public, max-age=31536000"
-# [[headers]]
-#   for = "*.css"
-#   [headers.values] # cache for 1 year
-#     Access-Control-Allow-Origin = "*"
-#     Cache-Control = "public, max-age=31536000"
-# [[headers]]
-#   for = "/*.(svg|jpg|jpeg|png|gif|webp|ico|ttf|ttc|otf|eot|woff|woff2)"
-#   [headers.values] # cache for 1 year
-#     Access-Control-Allow-Origin = "*"
-#     Cache-Control = "public, max-age=31536000, immutable"
-
 [[plugins]]
 package = "netlify-plugin-cache"
 
@@ -48,32 +20,40 @@ ELEVENTY_ENV="tutor-dev"
 NODE_ENV="tutor-local"
 ELEVENTY_ENV="tutor-local"
 
-[context.soy]
-NODE_ENV="soy"
-ELEVENTY_ENV="soy"
-
-[context.dev.environment]
-NODE_ENV="development"
-ELEVENTY_ENV="development"
-
 # Local dev settings
 [dev]
   # framework = "#static"
   port=8888
   targetPort=4040
 
+[context.dev.environment]
+NODE_ENV="development"
+ELEVENTY_ENV="development"
+
 # Per-branch settings (except production)
 [context.branch-deploy]
+NODE_ENV="development"
+ELEVENTY_ENV="development"
 command = "cat ./custom-headers/_global ./custom-headers/_branch-deploy > ./public/_headers && npm run build"
 
 # Deploy preview settings
 [context.deploy-preview]
+NODE_ENV="development"
+ELEVENTY_ENV="development"
 command = "cat ./custom-headers/_global ./custom-headers/_deploy-preview > ./public/_headers && npm run build"
 
 [context.develop]
+NODE_ENV="development"
+ELEVENTY_ENV="development"
+command = "cat ./custom-headers/_global ./custom-headers/_develop > ./public/_headers && npm run build"
 
 [context.staging]
+NODE_ENV="development"
+ELEVENTY_ENV="development"
+command = "cat ./custom-headers/_global ./custom-headers/_staging > ./public/_headers && npm run build"
 
 # Production settings
-# [context.production]
-# command = "npm run build && cat ./custom-headers/_global ./custom-headers/_production > ./custom-headers/_headers && cp ./custom-headers/_headers ./dist/_headers"
+[context.production]
+NODE_ENV="production"
+ELEVENTY_ENV="production"
+command = "cat ./custom-headers/_global ./custom-headers/_production > ./public/_headers && npm run build"
