@@ -8,14 +8,18 @@
     bodyClass: "home",
   },
   eleventyComputed: {
-    meta: {
-      title: "{{ config.meta.subtitle }}",
-    },
     hero_data: (data) => {
       const home_hero = data.featured.home.hero;
       const hero_category = Object.keys(home_hero)[0];
       const hero_slug = Object.values(home_hero)[0];
       return [hero_category, hero_slug];
+    },
+    meta: {
+      title: "{{ config.meta.subtitle }}",
+      css: function(data) {
+        const cssfile = (data.hero_data && (data.hero_data[0] && data.hero_data[1])) ? `/css/heros/${data.hero_data[0]}/${data.hero_data[1]}.css` : false;
+        return cssfile;
+      }
     },
   }
 }
