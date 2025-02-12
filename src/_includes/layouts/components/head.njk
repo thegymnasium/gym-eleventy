@@ -69,10 +69,10 @@
       {%- if item.cachebust -%}
         {%- set link = item.link | cachebust -%}
       {%- endif -%}
-      <link rel="stylesheet" href="{{ link }}" fetchpriority="high" />
+      <link rel="stylesheet" fetchpriority="high" href="{{ link }}">
     {%- endfor -%}
   {%- else -%}
-    <link rel="stylesheet" href="{{ meta.css | cachebust }}" fetchpriority="high" />
+    <link rel="stylesheet" fetchpriority="high" href="{{ meta.css | cachebust }}">
   {%- endif -%}
 {%- endif -%}
 
