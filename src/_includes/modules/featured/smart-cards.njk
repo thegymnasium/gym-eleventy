@@ -73,7 +73,7 @@
         <article class="featured-card" id="featured-{{ type }}-{{ obj.id | lower }}">
           <div>
             <p class="topic"><b>{{ category }}</b></p>
-            <figure style="border-image-source: url({{ src }});">
+            <figure {% if obj.type == 'full' or obj.type == 'short' %}style="border-image-source: url({{ src }});" {% endif %}>
               <a href="{{ destUrl }}">
                 <img alt="{{ title }} course illustration." src="{{ src }}" width="" height="" decoding="async" fetchpriority="high">
               </a>
