@@ -35,7 +35,7 @@
 {%- set srcSet = src -%}
 {%- set video_duration = obj.video_duration -%}
 
-{%- set url = '/courses/take5/' + obj.title | slugify -%}
+{%- set url = '/courses/take5/' + (obj.title | slugify) ~ '/' -%}
 
 {%- set baseClass = "course " + type + ' ' + shortId | lower -%}
 
