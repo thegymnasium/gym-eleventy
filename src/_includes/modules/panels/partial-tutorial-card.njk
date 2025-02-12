@@ -76,5 +76,7 @@
     </footer>
   </div>
 
-  {%- back_to 'footer', 'topics', 'Back to menu' -%}
+  {% if page.url == '/courses/take5/' %}
+    {%- back_to 'footer', 'topics', 'Back to menu' -%}
+  {% endif %}
 </article>
