@@ -41,7 +41,7 @@
           {%- set src = obj.img  -%}
         {%- elif type == 'webinar' -%}
           {%- set cta_text = "Watch Now" -%}
-          {%- set destUrl = '/webinars/' + slug -%}
+          {%- set destUrl = '/webinars/' + slug + "/" -%}
           {%- set src = '/img/og/webinars/' + obj.recording_ogimage -%}
         {%- elif type == 'short' or type == 'full' -%}
           {%- set category = "Courses" -%}
@@ -50,7 +50,7 @@
           {%- set destUrl = "/courses/" + slug + "/" -%}
         {%- elif type == 'tutorial' -%}
           {%- set cta_text = "Watch Now" -%}
-          {%- set destUrl = '/courses/take5/' + slug -%}
+          {%- set destUrl = '/courses/take5/' + slug + "/" -%}
         {%- else -%}
           TYPE IS SOMETHING ELSE
         {%- endif -%}
