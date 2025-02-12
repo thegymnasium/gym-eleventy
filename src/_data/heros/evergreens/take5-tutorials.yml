@@ -9,7 +9,6 @@ cta:
 # custom content
 
 layout: full-width
-img_preload: /img/tutorials/hero/gym-5019.jpg
-css: evergreens/take5-tutorials.css
+img_preload: img/tutorials/hero/gym-5019.jpg
 alt_text: "Slideshow of various Gymnasium tutorial video posters with fading color overlays."
 artwork: [5019, 5013, 5002, 5001, 5007]
