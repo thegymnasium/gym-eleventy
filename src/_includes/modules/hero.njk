@@ -9,9 +9,6 @@
   {%- if not heroClass -%}
     {%- set heroClass = "hero" -%}
   {%- endif -%}
-  {%- if hero.img_preload -%}
-  <link rel="preload" fetchpriority="high" href="{{ hero.img_preload }}" as="image" media="(min-width: 75em)">
-  {%- endif -%}
   <article class="{{ heroClass }} {{ hero.layout }}" id="{{ hero.slug }}">
     <div class="container">
       {%- if hero.img -%}
