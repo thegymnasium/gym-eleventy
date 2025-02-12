@@ -31,7 +31,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ config.meta.title }}</title>
 
-<link rel="preload" as="style" href="{{ '/css/global.css' | cachebust }}">
+<link rel="preload" fetchpriority="high" as="style" href="{{ '/css/global.css' | cachebust }}">
+{% if meta.preload_image %}
+<link rel="preload" fetchpriority="high" as="image" media="(min-width: 75em)" href="{{ meta.preload_image }}">
+{% endif %}
 
 <meta name="robots" content="noai, noimageai, {{ metaRobots }}">
 <meta name="author" content="{{ metaAuthor }}">
