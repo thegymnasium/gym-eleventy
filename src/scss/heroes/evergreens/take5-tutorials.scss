@@ -17,8 +17,6 @@
     height: 100%;
   }
 
-  // animation: 60s ease-in-out infinite running slide-show
-
   .slide {
     filter: grayscale(1);
     object-fit: cover;
@@ -33,19 +31,25 @@
     }
   }
 
+  // add animation mixins
+
   @include fades;
+  @include ebb-flow;
 
   &:after {
     display: block;
     content: "";
-    background: linear-gradient(135deg, var(--green-500), var(--green-500), var(--teal-500), var(--teal-500), var(--magenta-500), var(--magenta-500), var(--teal-500));
+    background: linear-gradient(135deg,
+      var(--green-500), var(--green-500),
+      var(--teal-500), var(--teal-500),
+      var(--magenta-500), var(--magenta-500),
+      var(--teal-500)
+    );
     background-size: 700% 700%;
     animation: 60s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite running ebb-flow;
     opacity: 0.94;
     z-index: 0;
   }
-
-  @include ebb-flow;
 
   header {
     position: relative;
