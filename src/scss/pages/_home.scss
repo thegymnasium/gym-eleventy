@@ -111,10 +111,12 @@
     margin-top: 2rem;
 
     .btn {
-      padding-left: 6%;
-      padding-right: 6%;
+      font-size: rem-calc(22.4);
+      line-height: 1.35;
+      text-wrap: balance;
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
       border: rem-calc(2) solid var(--mono-100);
-      font-size: rem-calc(23);
     }
   }
 
