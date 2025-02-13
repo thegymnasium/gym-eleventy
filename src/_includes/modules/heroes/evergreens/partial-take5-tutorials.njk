@@ -11,10 +11,10 @@
   {% set tutorial_data = tutorials[ "GYM-" + fmt_num ] %}
   <img class="slide" id="slide-{{ loop.index }}"
     alt="{{ tutorial_data.title }} video poster."
-    src="/img/tutorials/poster/gym-{{ fmt_num }}.jpg"
     srcset="/img/tutorials/poster/gym-{{ fmt_num }}.jpg 1280w,
            /img/tutorials/hero/gym-{{ fmt_num }}.jpg 1920w"
     sizes="(max-width: 75em) 100vw, 50vw"
+    src="/img/tutorials/poster/gym-{{ fmt_num }}.jpg"
     width="1280"
     height="720"
     decoding="async"
