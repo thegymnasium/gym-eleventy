@@ -19,7 +19,7 @@
     height="720"
     decoding="async"
     {% if loop.index == 1 %} fetchpriority="high"{% endif %}
-    {% if loop.index > 1 %} fetchpriority="low"{% endif %}>
+    {% if loop.index > 1 %} fetchpriority="low" loading="lazy"{% endif %}>
 {% endfor %}
 </div>
 <!-- / Take 5 tutorials evergreen -->
