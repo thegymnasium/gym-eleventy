@@ -6,6 +6,7 @@
 
 .home-hero {
   position: relative;
+  contain: content;
 
   .image-group,
   .slide,
@@ -17,10 +18,13 @@
     height: 100%;
   }
 
-  .slide {
+  .image-group {
     filter: grayscale(1);
+  }
+
+  .slide {
     object-fit: cover;
-    animation: 60s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite running;
+    animation: 60s ease-in-out infinite;
   }
 
   // loop through images
@@ -46,7 +50,7 @@
       var(--teal-500)
     );
     background-size: 700% 700%;
-    animation: 60s cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite running ebb-flow;
+    animation: ebb-flow 60s ease-in-out infinite;
     opacity: 0.94;
   }
 
