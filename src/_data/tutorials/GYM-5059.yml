@@ -7,13 +7,13 @@ tags:
   - take5
 url: /courses/take5/GYM-5059/
 img: /img/tutorials/poster/gym-5059.jpg
-live: false
+live: true
 instructor: "Leah Cunningham"
 instructor_bio: "UX Strategist and Founder at Mind and Pixel"
-topic_featured: false
+topic_featured: true
 topic: "UX"
 subtopics:
-  - label: "Design"
+  - label: ""
 video_id: X98HZkzvbIM
 video_duration: "4:21"
 featured: false

@@ -47,11 +47,12 @@ tutorials:
     class: btn
   ux-tutorials:
     ids:
-    - id: GYM-5006
-    - id: GYM-5007
-    - id: GYM-5008
-    - id: GYM-5009
-    - id: GYM-5010
+    - id: GYM-5061
+    - id: GYM-5060
+    - id: GYM-5059
+    - id: GYM-5051
+    - id: GYM-5050
+    - id: GYM-5049
 
 webinars:
   module: lists/image-course
