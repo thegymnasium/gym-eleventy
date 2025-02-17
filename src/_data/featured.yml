@@ -24,9 +24,9 @@ catalog:
   short:
   - GYM-017
   tutorial:
-  - GYM-5054
+  - GYM-5059
   collection:
-  - design-systems
+  - generative-ai
 
 popular:
   full:
@@ -79,7 +79,7 @@ collection:
     items:
     - id: GYM-015
       type: course
-    - id: GYM-5008
+    - id: GYM-5059
       type: tutorial
     - id: web-0013
       type: webinar
@@ -111,7 +111,7 @@ collection:
     items:
     - id: GYM-017
       type: course
-    - id: GYM-5052
+    - id: GYM-5061
       type: tutorial
     - link: https://medium.com/gymnasium/improving-your-portfolio-is-easier-than-you-think-b1430bbe1007
       title: Improving Your Portfolio is Easier Than You Think

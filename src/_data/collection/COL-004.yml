@@ -120,7 +120,7 @@ resources:
       label: Introduction to Web Accessibility
     - href: https://www.deque.com/web-accessibility-beginners-guide/
       label: The Beginner’s Guide to Web Accessibility
-    - href: https://developer.mozilla.org/en-US/docs/Learn/Accessibility
+    - href: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Accessibility
       label: Accessibility for Web Developers
 
   guides:
@@ -158,7 +158,7 @@ services:
     description: Explore people, projects, and training that deliver truly inclusive experiences from <a href="https://aquent.com" target="_blank" rel="noopener">Aquent</a>.
   accessibility-services:
     links:
-    - href: https://aquenttalent.com/services/talent-recruiting
+    - href: https://aquenttalent.com/services/staffing-solutions
       label: Staffing
       description: Finding people with deep knowledge of accessibility can be like finding a needle in a haystack. Luckily, we know where to look. Our experienced recruiters and vast talent pool mean you can complete accessibility projects and bring in specialized skill sets when you need them.
     - href: https://aquent.com/solutions/aquent-studios
