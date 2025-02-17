@@ -8,9 +8,9 @@
 {%- if meta.canonicalUrl -%}
   {%- set metaUrl = meta.canonicalUrl -%}
 {%- endif -%}
-{%- set metaImg -%}{{ config.urls.root_url }}{{ config.meta.og_img }}{%- endset -%}
+{%- set metaImg -%}{{ config.urls.root }}{{ config.meta.og_img }}{%- endset -%}
 {%- if meta.img -%}
-  {%- set metaImg -%}{{ config.urls.root_url }}{{ meta.img }}{%- endset -%}
+  {%- set metaImg -%}{{ config.urls.root }}{{ meta.img }}{%- endset -%}
 {%- endif -%}
 {# meta robots defaults #}
 {%- set robotsDisallow = "noindex, nofollow, noimageindex, noarchive, nosnippet, nocache" -%}
