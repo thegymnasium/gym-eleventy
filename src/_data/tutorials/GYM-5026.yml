@@ -29,5 +29,5 @@ related_content:
 - label: "Examples of Projects Using GitHub Pages"
   url: "https://github.com/collections/github-pages-examples"
 - label: "Gymnasium: Introduction to Git and GitHub"
-  url: "https://thegymnasium.com/courses/course-v1:GYM+006+0/about"
+  url: "/courses/introduction-to-git-and-github/"
 skill_level: "Intermediate"

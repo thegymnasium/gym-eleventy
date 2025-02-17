@@ -88,7 +88,7 @@ resources:
       heading: "Learning the Basics"
       heading_type: h3
     links:
-    - href: https://www.ibm.com/topics/generative-ai
+    - href: https://www.ibm.com/think/topics/generative-ai
       label: What is generative AI?
       description: Generative AI, sometimes called gen AI, is artificial intelligence (AI) that can create original content—such as text, images, video, audio or software code—in response to a user’s prompt or request.
 
