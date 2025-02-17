@@ -8,9 +8,9 @@
 {%- if meta.canonicalUrl -%}
   {%- set metaUrl = meta.canonicalUrl -%}
 {%- endif -%}
-{%- set metaImg -%}{{ config.urls.root_url }}{{ config.meta.og_img }}{%- endset -%}
+{%- set metaImg -%}{{ config.urls.root }}{{ config.meta.og_img }}{%- endset -%}
 {%- if meta.img -%}
-  {%- set metaImg -%}{{ config.urls.root_url }}{{ meta.img }}{%- endset -%}
+  {%- set metaImg -%}{{ config.urls.root }}{{ meta.img }}{%- endset -%}
 {%- endif -%}
 {# meta robots defaults #}
 {%- set robotsDisallow = "noindex, nofollow, noimageindex, noarchive, nosnippet, nocache" -%}
@@ -31,7 +31,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ config.meta.title }}</title>
 
-<link rel="preload" as="style" href="{{ '/css/global.css' | cachebust }}">
+<link rel="preload" fetchpriority="high" as="style" href="{{ '/css/global.css' | cachebust }}">
+{% if meta.preload_image %}
+<link rel="preload" fetchpriority="high" as="image" media="(min-width: 75em)" href="{{ meta.preload_image }}">
+{% endif %}
 
 <meta name="robots" content="noai, noimageai, {{ metaRobots }}">
 <meta name="author" content="{{ metaAuthor }}">
@@ -66,10 +69,10 @@
       {%- if item.cachebust -%}
         {%- set link = item.link | cachebust -%}
       {%- endif -%}
-      <link rel="stylesheet" href="{{ link }}" fetchpriority="high" />
+      <link rel="stylesheet" fetchpriority="high" href="{{ link }}">
     {%- endfor -%}
   {%- else -%}
-    <link rel="stylesheet" href="{{ meta.css | cachebust }}" fetchpriority="high" />
+    <link rel="stylesheet" fetchpriority="high" href="{{ meta.css | cachebust }}">
   {%- endif -%}
 {%- endif -%}
 

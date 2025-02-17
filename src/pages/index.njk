@@ -17,8 +17,14 @@
     meta: {
       title: "{{ config.meta.subtitle }}",
       css: function(data) {
-        const cssfile = (data.hero_data && (data.hero_data[0] && data.hero_data[1])) ? `/css/heros/${data.hero_data[0]}/${data.hero_data[1]}.css` : false;
+        const cssfile = (data.hero_data && (data.hero_data[0] && data.hero_data[1])) ? `/css/heroes/${data.hero_data[0]}/${data.hero_data[1]}.css` : false;
         return cssfile;
+      },
+      preload_image: function(data) {
+        const hero_category = data.hero_data && data.hero_data[0];
+        const hero_slug = data.hero_data && data.hero_data[1];
+        const img_preload = (hero_category && hero_slug) ? `/${data.heros[hero_category][hero_slug].img_preload}` : false;
+        return img_preload;
       }
     },
   }

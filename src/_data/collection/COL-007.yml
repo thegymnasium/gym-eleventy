@@ -47,15 +47,12 @@ tutorials:
     class: btn
   prototyping-tutorials:
     ids:
-    - id: GYM-5052
-    - id: GYM-5053
+    - id: GYM-5061
     - id: GYM-5056
-    - id: GYM-5016
-    - id: GYM-5018
-    - id: GYM-5020
-    - id: GYM-5019
-    - id: GYM-5017
+    - id: GYM-5053
+    - id: GYM-5052
     - id: GYM-5027
+    - id: GYM-5020
 
 articles:
   module: lists/default
