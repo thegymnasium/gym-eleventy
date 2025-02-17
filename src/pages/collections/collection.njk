@@ -38,8 +38,12 @@
       },
       css: function(data) {
         return data.item.meta.css;
-      }
-    }
+      },
+      img: function(data) {
+        const col_slug = data.item.meta.slug;
+        return `/img/og/collections/${col_slug}-collection.png`;
+      },
+    },
   },
 }
 ---
