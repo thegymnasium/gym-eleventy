@@ -7,14 +7,14 @@
       {%- set course = collections.catalog[item.ids[idx].id] -%}
       {%- set id = course.id -%}
       {%- set path = id | get_path -%}
-      {%- set url = id | course_endpoint('course_about') -%}
       {%- set title = course.title | strip_html -%}
       {%- set slug = title | slugify -%}
+      {%- set course_about_url = config.urls.production + '/courses/' + slug ~ '/' -%}
       {%- set description = course.description | strip_html -%}
       {%- set bio = bios[course.instructor] -%}
       {%- set bio_name = bio.name -%}
       {%- set bio_description = bio.description | strip_html -%}
-      {%- set bio_img = config.urls.root_url + bio.img -%}
+      {%- set bio_img = config.urls.production + bio.img -%}
       {
         "@type": "ListItem",
         "position": {{ loop.index }},
@@ -22,8 +22,8 @@
           "@type": "Course",
           "name": "{{ title }}",
           "description": "{{ description }}",
-          "image": "{{ config.urls.root_url }}{{ config.paths.img.og }}courses/{{ id | lowercase }}.png",
-          "url": "{{ url }}",
+          "image": "{{ config.urls.production }}{{ config.paths.img.og }}courses/{{ id | lowercase }}.png",
+          "url": "{{ course_about_url }}",
           "provider": {
             "@type": "School",
             "name": "Gymnasium",

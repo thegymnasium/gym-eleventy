@@ -41,7 +41,7 @@
           {%- set src = obj.img  -%}
         {%- elif type == 'webinar' -%}
           {%- set cta_text = "Watch Now" -%}
-          {%- set destUrl = '/webinars/' + slug -%}
+          {%- set destUrl = '/webinars/' + slug + "/" -%}
           {%- set src = '/img/og/webinars/' + obj.recording_ogimage -%}
         {%- elif type == 'short' or type == 'full' -%}
           {%- set category = "Courses" -%}
@@ -50,7 +50,7 @@
           {%- set destUrl = "/courses/" + slug + "/" -%}
         {%- elif type == 'tutorial' -%}
           {%- set cta_text = "Watch Now" -%}
-          {%- set destUrl = '/courses/take5/' + slug -%}
+          {%- set destUrl = '/courses/take5/' + slug + "/" -%}
         {%- else -%}
           TYPE IS SOMETHING ELSE
         {%- endif -%}
@@ -73,7 +73,7 @@
         <article class="featured-card" id="featured-{{ type }}-{{ obj.id | lower }}">
           <div>
             <p class="topic"><b>{{ category }}</b></p>
-            <figure style="border-image-source: url({{ src }});">
+            <figure {% if obj.type == 'full' or obj.type == 'short' %}style="border-image-source: url({{ src }});" {% endif %}>
               <a href="{{ destUrl }}">
                 <img alt="{{ title }} course illustration." src="{{ src }}" width="" height="" decoding="async" fetchpriority="high">
               </a>

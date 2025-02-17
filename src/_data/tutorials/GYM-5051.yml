@@ -10,7 +10,7 @@ img: /img/tutorials/poster/gym-5051.jpg
 live: true
 instructor: josborn
 instructor_bio: "Director of Learning at Aquent Gymnasium"
-topic_featured: true
+topic_featured: false
 topic: "UX"
 subtopics:
   - label: "Prototyping"

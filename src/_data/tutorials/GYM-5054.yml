@@ -10,7 +10,7 @@ img: /img/tutorials/poster/gym-5054.jpg
 live: true
 instructor: "Meagan Fisher"
 instructor_bio: "Web Designer and Developer at Owltastic"
-topic_featured: true
+topic_featured: false
 topic: "Design"
 subtopics:
   - label: "Accessibility"
