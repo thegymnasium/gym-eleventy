@@ -10,7 +10,7 @@ tags:
   - full
   - full-course
 live: true
-url: /courses/course-v1:GYM+109+0/about
+url: /courses/responsive-web-design-fundamentals/
 img: /img/courses/svg/gym-109.svg
 topic: "Development"
 description: "This is a hands-on, code-intensive course on how to build high-performance, responsive websites that look great across multiple screen sizes and devices."
@@ -48,7 +48,7 @@ outline:
 - label: "Lesson 6: Performance"
   description: "Learn why website performance is one of the most important elements of the design process, especially for users in mobile and/or low-bandwidth scenarios. You’ll learn which tools are useful for testing your sites and walk through a number of exercises involving the optimization of our sample site. Specifically, you’ll learn when a Content Delivery Network (CDN) makes sense. You’ll also learn recent techniques involving inline CSS and JavaScript configurations that can cut page-load time dramatically for your users."
 prerequisites:
-  - label: Familiarity with the concepts covered in our <a href="/courses/course-v1:GYM+107+0/about" target="_blank" rel="noopener">Modern Web Design</a> course (or the equivalent).
+  - label: Familiarity with the concepts covered in our <a href="/courses/modern-web-design/" target="_blank" rel="noopener">Modern Web Design</a> course (or the equivalent).
   - label: Basic understanding of how to use browser developer tools.
 requirements:
   - label: Mac or Windows desktop or laptop
