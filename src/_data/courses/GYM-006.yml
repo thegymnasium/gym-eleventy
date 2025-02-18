@@ -13,7 +13,7 @@ tags:
   - short
   - short-course
 live: true
-url: /courses/course-v1:GYM+006+0/about
+url: /courses/introduction-to-git-and-github/
 img: /img/courses/svg/gym-006.svg
 topic: "Development"
 description: "Learn the basics of version control and get a high-level overview of both Git and GitHub. Perfect for someone with little to no first-hand experience with either."
