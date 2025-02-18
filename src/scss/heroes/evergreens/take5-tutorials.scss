@@ -6,16 +6,25 @@
 
 .home-hero {
   position: relative;
-  contain: content;
 
+  // add animation mixins
+
+  @include fades;
+  @include ebb-flow;
+
+  &:after,
   .image-group,
-  .slide,
-  &:after {
+  .slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  &:after,
+  .slide {
+    animation: 60s ease-in-out infinite;
   }
 
   .image-group {
@@ -24,7 +33,6 @@
 
   .slide {
     object-fit: cover;
-    animation: 60s ease-in-out infinite;
   }
 
   // loop through images
@@ -34,11 +42,6 @@
       animation-name: fade-#{$i};
     }
   }
-
-  // add animation mixins
-
-  @include fades;
-  @include ebb-flow;
 
   &:after {
     display: block;
@@ -50,7 +53,7 @@
       var(--teal-500)
     );
     background-size: 700% 700%;
-    animation: ebb-flow 60s ease-in-out infinite;
+    animation-name: ebb-flow;
     opacity: 0.94;
   }
 
