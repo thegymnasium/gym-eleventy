@@ -10,7 +10,7 @@ tags:
   - full
   - full-course
 live: true
-url: /courses/course-v1:GYM+108+0/about
+url: /courses/javascript-and-jquery-survival-guide/
 img: /img/courses/svg/gym-108.svg
 topic: "Development"
 subtopics:
@@ -47,7 +47,7 @@ outline:
 prerequisites:
   - label: Basic to intermediate competency with HTML and CSS. Specifically, an understanding of how the DOM functions is helpful, as well as experience working with with complex CSS stylesheets.
   - label: Experience with a text editor (such as <a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code</a>, <a href="https://atom.io" target="_blank" rel="noopener">Atom</a>, <a href="https://www.sublimetext.com" target="_blank" rel="noopener">Sublime Text</a>, etc.)
-  - label: Although not strictly required, a familiarity with our <a href="/courses/course-v1:GYM+104+0/about" target="_blank" rel="noopener">JavaScript Foundations</a> course is highly recommended.
+  - label: Although not strictly required, a familiarity with our <a href="/courses/javascript-foundations/" target="_blank" rel="noopener">JavaScript Foundations</a> course is highly recommended.
 # Note: this section's content is an exception to the typical list we use. As such, we are providing the raw html instead.
 requirements: |
   <ul>
