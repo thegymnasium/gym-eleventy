@@ -13,7 +13,7 @@ tags:
   - short
   - short-course
 live: true
-url: /courses/course-v1:GYM+009+0/about
+url: /courses/creating-a-drupal-8-theme/
 img: /img/courses/svg/gym-009.svg
 topic: "Development"
 description: "Learn how to create Drupal 8 themes, set up a local development environment, and customize theme structure and style with the TWIG templating engine."
