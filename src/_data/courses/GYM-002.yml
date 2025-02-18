@@ -15,8 +15,8 @@ tags:
 live: false
 sitemapExclude: true
 retired_message:
-  post: "<strong>This course has been retired.</strong> Due to outdated content, we don’t offer a badge for this course, but you can still view the lessons. <span class='text-wrap'>We recommend taking the updated course <a href='/courses/course-v1:GYM+012+0/about'>Introduction to Node.js</a> (and earning a badge) instead.</span>"
-url: /courses/course-v1:GYM+002+0/about
+  post: "<strong>This course has been retired.</strong> Due to outdated content, we don’t offer a badge for this course, but you can still view the lessons. <span class='text-wrap'>We recommend taking the updated course <a href='/courses/introduction-to-node-js/'>Introduction to Node.js</a> (and earning a badge) instead.</span>"
+url: /courses/introducing-node-js/
 img: /img/courses/svg/gym-002.svg
 topic: "Development"
 description: "This course has been retired."
