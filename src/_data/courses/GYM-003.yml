@@ -16,7 +16,7 @@ live: false
 sitemapExclude: true
 retired_message:
   post: "<strong>This course has been retired.</strong> Due to outdated content, we don’t offer a badge for this course, but you can still view the lessons. <span class='text-wrap'>We recommend watching the tutorial <a href='/courses/take5/prototyping-in-the-browser-with-css-grid-layout'>Prototyping in the Browser with CSS Grid Layout</a> instead.</span>"
-url: /courses/course-v1:GYM+003+0/about
+url: /courses/grid-layout-in-bootstrap-3/
 img: /img/courses/svg/gym-003.svg
 topic: "Development"
 description: "This course has been retired."

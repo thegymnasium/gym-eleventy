@@ -11,7 +11,7 @@ tags:
   - short
   - short-course
 live: true
-url: /courses/course-v1:GYM+011+0/about
+url: /courses/build-better-websites-with-chrome-developer-tools/
 img: /img/courses/svg/gym-011.svg
 topic: "Development"
 description: "Learn how to leverage Chrome web developer tools to speed up your development time and help create bug-free, high-performing pages and apps."
