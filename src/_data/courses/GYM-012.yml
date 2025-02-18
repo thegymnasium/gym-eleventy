@@ -11,7 +11,7 @@ tags:
   - short
   - short-course
 live: true
-url: /courses/course-v1:GYM+012+0/about
+url: /courses/introduction-to-node-js/
 img: /img/courses/svg/gym-012.svg
 topic: "Development"
 subtopics:
