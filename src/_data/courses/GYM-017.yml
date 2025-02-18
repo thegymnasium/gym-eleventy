@@ -28,6 +28,7 @@ audience:
   - label: "Teams that are new to the design systems process"
 lessons_duration: "Under 1 hour"
 completion_duration: "Up to 1 hour"
+duration_8601_format: PT1H
 skill_level: "Beginner"
 # Begin Overview
 intro: >
