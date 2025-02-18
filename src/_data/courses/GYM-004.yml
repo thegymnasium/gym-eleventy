@@ -13,7 +13,7 @@ tags:
   - short
   - short-course
 live: true
-url: /courses/course-v1:GYM+004+0/about
+url: /courses/creating-a-wordpress-theme/
 img: /img/courses/svg/gym-004.svg
 topic: "Development"
 description: "Learn how to convert your HTML/CSS design into a WordPress website. Discover how to set up a local development environment and add WordPress tags to your design."

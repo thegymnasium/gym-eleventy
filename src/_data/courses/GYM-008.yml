@@ -16,7 +16,7 @@ live: false
 sitemapExclude: true
 retired_message:
   post: "<strong>This course has been retired.</strong> Due to outdated content, we don’t offer a badge for this course, but you can still view the lessons."
-url: /courses/course-v1:GYM+008+0/about
+url: /courses/advanced-rapid-prototyping-with-axure/
 img: /img/courses/svg/gym-008.svg
 topic: "UX"
 subtopics:
