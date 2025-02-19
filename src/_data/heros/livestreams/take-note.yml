@@ -11,6 +11,4 @@ cta:
   url: "https://www.youtube.com/watch?v=K7lF3oihwMI"
 img:
   description: "Two pastel-colored Valentine’s Day candy hearts with the words Take and Note."
-artwork:
-  1: /take-note-768w.jpg
-  2: /take-note-1280w.jpg
+  format: jpg
