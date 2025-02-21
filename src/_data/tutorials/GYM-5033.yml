@@ -16,7 +16,6 @@ subtopics:
   - label: "Accessibility"
 video_id: mmXdKhB7Ueg
 video_duration: "4:50"
-featured: false
 description: "Learn how to design beautiful and accessible link focus states in this tutorial."
 project_file_source: CodePen
 project_files:

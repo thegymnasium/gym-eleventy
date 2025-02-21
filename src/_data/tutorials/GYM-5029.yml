@@ -16,7 +16,6 @@ subtopics:
   - label: "Prototyping"
 video_id: LnPEGhE90r4
 video_duration: "4:57"
-featured: false
 description: "Build and animate a prototype for a simple microinteraction in Figma in this tutorial."
 project_file_source: GitHub
 project_files:
