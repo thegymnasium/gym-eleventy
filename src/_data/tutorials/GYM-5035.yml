@@ -16,7 +16,6 @@ subtopics:
   - label: "Accessibility"
 video_id: m1_iOLbtEFM
 video_duration: "4:59"
-featured: false
 description: "Learn how to responsively spice up your designs with viewport units in this tutorial."
 project_file_source: CodePen
 project_files:
