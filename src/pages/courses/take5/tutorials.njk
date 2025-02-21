@@ -60,7 +60,7 @@
 <article id="{{ item.id | slugify }}" class="courses tutorial-detail bg-mono-100">
   <header>
     <hgroup>
-      <p class="topic"><b>{{ item.topic }}</b></p>
+      <p class="topic"><b><a href="/courses/take5/#{{ item.topic | slugify }}">{{ item.topic }}</a></b></p>
       <h1 class="title">{{ item.title }}</h1>
       <p class="instructor">{{ instructor_blurb | safe }}</p>
     </hgroup>

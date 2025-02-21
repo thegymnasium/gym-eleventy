@@ -1,5 +1,5 @@
 id: GYM-5059
-title: "Preventing Confirmation Bias In UX"
+title: "Preventing Confirmation Bias in UX"
 date: 2025-01-24T00:00:00-04:00
 type: tutorial
 tags:
@@ -16,7 +16,6 @@ subtopics:
   - label: ""
 video_id: X98HZkzvbIM
 video_duration: "4:21"
-featured: false
 description: Learn strategies for challenging your assumptions and preventing costly mistakes during the most important stages of the design process in this tutorial.
 project_file_source:
 project_files:

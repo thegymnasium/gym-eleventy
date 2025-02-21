@@ -17,7 +17,6 @@ subtopics:
   - label: "Prototyping"
 video_id: QxN2wVlBTTw
 video_duration: "4:51"
-featured: false
 description: "Learn how to create animated micro-interactions using InVision Studio’s timeline feature in this hands-on tutorial."
 project_file_source: GitHub
 project_files:

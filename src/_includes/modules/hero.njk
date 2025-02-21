@@ -14,10 +14,10 @@
       {%- if hero.img -%}
       <div class="image">
         {%- macro picture() -%}
-          <picture decoding="async" fetchpriority="high">
-            <source srcset="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-768w.jpg" width="768" height="714" media="(min-width: 1200px)">
-            <img alt="{{ hero.img.description }}" src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.jpg" width="1280" height="720">
-          </picture>
+        <picture decoding="async" fetchpriority="high">
+          <source srcset="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-768w.{{ hero.img.format or 'jpg' }}" width="768" height="714" media="(min-width: 1200px)">
+          <img alt="{{ hero.img.description }}" src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}" width="1280" height="720">
+        </picture>
         {%- endmacro -%}
         {%- if hero.cta.url| is_external_link -%}
           {%- external_link hero.cta.url, picture() -%}
@@ -28,11 +28,39 @@
       {%- endif -%}
       {# TODO: refactor for DRYer logic #}
       {%- if hero.slug == 'take5-tutorials' -%}
-        {% include "modules/heroes/evergreens/partial-take5-tutorials.njk" %}
+        {% include "modules/hero/evergreens/partial-take5-tutorials.njk" %}
       {%- endif -%}
+
+      {%- set tutorial = tutorials[hero.id] -%}
+      {%- if tutorial-%}
+      <div class="image">
+        {%- macro img() -%}
+        <img alt="{{ tutorial.title }} video poster."
+        srcset="/img/tutorials/poster/{{ hero.id | lower }}.jpg 1280w,
+                /img/tutorials/hero/{{ hero.id | lower }}.jpg 1920w"
+        sizes="(max-width: 75em) 100vw, 50vw"
+        src="/img/tutorials/poster/{{ hero.id | lower }}.jpg"
+        width="1280"
+        height="720"
+        decoding="async">
+        {%- endmacro -%}
+        <a href="/courses/take5/{{ tutorial.title | slugify }}">{{ img() }}</a>
+      </div>
       <header>
         <hgroup>
-          <p class="subhead caps">{{ hero.subtitle }}</p>
+          <p class="subhead caps"><b>{{ hero.subtitle }}</b></p>
+          <h1>{{ tutorial.title }}</h1>
+          <p class="subhead caps topic"><span>Take 5</span> {{ tutorial.topic }}</p>
+        </hgroup>
+        <p>{{ tutorial.description }}</p>
+        <div class="cta">
+          <a href="/courses/take5/{{ tutorial.title | slugify }}" class="btn">{{ hero.cta.label }}</a>
+        </div>
+      </header>
+      {%- else -%}
+      <header>
+        <hgroup>
+          <p class="subhead caps"><b>{{ hero.subtitle }}</b></p>
           <h1>{{ hero.title }}</h1>
         </hgroup>
         {# TODO: we need to figure out some conditional logic to handle when a future livestream becomes a past recording. In the interest of simplicity, I might suggest creating a recordings category?  #}
@@ -42,13 +70,14 @@
           <p>{{ hero.description }}</p>
         {%- endif -%}
         <div class="cta">
-          {%- if hero.cta.href | is_external_link -%}
-            {%- external_link hero.cta.href, hero.cta.label, 'btn' -%}
+          {%- if hero.cta.url| is_external_link -%}
+            {%- external_link hero.cta.url, hero.cta.label, 'btn' -%}
           {%- else -%}
             <a href="{{ hero.cta.url }}" class="btn">{{ hero.cta.label }}</a>
           {%- endif -%}
         </div>
       </header>
+      {%- endif -%}
     </div>
   </article>
 {%- else -%}
