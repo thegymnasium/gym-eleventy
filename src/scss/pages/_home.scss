@@ -93,17 +93,18 @@
 
   h1 {
     font-size: rem-calc(40);
-    word-spacing: rem-calc(2);
+    letter-spacing: 0.0625ex;
+    word-spacing: 0.125ex;
     text-wrap: pretty;
   }
 
   header > p {
     max-width: 44rem;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     line-height: 1.5;
     color: var(--mono-300);
     text-wrap: pretty;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
   }
 
   .guest {
