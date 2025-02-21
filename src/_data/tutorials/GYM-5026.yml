@@ -15,7 +15,6 @@ topic_featured: false
 topic: "Development"
 video_id: ukPI1zlxKqg
 video_duration: "4:58"
-featured: false
 description: "Learn how to get up and running with your first GitHub Pages Website in this tutorial."
 related_content:
 - label: "GitHub.com"
