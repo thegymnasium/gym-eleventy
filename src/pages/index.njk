@@ -17,8 +17,11 @@
     meta: {
       title: "{{ config.meta.subtitle }}",
       css: function(data) {
-        const cssfile = (data.hero_data && (data.hero_data[0] && data.hero_data[1])) ? `/css/hero/${data.hero_data[0]}/${data.hero_data[1]}.css` : false;
-        return cssfile;
+        const [hero_category, hero_slug] = data.hero_data || [];
+        if (hero_category && hero_slug && data.hero[hero_category] && data.hero[hero_category][hero_slug] && data.hero[hero_category][hero_slug].css) {
+          return `/css/hero/${hero_category}/${hero_slug}.css`;
+        }
+        return false;
       },
       preload_image: function(data) {
         const hero_category = data.hero_data && data.hero_data[0];
