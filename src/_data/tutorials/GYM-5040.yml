@@ -15,7 +15,6 @@ topic_featured: false
 topic: "Accessibility"
 video_id: CizNbSuRRew
 video_duration: "4:20"
-featured: false
 description: "Learn best practices for using alt text to improve the accessibility of the images on your website in this tutorial."
 related_content:
 - label: "When Not to use alt attributes"

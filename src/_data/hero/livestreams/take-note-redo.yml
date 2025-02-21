@@ -1,0 +1,18 @@
+id: take-note-redo
+subtitle: "New Livestream"
+title: "Take Note: Transcribing Images with ChatGPT"
+description: "Watch the livestream on"
+linkedin: "LinkedIn"
+linkedin_cta: "https://www.linkedin.com/events/7194019280919674881/about/"
+homepage: "or here on our homepage"
+date: "Tuesday, May 21"
+time: "2PM EDT / 8PM CET"
+datetime: "2024-05-21T18:00:00Z"
+recording: true
+cta:
+  label: "Watch the Recording"
+  url: "https://www.linkedin.com/events/7194019280919674881/about/"
+img:
+  description: "An illustrative poster of a complex line drawing with digital symbols, hanging on a blue wall."
+  format: jpg
+
