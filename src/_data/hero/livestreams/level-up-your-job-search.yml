@@ -12,6 +12,4 @@ cta:
   url: "https://www.youtube.com/watch?v=iKqXRFiD7W4"
 img:
   description: "A job seeker and wizard searching for work, aided by magic to shed light on their quest."
-artwork:
-  1: /level-up-your-job-search-768w.jpg
-  2: /level-up-your-job-search-1280w.jpg
+  format: jpg

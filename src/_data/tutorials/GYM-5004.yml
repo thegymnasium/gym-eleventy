@@ -14,7 +14,6 @@ topic_featured: false
 topic: "Development"
 video_id: VaHkQQ5xgac
 video_duration: "4:34"
-featured: false
 description: "Learn how to use new CSS features for modern browsers without worrying about browser incompatibilities in this hands-on tutorial."
 project_file_source: CodePen
 project_files:

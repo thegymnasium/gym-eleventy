@@ -14,7 +14,6 @@ topic_featured: false
 topic: "Development"
 video_id: SaO2hO-4yEY
 video_duration: "4:13"
-featured: false
 description: "Learn how to add a gradient overlay to an image more efficiently using only CSS in this hands-on tutorial."
 project_file_source: CodePen
 project_files:

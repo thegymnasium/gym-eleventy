@@ -11,6 +11,4 @@ cta:
 url: "https://www.youtube.com/watch?v=9bMjt4fJR-M"
 img:
   description: "Two engineers build a custom ChatGPT bot from wooden blocks."
-artwork:
-  1: /fill-in-the-blanks-768w.jpg
-  2: /fill-in-the-blanks-1280w.jpg
+  format: jpg

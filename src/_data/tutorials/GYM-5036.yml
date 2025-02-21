@@ -17,7 +17,6 @@ subtopics:
   - label: "Accessibility"
 video_id: nt7p3CuxUzA
 video_duration: "4:55"
-featured: false
 description: "Learn how to create visually compelling and accessible drop caps on the web in this tutorial."
 project_file_source: CodePen
 project_files:

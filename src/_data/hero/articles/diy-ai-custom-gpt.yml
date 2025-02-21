@@ -7,6 +7,4 @@ cta:
   url: https://medium.com/gymnasium/diy-ai-building-your-own-custom-gpt-a2523167bf21
 img:
   description: "Two engineers build a custom ChatGPT bot from wooden blocks."
-artwork:
-  1: /diy-ai-custom-gpt-768w.jpg
-  2: /diy-ai-custom-gpt-1280w.jpg
+  format: jpg

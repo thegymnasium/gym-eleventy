@@ -14,7 +14,6 @@ topic_featured: false
 topic: "Accessibility"
 video_id: qfdOIriWM90
 video_duration: "3:52"
-featured: false
 description: "Learn how to leverage the inherent accessibility of HTML documents in this tutorial."
 related_content:
 - label: "HTML: A good basis for accessibility"
