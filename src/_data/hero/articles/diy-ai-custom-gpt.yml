@@ -1,0 +1,10 @@
+slug: diy-ai-custom-gpt
+subtitle: "New Article"
+title: "DIY AI: Building Your Own Custom GPT"
+description: "What’s the difference between a custom GPT and the original ChatGPT? Learn how it works, what it can do for you, and more in our latest article."
+cta:
+  label: "Read Now"
+  url: https://medium.com/gymnasium/diy-ai-building-your-own-custom-gpt-a2523167bf21
+img:
+  description: "Two engineers build a custom ChatGPT bot from wooden blocks."
+  format: jpg
