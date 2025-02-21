@@ -8,11 +8,11 @@
   {% else %}
     {% set fmt_num = img_num %}
   {% endif %}
-  {% set tutorial_data = tutorials[ "GYM-" + fmt_num ] %}
+  {% set tutorial = tutorials[ "GYM-" + fmt_num ] %}
   <img class="slide" id="slide-{{ loop.index }}"
-    alt="{{ tutorial_data.title }} video poster."
+    alt="{{ tutorial.title }} video poster."
     srcset="/img/tutorials/poster/gym-{{ fmt_num }}.jpg 1280w,
-           /img/tutorials/hero/gym-{{ fmt_num }}.jpg 1920w"
+            /img/tutorials/hero/gym-{{ fmt_num }}.jpg 1920w"
     sizes="(max-width: 75em) 100vw, 50vw"
     src="/img/tutorials/poster/gym-{{ fmt_num }}.jpg"
     width="1280"

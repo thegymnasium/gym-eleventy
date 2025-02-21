@@ -7,6 +7,4 @@ cta:
   url: https://medium.com/gymnasium/meet-the-metaverse-a-virtual-world-of-potential-4bd2391cc837
 img:
   description: "Three people from the Gymnasium team meet in the metaverse at a virtual conference room using Spatial."
-artwork:
-  1: /meet-the-metaverse-768w.jpg
-  2: /meet-the-metaverse-1280w.jpg
+  format: jpg

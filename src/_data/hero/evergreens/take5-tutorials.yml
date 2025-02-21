@@ -5,10 +5,9 @@ description: "Watch free video tutorials on design, development, UX, prototyping
 cta:
   label: "5-Minute Skill Boost"
   url: /courses/take5/
-
-# custom content
-
+# includes
+css: true
 layout: full-width
-img_preload: img/tutorials/hero/gym-5019.jpg
+img_preload: /tutorials/hero/gym-5019.jpg
 alt_text: "A collection of 5-minute tutorial video posters."
 artwork: [5019, 5013, 5002, 5001, 5007]

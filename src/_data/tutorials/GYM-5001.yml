@@ -14,7 +14,6 @@ topic_featured: false
 topic: "Development"
 video_id: zRNUPU2dujU
 video_duration: "4:59"
-featured: false
 description: "Learn how to create a scrolling background effect using CSS in this hands-on tutorial."
 project_file_source: CodePen
 project_files:

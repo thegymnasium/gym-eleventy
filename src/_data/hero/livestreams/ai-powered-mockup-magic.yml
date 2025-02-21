@@ -12,5 +12,4 @@ cta:
 img:
   description: "Mockups shown on various screens and devices with the magic of AI."
 artwork:
-  1: /ai-powered-mockup-magic-768w.jpg
-  2: /ai-powered-mockup-magic-1280w.jpg
+  format: jpg

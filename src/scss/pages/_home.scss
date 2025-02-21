@@ -45,7 +45,7 @@
 
   .container {
     display: grid;
-    gap: 1.4rem 2rem;
+    gap: 1.8rem 2rem;
 
     @include breakpoint(large, min) {
       grid-template-columns: 1fr 2fr;
@@ -59,8 +59,16 @@
   }
 
   .image {
-    margin-left: -1rem;
-    margin-right: -1rem;
+    a {
+      display: inline-block;
+    }
+  }
+
+  @include breakpoint(medium, max) {
+    .image {
+      margin-left: -1rem;
+      margin-right: -1rem;
+    }
   }
 
   @include breakpoint(large, max) {
@@ -77,6 +85,10 @@
     letter-spacing: 0.15ex;
     word-spacing: 0.25ex;
     margin-top: -0.4rem;
+
+    b {
+      font-weight: inherit;
+    }
   }
 
   h1 {
@@ -86,8 +98,9 @@
   }
 
   header > p {
+    max-width: 44rem;
     font-size: 1.4rem;
-    line-height: 1.45;
+    line-height: 1.5;
     color: var(--mono-300);
     text-wrap: pretty;
     margin-top: 1rem;
@@ -123,14 +136,6 @@
   @include breakpoint(large, min) {
     header {
       align-self: center;
-    }
-
-    .image {
-      min-height: 100%;
-      margin: 0;
-      & + .text {
-        margin-top: 0;
-      }
     }
   }
 }
