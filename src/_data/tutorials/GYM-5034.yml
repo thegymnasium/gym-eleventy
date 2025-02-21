@@ -16,7 +16,6 @@ subtopics:
   - label: "Accessibility"
 video_id: fk-eu9TmFNk
 video_duration: "4:58"
-featured: false
 description: "Learn how to set flexible and accessible type sizes for a more user-friendly web in this tutorial."
 project_file_source: CodePen
 project_files:
