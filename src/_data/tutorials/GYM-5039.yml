@@ -15,7 +15,6 @@ topic_featured: false
 topic: "Accessibility"
 video_id: npto50RJpDc
 video_duration: "4:28"
-featured: false
 description: "Learn how to make the data tables in your HTML documents more accessible for everyone in this tutorial."
 project_file_source: CodePen
 project_files:
