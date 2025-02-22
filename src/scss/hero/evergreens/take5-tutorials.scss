@@ -61,10 +61,6 @@
     justify-self: center;
     z-index: 1;
 
-    @include breakpoint(large, min) {
-      margin: 1.5rem 0;
-    }
-
     hgroup {
       max-width: 24rem;
     }
