@@ -9,7 +9,7 @@
   {%- if not heroClass -%}
     {%- set heroClass = "hero" -%}
   {%- endif -%}
-  <article class="{{ heroClass }} {{ hero.layout }}" id="{{ hero.slug }}">
+  <article class="{{ heroClass }} {{ hero.type }} {{ hero.layout }}" id="{{ hero.slug }}">
     <div class="container">
       {%- if hero.img -%}
       <div class="image">
