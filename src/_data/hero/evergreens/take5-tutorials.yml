@@ -9,7 +9,6 @@ cta:
 # includes
 css: true
 layout: full-width
-img_preload: /tutorials/hero/gym-5019.jpg
 img_preload: gym-5019.jpg
 alt_text: "A collection of 5-minute tutorial video posters."
 artwork: [5019, 5013, 5002, 5001, 5007]
