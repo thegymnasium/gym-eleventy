@@ -6,6 +6,7 @@
     sitemapPriority: 1.0,
     sitemapChangeFreq: 'weekly',
     bodyClass: 'home',
+    imgBasePath: '/img/tutorials/',
   },
   eleventyComputed: {
     hero_data: (data) => {
@@ -24,18 +25,19 @@
       preload_image: (data) => {
         const [heroCategory, heroSlug] = data.hero_data || [];
         const hero = data.hero?.[heroCategory]?.[heroSlug];
+        const imgBasePath = data.meta.imgBasePath;
         if (hero) {
           const imageId = (hero.id || 'default-id').toLowerCase();
           if (hero.img_preload === true || hero.img_preload === 'poster') {
-            return { poster: `/img/tutorials/poster/${imageId}.jpg` };
+            return { poster: `${imgBasePath}poster/${imageId}.jpg` };
           }
           if (hero.img_preload === 'hero') {
-            return { hero: `/img/tutorials/hero/${imageId}.jpg` };
+            return { hero: `${imgBasePath}hero/${imageId}.jpg` };
           }
           if (typeof hero.img_preload === 'string') {
             return {
-              poster_breakpoint: `/img/tutorials/poster/${hero.img_preload}`,
-              hero_breakpoint: `/img/tutorials/hero/${hero.img_preload}`
+              poster_breakpoint: `${imgBasePath}poster/${hero.img_preload}`,
+              hero_breakpoint: `${imgBasePath}hero/${hero.img_preload}`
             };
           }
         }
