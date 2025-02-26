@@ -29,6 +29,14 @@
       height: 100%;
       object-fit: cover;
       object-position: 48% center;
+      background:
+        linear-gradient(to top right,
+           transparent calc(50% - 1px), var(--mono-300) calc(50% - 1px),
+           var(--mono-300) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(to bottom right,
+           transparent calc(50% - 1px), var(--mono-300) calc(50% - 1px),
+           var(--mono-300) calc(50% + 1px), transparent calc(50% + 1px)),
+           var(--mono-200);
     }
   }
 }
