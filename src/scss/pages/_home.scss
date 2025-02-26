@@ -98,6 +98,13 @@
     text-wrap: pretty;
   }
 
+  &.article,
+  &.livestream {
+    h1 {
+      text-wrap: balance;
+    }
+  }
+
   header > p {
     max-width: 44rem;
     font-size: 1.35rem;
