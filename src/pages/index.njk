@@ -1,36 +1,35 @@
 ---js
 {
-  layout: "layouts/full-width.njk",
-  permalink: "/",
+  layout: 'layouts/full-width.njk',
+  permalink: '/',
   meta: {
     sitemapPriority: 1.0,
-    sitemapChangeFreq: "weekly",
-    bodyClass: "home",
+    sitemapChangeFreq: 'weekly',
+    bodyClass: 'home',
   },
   eleventyComputed: {
-    hero_data: function(data) {
+    hero_data: (data) => {
       const homeHero = data.featured.home.hero || {};
       const heroCategory = Object.keys(homeHero)[0];
       const heroSlug = homeHero[heroCategory];
       return heroCategory && heroSlug ? [heroCategory, heroSlug] : [];
     },
     meta: {
-      title: "{{ config.meta.subtitle }}",
-      css: function(data) {
+      title: '{{ config.meta.subtitle }}',
+      css: (data) => {
         const [heroCategory, heroSlug] = data.hero_data || [];
         return heroCategory && heroSlug && data.hero[heroCategory]?.[heroSlug]?.css
-          ? `/css/hero/${heroCategory}/${heroSlug}.css`
-          : false;
+          ? `/css/hero/${heroCategory}/${heroSlug}.css` : false;
       },
-      preload_image: function(data) {
+      preload_image: (data) => {
         const [heroCategory, heroSlug] = data.hero_data || [];
         const hero = data.hero?.[heroCategory]?.[heroSlug];
         if (hero) {
-          const imageId = (hero.id || "default-id").toLowerCase();
-          if (hero.img_preload === true || hero.img_preload === "poster") {
+          const imageId = (hero.id || 'default-id').toLowerCase();
+          if (hero.img_preload === true || hero.img_preload === 'poster') {
             return { poster: `/img/tutorials/poster/${imageId}.jpg` };
           }
-          if (hero.img_preload === "hero") {
+          if (hero.img_preload === 'hero') {
             return { hero: `/img/tutorials/hero/${imageId}.jpg` };
           }
           if (typeof hero.img_preload === 'string') {
@@ -42,7 +41,7 @@
         }
         return null;
       }
-    },
+    }
   }
 }
 ---
