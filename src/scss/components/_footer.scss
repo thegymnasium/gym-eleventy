@@ -10,8 +10,9 @@
   border-top: 0.625rem solid var(--secondary-500);
 
   p {
+    max-width: 16rem;
     letter-spacing: 0.05ex;
-    text-wrap: pretty;
+    text-wrap: balance;
 
     &:only-of-type {
       margin-bottom: 0;
@@ -24,7 +25,7 @@
 
   .main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, auto));
+    grid-template-columns: repeat(auto-fit, minmax(10rem, auto));
     gap: 2rem 2.8rem;
     justify-content: start;
   }
