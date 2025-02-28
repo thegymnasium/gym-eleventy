@@ -6,4 +6,4 @@ cta:
   label: Watch and Learn
 # includes
 css: true
-img_preload: true
+img_preload: both
