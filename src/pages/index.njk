@@ -35,10 +35,17 @@
             return { hero: `${imgBasePath}hero/${imageId}.jpg` };
           }
           if (typeof hero.img_preload === 'string') {
-            return {
-              poster_breakpoint: `${imgBasePath}poster/${hero.img_preload}`,
-              hero_breakpoint: `${imgBasePath}hero/${hero.img_preload}`
-            };
+            if (hero.img_preload === 'both') {
+              return {
+                poster_breakpoint: `${imgBasePath}poster/${imageId}.jpg`,
+                hero_breakpoint: `${imgBasePath}hero/${imageId}.jpg`
+              };
+            } else {
+              return {
+                poster_breakpoint: `${imgBasePath}poster/${hero.img_preload}`,
+                hero_breakpoint: `${imgBasePath}hero/${hero.img_preload}`
+              };
+            }
           }
         }
         return null;
