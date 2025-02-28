@@ -125,35 +125,31 @@
   @keyframes ken-burns {
     0% {
       transform: scale(1);
-      object-position: 50% center;
+      object-position: center center;
     }
     15% {
-      transform: scale(1.04);
-      object-position: 38% 52%;
+      transform: scale(1.05);
+      object-position: 42% 58%;
     }
-    30% {
-      transform: scale(1.08);
-      object-position: 25% 54%;
-    }
-    45% {
+    35% {
       transform: scale(1.1);
-      object-position: 15% 55%;
+      object-position: 60% 42%;
     }
     55% {
-      transform: scale(1.1);
-      object-position: 15% 55%;
+      transform: scale(1.15);
+      object-position: 53% 47%;
     }
-    65% {
+    75% {
       transform: scale(1.08);
-      object-position: 30% 57%;
+      object-position: 45% 55%;
     }
-    80% {
-      transform: scale(1.04);
-      object-position: 45% 54%;
+    90% {
+      transform: scale(1.02);
+      object-position: center center;
     }
     100% {
       transform: scale(1);
-      object-position: 50% center;
+      object-position: center center;
     }
   }
 }
