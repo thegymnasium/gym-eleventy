@@ -10,9 +10,7 @@
   border-top: 0.625rem solid var(--secondary-500);
 
   p {
-    max-width: 16rem;
     letter-spacing: 0.05ex;
-    text-wrap: balance;
 
     &:only-of-type {
       margin-bottom: 0;
@@ -31,7 +29,7 @@
   }
 
   .header {
-     grid-column: 1 / -1;
+    grid-column: 1 / -1;
 
     img {
       max-width: none;
@@ -46,6 +44,14 @@
     .main {
       grid-auto-flow: column;
       grid-template-columns: 1fr;
+      column-gap: 4.2rem;
+    }
+    .header {
+      max-width: 16rem;
+
+      p {
+        text-wrap: pretty;
+      }
     }
     #resources {
       max-width: 8rem;
@@ -53,7 +59,6 @@
   }
 
   nav {
-
     h2 {
       font-family: var(--font-family-custom);
       font-size: 1rem;
@@ -177,7 +182,6 @@
   }
 
   .copyright {
-
     a {
       color: var(--secondary-500);
 
