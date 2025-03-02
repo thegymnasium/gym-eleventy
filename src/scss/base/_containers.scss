@@ -10,10 +10,13 @@
   @include container;
 }
 
-
 main {
   background-color: var(--mono-200);
   padding-bottom: 1.4rem;
+
+  &:focus {
+    outline: none;
+  }
 
   // TODO: replace with :not(.full-width) instead?
   &.default {
