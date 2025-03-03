@@ -58,7 +58,7 @@ footer:
           href: GYM_ROOT_URL/webinars/
         - label: About
           href: GYM_ROOT_URL/about/
-    - title: Content Collections
+    - title: Collections
       links:
         - label: Generative AI
           href: GYM_ROOT_URL/generative-ai/
@@ -115,13 +115,13 @@ footer:
           alt: YouTube play button icon.
           src: png/icon-youtube-4x.png
           srcset: svg/icon-youtube.svg
-        - label: Medium
-          href: https://medium.com/gymnasium
+        - label: Bluesky
+          href: https://bsky.app/profile/aquentgymnasium.bsky.social
           target: _blank
           rel: noopener
-          alt: Medium ellipsis (dot, oval, thin oval) icon.
-          src: png/icon-medium-4x.png
-          srcset: svg/icon-medium.svg
+          alt: Bluesky butterfly icon.
+          src: png/icon-bluesky-4x.png
+          srcset: svg/icon-bluesky.svg
         - label: Threads
           href: https://www.threads.net/@aquent_gymnasium
           target: _blank
@@ -136,13 +136,13 @@ footer:
           alt: Instagram camera icon.
           src: png/icon-instagram-4x.png
           srcset: svg/icon-instagram.svg
-        - label: Facebook
-          href: https://www.facebook.com/aquentgymnasium/
+        - label: Medium
+          href: https://medium.com/gymnasium
           target: _blank
           rel: noopener
-          alt: Facebook “f” icon.
-          src: png/icon-facebook-4x.png
-          srcset: svg/icon-facebook.svg
+          alt: Medium ellipsis (dot, oval, thin oval) icon.
+          src: png/icon-medium-4x.png
+          srcset: svg/icon-medium.svg
         - label: GitHub
           href: https://github.com/gymnasium
           target: _blank
