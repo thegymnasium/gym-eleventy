@@ -11,7 +11,6 @@
 
   p {
     letter-spacing: 0.05ex;
-    text-wrap: pretty;
 
     &:only-of-type {
       margin-bottom: 0;
@@ -24,13 +23,13 @@
 
   .main {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, auto));
+    grid-template-columns: repeat(auto-fit, minmax(10rem, auto));
     gap: 2rem 2.8rem;
     justify-content: start;
   }
 
   .header {
-     grid-column: 1 / -1;
+    grid-column: 1 / -1;
 
     img {
       max-width: none;
@@ -45,6 +44,14 @@
     .main {
       grid-auto-flow: column;
       grid-template-columns: 1fr;
+      column-gap: 4.2rem;
+    }
+    .header {
+      max-width: 16rem;
+
+      p {
+        text-wrap: pretty;
+      }
     }
     #resources {
       max-width: 8rem;
@@ -52,7 +59,6 @@
   }
 
   nav {
-
     h2 {
       font-family: var(--font-family-custom);
       font-size: 1rem;
@@ -176,7 +182,6 @@
   }
 
   .copyright {
-
     a {
       color: var(--secondary-500);
 

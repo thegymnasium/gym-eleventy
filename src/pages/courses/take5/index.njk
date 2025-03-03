@@ -37,10 +37,17 @@
     <article class="topic-listing">
       <h2 class="topic-label" aria-hidden="true"><span>All Topics</span></h2>
       <ul class="courses tutorials">
-      {% for tutorial in collections.live_tutorials | reverse %}
-        {%- set module = tutorial-%}
-        {%- include 'modules/panels/tutorial.njk' -%}
-      {% endfor %}
+        {% for tutorial in collections.live_tutorials | reverse %}
+          {%- set module = tutorial -%}
+
+          {%- set fetchpriority = "low" %}
+          {%- if loop.index <= 4 %}
+            {%- set fetchpriority = "high" %}
+          {% endif %}
+
+          {%- include 'modules/panels/tutorial.njk' -%}
+
+        {% endfor %}
       </ul>
     </article>
 

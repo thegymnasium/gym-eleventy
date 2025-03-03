@@ -1,35 +1,56 @@
 ---js
 {
-  layout: "layouts/full-width.njk",
-  permalink: "/",
+  layout: 'layouts/full-width.njk',
+  permalink: '/',
   meta: {
     sitemapPriority: 1.0,
-    sitemapChangeFreq: "weekly",
-    bodyClass: "home",
+    sitemapChangeFreq: 'weekly',
+    bodyClass: 'home',
+    imgBasePath: '/img/tutorials/',
   },
   eleventyComputed: {
     hero_data: (data) => {
-      const home_hero = data.featured.home.hero;
-      const hero_category = Object.keys(home_hero)[0];
-      const hero_slug = Object.values(home_hero)[0];
-      return [hero_category, hero_slug];
+      const homeHero = data.featured.home.hero || {};
+      const heroCategory = Object.keys(homeHero)[0];
+      const heroSlug = homeHero[heroCategory];
+      return heroCategory && heroSlug ? [heroCategory, heroSlug] : [];
     },
     meta: {
-      title: "{{ config.meta.subtitle }}",
-      css: function(data) {
-        const [hero_category, hero_slug] = data.hero_data || [];
-        if (hero_category && hero_slug && data.hero[hero_category] && data.hero[hero_category][hero_slug] && data.hero[hero_category][hero_slug].css) {
-          return `/css/hero/${hero_category}/${hero_slug}.css`;
-        }
-        return false;
+      title: '{{ config.meta.subtitle }}',
+      css: (data) => {
+        const [heroCategory, heroSlug] = data.hero_data || [];
+        return heroCategory && heroSlug && data.hero[heroCategory]?.[heroSlug]?.css
+          ? `/css/hero/${heroCategory}/${heroSlug}.css` : false;
       },
-      preload_image: function(data) {
-        const hero_category = data.hero_data && data.hero_data[0];
-        const hero_slug = data.hero_data && data.hero_data[1];
-        const img_preload = (hero_category && hero_slug) ? `/img/${data.hero[hero_category][hero_slug].img_preload}` : false;
-        return img_preload;
+      preload_image: (data) => {
+        const [heroCategory, heroSlug] = data.hero_data || [];
+        const hero = data.hero?.[heroCategory]?.[heroSlug];
+        const imgBasePath = data.meta.imgBasePath;
+        if (hero) {
+          const imageId = (hero.id || 'default-id').toLowerCase();
+          if (hero.img_preload === true || hero.img_preload === 'poster') {
+            return { poster: `${imgBasePath}poster/${imageId}.jpg` };
+          }
+          if (hero.img_preload === 'hero') {
+            return { hero: `${imgBasePath}hero/${imageId}.jpg` };
+          }
+          if (typeof hero.img_preload === 'string') {
+            if (hero.img_preload === 'both') {
+              return {
+                poster_breakpoint: `${imgBasePath}poster/${imageId}.jpg`,
+                hero_breakpoint: `${imgBasePath}hero/${imageId}.jpg`
+              };
+            } else {
+              return {
+                poster_breakpoint: `${imgBasePath}poster/${hero.img_preload}`,
+                hero_breakpoint: `${imgBasePath}hero/${hero.img_preload}`
+              };
+            }
+          }
+        }
+        return null;
       }
-    },
+    }
   }
 }
 ---

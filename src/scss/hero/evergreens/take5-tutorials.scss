@@ -1,6 +1,4 @@
 @use '../../base/breakpoints' as *;
-@use '../../base/functions' as *;
-@use '../../base/colors' as *;
 @use '../../base/mixins' as *;
 @use '../../base/animations' as *;
 
@@ -64,11 +62,11 @@
     z-index: 1;
 
     @include breakpoint(large, min) {
-      margin: 1.5rem 0;
+      margin: 0.875rem 0;
     }
 
     hgroup {
-      max-width: 24rem;
+      max-width: 28rem;
     }
 
     .subhead,
