@@ -119,3 +119,37 @@
     }
   }
 }
+
+// Ken Burns animation
+@mixin ken-burns {
+  @keyframes ken-burns {
+    0% {
+      transform: scale(1);
+      object-position: center center;
+    }
+    15% {
+      transform: scale(1.05);
+      object-position: 42% 58%;
+    }
+    35% {
+      transform: scale(1.1);
+      object-position: 60% 42%;
+    }
+    55% {
+      transform: scale(1.15);
+      object-position: 53% 47%;
+    }
+    75% {
+      transform: scale(1.08);
+      object-position: 45% 55%;
+    }
+    90% {
+      transform: scale(1.02);
+      object-position: center center;
+    }
+    100% {
+      transform: scale(1);
+      object-position: center center;
+    }
+  }
+}

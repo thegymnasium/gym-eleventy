@@ -85,25 +85,29 @@
     letter-spacing: 0.15ex;
     word-spacing: 0.25ex;
     margin-top: -0.4rem;
-
-    b {
-      font-weight: inherit;
-    }
   }
 
   h1 {
     font-size: rem-calc(40);
-    word-spacing: rem-calc(2);
+    letter-spacing: 0.0625ex;
+    word-spacing: 0.125ex;
     text-wrap: pretty;
+  }
+
+  &.article,
+  &.livestream {
+    h1 {
+      text-wrap: balance;
+    }
   }
 
   header > p {
     max-width: 44rem;
-    font-size: 1.4rem;
+    font-size: 1.35rem;
     line-height: 1.5;
     color: var(--mono-300);
     text-wrap: pretty;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
   }
 
   .guest {
@@ -263,10 +267,6 @@
       word-spacing: 0.25ex;
       margin-top: -0.125rem;
       margin-bottom: 0.8rem;
-
-      b {
-        font-weight: inherit;
-      }
     }
 
     h2 {

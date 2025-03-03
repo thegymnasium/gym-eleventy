@@ -32,9 +32,19 @@
 <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ config.meta.title }}</title>
 
 <link rel="preload" fetchpriority="high" as="style" href="{{ '/css/global.css' | cachebust }}">
-{% if meta.preload_image %}
-<link rel="preload" fetchpriority="high" as="image" media="(min-width: 75em)" href="{{ meta.preload_image }}">
-{% endif %}
+
+{%- set preload_images = meta.preload_image %}
+{%- if preload_images %}
+  {%- if preload_images.poster %}
+    <link rel="preload" fetchpriority="high" as="image" href="{{ preload_images.poster }}">
+  {%- elif preload_images.hero %}
+    <link rel="preload" fetchpriority="high" as="image" href="{{ preload_images.hero }}">
+  {%- endif %}
+  {%- if preload_images.poster_breakpoint %}
+    <link rel="preload" fetchpriority="high" as="image" media="max-width: 74.99em" href="{{ preload_images.poster_breakpoint }}">
+    <link rel="preload" fetchpriority="high" as="image" media="min-width: 75em" href="{{ preload_images.hero_breakpoint }}">
+  {%- endif %}
+{%- endif %}
 
 <meta name="robots" content="noai, noimageai, {{ metaRobots }}">
 <meta name="author" content="{{ metaAuthor }}">
