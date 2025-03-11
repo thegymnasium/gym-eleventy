@@ -17,9 +17,10 @@
       {%- if hero.img -%}
         <div class="image">
           {%- macro picture() -%}
-            <picture decoding="async" fetchpriority="high">
+            <picture>
               <source srcset="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-768w.{{ hero.img.format or 'jpg' }}" width="768" height="714" media="(min-width: 1200px)">
-              <img alt="{{ hero.img.alt_text }}" src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}" width="1280" height="720">
+              <img alt="{{ hero.img.alt_text }}"
+                   src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}" width="1280" height="720" decoding="async" fetchpriority="high">
             </picture>
           {%- endmacro -%}
           {% if hero.recording == false %}
@@ -49,10 +50,10 @@
                     /img/tutorials/hero/{{ hero.id | lower }}.jpg 1920w"
             sizes="(max-width: 75em) 100vw, 50vw"
             src="/img/tutorials/poster/{{ hero.id | lower }}.jpg"
-            decoding="async"
-            fetchpriority="high"
             width="1280"
-            height="720">
+            height="720"
+            decoding="async"
+            fetchpriority="high">
           {%- endmacro -%}
           <a href="/courses/take5/{{ tutorial.title | slugify }}">{{ img() }}</a>
         </div>
