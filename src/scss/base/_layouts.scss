@@ -49,6 +49,7 @@
   grid-template-rows: 1fr auto;
   background-color: var(--mono-900);
   border-top: 1rem solid var(--mono-500);
+  color: var(--mono-100); // default color for all enclosed text , unless overriden by anything below
 
   &.magenta {
     border-top-color: var(--magenta-500);
