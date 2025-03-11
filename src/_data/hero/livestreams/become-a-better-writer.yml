@@ -14,5 +14,5 @@ cta:
   label: "Watch the Recording"
   url: "https://www.youtube.com/watch?v=JXSpx385gbo"
 img:
-  description: "A view from above shows a desk with pens, broken pencils, crossed-out notes, and lots of crumpled papers."
+  alt_text: "A view from above shows a desk with pens, broken pencils, crossed-out notes, and lots of crumpled papers."
   format: jpg

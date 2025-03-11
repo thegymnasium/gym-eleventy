@@ -7,5 +7,5 @@ cta:
   label: "Read Now"
   url: https://medium.com/gymnasium/diy-ai-building-your-own-custom-gpt-a2523167bf21
 img:
-  description: "Two engineers build a custom ChatGPT bot from wooden blocks."
+  alt_text: "Two engineers build a custom ChatGPT bot from wooden blocks."
   format: jpg
