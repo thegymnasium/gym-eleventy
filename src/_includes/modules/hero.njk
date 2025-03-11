@@ -19,7 +19,7 @@
           {%- macro picture() -%}
             <picture decoding="async" fetchpriority="high">
               <source srcset="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-768w.{{ hero.img.format or 'jpg' }}" width="768" height="714" media="(min-width: 1200px)">
-              <img alt="{{ hero.img.description }}" src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}" width="1280" height="720">
+              <img alt="{{ hero.img.alt_text }}" src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}" width="1280" height="720">
             </picture>
           {%- endmacro -%}
           {% if hero.recording == false %}
