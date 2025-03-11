@@ -11,5 +11,5 @@ cta:
   label: "Watch the Recording"
   url: "https://www.youtube.com/watch?v=K7lF3oihwMI"
 img:
-  description: "Two pastel-colored Valentine’s Day candy hearts with the words Take and Note."
+  alt_text: "Two pastel-colored Valentine’s Day candy hearts with the words Take and Note."
   format: jpg

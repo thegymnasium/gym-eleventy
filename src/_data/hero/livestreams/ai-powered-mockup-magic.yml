@@ -11,6 +11,6 @@ cta:
   label: "Embrace the Magic"
   url: "https://www.youtube.com/watch?v=zMmzJ481ukE"
 img:
-  description: "Mockups shown on various screens and devices with the magic of AI."
+  alt_text: "Mockups shown on various screens and devices with the magic of AI."
 artwork:
   format: jpg

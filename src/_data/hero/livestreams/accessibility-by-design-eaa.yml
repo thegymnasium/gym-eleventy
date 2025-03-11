@@ -16,5 +16,5 @@ cta:
     url: "https://www.linkedin.com/events/7300203500347473922/"
 recording: false
 img:
-  description: "Explore how the European Accessibility Act enhances user experience, creating inclusive products and services for all."
+  alt_text: "Explore how the European Accessibility Act enhances user experience, creating inclusive products and services for all."
   format: png
