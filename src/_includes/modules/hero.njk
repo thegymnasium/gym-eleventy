@@ -2,10 +2,12 @@
   {%- if not hero_cat -%}
     <em>{ Hero Module }</em>
     <p>Your images won't work unless you provide a hero_cat variable</p>
-  {%- endif  -%}
+  {%- endif -%}
+
   {%- if hero.img.url -%}
     {# TODO: do something if we have an anomalous URL that doesn't fit the pattern below #}
   {%- endif -%}
+
   {%- if not heroClass -%}
     {%- set heroClass = "hero" -%}
   {%- endif -%}
@@ -20,11 +22,17 @@
               <img alt="{{ hero.img.description }}" src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}" width="1280" height="720">
             </picture>
           {%- endmacro -%}
-          {%- if hero.cta.url | is_external_link -%}
-            {%- external_link hero.cta.url, picture() -%}
-          {%- else -%}
-            <a href="{{ hero.cta.url }}">{{ picture() }}</a>
-          {%- endif -%}
+          {% if hero.recording == false %}
+            {% set cta = hero.cta[0] %}
+          {% else %}
+            {% set cta = hero.cta[1] %}
+          {% endif %}
+
+          {% if cta.url | is_external_link %}
+            {% external_link cta.url, picture() %}
+          {% else %}
+            <a href="{{ cta.url }}">{{ picture() }}</a>
+          {% endif %}
         </div>
       {%- endif -%}
 
@@ -71,24 +79,48 @@
             {%- if hero.subtitle -%}
               <p class="subhead caps"><strong>{{ hero.subtitle }}</strong></p>
             {%- endif -%}
-            <h1>{{ hero.title }}</h1>
+            <h1>
+              {{ hero.title | replace(r/:.*/ , '') }}
+              {% if ':' in hero.title %}
+                <span class="visually-hidden">:</span><span class="subhead">{{ hero.title | replace(r/^.*:/ , '') }}</span>
+              {% endif %}
+            </h1>
           </hgroup>
 
-          {%- if hero.guest -%}
-            <p class="guest">{{ hero.guest }}</p>
-          {%- else -%}
-            <p>{{ hero.description }}</p>
-          {%- endif -%}
+          {%- if hero.recording == false %}
+            {%- if hero.guest -%}
+              <p class="guest">{{ hero.guest }}</p>
+            {%- endif -%}
+            <p class="date-time">
+              <time datetime="{{ hero.date }}">{{ hero.date }} at {{ hero.time }}</time>
+            </p>
+            <p>
+              {{ hero.description }}
+              {{ cta.site }}
+              {%- for key, value in hero -%}
+                {% if key == 'homepage' and value == true %}
+                  or our {{ key }}
+                {%- endif -%}
+              {%- endfor -%}.
+            </p>
+          {%- endif %}
+
+          {%- set cta = hero.cta[0] if hero.recording == false else hero.cta[1] %}
+          {%- set label = cta.label %}
+          {% if cta.site %}
+            {% set label = cta.label + ' ' + cta.site %}
+          {% endif %}
 
           <div class="cta">
-            {%- if hero.cta.url | is_external_link -%}
-              {%- external_link hero.cta.url, hero.cta.label, 'btn' -%}
-            {%- else -%}
-              <a href="{{ hero.cta.url }}" class="btn">{{ hero.cta.label }}</a>
-            {%- endif -%}
+            {% if cta.url | is_external_link %}
+              {% external_link cta.url, label, 'btn' %}
+            {% else %}
+              <a class="btn" href="{{ cta.url }}">{{ label }}</a>
+            {% endif %}
           </div>
+
         </header>
-      {%- endif -%}
+      {% endif %}
     </div>
   </article>
 
