@@ -7,5 +7,5 @@ cta:
   label: "Embrace the Magic"
   url: https://medium.com/gymnasium/ai-mockup-magic-prototyping-landing-pages-with-llms-3765bef6a84c
 img:
-  description: "Mockups shown on various screens and devices with the magic of AI."
+  alt_text: "Mockups shown on various screens and devices with the magic of AI."
   format: jpg

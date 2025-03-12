@@ -1,4 +1,4 @@
-id: take-note-redo
+slug: take-note-redo
 type: livestream
 subtitle: "New Livestream"
 title: "Take Note: Transcribing Images with ChatGPT"
@@ -14,6 +14,5 @@ cta:
   label: "Watch the Recording"
   url: "https://www.linkedin.com/events/7194019280919674881/about/"
 img:
-  description: "An illustrative poster of a complex line drawing with digital symbols, hanging on a blue wall."
+  alt_text: "An illustrative poster of a complex line drawing with digital symbols, hanging on a blue wall."
   format: jpg
-

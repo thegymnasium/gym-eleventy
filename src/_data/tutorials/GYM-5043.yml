@@ -14,7 +14,7 @@ topic_featured: false
 topic: "Accessibility"
 video_id: 7Q1bVzu0KxE
 video_duration: "3:36"
-description: "Discover how to identify whether the colors on your website have sufficient contrast between text color and its background in this tutorial."
+description: "Learn how to identify whether the colors on your website have sufficient contrast between text color and its background in 5 minutes."
 related_content:
 - label: "WebAIM: Contrast Checker"
   url: "https://webaim.org/resources/contrastchecker/"

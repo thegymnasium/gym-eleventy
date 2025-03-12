@@ -12,5 +12,5 @@ cta:
   label: "Watch the Recording"
   url: "https://www.youtube.com/watch?v=iKqXRFiD7W4"
 img:
-  description: "A job seeker and wizard searching for work, aided by magic to shed light on their quest."
+  alt_text: "A job seeker and wizard searching for work, aided by magic to shed light on their quest."
   format: jpg

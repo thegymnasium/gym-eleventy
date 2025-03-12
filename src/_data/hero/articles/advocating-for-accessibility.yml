@@ -7,5 +7,5 @@ cta:
   label: "Read Now"
   url: https://medium.com/gymnasium/advocating-for-accessibility-with-aaron-gustafson-54079c132152
 img:
-  description: "Aaron wearing a blue beanie while working at the computer."
+  alt_text: "Aaron wearing a blue beanie while working at the computer."
   format: png

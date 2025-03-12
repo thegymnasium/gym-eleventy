@@ -14,7 +14,7 @@ topic_featured: false
 topic: "Development"
 video_id: Q66-TDbHiIs
 video_duration: "4:48"
-description: "Learn how to make an image appear inside the outline of plain text using CSS in this hands-on tutorial."
+description: "Learn how to make an image appear inside the outline of plain text using CSS in 5 minutes."
 project_file_source: CodePen
 project_files:
 - label: "Starting Project"
