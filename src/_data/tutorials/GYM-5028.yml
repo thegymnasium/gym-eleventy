@@ -14,7 +14,7 @@ topic_featured: false
 topic: "Development"
 video_id: VYhPXZvAD9k
 video_duration: "4:57"
-description: "Learn how to create a theme for your dark mode users in this tutorial."
+description: "Learn how to create a theme for your dark mode users in 5 minutes."
 project_file_source: CodePen
 project_files:
 - label: "Starting Project"

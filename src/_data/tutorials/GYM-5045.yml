@@ -18,7 +18,7 @@ subtopics:
   - label: "UX"
 video_id: m3M7QbDE3Lg
 video_duration: "4:33"
-description: "Forms are a frequent source of accessibility problems on websites. Learn some tips and tricks on how to make your web forms easier to use and understand in this tutorial."
+description: "Learn tips and tricks to address common accessibility issues and make your web forms easier to use in 5 minutes."
 related_content:
 - label: "Validating Input"
   url: "https://www.w3.org/WAI/tutorials/forms/validation/"
