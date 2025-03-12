@@ -14,7 +14,7 @@ topic_featured: false
 topic: "Accessibility"
 video_id: Njn6CQwiafQ
 video_duration: "3:41"
-description: "You don’t have to forgo animation entirely to accommodate users with disabilities. Learn how to ensure that animated elements won’t compromise the accessibility of your website in this tutorial."
+description: "Learn how to make animated elements accessible without compromising your website’s usability in 5 minutes."
 related_content:
 - label: "An Introduction to the Reduced Motion Media Query"
   url: "https://css-tricks.com/introduction-reduced-motion-media-query/"
