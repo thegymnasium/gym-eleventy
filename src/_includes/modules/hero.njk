@@ -61,7 +61,9 @@
         <header>
           <hgroup>
             {%- if hero.subtitle -%}
-              <p class="subhead caps"><strong>{{ hero.subtitle }}</strong></p>
+              <p class="subhead caps">
+                <strong>{% if hero.new == true %}New{% else %}Featured{% endif %} {{ hero.subtitle }}</strong>
+              </p>
             {%- endif -%}
             <h1>{{ tutorial.title }}</h1>
             {%- if tutorial.topic -%}
