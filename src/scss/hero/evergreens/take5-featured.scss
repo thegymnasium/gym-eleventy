@@ -12,7 +12,7 @@
   .topic:last-child {
     font-size: 1rem;
     color: var(--mono-400);
-    margin-top: 0.2rem;
+    margin-top: 0.4rem;
 
     span {
       color: var(--mono-100);
@@ -33,6 +33,7 @@
          transparent calc(50% - 1px), var(--mono-300) calc(50% - 1px),
          var(--mono-300) calc(50% + 1px), transparent calc(50% + 1px)),
          var(--mono-200);
+    clip-path: inset(0 0 1px 0);
     overflow: hidden;
 
     img {
