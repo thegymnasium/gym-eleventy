@@ -1,6 +1,6 @@
 <!-- Take 5 tutorials evergreen -->
-<div class="image-group" role="img" aria-label="{{ hero.alt_text }}">
-{% for img_num in hero.artwork %}
+<div class="image-group" role="img" aria-label="{{ hero.img.alt }}">
+{% for img_num in hero.img.set %}
   {% if img_num < 10 %}
     {% set fmt_num = '000' + img_num %}
   {% elif img_num < 100 %}
