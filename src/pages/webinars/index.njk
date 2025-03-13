@@ -25,10 +25,10 @@ meta:
           <header>
             <p class="topic caps"><b>{{ webinar.content_category }}</b></p>
             <h2 class="title">
-              {{ webinar.title | replace(r/:.*/ , '') }}
-              {% if ':' in webinar.title %}
-                <span class="visually-hidden">:</span><span class="subhead">{{ webinar.title | replace(r/^.*:/ , '') }}</span>
-              {% endif %}
+              {{ webinar.title | replace(r/:.*/, '') }}
+              {%- if ':' in webinar.title -%}
+                <span class="visually-hidden">:</span><span class="subhead">{{ webinar.title | replace(r/^.*:/, '') }}</span>
+              {%- endif -%}
             </h2>
             <p class="guests"><b>{{ webinar.event_guests }}</b></p>
           </header>
