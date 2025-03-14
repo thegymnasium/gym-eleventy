@@ -1,32 +1,39 @@
-{%- if hero -%}
-  {%- if not hero_cat -%}
+{%- if hero %}
+  {%- if not hero_cat %}
     <em>{ Hero Module }</em>
     <p>Your images won't work unless you provide a hero_cat variable</p>
-  {%- endif -%}
+  {%- endif %}
 
-  {%- if hero.img.url -%}
+  {%- if hero.img.url %}
     {# TODO: do something if we have an anomalous URL that doesn't fit the pattern below #}
-  {%- endif -%}
+  {%- endif %}
 
-  {%- if not heroClass -%}
-    {%- set heroClass = "hero" -%}
-  {%- endif -%}
+  {%- if not heroClass %}
+    {%- set heroClass = "hero" %}
+  {%- endif %}
 
   <article class="{{ heroClass }} {{ hero.type }} {{ hero.layout }}" id="{{ hero.slug }}">
     <div class="container">
-      {%- if hero.img -%}
+
+      {% if hero.type != 'tutorial' and hero.img %}
         <div class="image">
-          {%- macro picture() -%}
+          {%- macro picture() %}
             <picture>
               <source srcset="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-768w.{{ hero.img.format or 'jpg' }}" width="768" height="714" media="(min-width: 1200px)">
-              <img alt="{{ hero.img.alt_text }}"
+              <img alt="{{ hero.img.alt }}"
                    src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}" width="1280" height="720" decoding="async" fetchpriority="high">
             </picture>
-          {%- endmacro -%}
-          {% if hero.recording == false %}
-            {% set cta = hero.cta[0] %}
+          {%- endmacro %}
+
+          {#} TODO: reusable include? {#}
+          {% if hero.cta is iterable %}
+            {% if hero.recording == false %}
+              {% set cta = hero.cta[0] %}
+            {% else %}
+              {% set cta = hero.cta[1] %}
+            {% endif %}
           {% else %}
-            {% set cta = hero.cta[1] %}
+              {% set cta = hero.cta %}
           {% endif %}
 
           {% if cta.url | is_external_link %}
@@ -34,17 +41,19 @@
           {% else %}
             <a href="{{ cta.url }}">{{ picture() }}</a>
           {% endif %}
+
         </div>
-      {%- endif -%}
+      {%- endif %}
 
-      {%- if hero.slug == 'take5-tutorials' -%}
+      {%- if hero.slug == 'take5-tutorials' %}
         {% include "modules/hero/evergreens/partial-take5-tutorials.njk" %}
-      {%- endif -%}
+      {%- endif %}
 
-      {%- set tutorial = tutorials[hero.id] -%}
-      {%- if tutorial -%}
+      {%- set tutorial = tutorials[hero.id] %}
+
+      {%- if tutorial %}
         <div class="image">
-          {%- macro img() -%}
+          {%- macro img() %}
             <img alt="{{ tutorial.title }} video poster."
             srcset="/img/tutorials/poster/{{ hero.id | lower }}.jpg 1280w,
                     /img/tutorials/hero/{{ hero.id | lower }}.jpg 1920w"
@@ -54,80 +63,115 @@
             height="720"
             decoding="async"
             fetchpriority="high">
-          {%- endmacro -%}
+          {%- endmacro %}
           <a href="/courses/take5/{{ tutorial.title | slugify }}">{{ img() }}</a>
         </div>
 
         <header>
           <hgroup>
-            {%- if hero.subtitle -%}
+            {%- if hero.subtitle %}
               <p class="subhead caps">
-                <strong>{% if hero.new == true %}New{% else %}Featured{% endif %} {{ hero.subtitle }}</strong>
+                <strong>
+                  {% if hero.new == true %}
+                    {{ hero.subtitle | replace('^\\S+', 'New') }}
+                  {% else %}
+                    {{ hero.subtitle }}
+                  {% endif %}
+                </strong>
               </p>
-            {%- endif -%}
-            <h1>{{ tutorial.title }}</h1>
-            {%- if tutorial.topic -%}
-              <p class="subhead caps topic"><span>Take 5</span> {{ tutorial.topic }}</p>
-            {%- endif -%}
-          </hgroup>
-          <p>{{ tutorial.description }}</p>
-          <div class="cta">
-            <a href="/courses/take5/{{ tutorial.title | slugify }}" class="btn">{{ hero.cta.label }}</a>
-          </div>
-        </header>
+            {%- endif %}
 
-      {%- else -%}
-        <header>
-          <hgroup>
-            {%- if hero.subtitle -%}
-              <p class="subhead caps"><strong>{{ hero.subtitle }}</strong></p>
-            {%- endif -%}
             <h1>
-              {{ hero.title | replace(r/:.*/ , '') }}
-              {% if ':' in hero.title %}
-                <span class="visually-hidden">:</span><span class="subhead">{{ hero.title | replace(r/^.*:/ , '') }}</span>
-              {% endif %}
+              {{ tutorial.title }}
+              {%- if tutorial.topic %}
+                <p class="subhead caps topic"><span>Take 5</span> {{ tutorial.topic }}</p>
+              {%- endif %}
             </h1>
           </hgroup>
 
-          {%- if hero.recording == false %}
-            {%- if hero.guest -%}
-              <p class="guest">{{ hero.guest }}</p>
-            {%- endif -%}
+          <p>{{ tutorial.description }}</p>
+
+          {%- if tutorial.url and hero.cta.label %}
+            <div class="cta">
+              <a href="/courses/take5/{{ tutorial.title | slugify }}" class="btn">{{ hero.cta.label }}</a>
+            </div>
+          {% endif %}
+
+        </header>
+
+      {%- else %}
+        <header>
+          <hgroup>
+            {%- if hero.subtitle %}
+              <p class="subhead caps">
+                <strong>
+                  {% if hero.new == true %}
+                    {{ hero.subtitle | replace('^\\S+', 'New') }}
+                  {% else %}
+                    {{ hero.subtitle }}
+                  {% endif %}
+                </strong>
+              </p>
+            {%- endif %}
+
+            <h1>
+              {{ hero.title | replace(r/:.*/ , '') }}
+              {%- if ':' in hero.title %}
+                <span class="visually-hidden">:</span><span class="subhead">{{ hero.title | replace(r/^.*:/ , '') }}</span>
+              {%- endif %}
+            </h1>
+          </hgroup>
+
+          {% if hero.recording == false %}
             <p class="date-time">
               <time datetime="{{ hero.date }}">{{ hero.date }} at {{ hero.time }}</time>
             </p>
             <p>
-              {{ hero.description }}
+              {{ hero.details }}
               {{ cta.site }}
-              {%- for key, value in hero -%}
-                {% if key == 'homepage' and value == true %}
-                  or our {{ key }}
-                {%- endif -%}
-              {%- endfor -%}.
+              {%- if hero.homepage == true %}
+                or our homepage
+              {%- endif %}.
             </p>
-          {%- endif %}
-
-          {%- set cta = hero.cta[0] if hero.recording == false else hero.cta[1] %}
-          {%- set label = cta.label %}
-          {% if cta.site %}
-            {% set label = cta.label + ' ' + cta.site %}
+          {% else %}
+            <p>{{ hero.description }}</p>
           {% endif %}
 
-          <div class="cta">
-            {% if cta.url | is_external_link %}
-              {% external_link cta.url, label, 'btn' %}
+          {% if hero.cta %}
+            {#} TODO: reusable include? {#}
+            {%-if hero.cta is iterable %}
+              {% if hero.recording == false %}
+                {% set cta = hero.cta[0] %}
+              {% else %}
+                {% set cta = hero.cta[1] %}
+              {% endif %}
             {% else %}
-              <a class="btn" href="{{ cta.url }}">{{ label }}</a>
+              {% set cta = hero.cta %}
             {% endif %}
-          </div>
 
+            {% set label = cta.label %}
+            {% if cta.site %}
+              {% set label = cta.label + ' ' + cta.site %}
+            {% endif %}
+
+            <div class="cta">
+              {% if cta.url and cta.url != '' %}
+                {% if cta.url | is_external_link %}
+                  {% external_link cta.url, label, 'btn' %}
+                {% else %}
+                  <a class="btn" href="{{ cta.url }}">{{ label }}</a>
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endif %}
         </header>
+
       {% endif %}
+
     </div>
   </article>
 
-{%- else -%}
+{%- else %}
   <em>{ Hero Module Placeholder }</em>
   <p>Pass in the hero variable to make this work</p>
-{%- endif -%}
+{%- endif %}
