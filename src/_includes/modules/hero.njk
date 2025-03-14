@@ -138,25 +138,37 @@
           <hgroup>
             {{ hero_subtitle() }}
             <h1>
-              {{ hero.title | replace(r/:.*/, '') }}
+              {{- hero.title | replace(r/:.*/, '') }}
               {%- if ':' in hero.title -%}
-                <span class="visually-hidden">:</span><span class="subhead">{{ hero.title | replace(r/^.*:/, '') }}</span>
+              <span class="visually-hidden">:</span>
+              <span class="subhead">{{- hero.title | replace(r/^.*:/, '') }}</span>
               {%- endif -%}
             </h1>
           </hgroup>
 
+          {%- if hero.guests and hero.title | length > 48 %}
+          {%- else %}
+            <p class="guests">
+              with
+              {%- for guest in hero.guests %}
+                {{ guest }}{% if not loop.last %} and {% endif %}
+              {%- endfor %}
+            </p>
+          {%- endif %}
           {%- if hero.recording == false -%}
-            {%- call hero_cta() -%}
-              <p class="date-time">
-                <time datetime="{{ hero.date }}">{{ hero.date }} at {{ hero.time }}</time>
-              </p>
-              <p>
-                {{ hero.details }} {{ cta.site }}
-                {%- if hero.homepage %} or our homepage{% endif -%}.
-              </p>
-            {%- endcall -%}
+            <p class="date-time">
+              <time datetime="{{ hero.date }}">{{ hero.date }} at {{ hero.time }}</time>
+            </p>
+             {%- if hero.details %}
+               {%- call hero_cta() -%}
+                <p class="details">
+                  {{- hero.details }} {{ cta.site -}}
+                  {%- if hero.homepage %} or our homepage{% endif -%}.
+                </p>
+              {%- endcall -%}
+            {%- endif %}
           {%- else -%}
-            <p>{{ hero.description }}</p>
+            <p class="description">{{ hero.description }}</p>
           {%- endif %}
 
           {%- if hero.cta -%}
