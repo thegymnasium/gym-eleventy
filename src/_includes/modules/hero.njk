@@ -30,7 +30,7 @@
 
   {%- macro hero_cta() -%}
     {%- if hero.cta is iterable -%}
-      {%- if not hero.recording -%}
+      {%- if hero.recording == false -%}
         {%- set cta = hero.cta[0] -%}
       {%- else -%}
         {%- set cta = hero.cta[1] -%}
@@ -39,7 +39,7 @@
       {%- set cta = hero.cta -%}
     {%- endif -%}
     {{- caller() -}}
-  {%- endmacro -%}
+  {%- endmacro %}
 
   {%- macro picture() -%}
     <picture>
@@ -83,43 +83,35 @@
 
   <article class="{{ heroClass }} {{ hero.type }} {{ hero.layout }}" id="{{ hero.slug }}">
     <div class="container">
-      {# Set tutorial context before any content #}
+      {# Set tutorial context #}
       {%- set tutorial = tutorials[hero.id] %}
 
-      {%- if hero.type != 'tutorial' -%}
-        {%- if hero.img -%}
-          <div class="image">
-            {%- call hero_cta() -%}
-              {%- if cta.url -%}
-                {%- if cta.url | is_external_link -%}
-                  {% external_link cta.url, picture() %}
-                {%- else -%}
-                  <a href="{{ cta.url }}">{{ picture() }}</a>
-                {%- endif -%}
-              {%- endif -%}
-            {%- endcall %}
-          </div>
-        {%- endif -%}
-      {%- endif %}
-
+      {# Tutorial-specific content #}
       {%- if hero.slug == 'take5-tutorials' -%}
         {% include "modules/hero/evergreens/partial-take5-tutorials.njk" %}
-        <header>
-          <hgroup>
-            {{ hero_subtitle() }}
-            <h1>{{ hero.title }}</h1>
-          </hgroup>
-          <p>{{ hero.description }}</p>
-          {%- if hero.cta -%}
-            <div class="cta">
-              <a href="{{ hero.cta.url }}" class="btn">{{ hero.cta.label }}</a>
-            </div>
-          {%- endif %}
-        </header>
-      {%- elif tutorial -%}
+      {%- endif %}
+
+      {%- if hero.type != 'tutorial' and hero.img -%}
+        <div class="image">
+          {%- call hero_cta() -%}
+            {%- if cta.url and cta.url != '' -%}
+              {%- if cta.url | is_external_link -%}
+                {% external_link cta.url, picture() %}
+              {%- else -%}
+                <a href="{{ cta.url }}">{{ picture() }}</a>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endcall %}
+        </div>
+      {%- endif %}
+
+      {# Content split between tutorial and standard (articles and livestreams) #}
+      {%- if tutorial -%}
+
         <div class="image">
           <a href="/courses/take5/{{ tutorial.title | slugify }}">{{ img() }}</a>
         </div>
+
         <header>
           <hgroup>
             {{ hero_subtitle() }}
@@ -130,14 +122,18 @@
               {%- endif -%}
             </h1>
           </hgroup>
+
           <p>{{ tutorial.description }}</p>
+
           {%- if tutorial.url and hero.cta -%}
             <div class="cta">
               <a href="/courses/take5/{{ tutorial.title | slugify }}" class="btn">{{ hero.cta.label }}</a>
             </div>
           {%- endif %}
         </header>
+
       {%- else -%}
+        {# Standard hero content #}
         <header>
           <hgroup>
             {{ hero_subtitle() }}
@@ -149,7 +145,7 @@
             </h1>
           </hgroup>
 
-          {%- if not hero.recording -%}
+          {%- if hero.recording == false -%}
             {%- call hero_cta() -%}
               <p class="date-time">
                 <time datetime="{{ hero.date }}">{{ hero.date }} at {{ hero.time }}</time>
