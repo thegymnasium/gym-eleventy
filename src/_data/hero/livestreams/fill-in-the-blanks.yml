@@ -1,15 +1,16 @@
 slug: fill-in-the-blanks
 type: livestream
-subtitle: "New Livestream"
+new: false
+subtitle: "Featured Livestream"
 title: "Fill in the Blanks: Demonstrating How to Build a Custom GPT"
-description: "Watch the livestream here on our homepage:"
+details: "Watch the livestream here on our homepage:"
 date: "Tuesday, January 30"
 time: "10AM EST / 4PM CET"
 datetime: "2024-01-30T15:00:00Z"
 recording: true
 cta:
   label: "Watch the Recording"
-url: "https://www.youtube.com/watch?v=9bMjt4fJR-M"
+url: https://www.youtube.com/watch?v=9bMjt4fJR-M
 img:
-  alt_text: "Two engineers build a custom ChatGPT bot from wooden blocks."
+  alt: "Two engineers build a custom ChatGPT bot from wooden blocks."
   format: jpg

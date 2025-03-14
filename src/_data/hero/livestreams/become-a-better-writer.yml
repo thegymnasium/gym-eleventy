@@ -1,10 +1,11 @@
 slug: become-a-better-writer
 type: livestream
-subtitle: "New Livestream"
+new: false
+subtitle: "Featured Livestream"
 title: "Become a Better Writer with ChatGPT"
-description: "Watch the livestream on"
+details: "Watch the livestream on"
 linkedin: "LinkedIn"
-linkedin_cta: "https://www.linkedin.com/events/7216234892848697345/about/"
+linkedin_cta: https://www.linkedin.com/events/7216234892848697345/about/
 homepage: "or here on our homepage"
 date: "Monday, July 22"
 time: "10AM EDT / 4PM CET"
@@ -12,7 +13,7 @@ datetime: "2024-07-22T14:00:00Z"
 recording: true
 cta:
   label: "Watch the Recording"
-  url: "https://www.youtube.com/watch?v=JXSpx385gbo"
+  url: https://www.youtube.com/watch?v=JXSpx385gbo
 img:
-  alt_text: "A view from above shows a desk with pens, broken pencils, crossed-out notes, and lots of crumpled papers."
+  alt: "A view from above shows a desk with pens, broken pencils, crossed-out notes, and lots of crumpled papers."
   format: jpg
