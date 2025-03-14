@@ -1,177 +1,193 @@
 {%- if hero %}
-  {%- if not hero_cat %}
+
+  {%- if not heroClass -%}
+    {%- set heroClass = "hero" -%}
+  {%- endif %}
+
+  {%- if not hero_cat -%}
     <em>{ Hero Module }</em>
     <p>Your images won't work unless you provide a hero_cat variable</p>
   {%- endif %}
 
-  {%- if hero.img.url %}
-    {# TODO: do something if we have an anomalous URL that doesn't fit the pattern below #}
+  {%- if hero.img.url and not (hero.img.url.startsWith('/img/hero/' ~ hero_cat ~ '/')) -%}
+    <em>{ Hero Module Warning }</em>
+    <p>Non-standard image URL detected. URLs should follow the pattern: <code>/img/hero/{hero_cat}/…</code></p>
   {%- endif %}
 
-  {%- if not heroClass %}
-    {%- set heroClass = "hero" %}
-  {%- endif %}
+  {%- macro hero_subtitle() -%}
+    {%- if hero.subtitle -%}
+      <p class="subhead caps">
+        <strong>
+          {%- if hero.new -%}
+            {{ hero.subtitle | replace('^\\S+', 'New') }}
+          {%- else -%}
+            {{ hero.subtitle }}
+          {%- endif -%}
+        </strong>
+      </p>
+    {%- endif -%}
+  {%- endmacro %}
+
+  {%- macro hero_cta() -%}
+    {%- if hero.cta is iterable -%}
+      {%- if not hero.recording -%}
+        {%- set cta = hero.cta[0] -%}
+      {%- else -%}
+        {%- set cta = hero.cta[1] -%}
+      {%- endif -%}
+    {%- else -%}
+      {%- set cta = hero.cta -%}
+    {%- endif -%}
+    {{- caller() -}}
+  {%- endmacro -%}
+
+  {%- macro picture() -%}
+    <picture>
+      {%- if hero.img.url -%}
+        <img
+          alt="{{ '[DEV: Non-standard URL] ' if not (hero.img.url.startsWith('/img/hero/' ~ hero_cat ~ '/')) }}{{ hero.img.alt }}"
+          src="{{ hero.img.url }}"
+          width="1280"
+          height="720"
+          decoding="async"
+          fetchpriority="high">
+      {%- else -%}
+        <source
+          srcset="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-768w.{{ hero.img.format or 'jpg' }}"
+          width="768"
+          height="714"
+          media="(min-width: 1200px)">
+        <img
+          alt="{{ hero.img.alt }}"
+          src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}"
+          width="1280"
+          height="720"
+          decoding="async"
+          fetchpriority="high">
+      {%- endif -%}
+    </picture>
+  {%- endmacro -%}
+
+  {%- macro img() -%}
+    <img
+      alt="{{ tutorial.title }} video poster."
+      srcset="/img/tutorials/poster/{{ hero.id | lower }}.jpg 1280w,
+              /img/tutorials/hero/{{ hero.id | lower }}.jpg 1920w"
+      sizes="(max-width: 75em) 100vw, 50vw"
+      src="/img/tutorials/poster/{{ hero.id | lower }}.jpg"
+      width="1280"
+      height="720"
+      decoding="async"
+      fetchpriority="high">
+  {%- endmacro %}
 
   <article class="{{ heroClass }} {{ hero.type }} {{ hero.layout }}" id="{{ hero.slug }}">
     <div class="container">
-
-      {% if hero.type != 'tutorial' and hero.img %}
-        <div class="image">
-          {%- macro picture() %}
-            <picture>
-              <source srcset="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-768w.{{ hero.img.format or 'jpg' }}" width="768" height="714" media="(min-width: 1200px)">
-              <img alt="{{ hero.img.alt }}"
-                   src="/img/hero/{{ hero_cat }}/{{ hero.slug }}/{{ hero.slug }}-1280w.{{ hero.img.format or 'jpg' }}" width="1280" height="720" decoding="async" fetchpriority="high">
-            </picture>
-          {%- endmacro %}
-
-          {#} TODO: reusable include? {#}
-          {% if hero.cta is iterable %}
-            {% if hero.recording == false %}
-              {% set cta = hero.cta[0] %}
-            {% else %}
-              {% set cta = hero.cta[1] %}
-            {% endif %}
-          {% else %}
-              {% set cta = hero.cta %}
-          {% endif %}
-
-          {% if cta.url | is_external_link %}
-            {% external_link cta.url, picture() %}
-          {% else %}
-            <a href="{{ cta.url }}">{{ picture() }}</a>
-          {% endif %}
-
-        </div>
-      {%- endif %}
-
-      {%- if hero.slug == 'take5-tutorials' %}
-        {% include "modules/hero/evergreens/partial-take5-tutorials.njk" %}
-      {%- endif %}
-
+      {# Set tutorial context before any content #}
       {%- set tutorial = tutorials[hero.id] %}
 
-      {%- if tutorial %}
-        <div class="image">
-          {%- macro img() %}
-            <img alt="{{ tutorial.title }} video poster."
-            srcset="/img/tutorials/poster/{{ hero.id | lower }}.jpg 1280w,
-                    /img/tutorials/hero/{{ hero.id | lower }}.jpg 1920w"
-            sizes="(max-width: 75em) 100vw, 50vw"
-            src="/img/tutorials/poster/{{ hero.id | lower }}.jpg"
-            width="1280"
-            height="720"
-            decoding="async"
-            fetchpriority="high">
-          {%- endmacro %}
-          <a href="/courses/take5/{{ tutorial.title | slugify }}">{{ img() }}</a>
-        </div>
+      {%- if hero.type != 'tutorial' -%}
+        {%- if hero.img -%}
+          <div class="image">
+            {%- call hero_cta() -%}
+              {%- if cta.url -%}
+                {%- if cta.url | is_external_link -%}
+                  {% external_link cta.url, picture() %}
+                {%- else -%}
+                  <a href="{{ cta.url }}">{{ picture() }}</a>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endcall %}
+          </div>
+        {%- endif -%}
+      {%- endif %}
 
+      {%- if hero.slug == 'take5-tutorials' -%}
+        {% include "modules/hero/evergreens/partial-take5-tutorials.njk" %}
         <header>
           <hgroup>
-            {%- if hero.subtitle %}
-              <p class="subhead caps">
-                <strong>
-                  {% if hero.new == true %}
-                    {{ hero.subtitle | replace('^\\S+', 'New') }}
-                  {% else %}
-                    {{ hero.subtitle }}
-                  {% endif %}
-                </strong>
-              </p>
-            {%- endif %}
-
+            {{ hero_subtitle() }}
+            <h1>{{ hero.title }}</h1>
+          </hgroup>
+          <p>{{ hero.description }}</p>
+          {%- if hero.cta -%}
+            <div class="cta">
+              <a href="{{ hero.cta.url }}" class="btn">{{ hero.cta.label }}</a>
+            </div>
+          {%- endif %}
+        </header>
+      {%- elif tutorial -%}
+        <div class="image">
+          <a href="/courses/take5/{{ tutorial.title | slugify }}">{{ img() }}</a>
+        </div>
+        <header>
+          <hgroup>
+            {{ hero_subtitle() }}
             <h1>
               {{ tutorial.title }}
-              {%- if tutorial.topic %}
+              {%- if tutorial.topic -%}
                 <p class="subhead caps topic"><span>Take 5</span> {{ tutorial.topic }}</p>
-              {%- endif %}
+              {%- endif -%}
             </h1>
           </hgroup>
-
           <p>{{ tutorial.description }}</p>
-
-          {%- if tutorial.url and hero.cta.label %}
+          {%- if tutorial.url and hero.cta -%}
             <div class="cta">
               <a href="/courses/take5/{{ tutorial.title | slugify }}" class="btn">{{ hero.cta.label }}</a>
             </div>
-          {% endif %}
-
+          {%- endif %}
         </header>
-
-      {%- else %}
+      {%- else -%}
         <header>
           <hgroup>
-            {%- if hero.subtitle %}
-              <p class="subhead caps">
-                <strong>
-                  {% if hero.new == true %}
-                    {{ hero.subtitle | replace('^\\S+', 'New') }}
-                  {% else %}
-                    {{ hero.subtitle }}
-                  {% endif %}
-                </strong>
-              </p>
-            {%- endif %}
-
+            {{ hero_subtitle() }}
             <h1>
-              {{ hero.title | replace(r/:.*/ , '') }}
-              {%- if ':' in hero.title %}
-                <span class="visually-hidden">:</span><span class="subhead">{{ hero.title | replace(r/^.*:/ , '') }}</span>
-              {%- endif %}
+              {{ hero.title | replace(r/:.*/, '') }}
+              {%- if ':' in hero.title -%}
+                <span class="visually-hidden">:</span><span class="subhead">{{ hero.title | replace(r/^.*:/, '') }}</span>
+              {%- endif -%}
             </h1>
           </hgroup>
 
-          {% if hero.recording == false %}
-            <p class="date-time">
-              <time datetime="{{ hero.date }}">{{ hero.date }} at {{ hero.time }}</time>
-            </p>
-            <p>
-              {{ hero.details }}
-              {{ cta.site }}
-              {%- if hero.homepage == true %}
-                or our homepage
-              {%- endif %}.
-            </p>
-          {% else %}
+          {%- if not hero.recording -%}
+            {%- call hero_cta() -%}
+              <p class="date-time">
+                <time datetime="{{ hero.date }}">{{ hero.date }} at {{ hero.time }}</time>
+              </p>
+              <p>
+                {{ hero.details }} {{ cta.site }}
+                {%- if hero.homepage %} or our homepage{% endif -%}.
+              </p>
+            {%- endcall -%}
+          {%- else -%}
             <p>{{ hero.description }}</p>
-          {% endif %}
+          {%- endif %}
 
-          {% if hero.cta %}
-            {#} TODO: reusable include? {#}
-            {%-if hero.cta is iterable %}
-              {% if hero.recording == false %}
-                {% set cta = hero.cta[0] %}
-              {% else %}
-                {% set cta = hero.cta[1] %}
-              {% endif %}
-            {% else %}
-              {% set cta = hero.cta %}
-            {% endif %}
+          {%- if hero.cta -%}
+            {%- call hero_cta() -%}
+              {%- set label = cta.label -%}
+              {%- if cta.site -%}
+                {%- set label = cta.label + ' ' + cta.site -%}
+              {%- endif -%}
 
-            {% set label = cta.label %}
-            {% if cta.site %}
-              {% set label = cta.label + ' ' + cta.site %}
-            {% endif %}
-
-            <div class="cta">
-              {% if cta.url and cta.url != '' %}
-                {% if cta.url | is_external_link %}
-                  {% external_link cta.url, label, 'btn' %}
-                {% else %}
-                  <a class="btn" href="{{ cta.url }}">{{ label }}</a>
-                {% endif %}
-              {% endif %}
-            </div>
-          {% endif %}
+              <div class="cta">
+                {%- if cta.url -%}
+                  {%- if cta.url | is_external_link -%}
+                    {% external_link cta.url, label, 'btn' %}
+                  {%- else -%}
+                    <a class="btn" href="{{ cta.url }}">{{ label }}</a>
+                  {%- endif -%}
+                {%- endif -%}
+              </div>
+            {%- endcall -%}
+          {%- endif %}
         </header>
-
-      {% endif %}
+      {%- endif %}
 
     </div>
   </article>
 
-{%- else %}
+{%- else -%}
   <em>{ Hero Module Placeholder }</em>
   <p>Pass in the hero variable to make this work</p>
-{%- endif %}
+{%- endif -%}
