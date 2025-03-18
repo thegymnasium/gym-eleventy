@@ -3,7 +3,8 @@ type: livestream
 new: false
 subtitle: "Featured Livestream"
 title: "Level Up Your Job Search with ChatGPT"
-guest: "with Feridoon Malekzadeh"
+guests:
+  - Feridoon Malekzadeh
 description: "TK"
 details: "Watch the livestream here on our homepage:"
 date: "Wednesday, March 27"
