@@ -3,20 +3,23 @@ type: livestream
 new: true
 subtitle: "Featured Livestream"
 title: "Accessibility by Design: How the European Accessibility Act Can Enhance Customer Experience"
-description: "Whether you're a business leader, marketer, or developer — gain insights to create inclusive, engaging, and compliant customer experiences."
+description: "Whether you’re a business leader, marketer, or developer — gain insights to create inclusive, engaging, and compliant customer experiences."
+guests:
+  - Andrew Miller
+  - Jeremy Osborn
 details: "Watch the livestream on"
 # Watch the livestream on our homepage, too.
 homepage: false
 date: "Tuesday, March 18"
 time: "11AM EDT / 4PM CET"
 datetime: "2025-03-18T18:00:00Z"
-recording: false
+recording: true
 cta:
   - label: "Register on"
     site: "LinkedIn"
     url: https://www.linkedin.com/events/accessibilitybydesign-howtheeaa7300203500347473922/theater/
   - label: "Watch the Recording"
-    url: https://www.linkedin.com/events/7300203500347473922/
+    url: https://www.linkedin.com/events/accessibilitybydesign-howtheeaa7300203500347473922/comments/
 img:
   alt: "Explore how the European Accessibility Act enhances user experience, creating inclusive products and services for all."
   format: png
