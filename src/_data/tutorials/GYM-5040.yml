@@ -15,7 +15,7 @@ topic_featured: false
 topic: "Accessibility"
 video_id: CizNbSuRRew
 video_duration: "4:20"
-description: "Learn best practices for using alt text to improve the accessibility of the images on your website in this tutorial."
+description: "Learn best practices for using alt text to improve the accessibility of the images on your website in 5 minutes."
 related_content:
 - label: "When Not to use alt attributes"
   url: "https://www.sitepoint.com/the-hidden-nuggets-of-wcag2-when-not-to-use-alt-attributes/"

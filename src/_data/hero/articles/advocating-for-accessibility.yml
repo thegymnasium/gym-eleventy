@@ -1,11 +1,12 @@
 slug: advocating-for-accessibility
 type: article
-subtitle: "New Article"
+new: false
+subtitle: "Featured Article"
 title: "Advocating for Accessibility with Aaron Gustafson"
-description: "If you’re not sure where to get started with creating a more inclusive web, you’re not alone. (Hint: It starts with awareness.) Learn the fundamentals of accessibility from Aaron Gustafson of Microsoft in our new article."
+description: "If you’re unsure where to get started with creating a more inclusive web, you’re not alone. (Hint: It starts with awareness.) Learn the fundamentals of accessibility from Aaron Gustafson of Microsoft in our new article."
 cta:
   label: "Read Now"
   url: https://medium.com/gymnasium/advocating-for-accessibility-with-aaron-gustafson-54079c132152
 img:
-  description: "Aaron wearing a blue beanie while working at the computer."
+  alt: "Aaron wearing a blue beanie while working at the computer."
   format: png

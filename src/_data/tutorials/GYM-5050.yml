@@ -16,7 +16,7 @@ subtopics:
   - label: "Prototyping"
 video_id: 5wvVjAZgf0Y
 video_duration: "4:59"
-description: "Learn the fundamentals of Auto Layout in Figma to design responsive interfaces, components, and even entire layouts."
+description: "Learn the basics of Auto Layout in Figma to design responsive interfaces, components, and even entire layouts in 5 minutes."
 project_file_source: Figma Community
 project_files:
 - label: "Starting Project"
