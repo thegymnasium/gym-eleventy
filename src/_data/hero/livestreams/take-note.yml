@@ -1,15 +1,17 @@
 slug: take-note
 type: livestream
-subtitle: "New Livestream"
+new: false
+subtitle: "Featured Livestream"
 title: "Take Note: Transcribing Images with ChatGPT"
-description: "Watch the livestream here on our homepage:"
+description: "TK"
+details: "Watch the livestream here on our homepage:"
 date: "Wednesday, February 14"
 time: "10AM EST / 4PM CET"
-datetime: "2024-02-14T11:00:00Z"
+datetime: "2024-02-14T15:00:00Z"
 recording: true
 cta:
   label: "Watch the Recording"
-  url: "https://www.youtube.com/watch?v=K7lF3oihwMI"
+  url: https://www.youtube.com/watch?v=K7lF3oihwMI
 img:
-  description: "Two pastel-colored Valentine’s Day candy hearts with the words Take and Note."
+  alt: "Two pastel-colored Valentine’s Day candy hearts with the words Take and Note."
   format: jpg

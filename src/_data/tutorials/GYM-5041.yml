@@ -15,7 +15,7 @@ topic_featured: false
 topic: "Accessibility"
 video_id: iyzPK-Mz_CY
 video_duration: "4:13"
-description: "Learn how to write alt text for more complex image use, such as charts, graphs, and image links in this tutorial."
+description: "Learn how to write alt text for more complex image use, such as charts, graphs, and image links in 5 minutes."
 related_content:
 - label: "Complex Images Tutorial"
   url: "https://www.w3.org/WAI/tutorials/images/complex/"

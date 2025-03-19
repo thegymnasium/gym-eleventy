@@ -1,11 +1,12 @@
 slug: ai-mockup-magic
 type: article
-subtitle: "New Article"
+new: false
+subtitle: "Featured Article"
 title: "AI Mockup Magic: Prototyping Landing Pages with LLMs"
 description: "Magically prototype faster and better without gray boxes or lorem ipsum. Learn how to turn a prompt into productivity in our latest article."
 cta:
   label: "Embrace the Magic"
   url: https://medium.com/gymnasium/ai-mockup-magic-prototyping-landing-pages-with-llms-3765bef6a84c
 img:
-  description: "Mockups shown on various screens and devices with the magic of AI."
+  alt: "Mockups shown on various screens and devices with the magic of AI."
   format: jpg

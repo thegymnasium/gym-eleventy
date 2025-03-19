@@ -1,11 +1,12 @@
 slug: meet-the-metaverse
 type: article
-subtitle: "New Article"
+new: false
+subtitle: "Featured Article"
 title: "Meet the Metaverse: A Virtual World of Potential"
 description: "If you’re not sure what the metaverse is, you’re not alone. It feels like it’s gone from a buzzword to a business overnight. So, what is this virtual world and why does it matter? Read our new article to find out."
 cta:
   label: "Meet the Metaverse"
   url: https://medium.com/gymnasium/meet-the-metaverse-a-virtual-world-of-potential-4bd2391cc837
 img:
-  description: "Three people from the Gymnasium team meet in the metaverse at a virtual conference room using Spatial."
+  alt: "Three people from the Gymnasium team meet in the metaverse at a virtual conference room using Spatial."
   format: jpg
