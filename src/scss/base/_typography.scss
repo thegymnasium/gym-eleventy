@@ -127,7 +127,7 @@ p + * {
 
 p + :only-of-type,
 p:last-of-type:not(:only-of-type) {
-  margin-top: 1rem;
+  margin-top: inherit;
   margin-bottom: 0;
 }
 

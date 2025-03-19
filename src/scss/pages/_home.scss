@@ -84,9 +84,10 @@
     letter-spacing: 0.15ex;
     word-spacing: 0.25ex;
     margin-top: -0.4rem;
+    margin-bottom: 0.8rem;
   }
 
-  hgroup > .subhead:first-child {
+  .subhead:first-child {
     color: var(--secondary-500);
   }
 
@@ -99,7 +100,6 @@
     .subhead {
       display: block;
       font-size: 1.5rem;
-      // color: var(--mono-400);
       line-height: 1.25;
       letter-spacing: 0.0625ex;
       margin-top: 0.6rem;
@@ -112,24 +112,25 @@
     line-height: 1.5;
     color: var(--mono-400);
     text-wrap: pretty;
-    margin-top: 1.2rem;
+    margin-top: 1rem;
   }
 
-  .guest {
+  .guests,
+  .date-time {
     font-weight: bold;
-    font-size: 1.05rem;
   }
 
-  .guest {
-    color: var(--mono-100);
+  .guests {
+    margin-top: 0.8rem;
   }
 
   .date-time {
-    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 
-    + p {
-      margin-top: 0;
-    }
+  p + .description {
+    margin-top: 1.2rem;
   }
 
   a:visited {

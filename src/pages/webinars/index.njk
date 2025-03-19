@@ -11,8 +11,8 @@ meta:
 {%- if webinars -%}
 <header class="intro-about bg-mono-400">
   <div class="container">
-    <h1>Webinars</h1>
-    <p>Insightful conversations with trailblazers in the web community.</p>
+    <h1>{{ meta.title }}</h1>
+    <p>{{ meta.description }}</p>
   </div>
 </header>
 
@@ -24,7 +24,12 @@ meta:
         <div class="main">
           <header>
             <p class="topic caps"><b>{{ webinar.content_category }}</b></p>
-            <h2 class="title">{{ webinar.title | replace( r/:.*/ , '') }}{% if ':' in webinar.title %}<span class="subhead"><span class="visually-hidden">:</span> {{ webinar.title | replace( r/^.*:/ , '') }}</span>{% endif %}</h2>
+            <h2 class="title">
+              {{ webinar.title | replace(r/:.*/, '') }}
+              {%- if ':' in webinar.title -%}
+                <span class="visually-hidden">:</span><span class="subhead">{{ webinar.title | replace(r/^.*:/, '') }}</span>
+              {%- endif -%}
+            </h2>
             <p class="guests"><b>{{ webinar.event_guests }}</b></p>
           </header>
         </div>

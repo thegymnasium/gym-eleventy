@@ -16,7 +16,7 @@ subtopics:
   - label: "Prototyping"
 video_id: ohEtP5MuWFk
 video_duration: "4:59"
-description: "Variants make working with components in Figma easier and more intuitive to use. Learn how to get up and running with the fundamentals of variants in this tutorial."
+description: "Learn how to create variants in Figma to make working with components easier and more intuitive in 5 minutes."
 project_file_source: Figma Community
 project_files:
 - label: "Starting Project"
