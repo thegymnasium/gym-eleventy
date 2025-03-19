@@ -28,22 +28,22 @@
         const imgBasePath = data.meta.imgBasePath;
         if (hero) {
           const imageId = (hero.id || 'default-id').toLowerCase();
-          if (hero.img_preload === true || hero.img_preload === 'poster') {
+          if (hero.img.preload === true || hero.img.preload === 'poster') {
             return { poster: `${imgBasePath}poster/${imageId}.jpg` };
           }
-          if (hero.img_preload === 'hero') {
+          if (hero.img.preload === 'hero') {
             return { hero: `${imgBasePath}hero/${imageId}.jpg` };
           }
-          if (typeof hero.img_preload === 'string') {
-            if (hero.img_preload === 'both') {
+          if (typeof hero.img.preload === 'string') {
+            if (hero.img.preload === 'both') {
               return {
                 poster_breakpoint: `${imgBasePath}poster/${imageId}.jpg`,
                 hero_breakpoint: `${imgBasePath}hero/${imageId}.jpg`
               };
             } else {
               return {
-                poster_breakpoint: `${imgBasePath}poster/${hero.img_preload}`,
-                hero_breakpoint: `${imgBasePath}hero/${hero.img_preload}`
+                poster_breakpoint: `${imgBasePath}poster/${hero.img.preload}`,
+                hero_breakpoint: `${imgBasePath}hero/${hero.img.preload}`
               };
             }
           }

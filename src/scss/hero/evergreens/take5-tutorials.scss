@@ -69,7 +69,7 @@
       max-width: 28rem;
     }
 
-    .subhead,
+    .subhead:first-child,
     p {
       color: var(--mono-900);
     }
