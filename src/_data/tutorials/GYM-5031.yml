@@ -15,7 +15,7 @@ topic_featured: false
 topic: "Development"
 video_id: 0X4uxoKMwew
 video_duration: "4:59"
-description: "Learn how to make an interactive column chart using Google Charts in this tutorial."
+description: "Learn how to make an interactive column chart using Google Charts in 5 minutes."
 project_file_source: CodePen
 project_files:
 - label: "Completed Project"

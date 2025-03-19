@@ -14,7 +14,7 @@ topic_featured: false
 topic: "Development"
 video_id: ZLR0rLm_zEM
 video_duration: "4:57"
-description: "Learn how CSS Variables can help you speed up and simplify your development workflow in this tutorial."
+description: "Learn how CSS Variables can help you speed up and simplify your development workflow in 5 minutes."
 project_file_source: CodePen
 project_files:
 - label: "Starting Project"

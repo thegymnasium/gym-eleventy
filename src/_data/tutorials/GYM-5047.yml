@@ -14,7 +14,7 @@ topic_featured: false
 topic: "Accessibility"
 video_id: TpvlucvoUPw
 video_duration: "4:38"
-description: "A few of the most common animation techniques used on the web can make users affected by motion dizzy or even sick. Learn how to avoid these techniques in this tutorial."
+description: "Learn how to avoid animation techniques that make users dizzy or sick, improving the experience for everyone in 5 minutes."
 related_content:
 - label: "Designing Safer Web Animation For Motion Sensitivity"
   url: "https://alistapart.com/article/designing-safer-web-animation-for-motion-sensitivity/"
