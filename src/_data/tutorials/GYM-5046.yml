@@ -14,7 +14,7 @@ topic_featured: false
 topic: "Accessibility"
 video_id: mCIFslxi1yU
 video_duration: "4:44"
-description: "With more video and audio being published online than ever before, it’s critical to make this content as accessible as possible. Learn strategies for improving multimedia accessibility on your websites in this tutorial."
+description: "Learn strategies for improving the accessibility of video and audio content on your website in 5 minutes."
 related_content:
 - label: "Audio Description for the Blind (Video)"
   url: "https://accessibility.psu.edu/video/audiodescription/"

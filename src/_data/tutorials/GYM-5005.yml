@@ -14,7 +14,7 @@ topic_featured: false
 topic: "Development"
 video_id: _12cCrECCdY
 video_duration: "4:59"
-description: "Learn how to turn a grayscale image into a duotone using CSS blend modes in this hands-on tutorial."
+description: "Learn how to turn a grayscale image into a duotone using CSS blend modes in 5 minutes."
 project_file_source: CodePen
 project_files:
 - label: "Starting Project"
