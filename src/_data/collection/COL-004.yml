@@ -76,6 +76,9 @@ webinars:
     class: btn
   accessibility-webinars:
     links:
+    - href: https://www.linkedin.com/events/accessibilitybydesign-howtheeaa7300203500347473922/comments/
+      label: "Accessibility by Design: How the European Accessibility Act Can Enhance Customer Experience"
+      description: Whether you’re a business leader, marketer, or developer — gain insights to create inclusive, engaging, and compliant customer experiences.
     - href: https://aquenttalent.com/events/why-digital-accessibility-and-inclusive-design-matters
       label: Why Digital Accessibility and Inclusive Design Matters
       description: Learn how to put inclusive design first and avoid common accessibility mistakes.
@@ -84,7 +87,7 @@ articles:
   module: lists/default
   header:
     heading: "Accessibility Articles"
-  accessibility:
+  accessibility-articles:
     links:
     - href: https://medium.com/gymnasium/advocating-for-accessibility-with-aaron-gustafson-54079c132152
       label: "Advocating for Accessibility with Aaron Gustafson"

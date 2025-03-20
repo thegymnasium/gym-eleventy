@@ -26,7 +26,7 @@ catalog:
   tutorial:
   - GYM-5059
   collection:
-  - generative-ai
+  - COL-004
 
 popular:
   full:
@@ -96,11 +96,11 @@ collection:
     - id: GYM-016
       type: course
       cta_text: Enroll for Free
-    - link: https://www.youtube.com/watch?v=B1y5aNsVVLQ
-      type: tutorial
-      title: Web Accessibility Testing Made Easy
+    - link: https://www.linkedin.com/events/accessibilitybydesign-howtheeaa7300203500347473922/comments/
+      type: webinar
+      title: Accessibility by Design
       # TODO: migrate image to a location that makes sense
-      img: /img/livestreams/poster/acessibility-testing-pt1-poster.jpg
+      img: /img/livestreams/poster/acessibility-by-design.jpg
       cta_text: Watch Now
     - link: https://medium.com/gymnasium/advocating-for-accessibility-with-aaron-gustafson-54079c132152
       type: article
