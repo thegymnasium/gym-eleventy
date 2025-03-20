@@ -120,20 +120,15 @@ p {
   text-wrap: pretty;
 }
 
-p + * {
+p:not(:only-of-type),
+p:last-of-type:not(:only-of-type),
+p:not(:only-of-type) + * {
   margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-p + :only-of-type,
-p:last-of-type:not(:only-of-type) {
-  margin-top: inherit;
-  margin-bottom: 0;
 }
 
 b,
 strong {
-  font-weight: inherit;
+  font-weight: bolder;
 }
 
 .caps {
