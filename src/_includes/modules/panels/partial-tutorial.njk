@@ -57,13 +57,14 @@
     <div class="main">
       <a href="{{ url }}">
         <div class="artwork" data-duration="{{ video_duration }}">
-          <img alt="{{ title }} tutorial video poster."
-               src="{{ src }}"
-               srcset="{{ srcSet }}"
-               decoding="async"
-               fetchpriority="{{ fetchpriority | default('low') }}"
-               width="1280"
-               height="720">
+          <img
+            alt="{{ title }} tutorial video poster."
+            srcset="{{ srcSet }}"
+            src="{{ src }}"
+            width="1280"
+            height="720"
+            decoding="async"
+            fetchpriority="{{ fetchpriority | default('low') }}">
         </div>
       </a>
       <header>

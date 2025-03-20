@@ -29,7 +29,7 @@
     heading: "Take 5 Tutorials",
     subheading: "Learn new skills in 5 minutes or less.",
   },
-  content_collections: {
+  collection: {
     heading: "Collections",
     subheading: "Explore specific topics with free courses, tutorials, resources, and jobs.",
     description: "Learn how to effectively integrate pattern libraries and design systems into your organization’s workflow.",
@@ -53,6 +53,7 @@
 {%- include 'modules/courses/header.njk' -%}
 
 <div class="container">
+
   <article class="course-card course">
     <header>
       <h2>{{ full.heading }}</h2>
@@ -61,7 +62,8 @@
     <div>
       <section>
         <h3>Featured</h3>
-        {%- set module = collections.live_courses_full | pluck('id', 'GYM-107') -%}
+        {%- set full_id = featured.catalog.full %}
+        {%- set module = collections.live_courses_full | pluck('id', full_id) -%}
         {%- set module = module[0] -%}
         {%- include 'modules/panels/course-card.njk' -%}
       </section>
@@ -79,7 +81,6 @@
       </div>
       {%- endif -%}
     </div>
-
   </article>
 
   <article class="course-card course">
@@ -90,7 +91,8 @@
     <div>
       <section>
         <h3>Featured</h3>
-        {%- set module = collections.live_courses_short | pluck('id', 'GYM-017') -%}
+        {%- set short_id = featured.catalog.short %}
+        {%- set module = collections.live_courses_short | pluck('id', short_id) -%}
         {%- set module = module[0] -%}
         {%- include 'modules/panels/course-card.njk' -%}
       </section>
@@ -118,7 +120,8 @@
     <div>
       <section>
         <h3>Featured</h3>
-        {%- set module = collections.live_tutorials | pluck('id', 'GYM-5059') -%}
+        {%- set tutorial_id = featured.catalog.tutorial %}
+        {%- set module = collections.live_tutorials | pluck('id', tutorial_id) -%}
         {%- set module = module[0] -%}
         {%- include 'modules/panels/tutorial-card.njk' -%}
       </section>
@@ -140,18 +143,20 @@
 
   <article class="course-card collection">
     <header>
-      <h2>{{ content_collections.heading }}</h2>
-      <p>{{ content_collections.subheading }} <strong><a href="/collections/"> {{ cta }} {{ content_collections.heading }}</a></strong></p>
+      <h2>{{ collection.heading }}</h2>
+      <p>{{ collection.subheading }} <strong><a href="/collections/"> {{ cta }} {{ collection.heading }}</a></strong></p>
     </header>
     <div>
       <section>
         <h3>Featured</h3>
-        {%- set collection = collection['COL-008'].meta -%}
+        {%- set collection_id = featured.catalog.collection %}
+        {%- set collection = collection[collection_id].meta -%}
+        {%- set module = module[0] -%}
         {%- include 'modules/panels/partial-collection.njk' -%}
       </section>
       <div class="list-summary">
         <dl>
-          <dt>Content Collections</dt>
+          <dt>Collections</dt>
           {%- for collect in collects -%}
             <dd><a href="/{{ collect.meta.slug }}/">{{ collect.meta.title }}</a></dd>
           {%- endfor -%}
@@ -159,4 +164,5 @@
       </div>
     </div>
   </article>
+
 </div>

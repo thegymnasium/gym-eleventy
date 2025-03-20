@@ -174,7 +174,7 @@
     .livestreams,
     .webinars {
 
-      ul {
+      ul:not(.accessibility-webinars ul) {
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
       }
 
