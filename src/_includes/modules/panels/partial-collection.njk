@@ -4,15 +4,21 @@
   <div class="main">
     <a href="{{ url }}">
       <div class="artwork">
-        <img alt="{{ collection.title }}." src="/img/og/collections/{{ collection.slug }}-collection.png" decoding="async" fetchpriority="high" width="1200" height="628">
+        <img
+          alt="{{ collection.title }}."
+          src="/img/og/collections/{{ collection.slug }}-collection.png"
+          width="1200"
+          height="628"
+          decoding="async"
+          fetchpriority="high">
       </div>
     </a>
     <header>
       <hgroup>
-        <p class="topic"><b>{{ collection.topic }}</b></p>
+        <p class="topic" hidden><b>{{ collection.topic }}</b></p>
         <h2 class="title"><a href="{{ url }}">{{ collection.title }}</a></h2>
       </hgroup>
-      <p class="description">{{ content_collections.description }}</p>
+      <p class="description">{{ collection.description }}</p>
     </header>
     <div class="cta">
       <a class="btn" href="{{ url }}">Explore Collection</a>
