@@ -262,6 +262,10 @@ colors:
   dark-gray: "#444"
   black: "#181818"
 msg:
+  banner:
+    active: true
+    content: |
+      <p><span aria-label="Waving Hand emoji" role="img">&#128075;</span> <strong>We’re planning some website maintenance on <time datetime="2025-07-11">Friday, July 11</time> and will be down temporarily</strong> <span aria-label="Hammer and Wrench emoji" role="img">&#128736;</span> — apologies for the inconvenience.</p>
   errors:
     error_404:
       heading: '404: Page Not Found'
