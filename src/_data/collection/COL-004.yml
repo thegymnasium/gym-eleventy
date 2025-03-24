@@ -158,7 +158,8 @@ services:
   module: lists/default
   header:
     heading: Accessibility Services
-    description: Explore people, projects, and training that deliver truly inclusive experiences from <a href="https://aquent.com" target="_blank" rel="noopener">Aquent</a>.
+    description: |
+      <p>Explore people, projects, and training that deliver truly inclusive experiences from <a href="https://aquent.com" target="_blank" rel="noopener">Aquent</a>.</p>
   accessibility-services:
     links:
     - href: https://aquenttalent.com/services/staffing-solutions
