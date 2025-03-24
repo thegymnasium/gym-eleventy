@@ -116,9 +116,9 @@ resources:
       heading: "Learning the Basics"
       heading_type: h3
     links:
-    - href: https://brand.aquent.com/Accessibility
-      label: How to Get Started with Digital Accessibility
-      description: Learn how (and why) to make digital accessibility a priority with Aquent’s PDF guide.
+    - href: https://aquent.co.uk/lp/digital-accessibility-guide/
+      label: Aquent Digital Accessibility Guide
+      description: "The Future is Inclusive: Learn how (and why) to make digital accessibility a priority with Aquent’s PDF guide."
     - href: https://webaim.org/intro/
       label: Introduction to Web Accessibility
     - href: https://www.deque.com/web-accessibility-beginners-guide/
