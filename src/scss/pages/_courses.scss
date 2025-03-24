@@ -533,6 +533,10 @@
 
         .info {
           margin-top: 1.4rem;
+
+          p {
+            margin-top: 0;
+          }
         }
       }
     }
@@ -689,6 +693,10 @@
       text-wrap: balance;
       margin-bottom: 0.8rem;
     }
+  }
+
+  .description {
+    max-width: 42rem;
   }
 
   .resources {
