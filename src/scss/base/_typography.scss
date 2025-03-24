@@ -120,9 +120,8 @@ p {
   text-wrap: pretty;
 }
 
-p:not(:only-of-type),
-p:last-of-type:not(:only-of-type),
-p:not(:only-of-type) + * {
+p + *,
+* + p {
   margin-top: 1rem;
 }
 
