@@ -121,7 +121,7 @@ p {
 }
 
 p + *,
-* + p {
+* + p:not(:only-of-type) {
   margin-top: 1rem;
 }
 
