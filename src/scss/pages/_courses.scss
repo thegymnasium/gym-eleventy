@@ -453,7 +453,7 @@
       h3,
       p {
         font-size: 0.9375rem;
-        line-height: 1.1;
+        line-height: 1.05;
         letter-spacing: 0.0125ex;
         margin-bottom: 0;
 
@@ -749,10 +749,6 @@
 
       ul {
         padding-left: 1rem;
-      }
-
-      * + p {
-        margin-top: 1rem;
       }
 
       blockquote {
