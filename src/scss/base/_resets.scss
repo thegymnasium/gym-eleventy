@@ -137,6 +137,11 @@ address {
   display: none !important;
 }
 
+[hidden] + *,
+.visually-hidden + * {
+  all: unset;
+}
+
 noscript {
   display: block;
   margin-top: 1em;
