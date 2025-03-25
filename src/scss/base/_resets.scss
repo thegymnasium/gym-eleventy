@@ -135,6 +135,10 @@ address {
 
 [hidden] {
   display: none !important;
+
+  + * {
+    all: inherit;
+  }
 }
 
 noscript {
