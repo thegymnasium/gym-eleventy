@@ -10,7 +10,7 @@ details: "Watch the livestream on"
 # Watch the livestream on our homepage, too.
 homepage: true
 date: "Wednesday, April 2"
-time: "12PM EDT / 6PM CET"
+time: "12PM EDT / 6PM CEST"
 datetime: "2025-04-02T16:00:00Z"
 recording: false
 cta:
