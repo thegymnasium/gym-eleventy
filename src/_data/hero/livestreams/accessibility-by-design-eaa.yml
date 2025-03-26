@@ -11,7 +11,7 @@ details: "Watch the livestream on"
 # Watch the livestream on our homepage, too.
 homepage: false
 date: "Tuesday, March 18"
-time: "11AM EDT / 4PM CET"
+time: "11AM EDT / 4PM CEST"
 datetime: "2025-03-18T18:00:00Z"
 recording: true
 cta:
