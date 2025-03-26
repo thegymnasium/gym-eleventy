@@ -1,0 +1,24 @@
+slug: exploring-ais-role-in-accessibility
+type: livestream
+new: true
+subtitle: "Featured Livestream"
+title: "Exploring AI’s Role in Accessibility"
+description: "Explore how AI is making a meaningful impact on accessibility, such as generating alternative text for images, preserving and recognizing voices, and transforming text."
+guests:
+  - Aaron Gustafson, of Microsoft
+details: "Watch the livestream on"
+# Watch the livestream on our homepage, too.
+homepage: true
+date: "Wednesday, April 2"
+time: "12PM EDT / 6PM CET"
+datetime: "2025-04-02T16:00:00Z"
+recording: false
+cta:
+  - label: "Register on"
+    site: "LinkedIn"
+    url: https://www.linkedin.com/events/exploringai-sroleinaccessibilit7310689304836517891/theater/
+  - label: "Watch the Recording"
+    url: https://www.linkedin.com/events/exploringai-sroleinaccessibilit7310689304836517891/comments/
+img:
+  alt: "Illustrations of people in various situations, showcasing diverse scenarios, from Microsoft’s Inclusive Design 101 Guidebook."
+  format: png
