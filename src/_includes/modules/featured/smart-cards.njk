@@ -52,7 +52,7 @@
           {%- set cta_text = "Watch Now" -%}
           {%- set destUrl = '/courses/take5/' + slug + "/" -%}
         {%- else -%}
-          TYPE IS SOMETHING ELSE
+          <mark>Type is Something Else</mark>
         {%- endif -%}
         {%- set srcSet = src -%}
       {%- elif item.link -%}
@@ -70,7 +70,7 @@
       {%- set category_link_text = "View more " + category -%}
 
       <li>
-        <article class="featured-card" id="featured-{{ type }}-{{ obj.id | lower }}">
+        <article class="featured-card">
           <div>
             <p class="topic"><b>{{ category }}</b></p>
             <figure {% if obj.type == 'full' or obj.type == 'short' %}style="border-image-source: url({{ src }});" {% endif %}>
