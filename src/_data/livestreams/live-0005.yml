@@ -8,7 +8,11 @@ description: "TK"
 permalink: /livestreams/fill-in-the-blanks-demonstrating-how-to-build-a-custom-gpt
 event_date: 2024-01-30
 event_time: "10AM EST"
-img: /img/hero/livestreams/fill-in-the-blanks/fill-in-the-blanks-1280w.jpg
+img:
+  slug: fill-in-the-blanks
+  format: jpg
+  sizes:
+    - 1280w
 host:
   - josborn
   - amiller
