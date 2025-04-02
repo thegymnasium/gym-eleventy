@@ -3,7 +3,7 @@ type: livestream
 new: true
 subtitle: "Featured Livestream"
 title: "Exploring AI’s Role in Accessibility"
-description: "Explore how AI is making a meaningful impact on accessibility, such as generating alternative text for images, preserving and recognizing voices, and transforming text."
+description: "Explore how AI enhances accessibility by preserving voices, describing images, and transforming text."
 guests:
   - agustafson
 details: "Watch the livestream on"
@@ -12,7 +12,7 @@ homepage: true
 date: "Wednesday, April 2"
 time: "12PM EDT / 6PM CEST"
 datetime: "2025-04-02T16:00:00Z"
-recording: false
+recording: true
 cta:
   - label: "Register on"
     site: "LinkedIn"
