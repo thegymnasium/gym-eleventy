@@ -30,36 +30,36 @@
 
         {%- set shortId = obj.id -%}
         {%- set type = obj.type -%}
-        {%- set category = type  | capitalize + "s" -%}
+        {%- set category = type  | capitalize ~ "s" -%}
 
         {%- set src = obj.img -%}
 
         {%- set destUrl = "" -%}
         {%- if type == 'livestream' -%}
           {%- set cta_text = "Watch Now" -%}
-          {%- set destUrl = 'https://www.youtube.com/watch?v=' + obj.video_id -%}
-          {%- set src = obj.img  -%}
+          {%- set destUrl = 'https://www.youtube.com/watch?v=' ~ obj.video_id -%}
+          {%- set src = '/img/hero/livestreams/' ~ (obj.img.slug | default(slug)) ~ '/' ~ (obj.img.slug | default(slug)) ~ '-' ~ obj.img.sizes[0] ~ '.' ~ obj.img.format -%}
         {%- elif type == 'webinar' -%}
           {%- set cta_text = "Watch Now" -%}
-          {%- set destUrl = '/webinars/' + slug + "/" -%}
-          {%- set src = '/img/og/webinars/' + obj.recording_ogimage -%}
+          {%- set destUrl = '/webinars/' ~ slug ~ "/" -%}
+          {%- set src = '/img/og/webinars/' ~ obj.recording_ogimage -%}
         {%- elif type == 'short' or type == 'full' -%}
           {%- set category = "Courses" -%}
           {%- set cta_text = "Get Started" -%}
           {# {%- set destUrl = shortId | course_endpoint('course_about') -%} #}
-          {%- set destUrl = "/courses/" + slug + "/" -%}
+          {%- set destUrl = "/courses/" ~ slug ~ "/" -%}
         {%- elif type == 'tutorial' -%}
           {%- set cta_text = "Watch Now" -%}
-          {%- set destUrl = '/courses/take5/' + slug + "/" -%}
+          {%- set destUrl = '/courses/take5/' ~ slug ~ "/" -%}
         {%- else -%}
-          TYPE IS SOMETHING ELSE
+          <mark>Type is Something Else</mark>
         {%- endif -%}
         {%- set srcSet = src -%}
       {%- elif item.link -%}
         {%- set src = item.img -%}
         {%- set title = item.title -%}
         {%- set destUrl = item.link-%}
-        {%- set category = item.type | capitalize + "s" -%}
+        {%- set category = item.type | capitalize ~ "s" -%}
       {%- endif -%}
 
       {# Allow overriding CTA text via cta_link set in featured.yml #}
@@ -67,10 +67,10 @@
         {%- set cta_text = item.cta_text -%}
       {%- endif -%}
 
-      {%- set category_link_text = "View more " + category -%}
+      {%- set category_link_text = "View more " ~ category -%}
 
       <li>
-        <article class="featured-card" id="featured-{{ type }}-{{ obj.id | lower }}">
+        <article class="featured-card">
           <div>
             <p class="topic"><b>{{ category }}</b></p>
             <figure {% if obj.type == 'full' or obj.type == 'short' %}style="border-image-source: url({{ src }});" {% endif %}>
