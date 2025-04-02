@@ -5,7 +5,7 @@ subtitle: "Featured Livestream"
 title: "Exploring AI’s Role in Accessibility"
 description: "Explore how AI is making a meaningful impact on accessibility, such as generating alternative text for images, preserving and recognizing voices, and transforming text."
 guests:
-  - Aaron Gustafson, of Microsoft
+  - agustafson
 details: "Watch the livestream on"
 # Watch the livestream on our homepage, too.
 homepage: true
