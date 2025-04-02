@@ -8,7 +8,11 @@ description: "TK"
 permalink: /livestreams/level-up-your-job-search-with-chatgpt
 event_date: 2024-03-27
 event_time: "6PM EDT"
-img: /img/hero/livestreams/level-up-your-job-search/level-up-your-job-search-1280w.jpg
+img:
+  slug: level-up-your-job-search
+  sizes:
+    - 1280w
+  format: jpg
 host:
   - josborn
   - amiller
