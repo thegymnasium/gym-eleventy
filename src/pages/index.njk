@@ -26,7 +26,7 @@
         const [heroCategory, heroSlug] = data.hero_data || [];
         const hero = data.hero?.[heroCategory]?.[heroSlug];
         const imgBasePath = data.meta.imgBasePath;
-        if (hero) {
+        if (hero && hero.img && hero.img.preload) {
           const imageId = (hero.id || 'default-id').toLowerCase();
           if (hero.img.preload === true || hero.img.preload === 'poster') {
             return { poster: `${imgBasePath}poster/${imageId}.jpg` };
