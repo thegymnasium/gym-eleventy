@@ -8,7 +8,11 @@ description: "TK"
 permalink: /livestreams/coding-in-the-kitchen-with-chatgpt
 event_date: 2023-12-13
 event_time: "1PM EST"
-img: /img/hero/livestreams/coding-in-the-kitchen/coding-in-the-kitchen-1280w.jpg
+img:
+  slug: coding-in-the-kitchen
+  sizes:
+    - 1280w
+  format: jpg
 host:
   - josborn
   - amiller

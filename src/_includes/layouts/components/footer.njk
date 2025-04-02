@@ -16,7 +16,7 @@ Please use the following strings instead of directly coding domain names:
         <p>{{ config.meta.short_description }}</p>
       </div>
       {%- for item in config.footer.nav -%}
-      <nav id="{{ item.title | slugify }}" aria-labelledby="{{ item.title | slugify }}-menu-label">
+      <nav id="footer-{{ item.title | slugify }}" aria-labelledby="{{ item.title | slugify }}-menu-label">
         <h2 id="{{ item.title | slugify }}-menu-label">{{ item.title }}</h2>
         <ul>
           {%- set links =  item.links -%}
