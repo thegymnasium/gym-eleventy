@@ -8,7 +8,11 @@ description: "TK"
 permalink: /livestreams/picture-perfect-using-ai-to-enhance-images
 event_date: 2023-11-15
 event_time: "1PM EST"
-img: /img/hero/livestreams/picture-perfect/picture-perfect-1280w.jpg
+img:
+  slug: picture-perfect
+  sizes:
+    - 1280w
+  format: jpg
 host:
   - josborn
   - amiller

@@ -8,7 +8,11 @@ description: "TK"
 permalink: /livestreams/take-note-transcribing-images-with-chatgpt
 event_date: 2024-05-21
 event_time: "2PM EDT"
-img: /img/hero/livestreams/take-note-redo/take-note-redo-1280w.jpg
+img:
+  slug: take-note-transcribing-images
+  sizes:
+    - 1280w
+  format: jpg
 host:
   - josborn
   - amiller
