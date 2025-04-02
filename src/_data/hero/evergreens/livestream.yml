@@ -2,3 +2,4 @@ slug: livestream
 type: livestream
 id: live-0011
 layout: full-width
+css: true
