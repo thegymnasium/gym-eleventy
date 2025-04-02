@@ -31,6 +31,7 @@ livestreams:
     class: btn
   gen-ai-livestreams:
     ids:
+    - id: live-0011
     - id: live-0010
     - id: live-0009
     - id: live-0008
