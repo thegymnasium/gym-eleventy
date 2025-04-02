@@ -139,7 +139,7 @@
           <hgroup>
             {{ hero_subtitle() }}
             <h1>
-              {{ hero.title | replace(r/:.*/, '') }}
+              {{- hero.title | replace(r/:.*/, '') -}}
               {%- if hero.title and ':' in hero.title -%}
               <span class="visually-hidden">:</span>
               <span class="subhead">{{ hero.title | replace(r/^.*:/, '') }}</span>
