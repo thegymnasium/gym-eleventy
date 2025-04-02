@@ -84,7 +84,6 @@
     letter-spacing: 0.15ex;
     word-spacing: 0.25ex;
     margin-top: -0.4rem;
-    margin-bottom: 0.8rem;
   }
 
   .subhead:first-child {
@@ -96,6 +95,8 @@
     letter-spacing: 0.0625ex;
     word-spacing: 0.125ex;
     text-wrap: pretty;
+    margin-top: 0.875rem;
+    margin-bottom: 0.8rem;
 
     .subhead {
       display: block;
@@ -112,7 +113,7 @@
     line-height: 1.5;
     color: var(--mono-400);
     text-wrap: pretty;
-    margin-top: 1rem;
+    margin-top: 0.875rem;
   }
 
   .guests,
@@ -122,7 +123,7 @@
 
   .guests {
     color: var(--mono-100);
-    margin-top: 0.8rem;
+    margin-top: inherit;
   }
 
   .date-time {
@@ -134,16 +135,12 @@
     }
   }
 
-  p + .description {
-    margin-top: 1.2rem;
-  }
-
   a:visited {
     border-bottom: inherit;
   }
 
   .cta {
-    margin-top: 2rem;
+    margin-top: 1.875rem;
 
     .btn {
       font-size: rem-calc(22.4);
