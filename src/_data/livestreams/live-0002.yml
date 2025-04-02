@@ -8,7 +8,10 @@ description: "TK"
 permalink: /livestreams/testing-the-limits-of-llms
 event_date: 2023-08-31
 event_time: "1PM EDT"
-img: /img/hero/livestreams/testing-the-limits-of-llms/testing-the-limits-of-llms-1280w.jpg
+img:
+  format: jpg
+  sizes:
+    - 1280w
 host:
   - josborn
   - amiller

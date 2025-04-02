@@ -8,7 +8,11 @@ description: "TK"
 permalink: /livestreams/become-a-better-writer-with-chatgpt
 event_date: 2024-07-22
 event_time: "10AM EDT"
-img: /img/hero/livestreams/become-a-better-writer/become-a-better-writer-1280w.jpg
+img:
+  slug: become-a-better-writer
+  sizes:
+    - 1280w
+  format: jpg
 host:
   - josborn
   - amiller
