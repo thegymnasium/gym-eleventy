@@ -2,9 +2,9 @@
 // | Container
 // | -------------------------------------------------------------
 @use "sass:map";
-@use "breakpoints" as *;
-@use "functions" as *;
-@use "mixins" as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
 
 .container {
   @include container;

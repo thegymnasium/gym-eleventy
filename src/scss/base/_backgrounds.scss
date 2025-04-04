@@ -1,8 +1,8 @@
 // | -------------------------------------------------------------
 // | Background Utility Classes
 // | -------------------------------------------------------------
-@use "colors" as *;
-@use "mixins" as *;
+@use "base/colors" as *;
+@use "base/mixins" as *;
 
 @include bg-colors;
 

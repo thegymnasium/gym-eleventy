@@ -8,7 +8,7 @@
 
 // The discussions default react app loads the CSS in this order
 
-@use 'tox' as *;
-@use 'font-awesome' as *;
-@use 'default' as *;
+@use 'mfe/discussions/tox' as *;
+@use 'mfe/discussions/font-awesome' as *;
+@use 'mfe/discussions/default' as *;
 // @use 'default2' as *;

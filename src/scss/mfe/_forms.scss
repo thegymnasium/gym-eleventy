@@ -731,12 +731,12 @@ textarea.form-control {
     }
     .custom-file-input {
       &:focus {
+        z-index: 4;
         ~ {
           .custom-file-label {
             z-index: 3;
           }
         }
-        z-index: 4;
       }
     }
     &:not(:last-child) {
@@ -1650,27 +1650,30 @@ textarea.form-control {
   }
 }
 .pgn__form-control-decorator-group {
-  + {
-    .pgn__form-text {
-      margin-top: 0.25rem;
-    }
-  }
   align-items: flex-start;
   display: flex;
   flex-grow: 1;
   font-size: 1.125rem;
   line-height: 1.3333;
   position: relative;
-}
-.pgn__form-control-set {
+
   + {
     .pgn__form-text {
       margin-top: 0.25rem;
     }
   }
+}
+.pgn__form-control-set {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
+
+  + {
+    .pgn__form-text {
+      margin-top: 0.25rem;
+    }
+  }
+
   >* {
     + {
       * {
@@ -1721,7 +1724,6 @@ textarea.form-control {
   }
 }
 .pgn__form-group {
-  margin-bottom: 1rem;
   text-align: start;
   margin-bottom: 1.75rem;
   .form-check {

@@ -1,5 +1,6 @@
 @use "sass:string";
-@use 'functions' as *;
+@use "sass:map";
+@use 'base/functions' as *;
 // | -------------------------------------------------------------
 // | Breakpoint
 // | -------------------------------------------------------------
@@ -14,10 +15,10 @@ $breakpoints: (
 // Modified, via @ https://rimdev.io/making-media-query-mixins-with-sass
 // TODO: add a min/max combo
 @mixin breakpoint($breakpoint, $direction: min) {
-  @if map-has-key($breakpoints, $breakpoint) {
+  @if map.has-key($breakpoints, $breakpoint) {
 
     // Get the breakpoint value.
-    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    $breakpoint-value: map.get($breakpoints, $breakpoint);
     
     @if $direction == max {
       @media (max-width: ($breakpoint-value - convert-to-em(1))) {
