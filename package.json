@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Gymnasium v3 frontend static site",
   "engines": {
-    "node": ">=18.17.0 <22"
+    "node": ">=22"
   },
   "os": [
     "darwin",
@@ -15,6 +15,7 @@
     "dev:tutor": "dotenvx run -f .env.dev-tutor -- npx netlify dev",
     "local:tutor": "dotenvx run -f .env.local-tutor -- npx netlify dev",
     "start": "dotenvx run -- npx @11ty/eleventy --serve --watch",
+    "build-dev": "dotenvx run -f .env.development -- npx @11ty/eleventy",
     "build": "NODE_ENV=production ELEVENTY_ENV=production dotenvx run --  npx @11ty/eleventy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +24,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@11ty/edge": "file:11ty-edge",
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-img": "^4.0.2",
@@ -36,7 +38,7 @@
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.3.1",
     "markdown-it-eleventy-img": "^0.10.2",
-    "netlify-cli": "^17.37.1",
+    "netlify-cli": "^19.1.5",
     "netlify-plugin-cache": "^1.0.3",
     "rss-parser": "^3.13.0",
     "sass": "^1.86.2"
