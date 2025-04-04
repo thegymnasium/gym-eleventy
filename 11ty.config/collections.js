@@ -1,4 +1,4 @@
-module.exports = eleventyConfig => {
+export default function collectionz(eleventyConfig) {
 
   eleventyConfig.addCollection('catalog', (collection, arg) => {
     return collection.getAll()[0].data.catalog;

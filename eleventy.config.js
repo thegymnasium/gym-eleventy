@@ -1,18 +1,22 @@
 // docs: https://www.11ty.io/docs/config/
-const eleventySass = require('eleventy-sass');
-const pluginRev = require('eleventy-plugin-rev');
-const { EleventyEdgePlugin, EleventyRenderPlugin } = require("@11ty/eleventy");
-const filters = require('./11ty.config/filters.js');
-const shortcodes = require('./11ty.config/shortcodes.js');
-const pluginImages = require('./11ty.config/images.js');
-const clean = require("eleventy-plugin-clean");
-const yaml = require('js-yaml');
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const markdownItAttrs = require("markdown-it-attrs");
-const htmlmin = require("html-minifier-terser");
+// const eleventySass = require("eleventy-sass");
+// const pluginRev = await import("eleventy-plugin-rev");
+import { EleventyEdgePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
+import filters from "./config/filters.js";
+import shortcodes from "./config/shortcodes.js";
+import pluginImages from "./config/images.js";
+// const clean = await import("eleventy-plugin-clean");
+import yaml from "js-yaml";
+import markdownit from "markdown-it";
+import * as markdownItAnchor from "markdown-it-anchor";
+import * as markdownItAttrs from "markdown-it-attrs";
+import htmlmin from "html-minifier-terser";
+import UpgradeHelper from "@11ty/eleventy-upgrade-help";
+import * as dotenvx from '@dotenvx/dotenvx';
+import * as sass from 'sass';
+import path from 'node:path';
 
-require('@dotenvx/dotenvx').config({ path: `.env.${process.env.NODE_ENV}` })
+dotenvx.config({ path: `.env.${process.env.NODE_ENV}` });
 
 function filter(arr, criteria) {
   return arr.filter(function (obj) {
@@ -22,84 +26,90 @@ function filter(arr, criteria) {
   });
 }
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
+  eleventyConfig.setInputDirectory("src");
+  eleventyConfig.setOutputDirectory("dist");
+  eleventyConfig.setIncludesDirectory("_includes");
+  eleventyConfig.setLayoutsDirectory("_includes/layouts");
+  eleventyConfig.setDataDirectory("_data");
 
-  eleventyConfig.addGlobalData('env', process.env);
+  eleventyConfig.addGlobalData("env", process.env);
 
-  eleventyConfig.addPassthroughCopy({
-    './public/': '/',
-  });
+  // eleventyConfig.addPassthroughCopy({
+  //   "./public/": "/",
+  // });
 
   // markdown-it options
   let mdOpts = {
     html: true,
     breaks: true,
-    linkify: true
+    linkify: true,
   };
 
   // markdown-it-attrs options
   const mdAttrs = {
     // optional, these are default options
-    leftDelimiter: '{:', // modified to use `{:` instead of `{`
-    rightDelimiter: '}',
-    allowedAttributes: []  // empty array = all attributes are allowed
-  }
+    leftDelimiter: "{:", // modified to use `{:` instead of `{`
+    rightDelimiter: "}",
+    allowedAttributes: [], // empty array = all attributes are allowed
+  };
 
-  eleventyConfig.setLibrary('md', markdownIt(mdOpts)
-    .use(markdownItAnchor)
-    .use(markdownItAttrs, mdAttrs)
-    );
+  const md = markdownit(mdOpts);
+
+  eleventyConfig.setLibrary("md", md);
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAnchor));
+  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs, mdAttrs));
 
   // create a catalog collection combining courses, tutorials, webinars
-  eleventyConfig.addCollection('catalog', (collection) => {
+  eleventyConfig.addCollection("catalog", (collection) => {
     const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== 'undefined' && allCollections !== null) {
+    if (typeof allCollections !== "undefined" && allCollections !== null) {
       const courses = collection.getAll()[0]?.data?.courses;
       const tutorials = collection.getAll()[0]?.data?.tutorials;
       const livestreams = collection.getAll()[0]?.data?.livestreams;
       const webinars = collection.getAll()[0]?.data?.webinars;
-      const catalog = {...courses, ...tutorials, ...livestreams, ...webinars}
+      const catalog = { ...courses, ...tutorials, ...livestreams, ...webinars };
       return catalog;
     } else {
       return false;
     }
-
   });
 
   // Get all static pages and perform intentional exclusions by directory
-  eleventyConfig.addCollection('static', function(collectionApi) {
+  eleventyConfig.addCollection("static", function (collectionApi) {
     let col = collectionApi.getFilteredByGlob("**/pages/**/**.{njk,html,md}");
 
-    return col.filter(item => {
+    return col.filter((item) => {
       if (
-        !item.page.filePathStem.startsWith('/pages/courses/') &&
-        !item.page.filePathStem.startsWith('/pages/tutorials/') &&
-        !item.page.filePathStem.startsWith('/pages/webinars/') &&
-        !item.page.filePathStem.startsWith('/pages/privacy-policy/')
-        ) {
+        !item.page.filePathStem.startsWith("/pages/courses/") &&
+        !item.page.filePathStem.startsWith("/pages/tutorials/") &&
+        !item.page.filePathStem.startsWith("/pages/webinars/") &&
+        !item.page.filePathStem.startsWith("/pages/privacy-policy/")
+      ) {
         return item;
       }
-    })
+    });
   });
 
-  eleventyConfig.addCollection('privacy', function(collectionApi) {
+  eleventyConfig.addCollection("privacy", function (collectionApi) {
     let col = collectionApi.getFilteredByGlob("**/pages/**/**.{njk,html,md}");
 
-    return col.filter(item => {
-      if (item.page.filePathStem.startsWith('/pages/privacy-policy/')) {
+    return col.filter((item) => {
+      if (item.page.filePathStem.startsWith("/pages/privacy-policy/")) {
         return item;
       }
-    })
+    });
   });
 
   // bios collections
-  eleventyConfig.addCollection('bios', function (collection) {
+  eleventyConfig.addCollection("bios", function (collection) {
     const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== 'undefined' && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.bios)
-      .filter(item => {
-        return item.exclude ? false : item;
-      });
+    if (typeof allCollections !== "undefined" && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.bios).filter(
+        (item) => {
+          return item.exclude ? false : item;
+        }
+      );
       return col;
     } else {
       return false;
@@ -107,13 +117,14 @@ module.exports = function (eleventyConfig) {
   });
 
   // this is our `hub pages` collection
-  eleventyConfig.addCollection('collection', function (collection) {
+  eleventyConfig.addCollection("collection", function (collection) {
     const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== 'undefined' && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.collection)
-      .filter(item => {
-        return item.exclude ? false : item;
-      });
+    if (typeof allCollections !== "undefined" && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.collection).filter(
+        (item) => {
+          return item.exclude ? false : item;
+        }
+      );
       return col;
     } else {
       return false;
@@ -121,14 +132,15 @@ module.exports = function (eleventyConfig) {
   });
 
   // return only live full courses
-  eleventyConfig.addCollection('live_courses_full', function (collection) {
+  eleventyConfig.addCollection("live_courses_full", function (collection) {
     const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== 'undefined' && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.courses)
-      .filter(item => {
-        const bool = item.type === 'full' && item.live;
-        return bool ? item : false;
-      });
+    if (typeof allCollections !== "undefined" && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.courses).filter(
+        (item) => {
+          const bool = item.type === "full" && item.live;
+          return bool ? item : false;
+        }
+      );
       return col;
     } else {
       return false;
@@ -136,14 +148,15 @@ module.exports = function (eleventyConfig) {
   });
 
   // return only live short courses
-  eleventyConfig.addCollection('live_courses_short', function (collection) {
+  eleventyConfig.addCollection("live_courses_short", function (collection) {
     const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== 'undefined' && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.courses)
-      .filter(item => {
-        const bool = item.type === 'short' && item.live;
-        return bool ? item : false;
-      });
+    if (typeof allCollections !== "undefined" && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.courses).filter(
+        (item) => {
+          const bool = item.type === "short" && item.live;
+          return bool ? item : false;
+        }
+      );
       return col;
     } else {
       return false;
@@ -151,44 +164,77 @@ module.exports = function (eleventyConfig) {
   });
 
   // return only live tutorials
-  eleventyConfig.addCollection('live_tutorials', function (collection) {
+  eleventyConfig.addCollection("live_tutorials", function (collection) {
     const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== 'undefined' && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.tutorials)
-      .filter(item => {
-        const bool = item.type === 'tutorial' && item.live;
-        return bool ? item : false;
-      });
+    if (typeof allCollections !== "undefined" && allCollections !== null) {
+      const col = Object.values(collection.getAll()[0].data.tutorials).filter(
+        (item) => {
+          const bool = item.type === "tutorial" && item.live;
+          return bool ? item : false;
+        }
+      );
       return col;
     } else {
       return false;
     }
   });
 
-  eleventyConfig.addPlugin(clean);
+  // eleventyConfig.addPlugin(clean);
   eleventyConfig.addPlugin(filters);
   eleventyConfig.addPlugin(shortcodes);
-  eleventyConfig.addPlugin(pluginRev);
-  eleventyConfig.addPlugin(pluginImages);
-  eleventyConfig.addPlugin(EleventyEdgePlugin);
+  // eleventyConfig.addPlugin(pluginRev);
+  // eleventyConfig.addPlugin(pluginImages);
+  // eleventyConfig.addPlugin(EleventyEdgePlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
-  eleventyConfig.addDataExtension('yaml', (contents) => yaml.load(contents));
-  eleventyConfig.addDataExtension('yml', (contents) => yaml.load(contents));
+  eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+  eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
-  eleventyConfig.addPlugin(eleventySass, {
+  // eleventyConfig.addPlugin(eleventySass, {
+  //   compileOptions: {
+  //     permalink: function (contents, inputPath) {
+  //       return (data) =>
+  //         `${data.page.filePathStem.replace(/^\/scss\//, "/css/")}.css`;
+  //     },
+  //   },
+  //   sass: {
+  //     style: "compressed",
+  //     sourceMap: true,
+  //   },
+  //   rev: false,
+  // });
+
+  eleventyConfig.addTemplateFormats("scss");
+
+  // Creates the extension for use
+  eleventyConfig.addExtension("scss", {
+    outputFileExtension: "css", // optional, default: "html"
+
+    // `compile` is called once per .scss file in the input directory
+    compile: async function (inputContent) {
+      let result = sass.compileString(inputContent,{
+        loadPaths: ['./src/scss',]
+      });
+
+      // This is the render function, `data` is the full data cascade
+      return async (data) => {
+        return result.css;
+      };
+    },
+    // … some configuration truncated
     compileOptions: {
-      permalink: function (contents, inputPath) {
-        return (data) =>
-          `${data.page.filePathStem.replace(/^\/scss\//, '/css/')}.css`;
-      },
+      permalink: function(contents, inputPath) {
+        let parsed = path.parse(inputPath);
+        if(parsed.name.startsWith("_")) {
+          return false;
+        }
+      }
     },
-    sass: {
-      style: 'compressed',
-      sourceMap: true,
-    },
-    rev: false,
+
   });
+
+  // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
+  eleventyConfig.addPlugin(UpgradeHelper);
 
   eleventyConfig.setServerOptions({
     // Default values are shown:
@@ -207,9 +253,7 @@ module.exports = function (eleventyConfig) {
     // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
     // Works great with a separate bundler writing files to your output folder.
     // e.g. `watch: ["_site/**/*.css"]`
-    watch: [
-
-    ],
+    watch: [],
 
     // Show local network IP addresses for device testing
     showAllHosts: true,
@@ -221,7 +265,7 @@ module.exports = function (eleventyConfig) {
     },
 
     // Change the default file encoding for reading/serving files
-    encoding: 'utf-8',
+    encoding: "utf-8",
 
     // Show the dev server version number on the command line
     showVersion: true,
@@ -232,8 +276,9 @@ module.exports = function (eleventyConfig) {
   // Set up HTML minification (excludes local dev env)
   const HTMLMIN_CONFIG = {
     useShortDoctype: true,
-    collapseWhitespace: process.env.ELEVENTY_ENV === 'development' ? false : true,
-  }
+    collapseWhitespace:
+      process.env.ELEVENTY_ENV === "development" ? false : true,
+  };
 
   // via @https://www.11ty.dev/docs/transforms/#minify-html-output
   eleventyConfig.addTransform("htmlmin", async function (content) {
@@ -247,14 +292,10 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+  
+
   return {
-    htmlTemplateEngine: 'njk',
+    htmlTemplateEngine: "njk",
     passthroughFileCopy: true,
-    dir: {
-      input: 'src',
-      output: 'dist',
-      includes: '_includes', // default: '_includes'
-      data: '_data', // default: '_data'
-    },
   };
 };

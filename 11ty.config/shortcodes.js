@@ -1,4 +1,4 @@
-module.exports = eleventyConfig => {
+export default function shortcodes(eleventyConfig) {
 
   eleventyConfig.addShortcode('year', () => `${new Date().toLocaleString('en-US', { year: 'numeric' })}`);
 
