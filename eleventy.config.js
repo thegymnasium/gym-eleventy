@@ -1,15 +1,14 @@
 // docs: https://www.11ty.io/docs/config/
-// const eleventySass = require("eleventy-sass");
-// const pluginRev = await import("eleventy-plugin-rev");
-import { EleventyEdgePlugin, EleventyRenderPlugin } from "@11ty/eleventy";
-import filters from "./config/filters.js";
-import shortcodes from "./config/shortcodes.js";
-import pluginImages from "./config/images.js";
+import { EleventyRenderPlugin } from "@11ty/eleventy";
+import EleventyEdgePlugin from "@11ty/edge";
+import filters from "./11ty.config/filters.js";
+import shortcodes from "./11ty.config/shortcodes.js";
+import pluginImages from "./11ty.config/images.js";
 // const clean = await import("eleventy-plugin-clean");
 import yaml from "js-yaml";
 import markdownit from "markdown-it";
-import * as markdownItAnchor from "markdown-it-anchor";
-import * as markdownItAttrs from "markdown-it-attrs";
+import markdownItAnchor from "markdown-it-anchor";
+import markdownItAttrs from "markdown-it-attrs";
 import htmlmin from "html-minifier-terser";
 import UpgradeHelper from "@11ty/eleventy-upgrade-help";
 import * as dotenvx from '@dotenvx/dotenvx';
@@ -24,6 +23,12 @@ function filter(arr, criteria) {
       return obj[c] == criteria[c];
     });
   });
+}
+
+if (typeof String.prototype.endsWith !== 'function') {
+  String.prototype.endsWith = function(suffix) {
+      return this.indexOf(suffix, this.length - suffix.length) !== -1;
+  };
 }
 
 export default function (eleventyConfig) {
@@ -184,7 +189,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(shortcodes);
   // eleventyConfig.addPlugin(pluginRev);
   // eleventyConfig.addPlugin(pluginImages);
-  // eleventyConfig.addPlugin(EleventyEdgePlugin);
+  eleventyConfig.addPlugin(EleventyEdgePlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
@@ -281,8 +286,8 @@ export default function (eleventyConfig) {
   };
 
   // via @https://www.11ty.dev/docs/transforms/#minify-html-output
-  eleventyConfig.addTransform("htmlmin", async function (content) {
-    if (this.page.outputPath.endsWith(".html")) {
+  eleventyConfig.addTransform("htmlmin", function (content) {
+    if ((this.page.outputPath || "").endsWith(".html")) {
       let minified = htmlmin.minify(content, HTMLMIN_CONFIG);
 
       return minified;
@@ -292,7 +297,6 @@ export default function (eleventyConfig) {
     return content;
   });
 
-  
 
   return {
     htmlTemplateEngine: "njk",
