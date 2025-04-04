@@ -1,7 +1,7 @@
-const EleventyFetch = require('@11ty/eleventy-fetch');
-const Parser = require('rss-parser');
+import EleventyFetch from '@11ty/eleventy-fetch';
+import Parser from 'rss-parser';
 let parser = new Parser();
-const fs = require('node:fs');
+import fs from 'node:fs';
 
 const ENV = process.env.ELEVENTY_ENV;
 
@@ -26,7 +26,7 @@ const JOB_FEED_URLS = {
   "US": "https://aquent.com/find-work/"
 };
 
-module.exports = async function() {
+export default async function() {
 
   try {
 
