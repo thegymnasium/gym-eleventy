@@ -1,7 +1,7 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 .site-footer {
   background-color: var(--mono-900);
@@ -174,7 +174,6 @@
     }
 
     section:last-child {
-
       img {
         height: 1.5rem;
       }

@@ -1,17 +1,17 @@
 // | -------------------------------------------------------------
 // | This file is intended to only serve the Account MFE
 // | -------------------------------------------------------------
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
-@use 'shared';
-@use 'base/visibility';
-@use 'components/webfonts_absolute';
+@use "shared";
+@use "base/visibility";
+@use "components/webfonts_absolute";
 
-@use 'mfe/root';
-@use 'mfe/layout';
+@use "mfe/root";
+@use "mfe/layout";
 
 .page__account-settings {
   h1 {
@@ -22,8 +22,9 @@
     font-size: 1.3rem;
   }
 
-  .h6, h6 {
-    margin-bottom: .25rem;
+  .h6,
+  h6 {
+    margin-bottom: 0.25rem;
     font-size: 1.1rem;
     margin-right: 1rem;
     display: inline-block;
@@ -55,7 +56,6 @@
         color: var(--mono-700);
       }
     }
-
   }
 
   .form-group {
@@ -71,7 +71,7 @@
 // Certificate area
 .pgn-transition-replace-group {
   text-align: start;
-  transition: height .3s ease;
+  transition: height 0.3s ease;
 }
 
 // H2
@@ -83,14 +83,15 @@
   font-size: 1.2rem;
 }
 
-
 // Utility classes
-.mb-4, .my-4 {
+.mb-4,
+.my-4 {
   margin-bottom: 1.5rem !important;
 }
 
-.mb-2, .my-2 {
-  margin-bottom: .5rem !important;
+.mb-2,
+.my-2 {
+  margin-bottom: 0.5rem !important;
 }
 
 .position-relative {
@@ -108,7 +109,10 @@
 }
 
 // Hide unused sections
-#profile-information, #social-media, #site-preferences, #linked-accounts {
+#profile-information,
+#social-media,
+#site-preferences,
+#linked-accounts {
   display: none;
 }
 
@@ -120,13 +124,12 @@
 // Form element (Country) + element (with button elements siblings)
 // Match form label font and weight
 .pgn__form-group {
-
   label {
     font-family: var(--font-family-custom);
     font-weight: 700;
 
     + * {
-       margin-top: 0.6rem;
+      margin-top: 0.6rem;
     }
   }
 
