@@ -239,7 +239,7 @@ export default function (eleventyConfig) {
   });
 
   // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
-  eleventyConfig.addPlugin(UpgradeHelper);
+  // eleventyConfig.addPlugin(UpgradeHelper);
 
   eleventyConfig.setServerOptions({
     // Default values are shown:
@@ -276,7 +276,7 @@ export default function (eleventyConfig) {
     showVersion: true,
   });
 
-  // eleventyConfig.setQuietMode(true);
+  eleventyConfig.setQuietMode(true);
 
   // Set up HTML minification (excludes local dev env)
   const HTMLMIN_CONFIG = {
