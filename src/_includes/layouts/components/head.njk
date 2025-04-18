@@ -55,7 +55,7 @@
 <meta property="og:url" content="{{ metaUrl }}">
 
 <meta property="og:site_name" content="{{ metaAuthor }}">
-<meta property="og:title" content="Gymnasium: {{ meta.title | default('') | replace('.*\\|', '') | trim }}">
+<meta property="og:title" content="{{ meta.title }}">
 <meta name="description" content="{{ metaDescription }}">
 <meta property="og:description" content="{{ metaDescription }}">
 <meta property="og:image:alt" content="{{ meta.title | default('') | replace(' \\|.*$', '') | trim | replace('\\.', '') }}.">
