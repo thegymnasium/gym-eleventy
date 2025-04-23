@@ -24,7 +24,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@11ty/edge": "file:11ty-edge",
+    "@11ty/edge": "git+https://git@github.com/gymnasium/11ty-edge.git#main",
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-img": "^4.0.2",
