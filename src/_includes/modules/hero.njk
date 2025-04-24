@@ -116,11 +116,11 @@
           <hgroup>
             {{ hero_subtitle() }}
             <h1>
-              {{ tutorial.title }}
-              {%- if tutorial.topic -%}
-                <p class="subhead caps topic"><span>Take 5</span> {{ tutorial.topic }}</p>
-              {%- endif -%}
+              {{- tutorial.title -}}
             </h1>
+            {%- if tutorial.topic -%}
+              <p class="subhead caps topic"><span>Take 5</span> {{ tutorial.topic }}</p>
+            {%- endif -%}
           </hgroup>
 
           <p>{{ tutorial.description }}</p>
