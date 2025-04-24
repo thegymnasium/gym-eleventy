@@ -10,21 +10,22 @@
     "linux"
   ],
   "scripts": {
+    "clean": "rimraf dist/* --glob",
     "dotenvx": "dotenvx",
     "dev": "dotenvx run -f .env.development -- npm run start",
     "dev:tutor": "dotenvx run -f .env.dev-tutor -- npx netlify dev",
     "local:tutor": "dotenvx run -f .env.local-tutor -- npx netlify dev",
-    "start": "dotenvx run -- npx @11ty/eleventy --serve --watch",
-    "build-dev": "dotenvx run -f .env.development -- npx @11ty/eleventy",
-    "build": "NODE_ENV=production ELEVENTY_ENV=production dotenvx run --  npx @11ty/eleventy",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "dotenvx run -- npm run clean && npx @11ty/eleventy --serve --watch",
+    "build:dev": "NODE_ENV=development ELEVENTY_ENV=development dotenvx run -f .env.development -- npm run clean && npx @11ty/eleventy",
+    "build": "NODE_ENV=production ELEVENTY_ENV=production dotenvx run -- npm run clean && npx @11ty/eleventy"
   },
-  "keywords": [],
+  "keywords": [
+    "Eleventy"
+  ],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "11ty-edge": "git+https://git@github.com/gymnasium/11ty-edge.git#main",
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-img": "^4.0.2",
@@ -32,16 +33,19 @@
     "@11ty/is-land": "^4.0.0",
     "@dotenvx/dotenvx": "^1.11.3",
     "@types/markdown-it": "^14.1.2",
+    "11ty-edge": "git+https://git@github.com/gymnasium/11ty-edge.git#main",
     "html-minifier-terser": "^7.2.0",
     "js-yaml": "^4.1.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.3.1",
     "markdown-it-eleventy-img": "^0.10.2",
-    "netlify-cli": "^20",
+    "netlify-cli": "^20.0.3",
     "netlify-plugin-cache": "^1.0.3",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
     "rss-parser": "^3.13.0",
-    "sass": "^1.86.2"
+    "sass": "^1.87.0"
   },
   "overrides": {
     "esbuild": "0.25.3"
