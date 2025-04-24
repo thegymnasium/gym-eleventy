@@ -24,7 +24,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@11ty/edge": "git+https://git@github.com/gymnasium/11ty-edge.git#main",
+    "11ty-edge": "git+https://git@github.com/gymnasium/11ty-edge.git#main",
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-img": "^4.0.2",
@@ -38,9 +38,12 @@
     "markdown-it-anchor": "^9.2.0",
     "markdown-it-attrs": "^4.3.1",
     "markdown-it-eleventy-img": "^0.10.2",
-    "netlify-cli": "^19.1.5",
+    "netlify-cli": "^20",
     "netlify-plugin-cache": "^1.0.3",
     "rss-parser": "^3.13.0",
     "sass": "^1.86.2"
+  },
+  "overrides": {
+    "esbuild": "0.25.3"
   }
 }

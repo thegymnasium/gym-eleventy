@@ -1,6 +1,6 @@
 // docs: https://www.11ty.io/docs/config/
 import { EleventyRenderPlugin } from "@11ty/eleventy";
-import EleventyEdgePlugin from "@11ty/edge";
+import EleventyEdgePlugin from "11ty-edge";
 import filters from "./11ty.config/filters.js";
 import shortcodes from "./11ty.config/shortcodes.js";
 import pluginImages from "./11ty.config/images.js";
