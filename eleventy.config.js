@@ -215,27 +215,42 @@ export default function (eleventyConfig) {
   eleventyConfig.addExtension("scss", {
     outputFileExtension: "css", // optional, default: "html"
 
+    // opt-out of Eleventy Layouts
+    useLayouts: false,
+
     // `compile` is called once per .scss file in the input directory
-    compile: async function (inputContent) {
-      let result = sass.compileString(inputContent,{
-        loadPaths: ['./src/scss',]
+    compile: async function (inputContent, inputPath) {
+      let parsed = path.parse(inputPath);
+      if (parsed.name.startsWith("_")) {
+        return;
+      }
+
+      let result = sass.compileString(inputContent, {
+        loadPaths: [
+          './src/scss',
+        ],
+        style: process.env.ELEVENTY_ENV === "production" ? "compressed" : "expanded",
+        sourceMap: true,
       });
 
       // This is the render function, `data` is the full data cascade
       return async (data) => {
-        return result.css;
+        // replace a string with our actual static assets URL
+        return result.css.replaceAll("STATIC_ASSETS_URL", process.env.STATIC_ASSETS_URL);
       };
     },
-    // … some configuration truncated
+
     compileOptions: {
-      permalink: function(contents, inputPath) {
+      permalink: (contents, inputPath) => (data) => {
         let parsed = path.parse(inputPath);
-        if(parsed.name.startsWith("_")) {
+        if (parsed.name.startsWith("_")) {
           return false;
+        } else {
+          // force "/css/" output path
+          return data.page.filePathStem.replaceAll("\/scss\/", "/css/") + '.' + data.page.outputFileExtension;
         }
       }
-    },
-
+    }
   });
 
   // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
