@@ -3,7 +3,7 @@ import Parser from 'rss-parser';
 let parser = new Parser();
 import fs from 'node:fs';
 
-const ENV = process.env.ELEVENTY_ENV;
+const ENV = process.env.NODE_ENV;
 
 // Individual job API: https://cloudwall.aquent.com/api/v1/jobpostings/189094
 
@@ -39,17 +39,17 @@ export default async function() {
     // });
 
     let jobs2 = await EleventyFetch(`${GYM_JOB_FEED}`, {
-      duration: ENV === ('dev' || 'development' || 'default' || 'local') ? 0 : '30m',
+      duration: ENV.includes('dev' || 'tutor') ? 0 : '30m',
       type: "json"
     });
 
     let markets = await EleventyFetch(MARKET_FEED, {
-      duration: ENV === ('dev' || 'development' || 'default' || 'local') ? 0 : '24h',
+      duration: ENV.includes('dev' || 'tutor') ? 0 : '24h',
       type: "json"
     });
 
     let job_options = await EleventyFetch(JOB_OPTIONS, {
-      duration: ENV === ('dev' || 'development' || 'default' || 'local') ? 0 : '24h',
+      duration: ENV.includes('dev' || 'tutor') ? 0 : '24h',
       type: "json"
     });
 

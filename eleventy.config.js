@@ -2,9 +2,9 @@
 import { EleventyRenderPlugin } from "@11ty/eleventy";
 import EleventyEdgePlugin from "11ty-edge";
 import filters from "./11ty.config/filters.js";
+import collectionz from "./11ty.config/collectionz.js";
 import shortcodes from "./11ty.config/shortcodes.js";
 import pluginImages from "./11ty.config/images.js";
-// const clean = await import("eleventy-plugin-clean");
 import yaml from "js-yaml";
 import markdownit from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
@@ -12,12 +12,16 @@ import markdownItAttrs from "markdown-it-attrs";
 import htmlmin from "html-minifier-terser";
 import UpgradeHelper from "@11ty/eleventy-upgrade-help";
 import * as dotenvx from '@dotenvx/dotenvx';
-import * as sass from 'sass';
+import * as sass from 'sass-embedded';
 import path from 'node:path';
 
-dotenvx.config({ path: `.env.${process.env.NODE_ENV}` });
+const ENV_FILE = process.env.NODE_ENV !== undefined ? `.env.${process.env.NODE_ENV}` : '.env';
 
-function filter(arr, criteria) {
+dotenvx.config({ path: ENV_FILE })
+
+console.log(`NODE_ENV: ${process.env.NODE_ENV} | ELEVENTY_ENV: ${process.env.ELEVENTY_ENV}`);
+
+export function filter(arr, criteria) {
   return arr.filter(function (obj) {
     return Object.keys(criteria).every(function (c) {
       return obj[c] == criteria[c];
@@ -40,9 +44,9 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addGlobalData("env", process.env);
 
-  // eleventyConfig.addPassthroughCopy({
-  //   "./public/": "/",
-  // });
+  eleventyConfig.addPassthroughCopy({
+    "./public/": "/",
+  });
 
   // markdown-it options
   let mdOpts = {
@@ -65,127 +69,8 @@ export default function (eleventyConfig) {
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAnchor));
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs, mdAttrs));
 
-  // create a catalog collection combining courses, tutorials, webinars
-  eleventyConfig.addCollection("catalog", (collection) => {
-    const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== "undefined" && allCollections !== null) {
-      const courses = collection.getAll()[0]?.data?.courses;
-      const tutorials = collection.getAll()[0]?.data?.tutorials;
-      const livestreams = collection.getAll()[0]?.data?.livestreams;
-      const webinars = collection.getAll()[0]?.data?.webinars;
-      const catalog = { ...courses, ...tutorials, ...livestreams, ...webinars };
-      return catalog;
-    } else {
-      return false;
-    }
-  });
-
-  // Get all static pages and perform intentional exclusions by directory
-  eleventyConfig.addCollection("static", function (collectionApi) {
-    let col = collectionApi.getFilteredByGlob("**/pages/**/**.{njk,html,md}");
-
-    return col.filter((item) => {
-      if (
-        !item.page.filePathStem.startsWith("/pages/courses/") &&
-        !item.page.filePathStem.startsWith("/pages/tutorials/") &&
-        !item.page.filePathStem.startsWith("/pages/webinars/") &&
-        !item.page.filePathStem.startsWith("/pages/privacy-policy/")
-      ) {
-        return item;
-      }
-    });
-  });
-
-  eleventyConfig.addCollection("privacy", function (collectionApi) {
-    let col = collectionApi.getFilteredByGlob("**/pages/**/**.{njk,html,md}");
-
-    return col.filter((item) => {
-      if (item.page.filePathStem.startsWith("/pages/privacy-policy/")) {
-        return item;
-      }
-    });
-  });
-
-  // bios collections
-  eleventyConfig.addCollection("bios", function (collection) {
-    const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== "undefined" && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.bios).filter(
-        (item) => {
-          return item.exclude ? false : item;
-        }
-      );
-      return col;
-    } else {
-      return false;
-    }
-  });
-
-  // this is our `hub pages` collection
-  eleventyConfig.addCollection("collection", function (collection) {
-    const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== "undefined" && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.collection).filter(
-        (item) => {
-          return item.exclude ? false : item;
-        }
-      );
-      return col;
-    } else {
-      return false;
-    }
-  });
-
-  // return only live full courses
-  eleventyConfig.addCollection("live_courses_full", function (collection) {
-    const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== "undefined" && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.courses).filter(
-        (item) => {
-          const bool = item.type === "full" && item.live;
-          return bool ? item : false;
-        }
-      );
-      return col;
-    } else {
-      return false;
-    }
-  });
-
-  // return only live short courses
-  eleventyConfig.addCollection("live_courses_short", function (collection) {
-    const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== "undefined" && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.courses).filter(
-        (item) => {
-          const bool = item.type === "short" && item.live;
-          return bool ? item : false;
-        }
-      );
-      return col;
-    } else {
-      return false;
-    }
-  });
-
-  // return only live tutorials
-  eleventyConfig.addCollection("live_tutorials", function (collection) {
-    const allCollections = collection.getAll()[0];
-    if (typeof allCollections !== "undefined" && allCollections !== null) {
-      const col = Object.values(collection.getAll()[0].data.tutorials).filter(
-        (item) => {
-          const bool = item.type === "tutorial" && item.live;
-          return bool ? item : false;
-        }
-      );
-      return col;
-    } else {
-      return false;
-    }
-  });
-
-  // eleventyConfig.addPlugin(clean);
   eleventyConfig.addPlugin(filters);
+  eleventyConfig.addPlugin(collectionz);
   eleventyConfig.addPlugin(shortcodes);
   // eleventyConfig.addPlugin(pluginRev);
   // eleventyConfig.addPlugin(pluginImages);
@@ -195,25 +80,12 @@ export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
-  // eleventyConfig.addPlugin(eleventySass, {
-  //   compileOptions: {
-  //     permalink: function (contents, inputPath) {
-  //       return (data) =>
-  //         `${data.page.filePathStem.replace(/^\/scss\//, "/css/")}.css`;
-  //     },
-  //   },
-  //   sass: {
-  //     style: "compressed",
-  //     sourceMap: true,
-  //   },
-  //   rev: false,
-  // });
-
   eleventyConfig.addTemplateFormats("scss");
 
-  // Creates the extension for use
+  // Creates the scss extension for use
   eleventyConfig.addExtension("scss", {
-    outputFileExtension: "css", // optional, default: "html"
+    outputFileExtension: "css",
+    // outputPath:  "",
 
     // opt-out of Eleventy Layouts
     useLayouts: false,
@@ -225,12 +97,16 @@ export default function (eleventyConfig) {
         return;
       }
 
+      const outputStyle = process.env.NODE_ENV == "production" ? "compressed" : "expanded";
+
       let result = sass.compileString(inputContent, {
+        charset: true,
         loadPaths: [
           './src/scss',
         ],
-        style: process.env.ELEVENTY_ENV === "production" ? "compressed" : "expanded",
+        style: outputStyle,
         sourceMap: true,
+        sourceMapIncludeSources: true,
       });
 
       // This is the render function, `data` is the full data cascade
@@ -297,7 +173,7 @@ export default function (eleventyConfig) {
   const HTMLMIN_CONFIG = {
     useShortDoctype: true,
     collapseWhitespace:
-      process.env.ELEVENTY_ENV === "development" ? false : true,
+      process.env.NODE_ENV === "development" ? false : true,
   };
 
   // via @https://www.11ty.dev/docs/transforms/#minify-html-output

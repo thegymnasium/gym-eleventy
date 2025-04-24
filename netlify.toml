@@ -54,14 +54,10 @@ package = "netlify-plugin-cache"
 function = "eleventy-edge"
 path = "/*"
 
-[context.tutor-dev]
-NODE_ENV="tutor-dev"
-ELEVENTY_ENV="tutor-dev"
+[context.dev-tutor]
+NODE_ENV="development"
+ELEVENTY_ENV="dev:tutor"
 
-[context.tutor-local]
-NODE_ENV="tutor-local"
-ELEVENTY_ENV="tutor-local"
-
-[context.soy]
-NODE_ENV="soy"
-ELEVENTY_ENV="soy"
+[context.local-tutor]
+NODE_ENV="production"
+ELEVENTY_ENV="local:tutor"
