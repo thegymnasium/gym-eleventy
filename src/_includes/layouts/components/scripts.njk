@@ -57,8 +57,8 @@ window.intercomSettings = {
 
 {#- Start OneTrust Cookies Consent Notice -#}
 {%- if env.ONETRUST_COOKIE_SCRIPT_ID -%}
-<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="{{ env.ONETRUST_COOKIE_SCRIPT_ID }}"></script>
-<script type="text/javascript">function OptanonWrapper(){}</script>
+<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-domain-script="{{ env.ONETRUST_COOKIE_SCRIPT_ID }}"></script>
+<script>function OptanonWrapper(){}</script>
 {%- else -%}
 <!-- ONETRUST_COOKIE_SCRIPT_ID missing! -->
 {%- endif -%}
