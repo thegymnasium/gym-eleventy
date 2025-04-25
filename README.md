@@ -15,7 +15,7 @@ nvm list
 
 If the list doesn't include the version referenced in `.nvmrc`, be sure to install it:
 ```
-nvm install 20
+nvm install 22.15
 ```
 
 Switch to the referenced version:
@@ -63,7 +63,7 @@ In either case, the server will open a browser automatically to [http://localhos
 
 **Note:** Prior to starting up Tutor, you may need to add `127.0.0.1 edly.io` to your `/etc/hosts` file. Once that's done, you should be able to access [http://edly.io:8888](http://edly.io:8888).
 
-This static site generates a JSON feed at `/feeds/config.json`, which is consumed by the various Open edX components - [the theme](https://github.com/gymnasium/gym-theme), the MFEs, and our [customized MFE frontend components](https://github.com/gymnasium/gym-frontend-components).
+This static site generates a JSON feed at `/api/config.json`, which is consumed by the various Open edX components - [the theme](https://github.com/gymnasium/gym-theme), the MFEs, and our [customized MFE frontend components](https://github.com/gymnasium/gym-frontend-components).
 
 ### References
 - [Eleventy](https://www.11ty.dev/)
