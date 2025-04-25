@@ -23,7 +23,6 @@
     "build:11ty": "eleventy",
     "start2": "dotenvx run -- npm-run-all clean && npx @11ty/eleventy --serve --watch",
     "start": "dotenvx run -- npm-run-all clean --parallel watch:dev:scss watch:11ty",
-    "build": "dotenvx run -- npm-run-all build:*",
     "build:dev": "export NODE_ENV=development; export ELEVENTY_ENV=development; dotenvx run -f .env.development -- npm-run-all clean build:dev:scss build:11ty",
     "build:prod": "export NODE_ENV=production; export ELEVENTY_ENV=production; dotenvx run -- npm-run-all clean build:prod:scss build:11ty"
   },
