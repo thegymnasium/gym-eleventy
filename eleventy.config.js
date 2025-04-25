@@ -5,6 +5,7 @@ import filters from "./11ty.config/filters.js";
 import collectionz from "./11ty.config/collectionz.js";
 import shortcodes from "./11ty.config/shortcodes.js";
 import pluginImages from "./11ty.config/images.js";
+import scss from "./11ty.config/scss.js";
 import yaml from "js-yaml";
 import markdownit from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
@@ -12,8 +13,6 @@ import markdownItAttrs from "markdown-it-attrs";
 import htmlmin from "html-minifier-terser";
 import UpgradeHelper from "@11ty/eleventy-upgrade-help";
 import * as dotenvx from '@dotenvx/dotenvx';
-import * as sass from 'sass-embedded';
-import path from 'node:path';
 
 const ENV_FILE = process.env.NODE_ENV !== undefined ? `.env.${process.env.NODE_ENV}` : '.env';
 
@@ -72,6 +71,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(filters);
   eleventyConfig.addPlugin(collectionz);
   eleventyConfig.addPlugin(shortcodes);
+  eleventyConfig.addPlugin(scss);
   // eleventyConfig.addPlugin(pluginRev);
   // eleventyConfig.addPlugin(pluginImages);
   eleventyConfig.addPlugin(EleventyEdgePlugin);
@@ -79,60 +79,6 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
-
-  // eleventyConfig.addTemplateFormats("scss");
-
-  // // Creates the scss extension for use
-  // eleventyConfig.addExtension("scss", {
-  //   outputFileExtension: "css",
-  //   outputPath: (data) => {
-  //     console.log(data);
-  //     // return data.page.filePathStem.replaceAll("\/scss\/", "/css/") + '.' + data.page.outputFileExtension;
-  //   },
-
-  //   // opt-out of Eleventy Layouts
-  //   useLayouts: false,
-
-  //   // `compile` is called once per .scss file in the input directory
-  //   compile: async function (inputContent, inputPath) {
-  //     let parsed = path.parse(inputPath);
-  //     if (parsed.name.startsWith("_")) {
-  //       return;
-  //     }
-
-  //     const outputStyle = process.env.NODE_ENV == "production" ? "compressed" : "expanded";
-
-  //     let result = sass.compileString(inputContent, {
-  //       charset: true,
-  //       loadPaths: [
-  //         './src/scss',
-  //       ],
-  //       style: outputStyle,
-  //       sourceMap: true,
-  //       sourceMapIncludeSources: true,
-  //     });
-
-  //     // This is the render function, `data` is the full data cascade
-  //     return async (data) => {
-  //       // replace a string with our actual static assets URL
-  //       return result.css.replaceAll("STATIC_ASSETS_URL", process.env.STATIC_ASSETS_URL);
-  //     };
-  //   },
-
-  //   compileOptions: {
-  //     permalink: (contents, inputPath) => (data) => {
-  //       // console.log(data);
-  //       let parsed = path.parse(inputPath);
-  //       if (parsed.name.startsWith("_")) {
-  //         return false;
-  //       } 
-  //       else {
-  //         // force "/css/" output path
-  //         return data.page.filePathStem.replaceAll("\/scss\/", "/css/") + '.' + data.page.outputFileExtension;
-  //       }
-  //     }
-  //   }
-  // });
 
   // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
   // eleventyConfig.addPlugin(UpgradeHelper);
