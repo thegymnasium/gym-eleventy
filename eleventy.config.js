@@ -80,54 +80,59 @@ export default function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 
-  eleventyConfig.addTemplateFormats("scss");
+  // eleventyConfig.addTemplateFormats("scss");
 
-  // Creates the scss extension for use
-  eleventyConfig.addExtension("scss", {
-    outputFileExtension: "css",
-    // outputPath:  "",
+  // // Creates the scss extension for use
+  // eleventyConfig.addExtension("scss", {
+  //   outputFileExtension: "css",
+  //   outputPath: (data) => {
+  //     console.log(data);
+  //     // return data.page.filePathStem.replaceAll("\/scss\/", "/css/") + '.' + data.page.outputFileExtension;
+  //   },
 
-    // opt-out of Eleventy Layouts
-    useLayouts: false,
+  //   // opt-out of Eleventy Layouts
+  //   useLayouts: false,
 
-    // `compile` is called once per .scss file in the input directory
-    compile: async function (inputContent, inputPath) {
-      let parsed = path.parse(inputPath);
-      if (parsed.name.startsWith("_")) {
-        return;
-      }
+  //   // `compile` is called once per .scss file in the input directory
+  //   compile: async function (inputContent, inputPath) {
+  //     let parsed = path.parse(inputPath);
+  //     if (parsed.name.startsWith("_")) {
+  //       return;
+  //     }
 
-      const outputStyle = process.env.NODE_ENV == "production" ? "compressed" : "expanded";
+  //     const outputStyle = process.env.NODE_ENV == "production" ? "compressed" : "expanded";
 
-      let result = sass.compileString(inputContent, {
-        charset: true,
-        loadPaths: [
-          './src/scss',
-        ],
-        style: outputStyle,
-        sourceMap: true,
-        sourceMapIncludeSources: true,
-      });
+  //     let result = sass.compileString(inputContent, {
+  //       charset: true,
+  //       loadPaths: [
+  //         './src/scss',
+  //       ],
+  //       style: outputStyle,
+  //       sourceMap: true,
+  //       sourceMapIncludeSources: true,
+  //     });
 
-      // This is the render function, `data` is the full data cascade
-      return async (data) => {
-        // replace a string with our actual static assets URL
-        return result.css.replaceAll("STATIC_ASSETS_URL", process.env.STATIC_ASSETS_URL);
-      };
-    },
+  //     // This is the render function, `data` is the full data cascade
+  //     return async (data) => {
+  //       // replace a string with our actual static assets URL
+  //       return result.css.replaceAll("STATIC_ASSETS_URL", process.env.STATIC_ASSETS_URL);
+  //     };
+  //   },
 
-    compileOptions: {
-      permalink: (contents, inputPath) => (data) => {
-        let parsed = path.parse(inputPath);
-        if (parsed.name.startsWith("_")) {
-          return false;
-        } else {
-          // force "/css/" output path
-          return data.page.filePathStem.replaceAll("\/scss\/", "/css/") + '.' + data.page.outputFileExtension;
-        }
-      }
-    }
-  });
+  //   compileOptions: {
+  //     permalink: (contents, inputPath) => (data) => {
+  //       // console.log(data);
+  //       let parsed = path.parse(inputPath);
+  //       if (parsed.name.startsWith("_")) {
+  //         return false;
+  //       } 
+  //       else {
+  //         // force "/css/" output path
+  //         return data.page.filePathStem.replaceAll("\/scss\/", "/css/") + '.' + data.page.outputFileExtension;
+  //       }
+  //     }
+  //   }
+  // });
 
   // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
   // eleventyConfig.addPlugin(UpgradeHelper);
