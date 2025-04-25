@@ -71,7 +71,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(filters);
   eleventyConfig.addPlugin(collectionz);
   eleventyConfig.addPlugin(shortcodes);
-  eleventyConfig.addPlugin(scss);
+  // eleventyConfig.addPlugin(scss);
   // eleventyConfig.addPlugin(pluginRev);
   // eleventyConfig.addPlugin(pluginImages);
   eleventyConfig.addPlugin(EleventyEdgePlugin);
