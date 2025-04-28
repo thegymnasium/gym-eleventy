@@ -24,12 +24,15 @@ export default function scss(eleventyConfig) {
       let result = sass.compileString(inputContent, {
         charset: true,
         loadPaths: [
+          parsed.dir || ".",
           './src/scss',
         ],
         style: outputStyle,
         sourceMap: true,
         sourceMapIncludeSources: true,
       });
+
+      this.addDependencies(inputPath, result.loadedUrls);
 
       // This is the render function, `data` is the full data cascade
       return async (data) => {
