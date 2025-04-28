@@ -39,7 +39,7 @@ npm run dev
 ```
 The server will be available at [http://localhost:4040](http://localhost:4040).
 
-### 2. Running in Parallel with Tutor
+### 2. Running in Parallel with Open edX Tutor
 
 This approach uses netlify-cli, which has the advantage of serving up relevant CORS headers, redirects, etc. This useful for running locally in parallel with other applications (such as the Tutor distribution of Open edX).
 
