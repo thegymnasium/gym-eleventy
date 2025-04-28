@@ -35,6 +35,14 @@ if (typeof String.prototype.endsWith !== 'function') {
 }
 
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(EleventyEdgePlugin);
+  eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+  eleventyConfig.setTemplateFormats(["njk"]);
+
+  // eleventyConfig.addTemplateFormats("html");
+  // eleventyConfig.addTemplateFormats("liquid");
+
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("dist");
   eleventyConfig.setIncludesDirectory("_includes");
@@ -74,8 +82,7 @@ export default function (eleventyConfig) {
   eleventyConfig.addPlugin(scss);
   // eleventyConfig.addPlugin(pluginRev);
   // eleventyConfig.addPlugin(pluginImages);
-  eleventyConfig.addPlugin(EleventyEdgePlugin);
-  eleventyConfig.addPlugin(EleventyRenderPlugin);
+  
 
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
@@ -100,7 +107,9 @@ export default function (eleventyConfig) {
     // Accepts an Array of file paths or globs (passed to `chokidar.watch`).
     // Works great with a separate bundler writing files to your output folder.
     // e.g. `watch: ["_site/**/*.css"]`
-    watch: [],
+    watch: [
+      // "src/scss/**/*.scss",
+    ],
 
     // Show local network IP addresses for device testing
     showAllHosts: true,
@@ -138,10 +147,4 @@ export default function (eleventyConfig) {
     // If not an HTML output, return content as-is
     return content;
   });
-
-
-  return {
-    htmlTemplateEngine: "njk",
-    passthroughFileCopy: true,
-  };
 };
