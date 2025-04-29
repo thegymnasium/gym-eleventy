@@ -49,7 +49,7 @@ export default function (eleventyConfig) {
   eleventyConfig.setLayoutsDirectory("_includes/layouts");
   eleventyConfig.setDataDirectory("_data");
 
-  // eleventyConfig.addLayoutAlias("*", "*.njk");
+  eleventyConfig.addLayoutAlias("*", "*.njk");
 
   eleventyConfig.addGlobalData("env", process.env);
 
