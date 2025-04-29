@@ -1,19 +1,21 @@
 import EleventyFetch from '@11ty/eleventy-fetch';
 import Parser from 'rss-parser';
-let parser = new Parser();
+import DOMPurify from 'isomorphic-dompurify';
 import fs from 'node:fs';
+
+let parser = new Parser();
 
 const ENV = process.env.NODE_ENV;
 
 // Individual job API: https://cloudwall.aquent.com/api/v1/jobpostings/189094
 
-const MARKET_FEED = 'https://aquentllc.wpengine.com/feeds/gymnasium-markets.json';
+const MARKETS_API = 'https://aquentllc.wpengine.com/feeds/gymnasium-markets.json';
 
 // const JOB_FEED = 'https://aquentllc.wpengine.com/wp-json/aq-central/v1/jobs/listing?pageSize=500';
 
-const GYM_JOB_FEED = 'https://aquentllc.wpengine.com/wp-json/aq-central/v1/gymnasium/listing';
+const JOB_API = 'https://aquentllc.wpengine.com/wp-json/aq-central/v1/gymnasium/listing';
 
-const JOB_OPTIONS = 'https://aquentllc.wpengine.com/wp-json/aq-central/v1/jobs/options';
+const JOB_OPTIONS_API = 'https://aquentllc.wpengine.com/wp-json/aq-central/v1/jobs/options';
 
 const JOB_FEED_URLS = {
   "AU": "https://aquent.com.au/find-work/",
@@ -26,43 +28,75 @@ const JOB_FEED_URLS = {
   "US": "https://aquent.com/find-work/"
 };
 
+const BASE_AQ_PAGES_API = `https://aquent.com/wp-json/wp/v2/pages`;
+const AQ_PAGES_API = `${BASE_AQ_PAGES_API}?slug=privacy-policy,european-rights,dpf-notice,california-privacy-rights,data-category`;
+
+const cleanWpOutput = (input) => {
+  const dirty = input
+    .replaceAll(`\n`,``)
+    .replaceAll(`https://aquent.com`,``);
+
+    const clean = DOMPurify.sanitize(dirty, {
+      // USE_PROFILES: {html: true},
+      FORBID_ATTR: [
+        'class',
+        'id',
+        'style',
+      ],
+      FORBID_TAGS: [
+        'body',
+        'html',
+        'style',
+      ]
+    });
+
+    // console.log(clean);
+    
+  return clean;
+};
+
+
 export default async function() {
 
   try {
 
-    // let feed1 = await parser.parseURL(`https://medium.com/feed/gymnasium`);
-    // let feed2 = await parser.parseURL(`https://medium.com/feed/@aquentgymnasium`);
-
-    // let jobs = await EleventyFetch(`${JOB_FEED}`, {
-    //   duration: ENV === ('dev' || 'development' || 'default' || 'local') ? 0 : '30m',
-    //   type: "json"
-    // });
-
-    let jobs2 = await EleventyFetch(`${GYM_JOB_FEED}`, {
-      duration: ENV.includes('dev' || 'tutor') ? 0 : '30m',
-      type: "json"
-    });
-
-    let markets = await EleventyFetch(MARKET_FEED, {
+    let MARKETS = await EleventyFetch(MARKETS_API, {
       duration: ENV.includes('dev' || 'tutor') ? 0 : '24h',
       type: "json"
     });
 
-    let job_options = await EleventyFetch(JOB_OPTIONS, {
+    let JOB_OPTIONS = await EleventyFetch(JOB_OPTIONS_API, {
       duration: ENV.includes('dev' || 'tutor') ? 0 : '24h',
       type: "json"
+    });
+
+    let AQ_PAGES = await EleventyFetch(AQ_PAGES_API, {
+      // duration: ENV.includes('dev' || 'tutor') ? 0 : '96h',
+      type: "json"
+    });
+
+    let PAGES = [];
+
+    AQ_PAGES.forEach(page => {
+      var newpage = {
+        "slug": page.slug,
+        "title": page.title.rendered,
+        "content": cleanWpOutput(page.content.rendered),
+      };
+      PAGES.push(newpage);
     });
 
     return {
-      GYM_JOB_FEED: GYM_JOB_FEED,
+      JOB_API: JOB_API,
       JOBDATA: {
-        "locations": job_options.locations,
-        "placement_options": job_options.placement_options,
-        "preferences": job_options.preferences,
-        "roles": job_options.roles,
+        "locations": JOB_OPTIONS.locations,
+        "placement_options": JOB_OPTIONS.placement_options,
+        "preferences": JOB_OPTIONS.preferences,
+        "roles": JOB_OPTIONS.roles,
         "urls": JOB_FEED_URLS,
       },
-      markets: markets,
+      markets: MARKETS,
+      // pages: PAGES,
     };
   } catch(e) {
     console.warn( "Failed fetching data feeds.", e );
