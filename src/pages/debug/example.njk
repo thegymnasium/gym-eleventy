@@ -1,0 +1,22 @@
+---js
+{
+  layout: "main",
+  permalink: "/debug/example/",
+  meta: {
+    sitemapExclude: true,
+  },
+  eleventyComputed: {
+    meta: {
+      title: (data) => {
+        return data.pagedata.title;
+      },
+    },
+    pagedata: (data) => {
+      const item = data.data.pages.filter(x => x.slug === 'privacy-policy');
+      return item[0];
+    }
+  },
+  eleventyExcludeFromCollections: true,
+}
+---
+{{ pagedata.content | safe }}

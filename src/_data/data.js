@@ -71,7 +71,7 @@ export default async function() {
     });
 
     let AQ_PAGES = await EleventyFetch(AQ_PAGES_API, {
-      // duration: ENV.includes('dev' || 'tutor') ? 0 : '96h',
+      duration: ENV.includes('dev' || 'tutor') ? 0 : '96h',
       type: "json"
     });
 
@@ -96,7 +96,7 @@ export default async function() {
         "urls": JOB_FEED_URLS,
       },
       markets: MARKETS,
-      // pages: PAGES,
+      pages: PAGES,
     };
   } catch(e) {
     console.warn( "Failed fetching data feeds.", e );
