@@ -18,10 +18,8 @@
     "start": "dotenvx run -- npm-run-all clean watch:11ty",
     "build:11ty": "eleventy",
     "watch:11ty": "eleventy --serve --watch",
-    "prebuild:dev": "export NODE_ENV=development; export ELEVENTY_ENV=development",
-    "build:dev": "dotenvx run -f .env.development -- npm-run-all build:11ty",
-    "prebuild": "export NODE_ENV=production; export ELEVENTY_ENV=production",
-    "build": "dotenvx run -- npm-run-all build:11ty"
+    "build:dev": "export NODE_ENV=development; export ELEVENTY_ENV=development; dotenvx run -f .env.development -- npm-run-all build:11ty",
+    "build": "export NODE_ENV=production; export ELEVENTY_ENV=production; dotenvx run -- npm-run-all build:11ty"
   },
   "keywords": [
     "Eleventy"
