@@ -39,6 +39,7 @@
     "@types/markdown-it": "^14.1.2",
     "11ty-edge": "git+https://git@github.com/gymnasium/11ty-edge.git#main",
     "html-minifier-terser": "^7.2.0",
+    "isomorphic-dompurify": "^2.24.0",
     "js-yaml": "^4.1.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "^9.2.0",
