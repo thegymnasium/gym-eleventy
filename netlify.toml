@@ -56,8 +56,8 @@ path = "/*"
 
 [context.tutor-dev]
 NODE_ENV="development"
-ELEVENTY_ENV="tutor:dev"
+ELEVENTY_ENV="tutor-dev"
 
 [context.tutor-local]
 NODE_ENV="production"
-ELEVENTY_ENV="tutor:local"
+ELEVENTY_ENV="tutor-local"
