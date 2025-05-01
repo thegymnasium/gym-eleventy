@@ -31,7 +31,6 @@
     "@11ty/eleventy": "^3.0.0",
     "@11ty/eleventy-fetch": "^4.0.1",
     "@11ty/eleventy-img": "^4.0.2",
-    "@11ty/eleventy-upgrade-help": "^3.0.1",
     "@11ty/is-land": "^4.0.0",
     "@dotenvx/dotenvx": "^1.11.3",
     "@types/markdown-it": "^14.1.2",
