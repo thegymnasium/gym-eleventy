@@ -17,7 +17,8 @@ const ENV_FILE = process.env.NODE_ENV !== undefined ? `.env.${process.env.NODE_E
 
 dotenvx.config({ path: ENV_FILE })
 
-console.log(`NODE_ENV: ${process.env.NODE_ENV} | ELEVENTY_ENV: ${process.env.ELEVENTY_ENV}`);
+// uncomment to debug NODE_ENV & ELEVENTY_ENV
+// console.log(`NODE_ENV: ${process.env.NODE_ENV} | ELEVENTY_ENV: ${process.env.ELEVENTY_ENV}`);
 
 export function filter(arr, criteria) {
   return arr.filter(function (obj) {
