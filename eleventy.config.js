@@ -11,7 +11,6 @@ import markdownit from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
 import markdownItAttrs from "markdown-it-attrs";
 import htmlmin from "html-minifier-terser";
-import UpgradeHelper from "@11ty/eleventy-upgrade-help";
 import * as dotenvx from '@dotenvx/dotenvx';
 
 const ENV_FILE = process.env.NODE_ENV !== undefined ? `.env.${process.env.NODE_ENV}` : '.env';
@@ -40,9 +39,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.setTemplateFormats(["njk"]);
 
-  // eleventyConfig.addTemplateFormats("html");
-  // eleventyConfig.addTemplateFormats("liquid");
-
+  // set directory defaults
   eleventyConfig.setInputDirectory("src");
   eleventyConfig.setOutputDirectory("dist");
   eleventyConfig.setIncludesDirectory("_includes");
@@ -78,19 +75,15 @@ export default function (eleventyConfig) {
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAnchor));
   eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs, mdAttrs));
 
+  // add our custom plugins
   eleventyConfig.addPlugin(filters);
   eleventyConfig.addPlugin(collectionz);
   eleventyConfig.addPlugin(shortcodes);
   eleventyConfig.addPlugin(scss);
-  // eleventyConfig.addPlugin(pluginRev);
-  // eleventyConfig.addPlugin(pluginImages);
   
-
+  // Add YAML support
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
-
-  // If you have other `addPlugin` calls, it’s important that UpgradeHelper is added last.
-  // eleventyConfig.addPlugin(UpgradeHelper);
 
   eleventyConfig.setServerOptions({
     // Default values are shown:
