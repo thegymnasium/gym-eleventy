@@ -1,11 +1,11 @@
 // docs: https://www.11ty.io/docs/config/
 import { EleventyRenderPlugin } from "@11ty/eleventy";
 import EleventyEdgePlugin from "11ty-edge";
-import filters from "./11ty.config/filters.js";
-import collectionz from "./11ty.config/collectionz.js";
-import shortcodes from "./11ty.config/shortcodes.js";
-import pluginImages from "./11ty.config/images.js";
-import scss from "./11ty.config/scss.js";
+import filters from "./_config/filters.js";
+import collectionz from "./_config/collectionz.js";
+import shortcodes from "./_config/shortcodes.js";
+import pluginImages from "./_config/images.js";
+import scss from "./_config/scss.js";
 import yaml from "js-yaml";
 import markdownit from "markdown-it";
 import markdownItAnchor from "markdown-it-anchor";
