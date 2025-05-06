@@ -18,7 +18,7 @@
   {%- endif -%}
 {%- endif %}
 {#- Add Intercom Script -#}
-{%- if env.INTERCOM_APP_ID -%}
+{%- if config.env.INTERCOM_APP_ID -%}
 {%- set auth %}
 <script>
 const getCookieValue = (name) => (
@@ -28,7 +28,7 @@ const getCookieValue = (name) => (
 const userInfo = JSON.parse(getCookieValue('edx-user-info').replace(/\\054/g, ','));
 const decodedUserInfo = JSON.parse(userInfo);
 
-const APP_ID = "{{ env.INTERCOM_APP_ID }}"
+const APP_ID = "{{ config.env.INTERCOM_APP_ID }}"
 
 window.intercomSettings = {
   api_base: "https://api-iam.intercom.io",
@@ -56,8 +56,8 @@ window.intercomSettings = {
 {%- endif -%}
 
 {#- Start OneTrust Cookies Consent Notice -#}
-{%- if env.ONETRUST_COOKIE_SCRIPT_ID -%}
-<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="{{ env.ONETRUST_COOKIE_SCRIPT_ID }}"></script>
+{%- if config.env.ONETRUST_COOKIE_SCRIPT_ID -%}
+<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="{{ config.env.ONETRUST_COOKIE_SCRIPT_ID }}"></script>
 <script type="text/javascript">function OptanonWrapper(){}</script>
 {%- else -%}
 <!-- ONETRUST_COOKIE_SCRIPT_ID missing! -->
@@ -65,14 +65,14 @@ window.intercomSettings = {
 {#- End OneTrust Cookies Consent Notice -#}
 
 {#- Add GA4 -#}
-{%- if env.GOOGLE_ANALYTICS_4_ID -%}
+{%- if config.env.GOOGLE_ANALYTICS_4_ID -%}
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ env.GOOGLE_ANALYTICS_4_ID }}"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '{{ env.GOOGLE_ANALYTICS_4_ID }}');
+gtag('config', '{{ config.env.GOOGLE_ANALYTICS_4_ID }}');
 </script>
 {%- else -%}
 <!-- GOOGLE_ANALYTICS_4_ID missing! -->

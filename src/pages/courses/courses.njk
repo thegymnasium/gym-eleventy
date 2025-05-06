@@ -28,7 +28,7 @@
         return `course-about ${data.item.path_slug} ${slug} ${data.item.id.toLowerCase()}`;
       },
       img: (data) => {
-        return `${data.config.paths.img.og}courses/${data.item.id.toLowerCase()}.png`;
+        return `${data.config.main.paths.img.og}courses/${data.item.id.toLowerCase()}.png`;
       },
       title: "{{ item.title }} | Courses",
       description: "{{ item.description | strip_html }}",
@@ -107,7 +107,7 @@
 
       {%- if item.preview_video_id -%}
       <section class="course-preview">
-        <h2>{{ config.msg.mfe.course_about.headings.preview }}</h2>
+        <h2>{{ config.main.msg.mfe.course_about.headings.preview }}</h2>
 
         {# TODO: fix shortcode to support all the embed variations #}
         {%- youtube item.preview_video_id, item.title + ' Preview' -%}
@@ -121,7 +121,7 @@
       </section>
 
       <section class="course-outline">
-        <h2>{{ config.msg.mfe.course_about.headings.outline }}</h2>
+        <h2>{{ config.main.msg.mfe.course_about.headings.outline }}</h2>
         {%- if item.outline -%}
         <ul>
           {%- for idx in range(0, item.outline.length) -%}
@@ -136,7 +136,7 @@
 
       {%- if item.prerequisites -%}
       <section class="course-prerequisites">
-        <h2>{{ config.msg.mfe.course_about.headings.prerequisites }}</h2>
+        <h2>{{ config.main.msg.mfe.course_about.headings.prerequisites }}</h2>
         {%- if item.prerequisites | is_object -%}
           <ul>
           {%- for idx in range(0, item.prerequisites.length) -%}
@@ -151,7 +151,7 @@
 
       {%- if item.requirements -%}
       <section class="course-requirements">
-        <h2>{{ config.msg.mfe.course_about.headings.requirements }}</h2>
+        <h2>{{ config.main.msg.mfe.course_about.headings.requirements }}</h2>
         {%- if item.requirements | is_object -%}
           <ul>
           {%- for idx in range(0, item.requirements.length) -%}
@@ -167,7 +167,7 @@
     <aside>
       {%- if item.audience -%}
       <section class="course-audience">
-        <h2>{{ config.msg.mfe.course_about.headings.audience }}</h2>
+        <h2>{{ config.main.msg.mfe.course_about.headings.audience }}</h2>
         <ul>
           {%- for idx in range(0, item.audience.length) -%}
           <li>{{ item.audience[idx].label }}</li>
@@ -178,7 +178,7 @@
 
       {%- if item.instructor -%}
       <section class="course-instructor">
-        <h2>{{ config.msg.mfe.course_about.headings.instructor }}</h2>
+        <h2>{{ config.main.msg.mfe.course_about.headings.instructor }}</h2>
         <img src="{{ bios[item.instructor].img }}" alt="Image of {{ bios[item.instructor].name }}">
         <h3>{{ bios[item.instructor].name }}</h3>
         <p>{{ bios[item.instructor].description | safe }}</p>

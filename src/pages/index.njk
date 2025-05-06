@@ -16,7 +16,7 @@
       return heroCategory && heroSlug ? [heroCategory, heroSlug] : [];
     },
     meta: {
-      title: '{{ config.meta.subtitle }}',
+      title: '{{ config.main.meta.subtitle }}',
       css: (data) => {
         const [heroCategory, heroSlug] = data.hero_data || [];
         return heroCategory && heroSlug && data.hero[heroCategory]?.[heroSlug]?.css

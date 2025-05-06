@@ -25,7 +25,7 @@
       title: "{{ item.title }} | Take 5 Tutorials",
       description: "{{ item.description | strip_html }}",
       img: (data) => {
-        return `${data.config.paths.img.og}tutorials/${data.item.id.toLowerCase()}.png`;
+        return `${data.config.main.paths.img.og}tutorials/${data.item.id.toLowerCase()}.png`;
       },
       sitemapDate: "{{ item.date.toISOString() }}",
       sitemapExclude: (data) => {
@@ -141,7 +141,7 @@
   <aside>
     <h3>Meet the Instructor</h3>
 
-    <img src="{{ config.urls.root }}/img/webinar-bio-headshots/{{ bios[item.instructor].img }}" alt="Headshot of {{ bios[item.instructor].name }}" decoding="async" fetchpriority="low" width="" height="">
+    <img src="{{ config.main.urls.root }}/img/webinar-bio-headshots/{{ bios[item.instructor].img }}" alt="Headshot of {{ bios[item.instructor].name }}" decoding="async" fetchpriority="low" width="" height="">
 
     <p>{{ bios[item.instructor].description | safe }}</p>
 

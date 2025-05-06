@@ -15,12 +15,12 @@
     },
     // Hide page from production
     layout: (data) => {
-      const item = data.env.ELEVENTY_ENV === 'production' ? false : "main";
+      const item = data.config.env.ELEVENTY_ENV === 'production' ? false : "main";
       return item;
     },
     // Hide page from production
     permalink: (data) => {
-      const item = data.env.ELEVENTY_ENV === 'production' ? false : "/debug/example/";
+      const item = data.config.env.ELEVENTY_ENV === 'production' ? false : "/debug/example/";
       return item;
     },
   },

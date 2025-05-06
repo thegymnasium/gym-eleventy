@@ -1,10 +1,10 @@
 <nav class="main" aria-label="Main">
   <a href="/">
-    <img alt="{{config.meta.author}} logo, to the homepage." srcset="{{config.logos.main.white.srcset}}" src="{{config.logos.main.white.src}}" decoding="async" fetchpriority="high" width="208" height="24">
+    <img alt="{{config.main.meta.author}} logo, to the homepage." srcset="{{config.main.logos.main.white.srcset}}" src="{{config.main.logos.main.white.src}}" decoding="async" fetchpriority="high" width="208" height="24">
   </a>
   <div class="wrapper">
     <ul role="list">
-      {%- for link in config.header.nav.main | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.urls.lms) | replace("GYM_MFE_URL", config.urls.mfe) -%}
+      {%- for link in config.main.header.nav.main | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) | replace("GYM_MFE_URL", config.main.urls.mfe) -%}
       <li>
         <a href="{{link.href}}"{%- if (link.href in permalink) or (nav.parent in link.href) -%} class="active" aria-current="page" {%- endif -%}>{{link.label}}</a>
       </li>
@@ -14,7 +14,7 @@
 
 {%- set auth %}
 <ul class="auth logged-in" role="list">
-  {%- for link in config.header.nav.auth.private | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.urls.lms) -%}
+  {%- for link in config.main.header.nav.auth.private | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) -%}
     <li>
       <a href="{{link.href}}"{%- if link.class -%} class="{{link.class}}"{%- endif -%}>{{link.label}}</a>
     </li>
@@ -24,7 +24,7 @@
 
 <is-land on:ready>
   <ul class="auth" role="list">
-  {%- for link in config.header.nav.auth.public | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.urls.lms) -%}
+  {%- for link in config.main.header.nav.auth.public | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) -%}
     <li>
       <a href="{{link.href}}"{%- if link.class -%} class="{{link.class}}"{%- endif -%}>{{link.label}}</a>
     </li>
