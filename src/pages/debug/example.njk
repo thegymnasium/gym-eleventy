@@ -1,7 +1,5 @@
 ---js
 {
-  layout: "main",
-  permalink: "/debug/example/",
   meta: {
     sitemapExclude: true,
   },
@@ -14,7 +12,17 @@
     pagedata: (data) => {
       const item = data.data.pages.filter(x => x.slug === 'privacy-policy');
       return item[0];
-    }
+    },
+    // Hide page from production
+    layout: (data) => {
+      const item = data.env.ELEVENTY_ENV === 'production' ? false : "main";
+      return item;
+    },
+    // Hide page from production
+    permalink: (data) => {
+      const item = data.env.ELEVENTY_ENV === 'production' ? false : "/debug/example/";
+      return item;
+    },
   },
   eleventyExcludeFromCollections: true,
 }

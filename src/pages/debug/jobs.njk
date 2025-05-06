@@ -1,10 +1,23 @@
----
-layout: main
-permalink: /debug/jobs/
-meta:
-  title: Jobs
-  sitemapExclude: true
-eleventyExcludeFromCollections: true
+---js
+{
+  meta: {
+    sitemapExclude: true,
+    title: "Jobs Debug",
+  },
+  eleventyComputed: {
+    // Hide page from production
+    layout: (data) => {
+      const item = data.env.ELEVENTY_ENV === 'production' ? false : "main";
+      return item;
+    },
+    // Hide page from production
+    permalink: (data) => {
+      const item = data.env.ELEVENTY_ENV === 'production' ? false : "/debug/jobs/";
+      return item;
+    },
+  },
+  eleventyExcludeFromCollections: true,
+}
 ---
 <section class="section" id="jobs">
   <h1>Jobs Debug</h1>

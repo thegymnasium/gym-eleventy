@@ -1,9 +1,23 @@
----
-layout: main
-permalink: /debug/courses/
-meta:
-  sitemapExclude: true
-eleventyExcludeFromCollections: true
+---js
+{
+  meta: {
+    sitemapExclude: true,
+    title: "Courses Debug",
+  },
+  eleventyComputed: {
+    // Hide page from production
+    layout: (data) => {
+      const item = data.env.ELEVENTY_ENV === 'production' ? false : "main";
+      return item;
+    },
+    // Hide page from production
+    permalink: (data) => {
+      const item = data.env.ELEVENTY_ENV === 'production' ? false : "/debug/courses/";
+      return item;
+    },
+  },
+  eleventyExcludeFromCollections: true,
+}
 ---
 <h1>Course List Debugger</h1>
 <ul>
