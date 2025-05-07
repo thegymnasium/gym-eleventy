@@ -1,0 +1,21 @@
+id: live-0011
+slug: exploring-ais-role-in-accessibility
+color: ""
+type: livestream
+title: "Exploring AI’s Role in Accessibility"
+description: "Explore how AI enhances accessibility by preserving voices, describing images, and transforming text."
+date: 2025-04-02
+time: "12PM EDT"
+hosts:
+  - josborn
+  - Andrew Miller
+guests:
+  - agustafson
+video_id: 7ObB4jM-QXU
+content_category: gen-ai
+tags:
+  - livestream
+img:
+  sizes:
+    - 1280w
+  format: png

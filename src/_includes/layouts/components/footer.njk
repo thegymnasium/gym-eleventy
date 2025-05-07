@@ -11,12 +11,12 @@ Please use the following strings instead of directly coding domain names:
     <div class="main">
       <div class="header">
         <a href="GYM_ROOT_URL/">
-          <img alt="{{ config.main.meta.author }} logo, to the homepage." srcset="GYM_ROOT_URL{{ config.main.logos.main.white.srcset }}" src="GYM_ROOT_URL{{ config.main.logos.main.white.src }}" decoding="async" fetchpriority="low" width="208" height="24">
+          <img alt="{{ config.main.meta.author }} logo, to the homepage." srcset="GYM_ROOT_URL{{ config.main.logos.main.white.srcset }}" src="GYM_ROOT_URL{{ config.main.logos.main.white.src }}" width="208" height="24" decoding="async" fetchpriority="low">
         </a>
         <p>{{ config.main.meta.short_description }}</p>
       </div>
       {%- for item in config.main.footer.nav -%}
-      <nav id="{{ item.title | slugify }}" aria-labelledby="{{ item.title | slugify }}-menu-label">
+      <nav id="footer-{{ item.title | slugify }}" aria-labelledby="{{ item.title | slugify }}-menu-label">
         <h2 id="{{ item.title | slugify }}-menu-label">{{ item.title }}</h2>
         <ul>
           {%- set links =  item.links -%}

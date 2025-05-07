@@ -1,0 +1,24 @@
+slug: exploring-ais-role-in-accessibility
+type: livestream
+new: true
+subtitle: "Featured Livestream"
+title: "Exploring AI’s Role in Accessibility"
+description: "Explore how AI enhances accessibility by preserving voices, describing images, and transforming text."
+guests:
+  - agustafson
+details: "Watch the livestream on"
+# Watch the livestream on our homepage, too.
+homepage: true
+date: "Wednesday, April 2"
+time: "12PM EDT / 6PM CEST"
+datetime: "2025-04-02T16:00:00Z"
+recording: true
+cta:
+  - label: "Register on"
+    site: "LinkedIn"
+    url: https://www.linkedin.com/events/exploringai-sroleinaccessibilit7310689304836517891/theater/
+  - label: "Watch the Recording"
+    url: https://youtube.com/live/7ObB4jM-QXU
+img:
+  alt: "Illustrations of people in various situations, showcasing diverse scenarios, from Microsoft’s Inclusive Design 101 Guidebook."
+  format: png

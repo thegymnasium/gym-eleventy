@@ -1,4 +1,4 @@
-<nav class="secondary {{ nav.secondary }}" role="Secondary Navigation" aria-label="{{ nav.secondary | capitalize }}">
+<nav class="secondary {{ nav.secondary }}" aria-label="{{ nav.secondary | capitalize }}">
   <ul>
     {%- for link in config.main.header.nav[nav.secondary] | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) | replace("GYM_MFE_URL", config.main.urls.mfe) -%}
     <li>

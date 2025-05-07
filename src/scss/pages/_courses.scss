@@ -36,7 +36,7 @@
       letter-spacing: 0.0125ex;
       text-wrap: pretty;
       margin-top: 0.55rem;
-      margin-left: 0.8rem;
+      margin-left: 0.875rem;
     }
 
     dd::marker {
@@ -453,8 +453,9 @@
       h3,
       p {
         font-size: 0.9375rem;
-        line-height: 1.1;
+        line-height: 1.05;
         letter-spacing: 0.0125ex;
+        margin-top: 0;
         margin-bottom: 0;
 
         &:not(p) {
@@ -533,10 +534,6 @@
 
         .info {
           margin-top: 1.4rem;
-
-          p {
-            margin-top: 0;
-          }
         }
       }
     }
@@ -755,10 +752,6 @@
         padding-left: 1rem;
       }
 
-      * + p {
-        margin-top: 1rem;
-      }
-
       blockquote {
         padding-left: 2rem;
         border-left: 1px solid var(--mono-400);
@@ -792,6 +785,10 @@
         code {
           font-size: 94%;
         }
+      }
+
+      pre {
+        white-space: wrap;
       }
 
       .back-to {

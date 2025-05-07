@@ -57,8 +57,8 @@ window.intercomSettings = {
 
 {#- Start OneTrust Cookies Consent Notice -#}
 {%- if config.env.ONETRUST_COOKIE_SCRIPT_ID -%}
-<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="{{ config.env.ONETRUST_COOKIE_SCRIPT_ID }}"></script>
-<script type="text/javascript">function OptanonWrapper(){}</script>
+<script async src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-domain-script="{{ config.env.ONETRUST_COOKIE_SCRIPT_ID }}"></script>
+<script>function OptanonWrapper(){}</script>
 {%- else -%}
 <!-- ONETRUST_COOKIE_SCRIPT_ID missing! -->
 {%- endif -%}
@@ -67,7 +67,7 @@ window.intercomSettings = {
 {#- Add GA4 -#}
 {%- if config.env.GOOGLE_ANALYTICS_4_ID -%}
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ env.GOOGLE_ANALYTICS_4_ID }}"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ config.env.GOOGLE_ANALYTICS_4_ID }}"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

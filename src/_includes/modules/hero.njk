@@ -45,7 +45,7 @@
     <picture>
       {%- if hero.img.url -%}
         <img
-          alt="{{ '[DEV: Non-standard URL] ' if not (hero.img.url.startsWith('/img/hero/' ~ hero_cat ~ '/')) }}{{ hero.img.alt }}"
+          alt="{{ '[DEV: Non-standard URL]' if not (hero.img.url.startsWith('/img/hero/' ~ hero_cat ~ '/')) }}{{ hero.img.alt }}"
           src="{{ hero.img.url }}"
           width="1280"
           height="720"
@@ -116,11 +116,11 @@
           <hgroup>
             {{ hero_subtitle() }}
             <h1>
-              {{ tutorial.title }}
-              {%- if tutorial.topic -%}
-                <p class="subhead caps topic"><span>Take 5</span> {{ tutorial.topic }}</p>
-              {%- endif -%}
+              {{- tutorial.title -}}
             </h1>
+            {%- if tutorial.topic -%}
+              <p class="subhead caps topic"><span>Take 5</span> {{ tutorial.topic }}</p>
+            {%- endif -%}
           </hgroup>
 
           <p>{{ tutorial.description }}</p>
@@ -134,14 +134,15 @@
 
       {%- else -%}
         {# Standard hero content #}
+        {%- if hero.slug != 'livestream' %}
         <header>
           <hgroup>
             {{ hero_subtitle() }}
             <h1>
-              {{- hero.title | replace(r/:.*/, '') }}
-              {%- if ':' in hero.title -%}
+              {{- hero.title | replace(r/:.*/, '') -}}
+              {%- if hero.title and ':' in hero.title -%}
               <span class="visually-hidden">:</span>
-              <span class="subhead">{{- hero.title | replace(r/^.*:/, '') }}</span>
+              <span class="subhead">{{ hero.title | replace(r/^.*:/, '') }}</span>
               {%- endif -%}
             </h1>
           </hgroup>
@@ -150,9 +151,21 @@
           {%- else %}
             <p class="guests">
               with
-              {%- for guest in hero.guests %}
-                {{ guest }}{% if not loop.last %} and {% endif %}
-              {%- endfor %}
+              {%- if hero.guests %}
+                {%- for guest in hero.guests %}
+                  {%- set guest = bios[guest] if bios[guest] else {'name': guest, 'subtitle': ''} %}
+                  {{ guest.name }}
+                  {%- if guest.subtitle -%}
+                    <span>, {{ guest.subtitle }}</span>
+                  {%- endif %}
+                  {% if not loop.last %} and {% endif %}
+                {%- endfor %}
+              {%- elif hero.hosts %}
+                {%- for host in hero.hosts %}
+                  {%- set host = bios[host] if bios[host] else {'name': host, 'subtitle': ''} %}
+                  {{ host.name }}{% if not loop.last %} and {% endif %}
+                {%- endfor %}
+              {%- endif %}
             </p>
           {%- endif %}
           {%- if hero.recording == false -%}
@@ -190,8 +203,38 @@
             {%- endcall -%}
           {%- endif %}
         </header>
-      {%- endif %}
 
+
+        {%- else-%}
+        {# Livestream-specific content #}
+        {%- set livestream = livestreams[hero.id] %}
+        <div class="livestream">
+          <header>
+            <p class="subhead caps"><strong>{{ livestream.type | upper }}</strong></p>
+            <h1>{{ livestream.title }}</h1>
+            <p class="guests">
+              with
+              {%- if livestream.guests %}
+                {%- for guest in livestream.guests %}
+                  {%- set guest = bios[guest] if bios[guest] else {'name': guest, 'subtitle': ''} %}
+                  {{ guest.name }}
+                  {%- if guest.subtitle -%}
+                    <span>, {{ guest.subtitle }}</span>
+                  {%- endif %}
+                  {% if not loop.last %} and {% endif %}
+                {%- endfor %}
+              {%- elif livestream.hosts %}
+                {%- for host in livestream.hosts %}
+                  {%- set host = bios[host] if bios[host] else {'name': host, 'subtitle': ''} %}
+                  {{ host.name }}{% if not loop.last %} and {% endif %}
+                {%- endfor %}
+              {%- endif %}
+            </p>
+          </header>
+          {% include "modules/hero/evergreens/partial-livestream.njk" %}
+        {%- endif %}
+      {%- endif %}
+      </div>
     </div>
   </article>
 

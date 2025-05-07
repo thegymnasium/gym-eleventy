@@ -41,8 +41,11 @@
             {# TODO: standardize image locations for ease of development #}
             {%- set src = img -%}
 
+            {%- if type === 'livestream' -%}
+              {%- set src = '/img/hero/livestreams/' ~ (img.slug | default(slug)) ~ '/' ~ (img.slug | default(slug)) ~ '-' ~ img.sizes[0] ~ '.' ~ img.format -%}
+            {%- endif -%}
             {%- if type === 'webinar' -%}
-              {%- set src = '/img/webinars/poster/' +  slug + '.jpg' -%}
+              {%- set src = '/img/webinars/poster/' ~ slug ~ '.jpg' -%}
             {%- endif -%}
 
             {%- set srcSet = src -%}

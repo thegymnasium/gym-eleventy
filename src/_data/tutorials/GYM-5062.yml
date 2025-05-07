@@ -1,0 +1,31 @@
+id: GYM-5062
+title: "Getting Started with Image Generation in Midjourney"
+date: 2025-03-26T00:00:00-04:00
+type: tutorial
+tags:
+  - tutorial
+  - take5
+url: /courses/take5/GYM-5062/
+img: /img/tutorials/poster/gym-5062.jpg
+live: true
+instructor: josborn
+instructor_bio: "Director of Learning at Aquent Gymnasium"
+topic_featured: true
+topic: "Design"
+subtopics:
+  - label: "Generative AI"
+video_id: noG6Ynnc110
+video_duration: "5:00"
+description: "Learn the basics of creating visual imagery using text prompts in Midjourney, the generative AI imaging platform, in 5 minutes."
+project_file_source:
+project_files:
+related_content:
+- label: "Discord Quick Start in Midjourney"
+  url: "https://docs.midjourney.com/hc/en-us/articles/32631709682573-Discord-Quick-Start"
+- label: "Prompt basics in Midjourney"
+  url: "https://docs.midjourney.com/hc/en-us/articles/32023408776205-Prompt-Basics"
+- label: "Using Variations in Midjourney"
+  url: "https://docs.midjourney.com/hc/en-us/articles/32692978437005-Variations"
+- label: "Working with Midjourney’s upscaling tool"
+  url: "https://docs.midjourney.com/hc/en-us/articles/32804058614669-Upscalers"
+skill_level: "Beginner"

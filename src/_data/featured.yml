@@ -1,6 +1,6 @@
 home:
   hero:
-    livestreams: accessibility-by-design-eaa
+    evergreens: take5-featured
   featured:
     header:
       heading: Featured Courses
@@ -45,7 +45,7 @@ popular:
 collection:
   generative-ai:
     items:
-    - id: live-0009
+    - id: live-0011
       type: livestream
     - link: https://medium.com/gymnasium/crafting-r%C3%A9sum%C3%A9s-in-the-age-of-ai-2662f0728594
       title: Crafting Résumés in the Age of AI

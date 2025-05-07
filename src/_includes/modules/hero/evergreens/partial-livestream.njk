@@ -1,0 +1,19 @@
+<!-- livestream evergreen -->
+<div class="embed">
+  <div class="video">
+    <iframe src="https://www.youtube.com/embed/{{ livestream.video_id }}"
+      width="854"
+      height="400"
+      frameborder="0"
+      scrolling="no"
+      allowfullscreen="true"
+fetchpriority="high">
+    </iframe>
+  </div>
+  <div class="chat">
+    <iframe src="https://www.youtube.com/live_chat?v={{ livestream.video_id }}&embed_domain=thegymnasium.com"
+      fetchpriority="high">
+    </iframe>
+  </div>
+</div>
+<!-- / livestream evergreen -->
