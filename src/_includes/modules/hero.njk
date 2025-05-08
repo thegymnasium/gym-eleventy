@@ -147,25 +147,25 @@
             </h1>
           </hgroup>
 
-          {%- if hero.guests and hero.title | length > 48 %}
-          {%- else %}
+          {%- if hero.guests and hero.title | length <= 48 %}
             <p class="guests">
               with
-              {%- if hero.guests %}
-                {%- for guest in hero.guests %}
-                  {%- set guest = bios[guest] if bios[guest] else {'name': guest, 'subtitle': ''} %}
-                  {{ guest.name }}
-                  {%- if guest.subtitle -%}
-                    <span>, {{ guest.subtitle }}</span>
-                  {%- endif %}
-                  {% if not loop.last %} and {% endif %}
-                {%- endfor %}
-              {%- elif hero.hosts %}
-                {%- for host in hero.hosts %}
-                  {%- set host = bios[host] if bios[host] else {'name': host, 'subtitle': ''} %}
-                  {{ host.name }}{% if not loop.last %} and {% endif %}
-                {%- endfor %}
-              {%- endif %}
+              {%- for guest in hero.guests %}
+                {%- set guest = bios[guest] if bios[guest] else {'name': guest, 'subtitle': ''} %}
+                {{ guest.name }}
+                {%- if guest.subtitle -%}
+                  <span>, {{ guest.subtitle }}</span>
+                {%- endif %}
+                {% if not loop.last %} and {% endif %}
+              {%- endfor %}
+            </p>
+          {%- elif hero.hosts %}
+            <p class="guests">
+              with
+              {%- for host in hero.hosts %}
+                {%- set host = bios[host] if bios[host] else {'name': host, 'subtitle': ''} %}
+                {{ host.name }}{% if not loop.last %} and {% endif %}
+              {%- endfor %}
             </p>
           {%- endif %}
           {%- if hero.recording == false -%}
