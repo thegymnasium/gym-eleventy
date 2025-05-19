@@ -28,11 +28,7 @@ export function filter(arr, criteria) {
   });
 }
 
-if (typeof String.prototype.endsWith !== 'function') {
-  String.prototype.endsWith = function(suffix) {
-      return this.indexOf(suffix, this.length - suffix.length) !== -1;
-  };
-}
+// Removed redundant polyfill for String.prototype.endsWith as it is natively supported in Node.js 22.15 and later.
 
 export default function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyEdgePlugin);
