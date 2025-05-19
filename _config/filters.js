@@ -1,6 +1,7 @@
-const fs = require("node:fs");
+import fs from "node:fs";
+import * as htmlmin from "html-minifier-terser";
 
-var urlRegex = new RegExp('^(?:[a-z+]+:)?//', 'i');
+const urlRegex = new RegExp('^(?:[a-z+]+:)?//', 'i');
 
 // Generic functions
 function replaceAll(string, find, replace) {
@@ -20,7 +21,7 @@ function sortByOrder(values, field = ['data']['order']) {
   });
 }
 
-module.exports = eleventyConfig => {
+export default function filters(eleventyConfig) {
 
   // modified, via @https://bnijenhuis.nl/notes/cache-busting-in-eleventy/
   eleventyConfig.addFilter('cachebust', (url) => {
@@ -64,9 +65,9 @@ module.exports = eleventyConfig => {
     if (id.startsWith('web')) {
       type = 'webinar';
       path = '/webinars/';
-      imgPath = `/img/webinars/poster/`;
+      let imgPath = `/img/webinars/poster/`;
     } else {
-      idString = id.split('-')[1];
+      let idString = id.split('-')[1];
       let idNum = Number(idString);
       path = '/courses/';
 
@@ -78,7 +79,7 @@ module.exports = eleventyConfig => {
         type = 'full';
       } else if (idNum >= 5000) {
         type = 'tutorial';
-        path = '/tutorials/';
+        path = '/courses/take5/';
       } else {
         console.warn(`the ID passed in doesn't match any ranges`);
       }
@@ -151,7 +152,7 @@ module.exports = eleventyConfig => {
 
   // Modified, original @ https://willvincent.com/2022/07/27/redirects-with-11ty-and-netlify/
   eleventyConfig.addFilter('course_endpoint', (id, dest_format) => {
-    idString = id.split('-')[1];
+    let idString = id.split('-')[1];
     let idNum = Number(idString);
     let path;
 
@@ -173,6 +174,27 @@ module.exports = eleventyConfig => {
     return path;
   });
 
+  const MFE_PORTS = {
+    'ACCOUNT': 1997,
+    'AUTHN': 1999,
+    'COURSE_ABOUT': 3000,
+    'DISCUSSIONS': 2002,
+    'LEARNER_DASHBOARD': 1996,
+    'LEARNING': 2000,
+    'PROFILE': 1995,
+  };
+
+  eleventyConfig.addFilter('mfe_endpoint', (name) => {
+    if (name) {
+      const usePorts = process.env.NODE_ENV === 'development' ? true : false;
+
+      const BASE_URL = usePorts ? `${process.env.MFE_URL}:${MFE_PORTS[name.toUpperCase().replaceAll('-','_')]}` : process.env.MFE_URL;
+      return `${BASE_URL}/${name.toLowerCase().replaceAll('_','-')}/`;
+    } else {
+      console.warn('you must specify a name!');
+    }
+  });
+
   // smart-ish replace filter, which works on strings and objects
   eleventyConfig.addFilter('replace', (input, string, replace) => {
     let output;
@@ -187,17 +209,14 @@ module.exports = eleventyConfig => {
     return output;
   });
 
-  eleventyConfig.addFilter('minify_html', (input) => {
-    let output;
-
-    if (typeof input === 'object') {
-      output = JSON.stringify(input);
-    }
-
-    output = input.replace(/>\s+|\s+</g, function(m) {
-      return m.trim();
+  eleventyConfig.addAsyncFilter('minify_html', (input) => {
+    let minified = htmlmin.minify(input, {
+      useShortDoctype: true,
+      removeComments: true,
+      collapseWhitespace: true,
     });
-    return output;
+
+    return minified;
   });
 
   eleventyConfig.addFilter('replace_after', (input, find, replace) => {
