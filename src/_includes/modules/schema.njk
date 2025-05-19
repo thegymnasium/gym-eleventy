@@ -9,12 +9,12 @@
       {%- set path = id | get_path -%}
       {%- set title = course.title | strip_html -%}
       {%- set slug = title | slugify -%}
-      {%- set course_about_url = config.urls.production + '/courses/' + slug ~ '/' -%}
+      {%- set course_about_url = config.main.urls.production + '/courses/' + slug ~ '/' -%}
       {%- set description = course.description | strip_html -%}
       {%- set bio = bios[course.instructor] -%}
       {%- set bio_name = bio.name -%}
       {%- set bio_description = bio.description | strip_html -%}
-      {%- set bio_img = config.urls.production + bio.img -%}
+      {%- set bio_img = config.main.urls.production + bio.img -%}
       {
         "@type": "ListItem",
         "position": {{ loop.index }},
@@ -22,12 +22,12 @@
           "@type": "Course",
           "name": "{{ title }}",
           "description": "{{ description }}",
-          "image": "{{ config.urls.production }}{{ config.paths.img.og }}courses/{{ id | lowercase }}.png",
+          "image": "{{ config.main.urls.production }}{{ config.main.paths.img.og }}courses/{{ id | lowercase }}.png",
           "url": "{{ course_about_url }}",
           "provider": {
             "@type": "School",
             "name": "Gymnasium",
-            "sameAs": "{{ config.urls.production }}"
+            "sameAs": "{{ config.main.urls.production }}"
           },
           "hasCourseInstance": {
             "@type": "CourseInstance",

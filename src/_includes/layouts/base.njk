@@ -1,5 +1,3 @@
----
----
 {# Define a unique class per page automatically (meta.bodyClass overrides this) #}
 {%- if meta.bodyClass -%}
   {%- set bodyClass = meta.bodyClass -%}
@@ -17,10 +15,10 @@
 {%- set footer -%}{%- include './components/footer.njk' -%}{%- endset -%}
 {# In the static site footer, convert absolute urls to relative #}
 {{ footer
-  | replace(config.urls.root, '')
+  | replace(config.main.urls.root, '')
   | replace('GYM_ROOT_URL', '')
-  | replace('GYM_LMS_URL', config.urls.lms)
-  | replace('GYM_MFE_URL', config.urls.mfe)
+  | replace('GYM_LMS_URL', config.main.urls.lms)
+  | replace('GYM_MFE_URL', config.main.urls.mfe)
   | safe
 }}
 {%- include './components/scripts.njk' -%}

@@ -1,6 +1,6 @@
 ---js
 {
-  layout: "layouts/full-width.njk",
+  layout: "full-width",
   permalink: "/courses/gym-shorts/",
   meta: {
     title: "Courses",
@@ -11,7 +11,7 @@
   eleventyComputed: {
     meta: {
       img: (data) => {
-        return `${data.config.paths.img.og}courses/index.png`;
+        return `${data.config.main.paths.img.og}courses/index.png`;
       },
     }
   },

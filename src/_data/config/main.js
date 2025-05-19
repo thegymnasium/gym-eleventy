@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   domains: {
     ROOT: process.env.ROOT_DOMAIN || 'gym.soy',
     PRODUCTION: 'thegymnasium.com',

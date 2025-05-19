@@ -1,7 +1,7 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 $color_1: #80b6d5;
 $color_2: #006daa;
@@ -80,7 +80,8 @@ $border-left-color_5: var(--green-700);
   }
   border: 0 solid var(--mono-1000);
   border-radius: 0.375rem;
-  box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.15), 0 0.0625rem 0.25rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.15),
+    0 0.0625rem 0.25rem rgba(0, 0, 0, 0.15);
   margin-bottom: 1rem;
   padding: 1.5rem;
   position: relative;

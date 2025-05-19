@@ -1,7 +1,7 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 // TODO: some of these are already duplicated in the base/buttonish partial - we should combine them or isolate them appropriately (are there ones we use only in the MFEs? They should go here. If there are ones used sitewide across the static site, the theme, and MFEs? Put it in buttonish.
 .btn {

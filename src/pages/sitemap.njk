@@ -1,5 +1,5 @@
 ---
-layout: layouts/main.njk
+layout: main
 permalink: /sitemap/
 eleventyExcludeFromCollections: true
 meta:
@@ -9,7 +9,7 @@ meta:
 <ul>
 {%- for item in collections.static | sortByUrl -%}
   {%- if (not item.data.meta.draft) and (not item.data.meta.sitemapExclude) -%}
-  {%- set title = item.data.meta.title | replace_after("|","") | replace(config.meta.subtitle,"Home") -%}
+  {%- set title = item.data.meta.title | replace_after("|","") | replace(config.main.meta.subtitle,"Home") -%}
   <li>
     <a href="{{ item.url }}">{{ title }}</a>
   </li>

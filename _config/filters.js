@@ -1,7 +1,7 @@
-const fs = require("node:fs");
-const htmlmin = require("html-minifier-terser");
+import fs from "node:fs";
+import * as htmlmin from "html-minifier-terser";
 
-var urlRegex = new RegExp('^(?:[a-z+]+:)?//', 'i');
+const urlRegex = new RegExp('^(?:[a-z+]+:)?//', 'i');
 
 // Generic functions
 function replaceAll(string, find, replace) {
@@ -21,7 +21,7 @@ function sortByOrder(values, field = ['data']['order']) {
   });
 }
 
-module.exports = eleventyConfig => {
+export default function filters(eleventyConfig) {
 
   // modified, via @https://bnijenhuis.nl/notes/cache-busting-in-eleventy/
   eleventyConfig.addFilter('cachebust', (url) => {
@@ -65,9 +65,9 @@ module.exports = eleventyConfig => {
     if (id.startsWith('web')) {
       type = 'webinar';
       path = '/webinars/';
-      imgPath = `/img/webinars/poster/`;
+      let imgPath = `/img/webinars/poster/`;
     } else {
-      idString = id.split('-')[1];
+      let idString = id.split('-')[1];
       let idNum = Number(idString);
       path = '/courses/';
 
@@ -152,7 +152,7 @@ module.exports = eleventyConfig => {
 
   // Modified, original @ https://willvincent.com/2022/07/27/redirects-with-11ty-and-netlify/
   eleventyConfig.addFilter('course_endpoint', (id, dest_format) => {
-    idString = id.split('-')[1];
+    let idString = id.split('-')[1];
     let idNum = Number(idString);
     let path;
 

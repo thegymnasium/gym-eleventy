@@ -2,9 +2,17 @@
 {
   meta: {
     sitemapExclude: true,
-    title: "Courses Debug",
   },
   eleventyComputed: {
+    meta: {
+      title: (data) => {
+        return data.pagedata.title;
+      },
+    },
+    pagedata: (data) => {
+      const item = data.data.pages.filter(x => x.slug === 'privacy-policy');
+      return item[0];
+    },
     // Hide page from production
     layout: (data) => {
       const item = data.config.env.ELEVENTY_ENV === 'production' ? false : "main";
@@ -12,20 +20,11 @@
     },
     // Hide page from production
     permalink: (data) => {
-      const item = data.config.env.ELEVENTY_ENV === 'production' ? false : "/debug/courses/";
+      const item = data.config.env.ELEVENTY_ENV === 'production' ? false : "/debug/example/";
       return item;
     },
   },
   eleventyExcludeFromCollections: true,
 }
 ---
-<h1>Course List Debugger</h1>
-<ul>
-{%- for id, course in courses -%}
-<li>{{ course.id }} - <a href="/courses/{{ course.title | slugify }}/">{{ course.title }}</a>
-  <ul>
-    <li>active: {{ course.live }}</li>
-  </ul>
-</li>
-{%- endfor -%}
-</ul>
+{{ pagedata.content | safe }}

@@ -6,7 +6,7 @@
     {%- set bio = bios[item.instructor] -%}
     {%- set bio_name = bio.name -%}
     {%- set bio_description = bio.description | strip_html -%}
-    {%- set bio_img = config.urls.production + bio.img -%}
+    {%- set bio_img = config.main.urls.production + bio.img -%}
   {%- endif -%}
   <script type="application/ld+json">
   {
@@ -18,12 +18,12 @@
     "publisher": {
       "@type": "School",
       "name": "Gymnasium",
-      "url": "{{ config.urls.production }}"
+      "url": "{{ config.main.urls.production }}"
     },
     "provider": {
       "@type": "School",
       "name": "Gymnasium",
-      "url": "{{ config.urls.production }}"
+      "url": "{{ config.main.urls.production }}"
     },
     "image": "{{ metaImg }}",
     "offers": [{
@@ -50,7 +50,7 @@
     "educationalCredentialAwarded": [{
       "@type": "EducationalOccupationalCredential",
       "name": "{{ item.title }} {{ item.credential | title }}",
-      {#- "url": "{{ config.urls.production }}", #}
+      {#- "url": "{{ config.main.urls.production }}", #}
       "credentialCategory": "{{ item.credential }}",
       "offers": [{
         "@type": "Offer",
