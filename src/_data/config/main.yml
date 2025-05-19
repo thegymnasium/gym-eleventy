@@ -1,0 +1,340 @@
+meta:
+  title: Gymnasium
+  subtitle: Free online courses and tutorials on design and development.
+  author: Aquent Gymnasium
+  description: Design a career you love with our free online courses and tutorials on design, development, UX, prototyping, accessibility, and career skills.
+  short_description: Design a career you love with free online courses and tutorials.
+  og_img: /img/og/gym-brand.png
+  twitter_handle: "@AquentGymnasium"
+header:
+  nav:
+    main:
+    - label: Courses
+      href: GYM_ROOT_URL/courses/
+    - label: Jobs
+      href: GYM_ROOT_URL/jobs/
+    - label: About
+      href: GYM_ROOT_URL/about/
+    auth:
+      public:
+      - label: Sign In
+        href: GYM_LMS_URL/login
+      - label: Sign Up
+        href: GYM_LMS_URL/register
+        class: btn
+      private:
+      - label: Dashboard
+        href: GYM_LMS_URL/dashboard
+      - label: Log Out
+        href: GYM_LMS_URL/logout
+    courses:
+    - label: Full Courses
+      href: GYM_ROOT_URL/courses/full/
+    - label: Gym Shorts
+      href: GYM_ROOT_URL/courses/gym-shorts/
+    - label: Take 5 Tutorials
+      href: GYM_ROOT_URL/courses/take5/
+    - label: Collections
+      href: GYM_ROOT_URL/collections/
+footer:
+  nav:
+    - title: What We Do
+      links:
+        - label: Courses
+          href: GYM_ROOT_URL/courses/
+        - label: Tutorials
+          href: GYM_ROOT_URL/courses/take5/
+        - label: Jobs
+          href: GYM_ROOT_URL/jobs/
+        - label: Articles
+          href: https://medium.com/gymnasium
+          target: _blank
+          rel: noopener
+        - label: Livestreams
+          href: https://www.youtube.com/@AquentGymnasium/streams
+          target: _blank
+          rel: noopener
+        - label: Webinars
+          href: GYM_ROOT_URL/webinars/
+        - label: About
+          href: GYM_ROOT_URL/about/
+    - title: Collections
+      links:
+        - label: Generative AI
+          href: GYM_ROOT_URL/generative-ai/
+        - label: Design Systems
+          href: GYM_ROOT_URL/design-systems/
+        - label: Development
+          href: GYM_ROOT_URL/development/
+        - label: UX Design
+          href: GYM_ROOT_URL/ux-design/
+        - label: Prototyping
+          href: GYM_ROOT_URL/prototyping/
+        - label: Accessibility
+          href: GYM_ROOT_URL/accessibility/
+        - label: Career Skills
+          href: GYM_ROOT_URL/career-skills/
+    - title: Resources
+      links:
+        - label: FAQ
+          href: GYM_ROOT_URL/faq/
+        - label: Support
+          href: GYM_ROOT_URL/support/
+        - label: Social Impact
+          href: GYM_ROOT_URL/social-impact/
+        - label: Privacy Policy
+          href: GYM_ROOT_URL/privacy-policy/
+          rel: privacy-policy
+        - label: Corporate Social Responsibility
+          href: https://aquent.com/csr-policy
+          target: _blank
+          rel: noopener
+        - label: Impressum
+          href: https://aquent.de/impressum/
+          target: _blank
+          rel: noopener
+    - title: Social
+      img:
+        attr:
+          decoding: async
+          fetchpriority: low
+          width: 20
+          height: 20
+      links:
+        - label: LinkedIn
+          href: https://www.linkedin.com/school/gymnasium/
+          target: _blank
+          rel: noopener
+          alt: LinkedIn “in” icon.
+          src: png/icon-linkedin-4x.png
+          srcset: svg/icon-linkedin.svg
+        - label: YouTube
+          href: https://www.youtube.com/AquentGymnasium
+          target: _blank
+          rel: noopener
+          alt: YouTube play button icon.
+          src: png/icon-youtube-4x.png
+          srcset: svg/icon-youtube.svg
+        - label: Bluesky
+          href: https://bsky.app/profile/aquentgymnasium.bsky.social
+          target: _blank
+          rel: noopener
+          alt: Bluesky butterfly icon.
+          src: png/icon-bluesky-4x.png
+          srcset: svg/icon-bluesky.svg
+        - label: Threads
+          href: https://www.threads.net/@aquent_gymnasium
+          target: _blank
+          rel: noopener
+          alt: Threads ampersand-esque icon.
+          src: png/icon-threads-4x.png
+          srcset: svg/icon-threads.svg
+        - label: Instagram
+          href: https://www.instagram.com/aquent_gymnasium/
+          target: _blank
+          rel: noopener
+          alt: Instagram camera icon.
+          src: png/icon-instagram-4x.png
+          srcset: svg/icon-instagram.svg
+        - label: Medium
+          href: https://medium.com/gymnasium
+          target: _blank
+          rel: noopener
+          alt: Medium ellipsis (dot, oval, thin oval) icon.
+          src: png/icon-medium-4x.png
+          srcset: svg/icon-medium.svg
+        - label: GitHub
+          href: https://github.com/gymnasium
+          target: _blank
+          rel: noopener
+          alt: GitHub Octocat silhouette icon.
+          src: png/icon-github-4x.png
+          srcset: svg/icon-github.svg
+    - title: Affiliated Sites
+      links:
+        - label: Aquent
+          href: https://aquent.com
+          target: _blank
+          rel: noopener
+        - label: Aquent Talent
+          href: https://aquenttalent.com
+          target: _blank
+          rel: noopener
+        - label: Aquent Studios
+          href: https://aquentstudios.com
+          target: _blank
+          rel: noopener
+        - label: Aquent RoboHead
+          href: https://www.robohead.net
+          target: _blank
+          rel: noopener
+        - label: Aquent Scout
+          href: https://aquentscout.com
+          target: _blank
+          rel: noopener
+  aside:
+    - title: Platforms
+      links:
+        - href: https://openedx.org
+          alt: Powered by Open edX.
+          src: edx-openedx-logo-tag-dark.png
+          srcset:
+          width: 175
+          height: 70
+        - href: https://www.11ty.dev
+          alt: 11ty or eleventy.
+          src: 11ty-logo-400x400.png
+          srcset:
+          width: 400
+          height: 400
+    - title: Awards
+      links:
+        - href: https://americanstaffing.net/posts/2024/10/15/workforce-development-with-2024-elevate-awards/
+          alt: American Staffing Association Elevete Awards.
+          src: asa-elevate-awards.png
+          srcset:
+          width: 254
+          height: 170
+    - title: Press
+      links:
+        - href: https://www.fastcompany.com/3024661/hacking-hack-schools-to-make-them-work
+          alt: Fast Company logo.
+          src: fast-company.svg
+          srcset: fast-company.svg
+          width: 223
+          height: 32
+        - href: https://www.forbes.com/sites/sap/2015/02/23/hate-formal-career-training-go-guerrilla-on-it/
+          alt: Forbes logo.
+          src: forbes.svg
+          srcset: forbes.svg
+          width: 128
+          height: 32
+        - href: https://www.inc.com/issie-lapowsky/how-moocs-training-tomorrow-workforce.html
+          alt: Inc logo.
+          src: inc.svg
+          srcset: inc.svg
+          width: 93
+          height: 32
+        - href: https://www.lemonde.fr/emploi/article/2014/06/30/les-firmes-americaines-recrutent-dans-les-mooc_4448062_1698637.html
+          alt: Le Monde .fr logo.
+          src: le-monde-fr.svg
+          srcset: le-monde-fr.svg
+          width: 186
+          height: 32
+        - href: https://www.foxbusiness.com/features/training-workers-the-netflix-way-moocs-in-the-job-industry
+          alt: Fox Business logo.
+          src: fox-business.svg
+          srcset: fox-business.svg
+          width: 64
+          height: 32
+  a:
+    attr:
+      target: _blank
+      rel: noopener
+  img:
+    attr:
+      decoding: async
+      fetchpriority: low
+feeds:
+  blog: https://medium.com/feed/gymnasium
+logos:
+  main:
+    white:
+      src: /img/brand/png/gymnasium-logo-white-4x.png
+      srcset: /img/brand/svg/gymnasium-logo-white.svg
+    black:
+      src: /img/brand/png/gymnasium-logo-black-lg.png
+      srcset: /img/brand/svg/gymnasium-logo-black.svg
+  tutor:
+    - href: https://docs.tutor.overhang.io
+      alt: Runs on Tutor.
+      src: tutor-logo.png
+      srcset:
+      width: 125
+      height: 24
+colors:
+  primary: "#0077c8"
+  secondary: "#ff5f14"
+  white: "#fff"
+  light-gray: "#ccc"
+  gray: "#a6a6a6"
+  medium-gray: "#737373"
+  dark-gray: "#444"
+  black: "#181818"
+msg:
+  banner:
+    active: false
+    class: 
+    content: |
+      <p><span aria-label="Waving Hand emoji" role="img">&#128075;</span> <strong>We’re planning some website maintenance on <time datetime="2025-07-11">Friday, July 11</time> and will be down temporarily</strong> <span aria-label="Hammer and Wrench emoji" role="img">&#128736;</span> — apologies for the inconvenience.</p>
+  errors:
+    error_404:
+      heading: '404: Page Not Found'
+      description: |
+        <span aria-label="Waving hand emoji" role="img">👋</span> You discovered a page that doesn’t exist.
+      body: |
+        <p>Some might call you lost. Others might call you a creative genius.</p><p>Either way, we suggest that you check out our frequently visited pages below:</p>
+      show_links: true
+    error_unknown:
+      heading: 'Oops!'
+      description: |
+        <span aria-label="Waving hand emoji" role="img">👋</span> There was an unexpected error.
+      body: |
+        <p>Try refreshing the page using the button below.</p>
+      footer: |
+        <p>If this issue persists, please reach out to our support team at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+      show_links: false
+    links:
+    - label: Homepage
+      url: GYM_ROOT_URL/
+    - label: Full Courses
+      url: GYM_ROOT_URL/courses/full/
+    - label: Gym Shorts
+      url: GYM_ROOT_URL/courses/gym-shorts/
+    - label: Take 5 Tutorials
+      url: GYM_ROOT_URL/courses/take5/
+    footer: |
+      <p>Need to get in touch? You can email us at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+  mfe:
+    account:
+      deletion: |
+        <p>To delete your data, please fill out <a href="https://privacyportal.onetrust.com/webform/05f24bb5-a0c4-43d4-966e-05606d5be9ca/93b6b82e-baf8-4adc-8998-0df20831be6d" rel="noopener" target="_blank">our data deletion request form</a>.</p>
+        <p>Heads up! Deleting your account data will remove any certificates/badges that you’ve earned on Aquent Gymnasium. We advise that you save them now. See our <a href="GYM_ROOT_URL/faq#account-deletion">FAQ page</a> for more information.</p>
+    authn:
+      welcome: "<p>This is an example of a welcome message on the registration page.</p>"
+    course_about:
+      headings:
+        about: About This Course
+        preview: Course Preview
+        outline: Course Outline
+        prerequisites: Prerequisites
+        requirements: Requirements
+        audience: This Course is For
+        instructor: Meet the Instructor
+  learning:
+    exam_success: |
+      <h2>You did it! 🎉</h2><p>Congratulations on passing the final exam!</p><p>Now you can share your achievement on social media. You can always access your credential from the <a href="GYM_LMS_URL/dashboard">Dashboard</a>.</p><div class="survey"><p>Want to let us know how we’re doing? Take a moment to share your thoughts with us. Your feedback will help shape our future courses.</p><a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a></div>
+    exam_failed_attempt: |
+      <h2>You’re Close!</h2><p>You didn't score high enough on the exam. The good news is that you still have one more chance to pass. This would be a great time to review the course material. Good luck!</p>
+    exam_failure: |
+      <h2>Darn.</h2><p>The bad news is that you didn’t pass the exam. But the good news is that we have plenty of other free courses.</p><div class="survey"><p>In the meantime, please take a moment to share your thoughts with us. Your feedback will help shape our future courses!</p><a class="btn" href="https://www.surveymonkey.com/s/JYJPMSS" target="_blank" rel="noopener">Take Survey</a></div>
+  theme:
+    custom: "<p>This is an example of a custom message for anywhere in the theme.</p>"
+html:
+  footer: FOOTER_HTML
+  error_404: 404_HTML
+bios: BIOS_DATA
+courses: COURSES_DATA
+# TODO: consider refactoring to support global path definitions
+paths:
+  img:
+    hero: /img/hero/
+    brand: /img/brand/
+    courses: /img/courses/
+    tutorials: /img/tutorials/
+    bios: /img/bios/
+    og: /img/og/
+    footer:
+      icons: /img/footer/icons/
+      logos: /img/footer/logos/
+markets: MARKETS_STATIC
