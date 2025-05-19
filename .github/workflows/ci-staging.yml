@@ -9,7 +9,7 @@ on:
       - '.github/workflows/**'
       - '.nvmrc'
       - 'eleventy.config.js'
-      - 'netlify.toml'
+      # - 'netlify.toml'
       - 'package.json'
       - 'package-lock.json'
       - '_config/**'
@@ -61,7 +61,7 @@ jobs:
           git checkout -b $TEMP_BRANCH
           git branch --set-upstream-to=origin/$TEMP_BRANCH $TEMP_BRANCH &>/dev/null || true
           git pull &>/dev/null || true
-          git checkout $BASE_BRANCH -- .env* .github/workflows src/_data src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components src/_includes/layouts/components/footer.njk
+          git checkout $BASE_BRANCH -- .env* .nvmrc .github/workflows eleventy.config.js package.json package-lock.json _config src/_data/config src/pages/api src/_includes/modules/api-config.njk src/_includes/modules/components src/_includes/layouts/components/footer.njk
           git add -A
           git commit -m "${{ steps.message.outputs.title }}"
           git push --set-upstream origin $TEMP_BRANCH
