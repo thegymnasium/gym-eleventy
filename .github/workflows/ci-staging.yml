@@ -9,7 +9,7 @@ on:
       - '.github/workflows/**'
       - '.nvmrc'
       - 'eleventy.config.js'
-      - 'netlify.toml'
+      # - 'netlify.toml'
       - 'package.json'
       - 'package-lock.json'
       - '_config/**'
