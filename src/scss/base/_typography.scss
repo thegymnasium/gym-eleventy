@@ -1,7 +1,7 @@
 // | -------------------------------------------------------------
 // | Typography
 // | -------------------------------------------------------------
-@use 'breakpoints' as *;
+@use 'base/breakpoints' as *;
 
 body {
   font-family: var(--font-family-default);

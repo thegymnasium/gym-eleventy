@@ -1,7 +1,7 @@
-const path = require("path");
-const eleventyImage = require("@11ty/eleventy-img");
+const path = await import("path");
+const eleventyImage = await import("@11ty/eleventy-img");
 
-module.exports = eleventyConfig => {
+export default function (eleventyConfig) {
   function relativeToInputPath(inputPath, relativeFilePath) {
     let split = inputPath.split("/");
     split.pop();

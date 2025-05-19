@@ -2,28 +2,28 @@
 // | These are shared among the static site, the theme, & MFEs
 // | -------------------------------------------------------------
 // Non-rendered (mixins, placeholders, variables, functions)
-@use 'base/mixins';
-@use 'base/functions';
-@use 'base/breakpoints';
-@use 'base/colors';
-@use 'base/fonts';
+@use "base/mixins";
+@use "base/functions";
+@use "base/breakpoints";
+@use "base/colors";
+@use "base/fonts";
 
 // Start rendered CSS
-@use 'base/resets';
-@use 'base/root';
-@use 'base/typography';
-@use 'base/lists';
-@use 'base/containers';
-@use 'base/buttonish';
-@use 'base/forms';
-@use 'base/outline';
-@use 'base/layouts';
-@use 'base/flex';
-@use 'base/backgrounds';
+@use "base/resets";
+@use "base/root";
+@use "base/typography";
+@use "base/lists";
+@use "base/containers";
+@use "base/buttonish";
+@use "base/forms";
+@use "base/outline";
+@use "base/layouts";
+@use "base/flex";
+@use "base/backgrounds";
 
 // Generic Page Styles
-@use 'pages/static';
+@use "pages/static";
 
 // Component Includes
-@use 'components/header';
-@use 'components/footer';
+@use "components/header";
+@use "components/footer";

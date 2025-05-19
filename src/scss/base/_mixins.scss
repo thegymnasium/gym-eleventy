@@ -1,7 +1,10 @@
 @use "sass:map";
-@use "colors" as *;
-@use "breakpoints" as *;
-@use "functions" as *;
+@use 'sass:list';
+@use 'sass:color';
+@use "base/colors" as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+
 
 // via @https://jonnykates.medium.com/automating-colour-contrast-ratios-with-sass-e201f3b52797
 
@@ -23,14 +26,14 @@
 // we now use a separate color map for background colors to avoid CSS bloat.
 @mixin bg-colors {
   @each $color, $shades in $bg-colors {
-    @if (length($shades) > 1) {
+    @if (list.length($shades) > 1) {
       @each $shade, $value in $shades {
         .bg-#{$color}-#{$shade} {
           background-color: var(--#{$color}-#{$shade});
           --box-shadow-color: var(--#{$color}-#{$shade});
 
           // Automatically set the color based on the HSL lightness value
-          @if lightness($value) > 60% {
+          @if color.channel($value, "lightness", $space: hsl) > 60% {
             color: var(--mono-900);
           } @else {
             color: white;
@@ -44,7 +47,7 @@
           --box-shadow-color: var(--#{$color}-#{$shade});
 
           // Automatically set the color based on the HSL lightness value
-          @if lightness($value) > 60% {
+          @if color.channel($value, "lightness", $space: hsl) > 60% {
             color: var(--mono-900);
           } @else {
             color: white;

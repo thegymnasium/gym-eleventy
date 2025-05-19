@@ -1,6 +1,6 @@
 <nav class="secondary {{ nav.secondary }}" aria-label="{{ nav.secondary | capitalize }}">
   <ul>
-    {%- for link in config.header.nav[nav.secondary] | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.urls.lms) | replace("GYM_MFE_URL", config.urls.mfe) -%}
+    {%- for link in config.main.header.nav[nav.secondary] | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) | replace("GYM_MFE_URL", config.main.urls.mfe) -%}
     <li>
       <a href="{{link.href}}"{%- if (link.href in permalink) or (nav.secondaryParent in link.href) -%} class="active" aria-current="page" {%- endif -%}>{{link.label}}</a>
     </li>

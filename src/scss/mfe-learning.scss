@@ -43,7 +43,9 @@ main {
   @include container;
   // max-width: convert-to-rem(map.get($breakpoints, 'large'));
 
-  margin: 0 auto 1.4rem;
+  & {
+    margin: 0 auto 1.4rem;
+  }
 }
 
 // Course Header (non-nav version, only appears under "Course" tab)

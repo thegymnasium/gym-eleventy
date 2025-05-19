@@ -1,5 +1,5 @@
 ---
-layout: layouts/sidebar.njk
+layout: sidebar
 meta:
   title: "404: Page Not Found"
   sitemapExclude: true
@@ -9,9 +9,9 @@ permalink: 404.html
 {%- set error404 -%}{%- include 'modules/components/404.njk' -%}{%- endset -%}
 {# In the static site footer, convert absolute urls to relative #}
 {{ error404
-  | replace(config.urls.root, '')
+  | replace(config.main.urls.root, '')
   | replace('GYM_ROOT_URL', '')
-  | replace('GYM_LMS_URL', config.urls.lms)
-  | replace('GYM_MFE_URL', config.urls.mfe)
+  | replace('GYM_LMS_URL', config.main.urls.lms)
+  | replace('GYM_MFE_URL', config.main.urls.mfe)
   | safe
 }}
