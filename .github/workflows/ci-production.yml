@@ -5,8 +5,11 @@ on:
     branches:
       - production
     paths:
+      - '.eleventy.config.js'
       - '.env*'
       - '.github/workflows/**'
+      - '.nvmrc'
+      - '_config/**'
       - 'src/_data/config/**'
       - 'src/pages/api/**.njk'
       - 'src/_includes/modules/api-config.njk'
