@@ -1,27 +1,27 @@
 // | -------------------------------------------------------------
 // | This file is intended to only serve the Discussions MFE
 // | -------------------------------------------------------------
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
-@use 'shared';
-@use 'base/visibility';
-@use 'components/webfonts_absolute';
+@use "shared";
+@use "base/visibility";
+@use "components/webfonts_absolute";
 
-@use 'mfe/root';
+@use "mfe/root";
 
-@use 'mfe/layout';
-@use 'mfe/course-header';
+@use "mfe/layout";
+@use "mfe/course-header";
 @use "mfe/course-tabs-nav";
 @use "mfe/tooltips";
 
 // copied from MFE
-@import 'mfe/paragon-variables';
+@use "mfe/paragon-variables";
 // @import 'mfe/discussions/original';
 
-@import 'mfe/discussions/app';
+@use "mfe/discussions/app";
 
 main.container {
   margin-bottom: 1.5rem;
@@ -48,15 +48,15 @@ main.container {
 }
 
 .text-TA-color {
-  color: $success-700;
+  color: paragon-variables.$success-700;
 }
 
 .outline-TA-color {
-  outline: $success-700 solid 2px;
+  outline: paragon-variables.$success-700 solid 2px;
 }
 
 .outline-anonymous {
-  outline: $light-400 solid 2px;
+  outline: paragon-variables.$light-400 solid 2px;
 }
 
 .font-size-16 {
@@ -239,7 +239,7 @@ main.container {
 
 .badge-padding {
   padding-top: 1px;
-  padding-bottom: 1px
+  padding-bottom: 1px;
 }
 
 .discussion-post:hover {
@@ -247,7 +247,7 @@ main.container {
 }
 
 .learner > a:hover {
-  background-color: $light-300;
+  background-color: paragon-variables.$light-300;
 }
 
 .py-10px {
@@ -304,7 +304,7 @@ header {
 }
 
 #learner-posts-link {
-  span[role=heading]:hover {
+  span[role="heading"]:hover {
     text-decoration: underline;
   }
 }
@@ -326,7 +326,7 @@ header {
 }
 
 .border-light-400-2 {
-  border: 2px solid $light-400 !important;
+  border: 2px solid paragon-variables.$light-400 !important;
   border-width: 2px !important;
 }
 
@@ -336,7 +336,7 @@ header {
 }
 
 .post-form {
-  input[type=checkbox] {
+  input[type="checkbox"] {
     width: 18px !important;
     height: 18px !important;
   }
@@ -361,29 +361,29 @@ header {
       font-size: 18px !important;
       font-weight: 400;
       line-height: 28px;
-    };
+    }
 
     span {
       font-weight: 500;
       line-height: 24px;
-    };
-  };
+    }
+  }
 
   .container-xl {
     .course-title-lockup {
       font-size: 1.125rem !important;
-    };
+    }
 
     .logo {
       margin-top: 2px;
-    };
-  };
+    }
+  }
 
   span:first-child {
     font-size: 14px !important;
     margin-top: 1px !important;
     margin-bottom: -1px !important;
-  };
+  }
 }
 
 #courseTabsNavigation {
@@ -400,7 +400,7 @@ header {
     .nav-item {
       padding-bottom: 8px;
     }
-  };
+  }
 }
 
 .min-content-height {
@@ -559,7 +559,6 @@ header {
   }
 }
 
-
 .tox-tinymce-aux {
   z-index: 1 !important;
 }
@@ -589,10 +588,9 @@ header {
 }
 
 .btn-icon.btn-icon-primary:hover {
-  background-color: $light-300 !important;
+  background-color: paragon-variables.$light-300 !important;
   color: var(--primary-500);
 }
-
 
 @media only screen and (max-width: 767px) {
   body:not(.tox-force-desktop) .tox .tox-dialog {
@@ -632,13 +630,13 @@ header {
 }
 
 .hover-button:hover {
-  background-color: $light-300 !important;
+  background-color: paragon-variables.$light-300 !important;
   height: 36px !important;
   border: none !important;
 }
 
 .btn-tertiary:hover {
-  background-color: $light-300 !important;
+  background-color: paragon-variables.$light-300 !important;
 }
 
 .nav-button-group {
@@ -667,7 +665,7 @@ header {
   }
 
   .nav-link.active,
-  .show >.nav-link {
+  .show > .nav-link {
     background-color: var(--primary-500);
   }
 }
@@ -675,13 +673,13 @@ header {
 // .course-tabs-navigation {
 //   .nav a {
 //     &:hover {
-//       background-color: $light-300 !important;
+//       background-color: paragon-variables.$light-300 !important;
 //     }
 //   }
 // }
 
 .btn-tertiary:disabled {
-  color: $gray-700 !important;
+  color: paragon-variables.$gray-700 !important;
   background-color: transparent !important;
 }
 
@@ -781,14 +779,14 @@ code {
 .post-preview,
 .discussion-comments {
   blockquote {
-    border-left: 2px solid $gray-200;
+    border-left: 2px solid paragon-variables.$gray-200;
     margin-left: 1.5rem;
     padding-left: 1rem;
   }
 }
 
 .add-comment-btn {
-  border: 1px solid $light-300 !important;
+  border: 1px solid paragon-variables.$light-300 !important;
 }
 
 .icon-size-24 {
@@ -807,11 +805,11 @@ code {
   line-height: 28px !important;
 }
 
-.usabilla_live_button_container{
+.usabilla_live_button_container {
   right: 0px !important;
 }
 
-.learning-header{
+.learning-header {
   z-index: 4;
   position: relative;
   background-color: var(--mono-100);
@@ -833,8 +831,9 @@ code {
   width: 32.188rem !important;
 }
 
-th, td {
-  border: 1px dashed $gray-200;
+th,
+td {
+  border: 1px dashed paragon-variables.$gray-200;
   padding: 0.4rem;
   white-space: nowrap;
 }

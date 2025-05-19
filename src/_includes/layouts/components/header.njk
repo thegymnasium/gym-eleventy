@@ -1,8 +1,8 @@
 <header class="site-header">
   <a href="#main" class="skip-link">Skip to main content</a>
-  {%- if config.msg.banner.active -%}
-  <aside id="system-status" class="system-status{%- if config.msg.banner.class %} {{config.msg.banner.class}}{% endif -%}">
-    <div class="container">{{ config.msg.banner.content | safe }}</div>
+  {%- if config.main.msg.banner.active -%}
+  <aside id="system-status" class="system-status{%- if config.main.msg.banner.class %} {{config.main.msg.banner.class}}{% endif -%}">
+    <div class="container">{{ config.main.msg.banner.content | safe }}</div>
   </aside>
   {%- endif -%}
   <div class="container">

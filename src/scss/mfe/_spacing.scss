@@ -1,7 +1,7 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 // These are the paragon spacing utility classes
 // TODO: if we use these for any reason, consider removing the so that we can override them

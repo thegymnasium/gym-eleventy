@@ -1,7 +1,7 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 @keyframes ellipsis {
   to {
@@ -77,7 +77,6 @@
   width: 0;
 }
 
-
 @keyframes react-loading-skeleton {
   100% {
     transform: translateX(100%);
@@ -134,11 +133,9 @@
   }
 }
 
-
 .react-loading-skeleton {
   z-index: unset;
 }
-
 
 @keyframes progress-bar-stripes {
   0% {
@@ -205,7 +202,6 @@
 .progress-bar {
   background-color: #00bbf9;
 }
-
 
 .spinner-border {
   animation: spinner-border 0.75s linear infinite;

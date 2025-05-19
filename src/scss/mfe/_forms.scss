@@ -1,7 +1,7 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 $color_1: #454545;
 $color_2: #707070;
@@ -72,7 +72,8 @@ $border-left-color_1: var(--mono-100);
       .pgn__form-control-floating-label {
         .pgn__form-control-floating-label-text {
           background-color: $background-color_1;
-          transform: translateY(-0.5625rem) scale(0.75) translateY(-80.0007500188%);
+          transform: translateY(-0.5625rem) scale(0.75)
+            translateY(-80.0007500188%);
         }
       }
     }
@@ -216,23 +217,23 @@ textarea.form-control {
   flex-wrap: wrap;
   margin-left: -5px;
   margin-right: -5px;
-  >.col {
+  > .col {
     padding-left: 5px;
     padding-right: 5px;
-    >.valid-tooltip {
+    > .valid-tooltip {
       left: 5px;
     }
-    >.invalid-tooltip {
+    > .invalid-tooltip {
       left: 5px;
     }
   }
-  >[class*="col-"] {
+  > [class*="col-"] {
     padding-left: 5px;
     padding-right: 5px;
-    >.valid-tooltip {
+    > .valid-tooltip {
       left: 5px;
     }
-    >.invalid-tooltip {
+    > .invalid-tooltip {
       left: 5px;
     }
   }
@@ -710,7 +711,7 @@ textarea.form-control {
   flex-wrap: wrap;
   position: relative;
   width: 100%;
-  >.custom-file {
+  > .custom-file {
     flex: 1 1 auto;
     margin-bottom: 0;
     min-width: 0;
@@ -731,12 +732,12 @@ textarea.form-control {
     }
     .custom-file-input {
       &:focus {
+        z-index: 4;
         ~ {
           .custom-file-label {
             z-index: 3;
           }
         }
-        z-index: 4;
       }
     }
     &:not(:last-child) {
@@ -750,7 +751,7 @@ textarea.form-control {
       }
     }
   }
-  >.custom-select {
+  > .custom-select {
     flex: 1 1 auto;
     margin-bottom: 0;
     min-width: 0;
@@ -775,7 +776,7 @@ textarea.form-control {
       border-top-left-radius: 0;
     }
   }
-  >.form-control {
+  > .form-control {
     flex: 1 1 auto;
     margin-bottom: 0;
     min-width: 0;
@@ -800,7 +801,7 @@ textarea.form-control {
       border-top-left-radius: 0;
     }
   }
-  >.form-control-plaintext {
+  > .form-control-plaintext {
     flex: 1 1 auto;
     margin-bottom: 0;
     min-width: 0;
@@ -819,7 +820,7 @@ textarea.form-control {
     }
   }
   &:not(.has-validation) {
-    >.custom-file {
+    > .custom-file {
       &:not(:last-child) {
         .custom-file-label {
           border-bottom-right-radius: 0;
@@ -831,34 +832,34 @@ textarea.form-control {
         }
       }
     }
-    >.custom-select {
+    > .custom-select {
       &:not(:last-child) {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
       }
     }
-    >.form-control {
+    > .form-control {
       &:not(:last-child) {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
       }
     }
-    >.input-group-append {
+    > .input-group-append {
       &:not(:last-child) {
-        >.btn {
+        > .btn {
           border-bottom-right-radius: 0;
           border-top-right-radius: 0;
         }
-        >.input-group-text {
+        > .input-group-text {
           border-bottom-right-radius: 0;
           border-top-right-radius: 0;
         }
       }
     }
   }
-  >.input-group-append {
+  > .input-group-append {
     &:last-child {
-      >.btn {
+      > .btn {
         &:not(:last-child) {
           &:not(.dropdown-toggle) {
             border-bottom-right-radius: 0;
@@ -866,39 +867,39 @@ textarea.form-control {
           }
         }
       }
-      >.input-group-text {
+      > .input-group-text {
         &:not(:last-child) {
           border-bottom-right-radius: 0;
           border-top-right-radius: 0;
         }
       }
     }
-    >.btn {
+    > .btn {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
     }
-    >.input-group-text {
+    > .input-group-text {
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
     }
   }
-  >.input-group-prepend {
-    >.btn {
+  > .input-group-prepend {
+    > .btn {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
-    >.input-group-text {
+    > .input-group-text {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
     &:first-child {
-      >.btn {
+      > .btn {
         &:not(:first-child) {
           border-bottom-left-radius: 0;
           border-top-left-radius: 0;
         }
       }
-      >.input-group-text {
+      > .input-group-text {
         &:not(:first-child) {
           border-bottom-left-radius: 0;
           border-top-left-radius: 0;
@@ -906,11 +907,11 @@ textarea.form-control {
       }
     }
     &:not(:first-child) {
-      >.btn {
+      > .btn {
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
       }
-      >.input-group-text {
+      > .input-group-text {
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
       }
@@ -918,7 +919,7 @@ textarea.form-control {
   }
 }
 .input-group.has-validation {
-  >.custom-file {
+  > .custom-file {
     &:nth-last-child(n + 3) {
       .custom-file-label {
         border-bottom-right-radius: 0;
@@ -930,25 +931,25 @@ textarea.form-control {
       }
     }
   }
-  >.custom-select {
+  > .custom-select {
     &:nth-last-child(n + 3) {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
   }
-  >.form-control {
+  > .form-control {
     &:nth-last-child(n + 3) {
       border-bottom-right-radius: 0;
       border-top-right-radius: 0;
     }
   }
-  >.input-group-append {
+  > .input-group-append {
     &:nth-last-child(n + 3) {
-      >.btn {
+      > .btn {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
       }
-      >.input-group-text {
+      > .input-group-text {
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
       }
@@ -1035,7 +1036,7 @@ textarea.form-control {
   }
 }
 .input-group-lg {
-  >.custom-select {
+  > .custom-select {
     height: calc(1.5em + 1.375rem + 2px);
     border-radius: 0.425rem;
     font-size: 1.325rem;
@@ -1043,7 +1044,7 @@ textarea.form-control {
     padding: 0.6875rem 1.25rem;
     padding-right: 2rem;
   }
-  >.form-control {
+  > .form-control {
     &:not(textarea) {
       height: calc(1.5em + 1.375rem + 2px);
     }
@@ -1052,28 +1053,28 @@ textarea.form-control {
     line-height: 1.5;
     padding: 0.6875rem 1.25rem;
   }
-  >.input-group-append {
-    >.btn {
+  > .input-group-append {
+    > .btn {
       border-radius: 0.425rem;
       font-size: 1.325rem;
       line-height: 1.5;
       padding: 0.6875rem 1.25rem;
     }
-    >.input-group-text {
+    > .input-group-text {
       border-radius: 0.425rem;
       font-size: 1.325rem;
       line-height: 1.5;
       padding: 0.6875rem 1.25rem;
     }
   }
-  >.input-group-prepend {
-    >.btn {
+  > .input-group-prepend {
+    > .btn {
       border-radius: 0.425rem;
       font-size: 1.325rem;
       line-height: 1.5;
       padding: 0.6875rem 1.25rem;
     }
-    >.input-group-text {
+    > .input-group-text {
       border-radius: 0.425rem;
       font-size: 1.325rem;
       line-height: 1.5;
@@ -1082,7 +1083,7 @@ textarea.form-control {
   }
 }
 .input-group-sm {
-  >.custom-select {
+  > .custom-select {
     height: calc(1.4286em + 0.875rem + 2px);
     border-radius: 0.25rem;
     font-size: 0.875rem;
@@ -1090,7 +1091,7 @@ textarea.form-control {
     padding: 0.4375rem 0.75rem;
     padding-right: 2rem;
   }
-  >.form-control {
+  > .form-control {
     &:not(textarea) {
       height: calc(1.4286em + 0.875rem + 2px);
     }
@@ -1099,28 +1100,28 @@ textarea.form-control {
     line-height: 1.4286;
     padding: 0.4375rem 0.75rem;
   }
-  >.input-group-append {
-    >.btn {
+  > .input-group-append {
+    > .btn {
       border-radius: 0.25rem;
       font-size: 0.875rem;
       line-height: 1.4286;
       padding: 0.4375rem 0.75rem;
     }
-    >.input-group-text {
+    > .input-group-text {
       border-radius: 0.25rem;
       font-size: 0.875rem;
       line-height: 1.4286;
       padding: 0.4375rem 0.75rem;
     }
   }
-  >.input-group-prepend {
-    >.btn {
+  > .input-group-prepend {
+    > .btn {
       border-radius: 0.25rem;
       font-size: 0.875rem;
       line-height: 1.4286;
       padding: 0.4375rem 0.75rem;
     }
-    >.input-group-text {
+    > .input-group-text {
       border-radius: 0.25rem;
       font-size: 0.875rem;
       line-height: 1.4286;
@@ -1226,7 +1227,8 @@ textarea.form-control {
     top: 0.250025rem;
     width: 1.25rem;
     left: -1.75rem;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
   &::after {
     background: 50%/100% no-repeat;
@@ -1333,7 +1335,9 @@ textarea.form-control {
       border-radius: 0.625rem;
       height: calc(1.25rem - 8px);
       top: calc(0.25003rem + 4px);
-      transition: transform 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      transition: transform 0.15s ease-in-out,
+        background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
       width: calc(1.25rem - 8px);
       left: calc(-2.6875rem + 4px);
     }
@@ -1375,9 +1379,12 @@ textarea.form-control {
   line-height: 1.3333;
   vertical-align: middle;
   width: 100%;
-  background: #fff url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23454545' d='M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41Z'/%3E%3C/svg%3E") no-repeat right 0.5625rem center/24px 24px;
+  background: #fff
+    url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none'%3E%3Cpath fill='%23454545' d='M16.59 8.59 12 13.17 7.41 8.59 6 10l6 6 6-6-1.41-1.41Z'/%3E%3C/svg%3E")
+    no-repeat right 0.5625rem center/24px 24px;
   padding: 0.5625rem 2rem 0.5625rem 1rem;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   &:focus {
     border-color: $border-color_1;
     box-shadow: 0 0 0 1px var(--primary-500);
@@ -1494,7 +1501,8 @@ textarea.form-control {
   padding: 0.5625rem 1rem;
   position: absolute;
   top: 0;
-  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
   &::after {
     color: $color_1;
     line-height: 1.3333;
@@ -1542,8 +1550,10 @@ textarea.form-control {
     border-radius: 1rem;
     height: 1rem;
     margin-top: -0.25rem;
-    -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -webkit-transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     width: 1rem;
     &:active {
       background-color: $background-color_11;
@@ -1564,8 +1574,10 @@ textarea.form-control {
     border: 0;
     border-radius: 1rem;
     height: 1rem;
-    -moz-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -moz-transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     width: 1rem;
     &:active {
       background-color: $background-color_11;
@@ -1589,8 +1601,10 @@ textarea.form-control {
     margin-left: 1px;
     margin-right: 1px;
     margin-top: 0;
-    -ms-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    -ms-transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     width: 1rem;
     &:active {
       background-color: $background-color_11;
@@ -1650,28 +1664,31 @@ textarea.form-control {
   }
 }
 .pgn__form-control-decorator-group {
-  + {
-    .pgn__form-text {
-      margin-top: 0.25rem;
-    }
-  }
   align-items: flex-start;
   display: flex;
   flex-grow: 1;
   font-size: 1.125rem;
   line-height: 1.3333;
   position: relative;
-}
-.pgn__form-control-set {
+
   + {
     .pgn__form-text {
       margin-top: 0.25rem;
     }
   }
+}
+.pgn__form-control-set {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  >* {
+
+  + {
+    .pgn__form-text {
+      margin-top: 0.25rem;
+    }
+  }
+
+  > * {
     + {
       * {
         margin: 0.75rem 0 0;
@@ -1721,7 +1738,6 @@ textarea.form-control {
   }
 }
 .pgn__form-group {
-  margin-bottom: 1rem;
   text-align: start;
   margin-bottom: 1.75rem;
   .form-check {
@@ -1890,7 +1906,8 @@ textarea.form-control {
     .pgn__form-control-floating-label {
       .pgn__form-control-floating-label-text {
         background-color: $background-color_1;
-        transform: translateY(-0.5625rem) scale(0.75) translateY(-80.0007500188%);
+        transform: translateY(-0.5625rem) scale(0.75)
+          translateY(-80.0007500188%);
       }
     }
   }
@@ -2242,7 +2259,8 @@ textarea.form-control {
   .pgn__form-autosuggest__dropdown {
     background-color: $background-color_1;
     border-radius: 0.25rem;
-    box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.15), 0 0 0.25rem rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.15),
+      0 0 0.25rem rgba(0, 0, 0, 0.15);
     max-height: 15rem;
     overflow-y: scroll;
     position: absolute;
@@ -2271,12 +2289,13 @@ textarea.form-control {
       }
     }
   }
-  >.pgn__form-group {
+  > .pgn__form-group {
     margin-bottom: 0 !important;
   }
 }
 #password-requirement-left {
-  filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.15)) drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.15)) !important;
+  filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.15))
+    drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.15)) !important;
   opacity: 1;
   right: 0.2rem !important;
   .tooltip-inner {
@@ -2293,7 +2312,8 @@ textarea.form-control {
 #password-requirement-top {
   bottom: 10px !important;
   display: flex;
-  filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.15)) drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.15)) !important;
+  filter: drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.15))
+    drop-shadow(0 0.125rem 0.25rem rgba(0, 0, 0, 0.15)) !important;
   justify-content: center;
   opacity: 1;
   width: 90%;
@@ -2317,7 +2337,6 @@ textarea.form-control {
   }
 }
 #forgot-password {
-
   &:hover {
     text-decoration: none;
   }
@@ -2369,13 +2388,13 @@ textarea.form-control {
   }
 }
 .username-suggestions--chip {
-  border-radius: .375rem;
+  border-radius: 0.375rem;
   color: var(--mono-100);
   font-size: rem-calc(14);
   font-weight: 400;
   line-height: 1;
   margin: 0.25rem;
-  padding: .5rem;
+  padding: 0.5rem;
   word-break: break-word;
   text-transform: initial;
 }
@@ -2384,7 +2403,8 @@ textarea.form-control {
   line-height: 1;
   margin-right: 0.5rem;
 }
-.username-suggestions, .username-suggestions__error {
+.username-suggestions,
+.username-suggestions__error {
   margin: 0.5rem 0 0 0;
   position: relative;
   background-color: var(--mono-100);

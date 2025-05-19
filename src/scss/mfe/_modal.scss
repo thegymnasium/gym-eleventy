@@ -1,7 +1,7 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 .pgn__modal {
   background: var(--mono-100);
@@ -306,7 +306,7 @@
   max-height: none;
 }
 .modal-backdrop {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .modal-backdrop.fade {
   opacity: 0;

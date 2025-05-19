@@ -1,20 +1,20 @@
-{%- set metaDescription = config.meta.description -%}
+{%- set metaDescription = config.main.meta.description -%}
 {%- if meta.description -%}
   {%- set metaDescription = meta.description -%}
 {%- endif -%}
-{%- set metaAuthor = config.meta.author -%}
-{%- set metaUrl -%}{{ config.urls.production }}{{ page.url }}{%- endset -%}
+{%- set metaAuthor = config.main.meta.author -%}
+{%- set metaUrl -%}{{ config.main.urls.production }}{{ page.url }}{%- endset -%}
 {# Allow overriding metaUrl via the page meta #}
 {%- if meta.canonicalUrl -%}
   {%- set metaUrl = meta.canonicalUrl -%}
 {%- endif -%}
-{%- set metaImg -%}{{ config.urls.production }}{{ config.meta.og_img }}{%- endset -%}
+{%- set metaImg -%}{{ config.main.urls.production }}{{ config.main.meta.og_img }}{%- endset -%}
 {%- if meta.img -%}
-  {%- set metaImg -%}{{ config.urls.production }}{{ meta.img }}{%- endset -%}
+  {%- set metaImg -%}{{ config.main.urls.production }}{{ meta.img }}{%- endset -%}
 {%- endif -%}
 {# meta robots defaults #}
 {%- set robotsDisallow = "noindex, nofollow, noimageindex, noarchive, nosnippet, nocache" -%}
-{%- if config.urls.root == config.urls.production -%}
+{%- if config.main.urls.root == config.main.urls.production -%}
   {%- set metaRobots = "index, follow" -%}
   {%- if meta.robots -%}
     {%- set metaRobots = meta.robots -%}
@@ -29,7 +29,7 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ config.meta.title }}</title>
+<title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ config.main.meta.title }}</title>
 
 <link rel="preload" fetchpriority="high" as="style" href="{{ '/css/global.css' | cachebust }}">
 

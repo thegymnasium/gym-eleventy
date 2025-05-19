@@ -1,14 +1,13 @@
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 @include bg-colors;
 
 // --- design systems ---
 
 .collection.design-systems {
-
   main {
     padding-top: 0;
 
@@ -49,7 +48,6 @@
   }
 
   @include breakpoint(large, min) {
-
     #everyone,
     #product-managers {
       background-position: right 6rem;
@@ -70,14 +68,13 @@
       background-image: url("/img/collections/design-systems/illustrations/designers.png");
     }
 
-    #developers{
+    #developers {
       background-image: url("/img/collections/design-systems/illustrations/developers.png");
     }
 
     #product-managers {
       background-image: url("/img/collections/design-systems/illustrations/product-managers.png");
     }
-
   }
 
   // --- sticky notes ---
@@ -113,7 +110,6 @@
       }
 
       @include breakpoint(large, min) {
-
         &:nth-child(2) {
           transform: rotate(3deg) translateY(4rem);
         }
@@ -132,13 +128,11 @@
         }
       }
     }
-
   }
 
   // --- instructor ---
 
   #instructor {
-
     header {
       padding-bottom: 1.4rem;
       border-bottom: 1px solid var(--mono-300);
@@ -159,7 +153,6 @@
     }
 
     @include breakpoint(medium, min) {
-
       & {
         overflow: hidden;
       }
@@ -170,5 +163,4 @@
       }
     }
   }
-
 }

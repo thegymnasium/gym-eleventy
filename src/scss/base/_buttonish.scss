@@ -1,8 +1,8 @@
 // | -------------------------------------------------------------
 // | Button
 // | -------------------------------------------------------------
-@use 'functions' as *;
-@use 'mixins' as *;
+@use 'base/functions' as *;
+@use 'base/mixins' as *;
 
 a, summary {
   cursor: pointer;

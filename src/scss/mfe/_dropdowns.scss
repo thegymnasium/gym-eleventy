@@ -1,8 +1,8 @@
 @use "sass:map";
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
 $color_1: #454545;
 $color_2: #212529;
@@ -364,7 +364,6 @@ $border-color_1: #c9cfcb;
     right: auto;
   }
 }
-
 
 @include breakpoint(large) {
   .dropdown-menu-xl-left {

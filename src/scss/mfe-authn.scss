@@ -1,17 +1,17 @@
 // | -------------------------------------------------------------
 // | This file is intended to only serve the Authn MFE
 // | -------------------------------------------------------------
-@use 'base/breakpoints' as *;
-@use 'base/functions' as *;
-@use 'base/mixins' as *;
-@use 'base/fonts' as *;
+@use "base/breakpoints" as *;
+@use "base/functions" as *;
+@use "base/mixins" as *;
+@use "base/fonts" as *;
 
-@use 'shared';
-@use 'base/visibility';
-@use 'components/webfonts_absolute';
+@use "shared";
+@use "base/visibility";
+@use "components/webfonts_absolute";
 
-@use 'mfe/root';
-@use 'mfe/layout';
+@use "mfe/root";
+@use "mfe/layout";
 
 @use "mfe/flex";
 @use "mfe/animations";

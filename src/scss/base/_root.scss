@@ -2,10 +2,11 @@
 // | Root
 // | -------------------------------------------------------------
 
-@use "colors" as *;
-@use "fonts" as *;
-@use "mixins" as *;
-@use "functions" as *;
+@use "base/colors" as *;
+@use "base/fonts" as *;
+@use "base/mixins" as *;
+@use "base/functions" as *;
+@use 'sass:list';
 
 // TODO: move to global variables?
 $global-button-radius: rem-calc(3);
@@ -16,7 +17,7 @@ $global-button-radius: rem-calc(3);
   --global-button-radius: #{$global-button-radius};
   
   @each $color, $shades in $colors {
-    @if (length($shades) > 1) {
+    @if (list.length($shades) > 1) {
       @each $shade, $value in $shades {
         --#{$color}-#{$shade}: #{$value};
       }
