@@ -7,8 +7,7 @@ on:
     paths:
       - '.env*'
       - '.github/workflows/**'
-      - 'src/_data/**.js'
-      - 'src/_data/**.yml'
+      - 'src/_data/config/**'
       - 'src/pages/api/**.njk'
       - 'src/_includes/modules/api-config.njk'
       - 'src/_includes/modules/components/**'
