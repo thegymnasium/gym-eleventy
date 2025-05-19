@@ -3,19 +3,19 @@ This component is used to generate the footer for the static site and the LMS th
 
 Please use the following strings instead of directly coding domain names:
 - GYM_ROOT_URL: without the brackets for the root static site domain
-- {{ config.urls.lms }}: the LMS theme domain
-- {{ config.urls.mfe }}: the LMS MFE domain
+- {{ config.main.urls.lms }}: the LMS theme domain
+- {{ config.main.urls.mfe }}: the LMS MFE domain
 #}
 <footer class="site-footer">
   <div class="container">
     <div class="main">
       <div class="header">
         <a href="GYM_ROOT_URL/">
-          <img alt="{{ config.meta.author }} logo, to the homepage." srcset="GYM_ROOT_URL{{ config.logos.main.white.srcset }}" src="GYM_ROOT_URL{{ config.logos.main.white.src }}" width="208" height="24" decoding="async" fetchpriority="low">
+          <img alt="{{ config.main.meta.author }} logo, to the homepage." srcset="GYM_ROOT_URL{{ config.main.logos.main.white.srcset }}" src="GYM_ROOT_URL{{ config.main.logos.main.white.src }}" width="208" height="24" decoding="async" fetchpriority="low">
         </a>
-        <p>{{ config.meta.short_description }}</p>
+        <p>{{ config.main.meta.short_description }}</p>
       </div>
-      {%- for item in config.footer.nav -%}
+      {%- for item in config.main.footer.nav -%}
       <nav id="footer-{{ item.title | slugify }}" aria-labelledby="{{ item.title | slugify }}-menu-label">
         <h2 id="{{ item.title | slugify }}-menu-label">{{ item.title }}</h2>
         <ul>
@@ -26,7 +26,7 @@ Please use the following strings instead of directly coding domain names:
               {%- if link.target %} target="{{ link.target }}"{%- endif -%}
               {%- if link.rel %} rel="{{ link.rel }}"{%- endif -%}>
               {%- if link.src -%}
-                {%- set img_base_path = "GYM_ROOT_URL" + config.paths.img.footer.icons -%}
+                {%- set img_base_path = "GYM_ROOT_URL" + config.main.paths.img.footer.icons -%}
                 <img alt="{{ link.alt }}" srcset="{{ img_base_path }}{{ link.srcset }}" src="{{ img_base_path }}{{ link.src }}"{% for key, val in item.img.attr %} {{ key }}="{{ val }}"{% endfor -%}>
               {%- endif -%}
               {{ link.label }}
@@ -38,15 +38,15 @@ Please use the following strings instead of directly coding domain names:
     {%- endfor -%}
     </div>
     <aside>
-     {%- for item in config.footer.aside -%}
+     {%- for item in config.main.footer.aside -%}
       <section id="{{ item.title | slugify }}">
         <h3>{{ item.title }}</h3>
         <div>
           {%- set links =  item.links -%}
           {%- for link in links -%}
-          <a href="{{ link.href }}"{% for key, val in config.footer.a.attr %} {{ key }}="{{ val }}"{% endfor -%}>
-            {%- set img_base_path = "GYM_ROOT_URL" + config.paths.img.footer.logos -%}
-            <img alt="{{ link.alt }}" src="{{ img_base_path }}{{ link.src }}" {%- if link.srcset %} srcset="{{ img_base_path }}{{ link.srcset }}" {%- endif %} width="{{ link.width }}" height="{{ link.height }}"{% for key, val in config.footer.img.attr %} {{ key }}="{{ val }}"{% endfor -%}>
+          <a href="{{ link.href }}"{% for key, val in config.main.footer.a.attr %} {{ key }}="{{ val }}"{% endfor -%}>
+            {%- set img_base_path = "GYM_ROOT_URL" + config.main.paths.img.footer.logos -%}
+            <img alt="{{ link.alt }}" src="{{ img_base_path }}{{ link.src }}" {%- if link.srcset %} srcset="{{ img_base_path }}{{ link.srcset }}" {%- endif %} width="{{ link.width }}" height="{{ link.height }}"{% for key, val in config.main.footer.img.attr %} {{ key }}="{{ val }}"{% endfor -%}>
           </a>
           {%- endfor -%}
         </div>
@@ -54,7 +54,7 @@ Please use the following strings instead of directly coding domain names:
       {%- endfor -%}
     </aside>
     <p class="copyright">
-      <small>© {% year %} <a href="GYM_ROOT_URL/" aria-label="{{ config.meta.title }} homepage">{{ config.meta.author }}</a></small>
+      <small>© {% year %} <a href="GYM_ROOT_URL/" aria-label="{{ config.main.meta.title }} homepage">{{ config.main.meta.author }}</a></small>
     </p>
   </div>
 </footer>
