@@ -5,10 +5,13 @@ on:
     branches:
       - develop
     paths:
-      - '.eleventy.config.js'
       - '.env*'
       - '.github/workflows/**'
       - '.nvmrc'
+      - 'eleventy.config.js'
+      - 'netlify.toml'
+      - 'package.json'
+      - 'package-lock.json'
       - '_config/**'
       - 'src/_data/config/**'
       - 'src/pages/api/**.njk'
