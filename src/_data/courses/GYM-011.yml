@@ -33,6 +33,7 @@ intro: >
   <strong><cite>Build Better Websites With Chrome Developer Tools</cite></strong> will familiarize you with all aspects of the built-in developer tools within the Chrome browser. Understanding how to use these tools will speed up your development time and help you create bug-free, high-performing pages and web applications.
 preview_video_id:
 preview_video_duration:
+playlist: videoseries?si=jsM1kGpLh4rL1RHT&amp;list=PL0Y6L6nQtNzd_6bVTTDpBNIFlTF9cCrDA
 about: >
   <p>This course will teach you how to use the Chrome Developer Tools to inspect various aspects of a page, including the HTML structure, styles, JavaScript, storage, and more. You will also be able to evaluate several aspects of the page performance, including loading times, JavaScript execution, and content rendering. Additionally, you will learn how to debug a running script on the page using breakpoints and the debugging tools.</p>
 outline:
