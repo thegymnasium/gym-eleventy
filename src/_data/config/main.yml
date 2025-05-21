@@ -20,10 +20,9 @@ header:
       - label: Sign In
         href: GYM_LMS_URL/login
       - label: Sign Up
-        attr: disabled
-        parent_attr: hidden
-      #   href: GYM_LMS_URL/register
-      #   class: btn
+        disabled: true
+        href: GYM_LMS_URL/register
+        class: btn
       private:
       - label: Dashboard
         href: GYM_LMS_URL/dashboard
