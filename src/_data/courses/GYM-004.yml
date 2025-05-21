@@ -47,7 +47,7 @@ outline:
   - label: "Chapter 2: Setting Up a Local Development Environment"
     description: "In this chapter, you will learn how to install MAMP for Mac to create a local development environment. (Note that although this lesson uses a Mac for the examples, a guide to help Windows users install XAMPP is referenced.)"
   - label: "Chapter 3: How a WordPress Theme Works"
-    description: "In this chapter, you will learn the elemental components of a WordPress theme. Specifically, you will take a look at the required files for a theme (<code>index.php</code> and <code>style.css</code>) as well as template tags and conditional tags and how to best use the WordPress Codex for additional help."
+    description: "In this chapter, you will learn the elemental components of a WordPress theme. Specifically, you will take a look at the required files for a theme (`index.php` and `style.css`) as well as template tags and conditional tags and how to best use the WordPress Codex for additional help."
   - label: "Chapter 4: The WordPress Loop"
     description: "This chapter illustrates the role and importance of the WordPress Loop and walks through the steps of modifying it for tasks such as showing a single category on the home page, hiding a category, showing pages instead of posts, and more."
   - label: "Chapter 5: Converting a Static HTML Page Into a Dynamic WordPress Template"
