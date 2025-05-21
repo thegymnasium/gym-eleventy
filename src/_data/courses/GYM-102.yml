@@ -45,7 +45,7 @@ outline:
   - label: "Lesson 1: Welcome to jQuery"
     description: "This lesson outlines the course and gives a brief introduction to jQuery. Learn how jQuery fits into the context of web technologies and has evolved as a solution for adding interactivity to your pages in the least painful and most efficient way possible. This lesson provides an overview of the five projects covered in this course and introduces you to jQuery selector syntax, as well as how to use a browser console for interactive “sleuthing” of web page code."
   - label: "Lesson 2: That Certain Sparkle"
-    description: "Learn how the appropriate use of animation in web pages can benefit users through examples currently found on the web. To begin, you will learn the importance of jQuery’s `.ready` function and then move on to explore the use of jQuery’s `.animate()` method with its ability to control the duration and relative smoothness of your animations."
+    description: "Learn how the appropriate use of animation in web pages can benefit users through examples currently found on the web. To begin, you will learn the importance of jQuery’s <code>.ready()</code> function and then move on to explore the use of jQuery’s <code>.animate()</code> method with its ability to control the duration and relative smoothness of your animations."
   - label: "Lesson 3: The jQuery Carousel(s)"
     description: "Learn the vast world of functionality that jQuery’s plugin ecosystem provides access to. You will walk through the process of downloading, including initializing a plugin—in this case, the jQuery cycle plugin. The coding project involves the use of a carousel, and before learning to configure it, you will also learn the advantages and disadvantages of this user interface component. The user experience of carousels is currently a hot topic in web development and you will learn what aspects are necessary to consider before you add one, as well as which features you should look for (and which to avoid!)."
   - label: "Lesson 4: Building Tabs…To Last"
@@ -53,7 +53,7 @@ outline:
   - label: "Lesson 5: Introspective Dynamism"
     description: "This lesson will move you toward becoming fluent in event handling, including what events are and why we need to handle them. Specifically, you will explore the use of the click and draggable events."
   - label: "Lesson 6: External Dynamism and Epilogue"
-    description: "You will learn the role of Ajax and JSON as techniques used to work with data on the web and how jQuery relies on the `.ajax()` method to retrieve data for use on a page. Additionally, you will walk through the process for basic templating, which is the process for translating data to HTML. Lastly, you will explore resources for working with various Web APIs as a way to fold public sources of data into your projects."
+    description: "You will learn the role of Ajax and JSON as techniques used to work with data on the web and how jQuery relies on the <code>.ajax()</code> method to retrieve data for use on a page. Additionally, you will walk through the process for basic templating, which is the process for translating data to HTML. Lastly, you will explore resources for working with various Web APIs as a way to fold public sources of data into your projects."
 prerequisites:
   - label: The ability to code HTML/CSS by hand
   - label: Some experience using and modifying JavaScript without necessarily having written JavaScript from scratch
