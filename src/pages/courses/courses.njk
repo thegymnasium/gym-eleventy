@@ -86,13 +86,17 @@
         {%- endif -%}
       {%- endif -%}
 
-        {# <div class="course-cta">
-          {%- if (item.live) -%}
-          <a href="{{ item.id | course_endpoint('learning') }}" class="btn">Go to Class</a>
+        <div class="course-cta">
+          {%- if item.playlist -%}
+            <a href="#playlist" class="btn">View the course</a>
           {%- else -%}
-          <button disabled class="disabled">Enrollment is Closed</button>
+            {%- if (item.live) -%}
+            <a href="{{ item.id | course_endpoint('learning') }}" class="btn">Go to Class</a>
+            {%- else -%}
+            <button disabled class="disabled">Enrollment is Closed</button>
+            {%- endif -%}
           {%- endif -%}
-        </div> #}
+        </div>
       </div>
     </div>
   </header>
@@ -165,7 +169,7 @@
       {%- endif -%}
 
       {%- if item.playlist -%}
-        <section class="playlist">
+        <section id="playlist" class="playlist">
           <h2>View the Course</h2>
           {%- youtube item.playlist -%}
         </section>
