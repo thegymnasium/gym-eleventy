@@ -134,7 +134,7 @@
           {%- for idx in range(0, item.outline.length) -%}
           <li>
             <h3>{{ item.outline[idx].label }}</h3>
-            <p>{{ item.outline[idx].description }}</p>
+            <p>{{ item.outline[idx].description | safe }}</p>
           </li>
           {%- endfor -%}
         </ul>
