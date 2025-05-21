@@ -37,6 +37,7 @@ intro: >
   <strong><cite>JavaScript Foundations</cite></strong> will teach you the fundamentals of programming with JavaScript and get started on the road to its mastery. <em>Prior experience with HTML &amp; CSS is recommended.</em>
 preview_video_id: ZUQG5_FU3Zw?list=PL0Y6L6nQtNzeH5uopFU6uH_2vOQ_R8206
 preview_video_duration:
+playlist: videoseries?si=BF7tpLMmOna2GI0J&amp;list=PL0Y6L6nQtNzcUAnvJ3ZTgXnx6AuPUt7jB
 about: >
   <p>In this course, you will learn how to create code that can make basic decisions; employ efficient debugging techniques with browser developer tools; access and modify HTML elements and CSS styles on a page; and use JavaScript to communicate with a server. This course will also introduce you to the rapidly growing world of JavaScript libraries, and you'll get a chance to create a simple application with Backbone.js.</p>
 outline:
