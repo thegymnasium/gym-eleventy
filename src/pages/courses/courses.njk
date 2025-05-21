@@ -119,6 +119,13 @@
       </section>
       {%- endif -%}
 
+      {%- if item.playlist -%}
+      <section class="playlist">
+        <h2>View the Course</h2>
+        {%- youtube item.playlist -%}
+      </section>
+      {%- endif -%}
+
       <section class="course-about">
         <h2>{{ item.title }}</h2>
         {{ item.about | safe }}
@@ -168,6 +175,7 @@
       </section>
       {%- endif -%}
 
+<<<<<<< HEAD
       {%- if item.playlist -%}
         <section id="playlist" class="playlist">
           <h2>View the Course</h2>
@@ -175,6 +183,8 @@
         </section>
       {%- endif -%}
 
+=======
+>>>>>>> cfe8c13 (Update courses page)
     </div>
     <aside>
       {%- if item.audience -%}
