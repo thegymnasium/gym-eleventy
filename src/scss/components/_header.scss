@@ -101,15 +101,23 @@
           li {
             display: block;
 
-            &:first-child {
-              display: none;
-            }
+            // &:first-child {
+            //   display: none;
+            // }
 
-            &:last-child {
+            // show & reposition sign-in button
+            &:first-child {
               position: absolute;
               top: 0.75rem;
               right: 0;
             }
+
+            // disable the register button positioning
+            // &:last-child {
+            //   position: absolute;
+            //   top: 0.75rem;
+            //   right: 0;
+            // }
           }
         }
       }
