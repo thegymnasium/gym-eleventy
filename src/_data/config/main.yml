@@ -20,8 +20,10 @@ header:
       - label: Sign In
         href: GYM_LMS_URL/login
       - label: Sign Up
-        href: GYM_LMS_URL/register
-        class: btn
+        attr: disabled
+        parent_attr: hidden
+      #   href: GYM_LMS_URL/register
+      #   class: btn
       private:
       - label: Dashboard
         href: GYM_LMS_URL/dashboard
@@ -263,10 +265,10 @@ colors:
   black: "#181818"
 msg:
   banner:
-    active: false
+    active: true
     class: 
     content: |
-      <p><span aria-label="Waving Hand emoji" role="img">&#128075;</span> <strong>We’re planning some website maintenance on <time datetime="2025-07-11">Friday, July 11</time> and will be down temporarily</strong> <span aria-label="Hammer and Wrench emoji" role="img">&#128736;</span> — apologies for the inconvenience.</p>
+      <p><span aria-label="Waving Hand emoji" role="img">&#128075;</span> <strong>We’re closing our courses.</strong> Pass your final exams by <time datetime="2025-05-23">12 PM EDT on Friday, May 23</time> to earn a free certificate.</p>
   errors:
     error_404:
       heading: '404: Page Not Found'
