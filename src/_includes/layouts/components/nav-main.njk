@@ -25,9 +25,9 @@
 <is-land on:ready>
   <ul class="auth" role="list">
   {%- for link in config.main.header.nav.auth.public | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) -%}
-    <li{%- if link.parent_attr %} {{link.parent_attr}}{%- endif -%}>
+    {%- if not link.disabled -%}<li{%- if link.parent_attr %} {{link.parent_attr}}{%- endif -%}>
       <a{%- if link.href %} href="{{link.href}}"{%- endif -%}{%- if link.class %} class="{{link.class}}"{%- endif -%}{%- if link.attr %} {{link.attr}}{%- endif -%}>{{link.label}}</a>
-    </li>
+    </li>{%- endif -%}
   {%- endfor -%}
   </ul>
 
