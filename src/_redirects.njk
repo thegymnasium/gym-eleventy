@@ -6,8 +6,8 @@ eleventyExcludeFromCollections: true
 
 {%- for id, course in courses -%}
 {{ course.id | course_endpoint }}about  /courses/{{ course.title | slugify }}/  301
-{{ course.id | course_endpoint }}info  {{ course.id | course_endpoint('learning') }}  301
-{{ course.id | course_endpoint }}courseware  {{ course.id | course_endpoint('learning') }}  301
+{{ course.id | course_endpoint }}info  /courses/{{ course.title | slugify }}/  301
+{{ course.id | course_endpoint }}courseware  /courses/{{ course.title | slugify }}/  301
 {%- if not loop.last -%}{{ '\n' }}{%- endif -%}
 {%- endfor -%}
 {{ '\n' }}
@@ -35,43 +35,9 @@ eleventyExcludeFromCollections: true
   {%- endif -%}
 {%- endfor -%}
 {#- Manual links below -#}
-/courses/GYM/001/0/info  {{ 'GYM-001' | course_endpoint('learning') }}  301
-/courses/GYM/002/0/info  {{ 'GYM-002' | course_endpoint('learning') }}  301
-/courses/GYM/003/0/info  {{ 'GYM-003' | course_endpoint('learning') }}  301
-/courses/GYM/004/0/info  {{ 'GYM-004' | course_endpoint('learning') }}  301
-/courses/GYM/005/0/info  {{ 'GYM-005' | course_endpoint('learning') }}  301
-/courses/GYM/006/0/info  {{ 'GYM-006' | course_endpoint('learning') }}  301
-/courses/GYM/007/0/info  {{ 'GYM-007' | course_endpoint('learning') }}  301
-/courses/GYM/008/0/info  {{ 'GYM-008' | course_endpoint('learning') }}  301
-/courses/GYM/009/0/info  {{ 'GYM-009' | course_endpoint('learning') }}  301
-/courses/GYM/100/0/info  {{ 'GYM-100' | course_endpoint('learning') }}  301
-/courses/GYM/101/0/info  {{ 'GYM-101' | course_endpoint('learning') }}  301
-/courses/GYM/102/0/info  {{ 'GYM-102' | course_endpoint('learning') }}  301
-/courses/GYM/103/0/info  {{ 'GYM-103' | course_endpoint('learning') }}  301
-/courses/GYM/104/0/info  {{ 'GYM-104' | course_endpoint('learning') }}  301
-/courses/GYM/105/0/info  {{ 'GYM-105' | course_endpoint('learning') }}  301
-/courses/GYM/106/0/info  {{ 'GYM-106' | course_endpoint('learning') }}  301
-/courses/GYM/107/0/info  {{ 'GYM-107' | course_endpoint('learning') }}  301
-/courses/GYM/001/0/courseware  {{ 'GYM-001' | course_endpoint('learning') }}  301
-/courses/GYM/002/0/courseware  {{ 'GYM-002' | course_endpoint('learning') }}  301
-/courses/GYM/003/0/courseware  {{ 'GYM-003' | course_endpoint('learning') }}  301
-/courses/GYM/004/0/courseware  {{ 'GYM-004' | course_endpoint('learning') }}  301
-/courses/GYM/005/0/courseware  {{ 'GYM-005' | course_endpoint('learning') }}  301
-/courses/GYM/006/0/courseware  {{ 'GYM-006' | course_endpoint('learning') }}  301
-/courses/GYM/007/0/courseware  {{ 'GYM-007' | course_endpoint('learning') }}  301
-/courses/GYM/008/0/courseware  {{ 'GYM-008' | course_endpoint('learning') }}  301
-/courses/GYM/009/0/courseware  {{ 'GYM-009' | course_endpoint('learning') }}  301
-/courses/GYM/100/0/courseware  {{ 'GYM-100' | course_endpoint('learning') }}  301
-/courses/GYM/101/0/courseware  {{ 'GYM-101' | course_endpoint('learning') }}  301
-/courses/GYM/102/0/courseware  {{ 'GYM-102' | course_endpoint('learning') }}  301
-/courses/GYM/103/0/courseware  {{ 'GYM-103' | course_endpoint('learning') }}  301
-/courses/GYM/104/0/courseware  {{ 'GYM-104' | course_endpoint('learning') }}  301
-/courses/GYM/105/0/courseware  {{ 'GYM-105' | course_endpoint('learning') }}  301
-/courses/GYM/106/0/courseware  {{ 'GYM-106' | course_endpoint('learning') }}  301
-/courses/GYM/107/0/courseware  {{ 'GYM-107' | course_endpoint('learning') }}  301
-/login  {{ 'authn' | mfe_endpoint }}login  301
-/register  {{ 'authn' | mfe_endpoint }}register  301
-/dashboard  {{ 'learner-dashboard' | mfe_endpoint }}  301
-/account*  {{ 'account' | mfe_endpoint }}  301
-/u/*  {{ 'profile' | mfe_endpoint }}u/:splat  301
+/login  /  301
+/register  /  301
+/dashboard  /  301
+/account*  /  301
+/u/*  /  301
 /take5/* /courses/take5/:splat 301
