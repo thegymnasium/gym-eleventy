@@ -16,7 +16,7 @@
 <ul class="auth logged-in" role="list">
   {%- for link in config.main.header.nav.auth.private | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) -%}
     <li>
-      <a href="{{link.href}}"{%- if link.class -%} class="{{link.class}}"{%- endif -%}>{{link.label}}</a>
+      <a href="{{link.href}}"{%- if link.class %} class="{{link.class}}"{%- endif -%}{%- if link.attr %} {{link.attr}}{%- endif -%}>{{link.label}}</a>
     </li>
   {%- endfor -%}
 </ul>
@@ -25,8 +25,8 @@
 <is-land on:ready>
   <ul class="auth" role="list">
   {%- for link in config.main.header.nav.auth.public | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) -%}
-    <li>
-      <a href="{{link.href}}"{%- if link.class -%} class="{{link.class}}"{%- endif -%}>{{link.label}}</a>
+    <li{%- if link.parent_attr %} {{link.parent_attr}}{%- endif -%}>
+      <a{%- if link.href %} href="{{link.href}}"{%- endif -%}{%- if link.class %} class="{{link.class}}"{%- endif -%}{%- if link.attr %} {{link.attr}}{%- endif -%}>{{link.label}}</a>
     </li>
   {%- endfor -%}
   </ul>
