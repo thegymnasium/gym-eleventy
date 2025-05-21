@@ -109,21 +109,17 @@
         {%- endif -%}
       </div>
 
-      {%- if item.preview_video_id -%}
-      <section class="course-preview">
-        <h2>{{ config.main.msg.mfe.course_about.headings.preview }}</h2>
-
-        {# TODO: fix shortcode to support all the embed variations #}
-        {%- youtube item.preview_video_id, item.title + ' Preview' -%}
-
-      </section>
-      {%- endif -%}
-
       {%- if item.playlist -%}
-      <section class="playlist">
-        <h2>View the Course</h2>
-        {%- youtube item.playlist -%}
-      </section>
+        <section id="playlist" class="playlist">
+          <h2>View the Course</h2>
+          {%- youtube item.playlist -%}
+        </section>
+      {%- elif item.preview_video_id -%}
+        <section class="course-preview">
+          <h2>{{ config.main.msg.mfe.course_about.headings.preview }}</h2>
+          {# TODO: fix shortcode to support all the embed variations #}
+          {%- youtube item.preview_video_id, item.title + ' Preview' -%}
+        </section>
       {%- endif -%}
 
       <section class="course-about">
