@@ -14,7 +14,9 @@
       <li><a href="{{ link.url }}" rel="noopener" target="_blank">{{ link.label }}</li></a>
     {%- endfor -%}
     </ul>
-    <p>{{ main.contact | safe }}</p>
+    {%- if main.contact -%}
+      <p>{{ main.contact | safe }}</p>
+    {%- endif -%}
   </article>
 
 </div>
