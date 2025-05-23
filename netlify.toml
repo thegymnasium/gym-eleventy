@@ -1,0 +1,30 @@
+# apps.learn subdomain redirects
+[[redirects]]
+  from = "/authn/*"
+  to = "https://thegymnasium.com/"
+  status = 301
+
+[[redirects]]
+  from = "/learner-dashboard/"
+  to = "https://thegymnasium.com/"
+  status = 301
+
+[[redirects]]
+  from = "/profile/u/*"
+  to = "https://thegymnasium.com/"
+  status = 301
+
+[[redirects]]
+  from = "/profile/account/"
+  to = "https://thegymnasium.com/"
+  status = 301
+
+[[redirects]]
+  from = "/learning/*"
+  to = "https://thegymnasium.com/"
+  status = 301
+
+[[redirects]]
+  from = "/discussions/*"
+  to = "https://thegymnasium.com/"
+  status = 301
