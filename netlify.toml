@@ -1,5 +1,9 @@
 # apps.learn subdomain redirects
 [[redirects]]
+  from = "/"
+  to = "https://thegymnasium.com/"
+  status = 301
+[[redirects]]
   from = "/authn/*"
   to = "https://thegymnasium.com/"
   status = 301
