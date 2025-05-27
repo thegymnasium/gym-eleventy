@@ -37,6 +37,7 @@ intro: >
   <strong><cite>Introduction to Git and GitHub</cite></strong> will teach you the basics of version control and present a high-level overview of both Git and GitHub.
 preview_video_id:
 preview_video_duration:
+playlist: videoseries?si=H1p3YdMl-Y0Eibrh&amp;list=PL0Y6L6nQtNzcrOtRCbGZ7t-JeSC4bUPi4
 about: >
   <p>Git is a popular version control system primarily used for web and software development. Increasingly, designers and developers are expected to know and use Git as part of their collaborative workflow.</p> 
   <p>This course offers a high level overview of Git and GitHub and is aimed at anyone who has heard of these technologies but has little or no first-hand experience with them. The videos explain the basic purpose of Git and GitHub respectively, and describe some typical uses of each. Additionally you will have the chance to walk through a sample project using Git and the Git client named SourceTree.</p>
