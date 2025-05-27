@@ -17,43 +17,6 @@
   <script async src="{{ meta.js | cachebust }}"></script>
   {%- endif -%}
 {%- endif %}
-{#- Add Intercom Script -#}
-{%- if config.env.INTERCOM_APP_ID -%}
-{%- set auth %}
-<script>
-const getCookieValue = (name) => (
-  document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
-);
-{#- Note: the openedx user info cookie is encoded in a weird way, and we have to double decode it to get useable values. Perhaps there's a better way of handling this. -#}
-const userInfo = JSON.parse(getCookieValue('edx-user-info').replace(/\\054/g, ','));
-const decodedUserInfo = JSON.parse(userInfo);
-
-const APP_ID = "{{ config.env.INTERCOM_APP_ID }}"
-
-window.intercomSettings = {
-  api_base: "https://api-iam.intercom.io",
-  app_id: APP_ID,
-  user_id: decodedUserInfo.username,
-  email: decodedUserInfo.email,
-};
-// Start Intercom Widget Script
-(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-</script>
-{% endset %}
-
-<is-land on:ready>
-{% edge "njk", auth %}
-  {% if eleventy.edge.cookies.edxloggedin %}
-    <template data-island="replace">
-    <!-- edxloggedin: {{ eleventy.edge.cookies.edxloggedin }} -->
-    {{ _ | safe }}
-    </template>
-  {% endif %}
-{% endedge %}
-</is-land>
-{%- else -%}
-<!-- INTERCOM_APP_ID missing! -->
-{%- endif -%}
 
 {#- Start OneTrust Cookies Consent Notice -#}
 {%- if config.env.ONETRUST_COOKIE_SCRIPT_ID -%}

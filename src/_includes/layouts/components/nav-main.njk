@@ -12,7 +12,7 @@
     </ul>
 
 
-{%- set auth %}
+{# {%- set auth %}
 <ul class="auth logged-in" role="list">
   {%- for link in config.main.header.nav.auth.private | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) -%}
     <li>
@@ -20,9 +20,9 @@
     </li>
   {%- endfor -%}
 </ul>
-{% endset %}
+{% endset %} #}
 
-<is-land on:ready>
+{# <is-land on:ready>
   <ul class="auth" role="list">
   {%- for link in config.main.header.nav.auth.public | replace("GYM_ROOT_URL", "") | replace("GYM_LMS_URL", config.main.urls.lms) -%}
     {%- if not link.disabled -%}<li{%- if link.parent_attr %} {{link.parent_attr}}{%- endif -%}>
@@ -40,7 +40,7 @@
   {% endif %}
 {% endedge %}
 
-</is-land>
+</is-land> #}
 
   </div>
 </nav>

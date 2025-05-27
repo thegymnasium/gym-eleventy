@@ -1,6 +1,5 @@
 // docs: https://www.11ty.io/docs/config/
 import { EleventyRenderPlugin } from "@11ty/eleventy";
-import EleventyEdgePlugin from "11ty-edge";
 import filters from "./_config/filters.js";
 import collectionz from "./_config/collectionz.js";
 import shortcodes from "./_config/shortcodes.js";
@@ -29,7 +28,6 @@ export function filter(arr, criteria) {
 // Removed redundant polyfill for String.prototype.endsWith as it is natively supported in Node.js 22.15 and later.
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyEdgePlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   eleventyConfig.setTemplateFormats(["njk"]);
