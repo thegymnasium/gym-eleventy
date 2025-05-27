@@ -35,6 +35,7 @@ intro: >
   <strong><cite>JavaScript and jQuery Survival Guide</cite></strong> will prepare you to tackle real-world projects that require the use of jQuery and JavaScript by walking you through a number of exercises and coding examples.
 preview_video_id: 4T1Ei46h41o
 preview_video_duration: PT06M06S
+playlist: videoseries?si=eUy0usQvSo-7RmZ7&amp;list=PL0Y6L6nQtNzf9c6PvqsrFm3uMIYTJEk8v
 about: >
   <p>Learn basic yet critical skills for working with JavaScript &amp; jQuery in the browser. By the end of this tutorial, the student will understand how to debug problems using the JavaScript console, write simple event handlers, and perform common manipulation of Document Object Model (DOM) elements. These three lessons are designed to prepare the student for typical challenges that they will face when adding or modifying interactive elements on a web page.</p>
 outline:
