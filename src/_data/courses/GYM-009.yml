@@ -37,6 +37,7 @@ intro: >
   <strong><cite>Creating A Drupal 8 Theme</cite></strong> will show you how to take your existing static website and convert it into a dynamic theme for Drupal 8. Couple your existing knowledge of HTML and CSS with the easy to use TWIG templating engine to create fast, secure, and flexible themes for the Drupal CMS. No PHP required!
 preview_video_id:
 preview_video_duration:
+playlist: videoseries?si=sYwn_kjG7-2W5pQ8&amp;list=PL0Y6L6nQtNzcSnPcfaRIrBphuEpRxqWTg
 about: >
   <p>This course will teach you how to install Drupal 8 locally and dive into the essential components of a Drupal 8 theme. Specifically, you will learn the following: How to register a theme with Drupal 8, how to integrate Bootstrap into a theme, how to use the TWIG templating engine to define and customize Drupal components and how to import pre-existing assets including images and CSS styles.</p>
 outline:
