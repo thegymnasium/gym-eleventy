@@ -35,6 +35,7 @@ intro: >
   <strong><cite>Design Systems for Developers</cite></strong> will introduce you to the key concepts behind design systems and how they can benefit developers.
 preview_video_id:
 preview_video_duration:
+playlist: videoseries?si=qv4BKlTONeuKxLAz&amp;list=PL0Y6L6nQtNzco4EQ_KcfBuw9aEZu7EjFX
 about: >
   <p>Much of your time as a developer is spent making things work, but as the scope of what you are responsible for continues to increase, your day-to-day tasks can feel overwhelming. Design systems have become an increasingly popular way to help manage this workload, but have introduced new challenges of their own. In this course, you will learn how to use design tokens as well as an overview of various techniques for integrating patterns into a production environment.</p>
 outline:
