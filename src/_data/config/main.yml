@@ -20,7 +20,6 @@ header:
       - label: Sign In
         href: GYM_LMS_URL/login
       - label: Sign Up
-        disabled: true
         href: GYM_LMS_URL/register
         class: btn
       private:
