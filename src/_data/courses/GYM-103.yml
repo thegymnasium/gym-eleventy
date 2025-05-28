@@ -5,7 +5,7 @@ redirectFrom:
   - /courses/GYM/103/0/about
   - /courses/GYM/103/0/info
   - /courses/GYM/103/0/courseware
-color: teal
+color: grey
 type: full
 path_slug: full
 credential: certificate
@@ -13,10 +13,13 @@ tags:
   - course
   - full
   - full-course
-live: true
+live: false
+sitemapExclude: true
+retired_message:
+  post: "<strong>This course has been retired.</strong> We recommend taking the course <a href='/courses/prototyping-for-digital-products-and-websites/'>Prototyping for Digital Products and Websites</a> instead. While it’s not a direct replacement, we think you’d get a lot out of it."
 url: /courses/ux-fundamentals/
 img: /img/courses/svg/gym-103.svg
-topic_featured: true
+topic_featured: false
 topic: "UX"
 description: "Learn how to apply user-centered design principles to improve your website and mobile app design. A must-take course for anyone working in design and development."
 instructor: jwebb
