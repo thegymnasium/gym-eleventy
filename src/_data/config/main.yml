@@ -79,8 +79,8 @@ footer:
       links:
         - label: FAQ
           href: GYM_ROOT_URL/faq/
-        - label: Support
-          href: GYM_ROOT_URL/support/
+        # - label: Support
+        #   href: GYM_ROOT_URL/support/
         - label: Social Impact
           href: GYM_ROOT_URL/social-impact/
         - label: Privacy Policy
