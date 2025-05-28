@@ -1,59 +1,12 @@
 header:
   heading: FAQ
-course-cost:
-  heading: How Much Do Courses Cost?
-  description: Every class is free. That’s right — no hidden fees. No ‘freemium’ upgrade offers. All of our classes are absolutely free of charge. Sign up. Sign in. Learn and succeed. For free.
-books:
-  heading: Do I Need To Buy Any Books?
-  description: No, you’re not required to purchase books for any Gymnasium courses. (When we say our courses are free, we really mean it!). Your required reading consists of free online content. Any books recommended by the instructors are optional.
-courses:
-  heading: What Courses Are You Offering?
-  description: Have a look at our current and upcoming Gymnasium courses in the <a href="/courses/">course catalog</a>.
-gym-shorts:
-  heading: What’s A Gym Short?
-  description: They are taught by industry experts and focus on current skills and technologies. Each includes approximately one hour of video instruction, a final exam, and a badge (if and) when you pass.
-right-course:
-  heading: How Can I Tell If A Course Is Right For Me?
-  description: 'All Gymnasium courses are designed to help you succeed. The <a href="/courses/">course catalog</a> is the best place to start: it’s chock full of information, including the entire video for the first lesson of each course. If you’re still unsure, just enroll <em>(remember: it’s <strong>free</strong>)</em> and take the optional Assessment Quiz in the Get Started section. Scoring 70% or better means the course is probably right for you. Even if you score lower than that you can still take the course, though you might have to work harder to succeed.'
-course-duration:
-  heading: How Long Are You Offering Each Course?
-  description: Gymnasium courses are open indefinitely and available 24/7. However, due to the rapidly evolving nature of the technologies we teach, classes may be updated, replaced, or retired.
-course-length:
-  heading: How Long Will It Take To Finish A Course?
-  description: The pace for completing Gymnasium courses is entirely up to you. Full Courses generally include 5-6 hours of video instruction, plus assignments, quizzes, and a final exam. Gym Shorts are an hour or less of video instruction with final exam.
-missed-questions:
-  heading: Will I Be Able To See What Questions I Miss On The Quizzes?
-  description: Yes, you’ll get feedback, including the correct answers, for quizzes you take while completing any course.
-final-grades:
-  heading: Will I Receive A Grade At The End Of Each Course?
-  description: No, we don’t give final grades for Gymnasium courses, even though individual quizzes and assessments are graded. You will earn a certificate if you complete a Full Course and score 85% or better on the final exam. You will earn a badge if you complete a Gym Short and score 80% or better on the final exam.
-how-do-i-get-my-certificate:
-  heading: How Do I Get My Certificate?
-  description: You will receive a certificate (issued by Aquent Gymnasium and Accredible) if you score 85% or better on the final exam of a Full Course. Certificates can be located on your <a href="/dashboard">Dashboard</a>.
-how-do-i-get-my-badge:
-  heading: How Do I Get My Badge?
-  description: You will receive a badge (issued by Aquent Gymnasium and Accredible) if you score 80% or better on the final exam of a Gym Short. Badges can be located on your <a href="/dashboard">Dashboard</a>.
-course-unenrollment:
-  heading: How Do I Unenroll From A Course?
-  description: Just click the “Unenroll” link for the course on your <a href="/dashboard">Dashboard</a>. Boom!
-forum:
-  heading: What Happens In The Forum?
-  description: Think of the Forum as a gathering spot for students, where you can post, share, and receive critiques of your coursework from your fellow students, as well as our TAs. Specific courses may require students to post assignments for feedback and provide feedback to fellow students in the Forums.
-instructors:
-  heading: Will I Get To Interact With The Instructor?
-  description: We try to have support available during the times you’re taking our courses, but are not available 24/7. If your question is related to course material, homework, or your understanding of a concept, check out the forums. There you’ll find other students and teaching assistants eager to share their knowledge. You can also leave a message for our support team or email us.
-change-email:
-  heading: How Do I Change The Email Address On My Account?
-  description: It’s easy! Go to your student profile on the left-hand side of the <a href="/dashboard">Dashboard</a>. Use the “edit” link next to “EMAIL” and enter the your email address. We’ll confirm by sending emails to your existing and new addresses.
-change-password:
-  heading: How Do I Change The Password On My Account?
-  description: Easily! Go to your student profile on the left-hand side of the <a href="/dashboard">Dashboard</a>. Click “Reset Password” and we’ll email you a link to reset your password.
-account-deletion:
-  heading: How Can I Delete My Account?
-  description: We understand, but we do hate to see you go. Please fill out <a href="https://privacyportal.onetrust.com/webform/05f24bb5-a0c4-43d4-966e-05606d5be9ca/93b6b82e-baf8-4adc-8998-0df20831be6d" rel="noopener" target="_blank">our data deletion request form</a>. Once you submit the form, you will receive a verification email with further instructions. Heads up! Deleting your account data will remove any certificates/badges that you’ve earned on Aquent Gymnasium. We advise that you save them now.
-get-help:
-  heading: Where Can I Get Help If I Hit A Snag?
-  description: It depends on the snag. For anything course-related, you should post to the Forum, where fellow students and course TAs can provide help. For non-course related questions (technical or otherwise), click on the Intercom icon on the lower right side of the screen or email <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>. We are usually able to respond to all questions within a few hours.
-gymnasium-technologies:
-  heading: What technologies does Gymnasium use?
-  description: Quite a few, as it turns out! The simplest answer is that Gymnasium is built on the open source platform <a href="https://openedx.org/" target="_blank" rel="noopener">Open EdX</a>. You can access the custom code we use to run Gymnasium on <a href="https://github.com/gymnasium/" target="_blank" rel="noopener">GitHub</a>.
+what-happened-to-gym:
+  heading: What Happened to Gymnasium?
+  description: |
+    For over 11 years, Gymnasium has been incredibly proud to offer free, high-quality training, helping over 160,000 people worldwide upskill into new careers and truly change lives. We've loved being a part of your learning journey and are immensely grateful for your support and enthusiasm.<br>
+    As of June 1, 2025, the course videos are available here and on YouTube. We will no longer be updating courses on our website or providing new certifications.
+certificates:
+  heading: What Happened to My Certificates and Badges?
+  description: |
+    You certificates will always be available through <a href="https://accredible.com">Accredible</a>. Please login to your <a href="https://v2.accounts.accredible.com/login">Accredible Dashboard</a> to view or make any changes to your certificates or badges.
+
