@@ -26,17 +26,3 @@
 <!-- ONETRUST_COOKIE_SCRIPT_ID missing! -->
 {%- endif -%}
 {#- End OneTrust Cookies Consent Notice -#}
-
-{#- Add GA4 -#}
-{%- if config.env.GOOGLE_ANALYTICS_4_ID -%}
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ config.env.GOOGLE_ANALYTICS_4_ID }}"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', '{{ config.env.GOOGLE_ANALYTICS_4_ID }}');
-</script>
-{%- else -%}
-<!-- GOOGLE_ANALYTICS_4_ID missing! -->
-{%- endif -%}
