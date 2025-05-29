@@ -70,6 +70,9 @@ $bg-colors: (
     800: map-deep-get($colors, 'mono', 800),
     900: map-deep-get($colors, 'mono', 900),
   ),
+  'gray': (
+    '600': map-deep-get($colors, 'mono', 600),
+  ),
   'green': (
     500: map-deep-get($colors, 'green', 500),
   ),
@@ -83,3 +86,10 @@ $bg-colors: (
     500: map-deep-get($colors, 'teal', 500),
   ),
 );
+
+// Retired courses
+
+// Map gray to mono-600
+:root {
+  --gray-600: var(--mono-600);
+}
