@@ -21,12 +21,6 @@
 .course-header {
   // padding: 1rem 0;
 
-  @include breakpoint(large, max) {
-    .grid-col-1-2 {
-      grid-template-columns: 2fr 3fr;
-    }
-  }
-
   figure {
     display: grid;
     overflow: hidden;
@@ -38,11 +32,12 @@
     }
   }
 
+  .grid-col-1-2 {
+    @include breakpoint(large, max) {
+      grid-template-columns: 2fr 3fr;
+    }
 
-
-  @media (max-width: 52em) {
-
-    .grid-col-1-2 {
+    @include breakpoint(52em, max) {
       grid-template-columns: none;
       gap: 1.2rem;
 
@@ -50,12 +45,16 @@
         margin-bottom: -2.2rem;
 
         img {
-         max-width: 50%;
-         justify-self: start;
+          max-width: 50%;
+          justify-self: start;
         }
       }
     }
+  }
 
+  // Retired courses
+  &.bg-gray figure {
+    filter: grayscale(1);
   }
 }
 
