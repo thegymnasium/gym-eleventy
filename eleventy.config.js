@@ -1,15 +1,12 @@
 // docs: https://www.11ty.io/docs/config/
 import { EleventyRenderPlugin } from "@11ty/eleventy";
-import EleventyEdgePlugin from "11ty-edge";
 import filters from "./_config/filters.js";
 import collectionz from "./_config/collectionz.js";
 import shortcodes from "./_config/shortcodes.js";
 import pluginImages from "./_config/images.js";
 import scss from "./_config/scss.js";
 import yaml from "js-yaml";
-import markdownit from "markdown-it";
-import markdownItAnchor from "markdown-it-anchor";
-import markdownItAttrs from "markdown-it-attrs";
+import md from "./_config/markdown.js";
 import htmlmin from "html-minifier-terser";
 import * as dotenvx from '@dotenvx/dotenvx';
 
@@ -31,7 +28,6 @@ export function filter(arr, criteria) {
 // Removed redundant polyfill for String.prototype.endsWith as it is natively supported in Node.js 22.15 and later.
 
 export default function (eleventyConfig) {
-  eleventyConfig.addPlugin(EleventyEdgePlugin);
   eleventyConfig.addPlugin(EleventyRenderPlugin);
 
   eleventyConfig.setTemplateFormats(["njk"]);
@@ -51,26 +47,8 @@ export default function (eleventyConfig) {
     "./public/": "/",
   });
 
-  // markdown-it options
-  let mdOpts = {
-    html: true,
-    breaks: true,
-    linkify: true,
-  };
-
-  // markdown-it-attrs options
-  const mdAttrs = {
-    // optional, these are default options
-    leftDelimiter: "{:", // modified to use `{:` instead of `{`
-    rightDelimiter: "}",
-    allowedAttributes: [], // empty array = all attributes are allowed
-  };
-
-  const md = markdownit(mdOpts);
-
+  // Set the markdown library using our shared instance
   eleventyConfig.setLibrary("md", md);
-  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAnchor));
-  eleventyConfig.amendLibrary("md", (mdLib) => mdLib.use(markdownItAttrs, mdAttrs));
 
   // add our custom plugins
   eleventyConfig.addPlugin(filters);

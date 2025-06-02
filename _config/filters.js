@@ -1,9 +1,10 @@
 import fs from "node:fs";
 import * as htmlmin from "html-minifier-terser";
+import md from "./markdown.js";
 
 const urlRegex = new RegExp('^(?:[a-z+]+:)?//', 'i');
 
-// Generic functions
+// generic functions
 function replaceAll(string, find, replace) {
   return string.replace(new RegExp(find, 'g'), replace);
 }
@@ -263,5 +264,10 @@ export default function filters(eleventyConfig) {
 
   eleventyConfig.addFilter('uppercase', (string) => {
     return string.toUpperCase();
+  });
+
+  // add markdown filter using markdown-it
+  eleventyConfig.addFilter('markdown', function(value) {
+    return md.render(value);
   });
 }
