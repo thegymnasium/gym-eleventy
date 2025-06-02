@@ -3,7 +3,9 @@ title: "Introducing Node.js"
 date: 2022-05-27T00:00:00-04:00
 redirectFrom:
   - /courses/GYM/002/0/about
-color: grey
+  - /courses/GYM/002/0/info
+  - /courses/GYM/002/0/courseware
+color: gray
 type: short
 path_slug: gym-shorts
 credential: badge

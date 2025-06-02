@@ -32,7 +32,6 @@ courses:
   ux-courses:
     schema: true
     ids:
-    - id: GYM-103
     - id: GYM-014
     - id: GYM-015
 
