@@ -79,8 +79,8 @@ footer:
       links:
         - label: FAQ
           href: GYM_ROOT_URL/faq/
-        - label: Support
-          href: GYM_ROOT_URL/support/
+        # - label: Support
+        #   href: GYM_ROOT_URL/support/
         - label: Social Impact
           href: GYM_ROOT_URL/social-impact/
         - label: Privacy Policy
@@ -264,7 +264,7 @@ colors:
   black: "#181818"
 msg:
   banner:
-    active: true
+    active: false
     class: 
     content: |
       <p><span aria-label="Waving Hand emoji" role="img">&#128075;</span> <strong>We’re closing our courses.</strong> Pass your final exams by <time datetime="2025-05-23">12 PM EDT on Friday, May 23</time> to earn a free certificate.</p>
@@ -282,8 +282,7 @@ msg:
         <span aria-label="Waving hand emoji" role="img">👋</span> There was an unexpected error.
       body: |
         <p>Try refreshing the page using the button below.</p>
-      footer: |
-        <p>If this issue persists, please reach out to our support team at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+      footer:
       show_links: false
     links:
     - label: Homepage
@@ -294,8 +293,7 @@ msg:
       url: GYM_ROOT_URL/courses/gym-shorts/
     - label: Take 5 Tutorials
       url: GYM_ROOT_URL/courses/take5/
-    footer: |
-      <p>Need to get in touch? You can email us at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+    footer:
   mfe:
     account:
       deletion: |
