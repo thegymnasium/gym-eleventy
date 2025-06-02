@@ -36,6 +36,7 @@ intro: >
   <strong><cite>Working with Atomic Design and Pattern Lab</cite></strong> will teach you how the Atomic Design methodology helps teams create successful user interface (UI) design systems and how to use Pattern Lab to create reusable UI components in HTML and CSS.
 preview_video_id:
 preview_video_duration:
+playlist: videoseries?si=I1RVqVpIzyo4rAa7&amp;list=PL0Y6L6nQtNzeyBHH0Jc5a3nR__ZXcBnaT
 about: >
   <p>This course will teach students the atomic design methodology, setting up Pattern Lab, building &amp; using UI components inside Pattern Lab, and manipulating data to create sophisticated page prototypes. Specifically you will learn the following: the 5-stage atomic design methodology, installing Pattern Lab, building frontend components in Pattern Lab, designing with dynamic data within Pattern Lab, and using advanced Pattern Lab features such as pseudo-patterns, pattern status, and more.</p>
 outline:

@@ -35,6 +35,7 @@ intro: >
   <strong><cite>Introduction to Node.js</cite></strong> demonstrates the benefits of using Node.js for building lightweight, scalable web applications. This is a hands-on course that will walk you through the process of building a simple to-do list application.
 preview_video_id:
 preview_video_duration:
+playlist: videoseries?si=Ii9knJsYxgzqE8-J&amp;list=PL0Y6L6nQtNzenxZJjs3oBgt9cUNL6-3Dp
 about: >
   <p>This course will teach you how to install the various components needed to get you up and running with Node.js including how to configure a local web server, how to leverage the Node Package Manager (NPM) to make web development easier and how to use a template engine to dynamically generate HTML within your web applications.</p>
 outline:

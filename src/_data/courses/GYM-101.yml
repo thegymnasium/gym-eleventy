@@ -3,7 +3,9 @@ title: "Responsive Web Design"
 date: 2022-05-27T00:00:00-04:00
 redirectFrom:
   - /courses/GYM/101/0/about
-color: grey
+  - /courses/GYM/101/0/info
+  - /courses/GYM/101/0/courseware
+color: gray
 type: full
 path_slug: full
 credential: certificate
