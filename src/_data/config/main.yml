@@ -282,8 +282,7 @@ msg:
         <span aria-label="Waving hand emoji" role="img">👋</span> There was an unexpected error.
       body: |
         <p>Try refreshing the page using the button below.</p>
-      footer: |
-        <p>If this issue persists, please reach out to our support team at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+      footer:
       show_links: false
     links:
     - label: Homepage
@@ -294,8 +293,7 @@ msg:
       url: GYM_ROOT_URL/courses/gym-shorts/
     - label: Take 5 Tutorials
       url: GYM_ROOT_URL/courses/take5/
-    footer: |
-      <p>Need to get in touch? You can email us at <b><a href="mailto:help@thegymnasium.com?subject=Get+In+Touch">help@thegymnasium.com</a></b>.</p>
+    footer:
   mfe:
     account:
       deletion: |
