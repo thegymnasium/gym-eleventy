@@ -3,6 +3,8 @@ title: "Modern Web Design"
 date: 2019-10-28T00:00:00-04:00
 redirectFrom:
   - /courses/GYM/107/0/about
+  - /courses/GYM/107/0/info
+  - /courses/GYM/107/0/courseware
 color: magenta
 type: full
 path_slug: full
@@ -35,6 +37,7 @@ intro: >
   <strong><cite>Modern Web Design</cite></strong> will prepare you to be a front-end developer by walking you through the basics of HTML, CSS, and JavaScript.
 preview_video_id: v6TTlIou8UA
 preview_video_duration: PT04M29S
+playlist: videoseries?si=uvN6i4V3GdDiZ3ik&amp;list=PL0Y6L6nQtNzc_5rqcIItxdZxKmuFLlNou
 about: >
   <p>This course is an introduction to front-end development for the web. You will learn how to mark up content with HTML, use CSS as a design tool, and add interactivity to your web pages with JavaScript. You will also learn the basics of building a responsive website for mobile devices and tablets, as well as for the desktop.</p>
 outline:

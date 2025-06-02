@@ -15,8 +15,8 @@ home:
     items:
     - id: GYM-017
     - id: GYM-107
-    - id: GYM-103
     - id: GYM-104
+    - id: GYM-001
 
 catalog:
   full:

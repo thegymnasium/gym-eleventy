@@ -53,10 +53,10 @@
         {%- set enableNote = true -%}
         {%- include 'modules/panels/course.njk' -%}
 
-        {# Add custom recommendation for prototyping #}
+        {# Add custom recommendation for ux and prototyping #}
         {%- set module = collections.live_courses_short | pluck('id', 'GYM-015') -%}
         {%- set module = module[0] -%}
-        {%- set topicClass = 'prototyping' -%}
+        {%- set topicClass = 'ux prototyping' -%}
         {%- set subtopicClass = ' ' -%}
         {%- set extraClass = 'elective' -%}
         {%- set enableNote = true -%}

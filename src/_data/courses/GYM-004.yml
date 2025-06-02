@@ -3,6 +3,8 @@ title: "Creating A WordPress Theme"
 date: 2019-10-28T00:00:00-04:00
 redirectFrom:
   - /courses/GYM/004/0/about
+  - /courses/GYM/004/0/info
+  - /courses/GYM/004/0/courseware
 color: magenta
 type: short
 path_slug: gym-shorts
@@ -35,6 +37,7 @@ intro: >
   <strong><cite>Creating A WordPress Theme</cite></strong> will show you how to convert your HTML/CSS design into a WordPress website. You’ll also discover how to set up a local development environment,and add WordPress tags to your design.
 preview_video_id:
 preview_video_duration:
+playlist: videoseries?si=DGBw1tH--G7JyTIA&amp;list=PL0Y6L6nQtNzcPOTNe6-_Z106t0DuFYmDx
 about: >
   <p>By the end of the course, you will understand which WordPress tags are needed to translate your HTML/CSS design into a website that takes advantage of WordPress content management features including posts, pages, and plugins.</p>
   <p>This course will teach you how to install Wordpress locally and dive into the essential components of a WordPress theme. Specifically, you will learn the following: the role of the WordPress Loop, modifying a pre-existing stylesheet to enable WordPress features (such as a sidebar), using includes to speed up development time and adding WordPress-specific features such as navigation menus.</p>

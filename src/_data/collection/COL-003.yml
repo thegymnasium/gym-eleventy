@@ -32,7 +32,6 @@ courses:
   prototyping-courses:
     schema: true
     ids:
-    - id: GYM-103
     - id: GYM-015
 
 tutorials:

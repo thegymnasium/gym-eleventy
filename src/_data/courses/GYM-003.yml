@@ -3,7 +3,9 @@ title: "Grid Layout in Bootstrap 3"
 date: 2022-05-26T00:00:00-04:00
 redirectFrom:
   - /courses/GYM/003/0/about
-color: grey
+  - /courses/GYM/003/0/info
+  - /courses/GYM/003/0/courseware
+color: gray
 type: short
 path_slug: gym-shorts
 credential: badge

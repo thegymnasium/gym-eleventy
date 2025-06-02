@@ -3,6 +3,8 @@ title: "jQuery Building Blocks"
 date: 2019-10-28T00:00:00-04:00
 redirectFrom:
   - /courses/GYM/102/0/about
+  - /courses/GYM/102/0/info
+  - /courses/GYM/102/0/courseware
 color: purple
 type: full
 path_slug: full
@@ -17,7 +19,7 @@ img: /img/courses/svg/gym-102.svg
 topic: "Development"
 subtopics:
   - label: "JavaScript"
-description: "This course will teach you 5 easy techniques for adding interactivity to your web pages. By the end of the course, you’ll be able to add features and style to your web pages, from simple animations to complex dynamic content."
+description: "Learn five easy techniques for adding interactivity, features, and visual style to your web pages, from simple animations to dynamic content."
 instructor: dporter
 skills:
   - label: "Navigation, animation, and server interaction"
@@ -36,13 +38,14 @@ intro: >
   <strong><cite>jQuery Building Blocks</cite></strong> will teach you 5 easy techniques for adding interactivity to your web pages. By the end of the course, you’ll be able to add features and style to your web pages, from simple animations to complex dynamic content.
 preview_video_id: ZvBf89VaMJI?list=PL0Y6L6nQtNzeGtsX5_rVuf2TUz709ybIk
 preview_video_duration: PT19M34S
+playlist: videoseries?si=hbJBhzeaLNzsiqzq&amp;list=PL0Y6L6nQtNzc0AsElfJH6MrvRAPjN8tGQ
 about: >
   <p>In this practical introduction to the technology, students will learn how to use jQuery to create a variety of visual effects, how to add complex, fully-functional widgets (such as an image carousel) to a page, how to work with and customize jQuery plug-ins, how to handle “events,” and how to pull in data for use in a web page or application. In addition to learning these specific techniques, students will also walk away with a framework for figuring out how jQuery can help them solve any development challenges they might face.</p>
 outline:
   - label: "Lesson 1: Welcome to jQuery"
     description: "This lesson outlines the course and gives a brief introduction to jQuery. Learn how jQuery fits into the context of web technologies and has evolved as a solution for adding interactivity to your pages in the least painful and most efficient way possible. This lesson provides an overview of the five projects covered in this course and introduces you to jQuery selector syntax, as well as how to use a browser console for interactive “sleuthing” of web page code."
   - label: "Lesson 2: That Certain Sparkle"
-    description: "Learn how the appropriate use of animation in web pages can benefit users through examples currently found on the web. To begin, you will learn the importance of jQuery’s `.ready` function and then move on to explore the use of jQuery’s `.animate()` method with its ability to control the duration and relative smoothness of your animations."
+    description: "Learn how the appropriate use of animation in web pages can benefit users through examples currently found on the web. To begin, you will learn the importance of jQuery’s `.ready()` function and then move on to explore the use of jQuery’s `.animate()` method with its ability to control the duration and relative smoothness of your animations."
   - label: "Lesson 3: The jQuery Carousel(s)"
     description: "Learn the vast world of functionality that jQuery’s plugin ecosystem provides access to. You will walk through the process of downloading, including initializing a plugin—in this case, the jQuery cycle plugin. The coding project involves the use of a carousel, and before learning to configure it, you will also learn the advantages and disadvantages of this user interface component. The user experience of carousels is currently a hot topic in web development and you will learn what aspects are necessary to consider before you add one, as well as which features you should look for (and which to avoid!)."
   - label: "Lesson 4: Building Tabs…To Last"
