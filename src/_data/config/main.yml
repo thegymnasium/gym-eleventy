@@ -84,7 +84,7 @@ footer:
         - label: Social Impact
           href: GYM_ROOT_URL/social-impact/
         - label: Privacy Policy
-          href: GYM_ROOT_URL/privacy-policy/
+          href: https://aquent.com/privacy-policy/
           rel: privacy-policy
         - label: Corporate Social Responsibility
           href: https://aquent.com/csr-policy
